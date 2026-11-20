@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>РОСДОРСПК — обучение для дорожной отрасли</title>
+<meta name="description" content="Система повышения квалификации РОСДОРСПК: программы обучения, открытые вебинары и нормативные обзоры для специалистов дорожного хозяйства. ФАУ «РОСДОРНИИ».">
+<link rel="stylesheet" href="site-chrome.css">
+<style>
+.home-page {
+  --home-ink: #14243d;
+  --home-text: #47586d;
+  --home-muted: #495d76;
+  --home-blue: #0a58ca;
+  --home-blue-hover: #0849a9;
+  --home-line: #dce4ef;
+  margin: 0;
+  background: #fff;
+  color: var(--home-ink);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+.home-page, .home-page *, .home-page *::before, .home-page *::after { box-sizing: border-box; }
+.home-page :is(h1,h2,h3,p,ul,dl,dd) { margin: 0; }
+.home-page a { color: inherit; text-decoration: none; }
+.home-page svg { width: 20px; height: 20px; flex: 0 0 auto; }
+.home-page :is(a,button):focus-visible { outline: 3px solid #79adf1; outline-offset: 4px; }
+.home-shell { width: min(1120px, calc(100% - 40px)); margin-inline: auto; }
+.home-skip { position: fixed; top: -100px; left: 16px; z-index: 1000; padding: 10px 16px; border-radius: 8px; background: #0a58ca; color: #fff; font: 14px/1.5 Arial,sans-serif; }
+.home-skip:focus { top: 12px; }
+
+
+
+
+
+
+.home-programs { padding: 0 0 60px; }
+.home-programs__header { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-bottom: 24px; padding-top: 36px; border-top: 1px solid var(--home-line); }
+.home-programs__header .home-section-heading { margin-bottom: 0; }
+.home-programs__header > a { flex-shrink: 0; }
+.home-program-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 20px; }
+.home-program { display: flex; min-width: 0; flex-direction: column; padding: 0; overflow: hidden; border: 1px solid var(--home-line); border-radius: 14px; background: #fff; transition: border-color .18s ease,box-shadow .18s ease; }
+.home-program:hover { border-color: #98b9e5; box-shadow: 0 8px 24px rgb(20 36 61 / 6%); }
+.home-program__media { display: block; flex: 0 0 auto; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; background: #faf8f3; }
+.home-program__media img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.home-program__content { display: flex; flex: 1; min-width: 0; flex-direction: column; padding: 24px; }
+.home-program__meta { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; color: var(--home-muted); font-size: 14px; }
+.home-program__hours { padding: 4px 10px; border-radius: 6px; background: #edf4ff; color: var(--home-blue); font-weight: 600; }
+.home-program h3 { margin-top: 18px; font-size: 21px; line-height: 1.4; letter-spacing: -.02em; font-weight: 650; }
+.home-program__description { margin: 14px 0 24px !important; color: var(--home-text); font-size: 15px; line-height: 1.65; }
+.home-program .home-text-link { justify-content: space-between; width: 100%; margin-top: auto; padding-top: 12px; border-top: 1px solid var(--home-line); }
+.home-program:hover .home-text-link { text-decoration: underline; text-underline-offset: 4px; }
+
+
+
+
+.home-page .home-button { display: inline-flex; min-height: 50px; align-items: center; justify-content: center; gap: 14px; padding: 12px 20px; border: 1px solid #d2ddea; border-radius: 9px; background: #fff; color: var(--home-ink); font-size: 15px; font-weight: 600; line-height: 1.5; transition: background-color .18s ease,border-color .18s ease,box-shadow .18s ease; }
+.home-page .home-button--primary { border-color: var(--home-blue); background: var(--home-blue); color: #fff; box-shadow: 0 4px 10px rgb(10 88 202 / 12%); }
+.home-page .home-button:hover { border-color: #a9bdd8; background: #edf3fb; }
+.home-page .home-button--primary:hover { border-color: var(--home-blue-hover); background: var(--home-blue-hover); box-shadow: 0 6px 16px rgb(10 88 202 / 18%); }
+
+
+
+
+
+
+
+
+.home-formats { padding: 52px 0 60px; }
+.home-section-heading { display: flex; align-items: flex-start; flex-direction: column; gap: 8px; margin-bottom: 24px; }
+.home-page h2 { font-size: 32px; font-weight: 650; line-height: 1.25; letter-spacing: -.03em; text-wrap: balance; }
+.home-section-heading > p { max-width: 620px; color: var(--home-muted); font-size: 15px; text-wrap: pretty; }
+.home-format-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 20px; }
+.home-format { display: flex; min-width: 0; flex-direction: column; padding: 24px 24px 20px; border: 1px solid var(--home-line); border-radius: 14px; background: #fff; transition: border-color .18s ease,box-shadow .18s ease; }
+.home-format:hover, .home-format:focus-within { border-color: #b4c8e2; box-shadow: 0 8px 24px rgb(20 36 61 / 6%); }
+.home-page .home-format:focus-visible { border-color: var(--home-blue); outline: 3px solid var(--home-blue); outline-offset: 4px; }
+.home-page .home-format:is(:hover,:focus-visible) .home-text-link { color: var(--home-blue-hover); text-decoration: underline; text-underline-offset: 4px; }
+.home-format__heading { display: flex; align-items: flex-start; gap: 12px; min-height: 60px; }
+.home-format__icon { display: flex; width: 42px; height: 42px; flex: 0 0 42px; align-items: center; justify-content: center; border-radius: 10px; background: #eef4fc; color: var(--home-blue); }
+.home-format__icon svg { width: 22px; height: 22px; }
+.home-format h3 { min-width: 0; font-size: 24px; font-weight: 650; line-height: 1.25; letter-spacing: -.035em; }
+.home-format__description { margin: 16px 0 24px !important; color: var(--home-text); font-size: 16px; line-height: 1.65; text-wrap: pretty; }
+.home-format__links { display: grid; grid-template-columns: minmax(0,1fr) auto; justify-items: start; align-items: center; gap: 12px; margin-top: auto; padding-top: 12px; border-top: 1px solid var(--home-line); }
+.home-format__links > :only-child { grid-column: 1 / -1; }
+.home-page .home-text-link { display: inline-flex; min-height: 44px; align-items: center; gap: 10px; color: var(--home-blue); font-size: 15px; font-weight: 600; line-height: 1.5; transition: color .18s ease; }
+.home-page .home-text-link:hover { color: var(--home-blue-hover); text-decoration: underline; text-underline-offset: 4px; }
+.home-format--education { border-color: #c8daf3; background: #edf4ff; }
+.home-format--education:hover, .home-format--education:focus-within { border-color: #98b9e5; box-shadow: 0 8px 24px rgb(10 88 202 / 8%); }
+.home-format--education .home-format__icon { background: #dceaff; }
+.home-format--education .home-format__links { border-color: #cdddf2; }
+.home-page .home-format__cta { min-height: 44px; justify-content: space-between; width: 100%; padding: 10px 14px; border-radius: 7px; background: var(--home-blue); color: #fff; }
+.home-page .home-format__cta:hover { background: var(--home-blue-hover); color: #fff; text-decoration: none; }
+.home-page .home-format--education:is(:hover,:focus-visible) .home-format__cta { background: var(--home-blue-hover); color: #fff; text-decoration: none; }
+.home-about { padding: 56px 0; border-top: 1px solid var(--home-line); border-bottom: 1px solid var(--home-line); background: #f6f8fc; }
+.home-about__layout { display: grid; grid-template-columns: 1.1fr 1fr; align-items: start; gap: 40px 64px; }
+.home-page .home-about__intro h2 { font-size: 28px; }
+.home-about__eyebrow { margin-bottom: 14px !important; color: var(--home-blue); font-size: 14px; font-weight: 600; }
+.home-about__description { max-width: 500px; margin-top: 20px !important; color: var(--home-text); font-size: 16px; line-height: 1.75; }
+.home-about__links { display: grid; min-width: 0; align-self: center; }
+.home-about__link { display: grid; grid-template-columns: 24px minmax(0,1fr) 20px; align-items: center; gap: 14px; min-height: 84px; padding: 16px 0; border-bottom: 1px solid var(--home-line); transition: color .18s ease; }
+.home-about__link:first-child { padding-top: 0; }
+.home-about__link:last-child { padding-bottom: 0; border-bottom: 0; }
+.home-about__link > svg:first-child { color: var(--home-blue); }
+.home-about__link > svg:last-child { width: 18px; height: 18px; color: var(--home-muted); }
+.home-about__link strong { display: block; font-size: 16px; font-weight: 600; line-height: 1.4; }
+.home-about__link small { display: block; margin-top: 4px; color: var(--home-muted); font-size: 14px; line-height: 1.5; }
+.home-page .home-about__link:hover { color: var(--home-blue); }
+.home-impact { display: grid; grid-column: 1 / -1; grid-template-columns: minmax(0,1fr) auto; gap: 0 24px; padding: 32px; border: 1px solid var(--home-line); border-radius: 14px; background: #fff; }
+.home-impact__heading { display: flex; grid-column: 1; grid-row: 1; flex-direction: column; align-items: flex-start; gap: 8px; }
+.home-page .home-impact__heading h2 { font-size: 24px; font-weight: 650; line-height: 1.25; }
+.home-impact__heading p { color: var(--home-muted); font-size: 14px; }
+.home-page .home-impact__more { display: inline-flex; grid-column: 2; grid-row: 1; align-self: start; justify-self: end; align-items: center; gap: 10px; min-height: 44px; padding: 8px 0; color: var(--home-blue); font-size: 15px; font-weight: 600; line-height: 1.5; }
+.home-page .home-impact__more:hover { color: var(--home-blue-hover); text-decoration: underline; text-underline-offset: 4px; }
+.home-impact__grid { display: grid; grid-column: 1 / -1; grid-row: 2; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 32px; margin-top: 26px !important; }
+.home-impact__grid > div { display: flex; flex-direction: column; align-items: flex-start; padding-left: 28px; border-left: 1px solid #d3deec; }
+.home-impact__grid > div:first-child { padding-left: 0; border-left: 0; }
+.home-impact dt { color: var(--home-text); font-size: 15px; line-height: 1.5; }
+.home-impact dd { order: -1; margin-bottom: 8px; color: var(--home-blue); font-size: 48px; font-weight: 700; line-height: 1.15; letter-spacing: -.045em; font-variant-numeric: tabular-nums; }
+.home-contact { padding: 48px 0 56px; }
+.home-contact__inner { position: relative; overflow: hidden; display: flex; justify-content: space-between; align-items: center; gap: 24px 40px; padding: 36px 40px; border-radius: 14px; background: #0a58ca; color: #fff; }
+.home-contact__inner > div { max-width: 670px; }
+.home-contact h2 { font-size: 28px; }
+.home-contact p { margin-top: 12px; color: #e3eeff; font-size: 16px; line-height: 1.65; }
+.home-contact .home-button { flex: 0 0 auto; border-color: #fff; color: #0849a9; }
+/* Improve footer readability only on the home page. */
+.home-site > .edu2-chrome-footer h2 { font-size: 14px; }
+.home-site > .edu2-chrome-footer .edu2-chrome-footer__column a { min-height: 38px; font-size: 14px; color: #47586d; }
+.home-site > .edu2-chrome-footer .edu2-chrome-footer__column a:hover { color: #0a58ca; }
+.home-site > .edu2-chrome-footer .edu2-chrome-footer__contact p,
+.home-site > .edu2-chrome-footer .edu2-chrome-footer__bottom { color: #536278; font-size: 13px; }
+@media(max-width:1080px) {
+  
+  .home-format-grid { gap: 16px; }
+  .home-format { padding: 24px 20px 18px; }
+  .home-format h3 { font-size: 22px; }
+  .home-about__layout { gap: 32px; }
+  .home-contact__inner { padding: 32px; }
+}
+
+@media(max-width:800px) {
+  .home-program-grid { grid-template-columns: minmax(0,1fr); }
+  .home-programs__header { align-items: flex-start; flex-direction: column; gap: 12px; }
+  
+  .home-format-grid { grid-template-columns: minmax(0,1fr); }
+  .home-format { padding: 24px; }
+  .home-format__heading { min-height: 48px; }
+  .home-format h3 { font-size: 24px; }
+  .home-format__description { margin: 16px 0 24px !important; }
+  .home-format__links { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 4px 20px; }
+  .home-page .home-format__cta { width: auto; gap: 24px; }
+  .home-about__layout { grid-template-columns: minmax(0,1fr); gap: 28px; }
+  .home-about__description { max-width: 650px; }
+  .home-impact { grid-template-columns: minmax(0,1fr); }
+  .home-page .home-impact__more { grid-column: 1; grid-row: 3; justify-self: start; width: 100%; margin-top: 20px; padding: 16px 0 0; border-top: 1px solid var(--home-line); }
+  .home-impact__grid { gap: 20px; }
+  .home-impact__grid > div { padding-left: 20px; }
+  .home-impact dd { font-size: 40px; }
+  .home-impact dt { font-size: 14px; }
+  .home-section-heading { align-items: flex-start; flex-direction: column; gap: 8px; }
+  .home-section-heading > p { max-width: none; }
+  .home-contact__inner { align-items: flex-start; flex-direction: column; gap: 24px; }
+}
+@media(max-width:560px) {
+  .home-programs { padding-bottom: 40px; }
+  .home-programs__header { padding-top: 28px; margin-bottom: 12px; }
+  .home-program__content { padding: 22px; }
+  .home-shell { width: calc(100% - 36px); }
+  
+  
+  
+  
+  
+  .home-page .home-button { padding-inline: 16px; font-size: 14px; }
+  
+  .home-formats { padding: 36px 0 40px; }
+  .home-page h2 { font-size: 27px; text-wrap: initial; }
+  .home-section-heading { margin-bottom: 22px; }
+  .home-format { padding: 20px; }
+  .home-format__heading { min-height: 40px; }
+  .home-format__description { margin: 12px 0 16px !important; line-height: 1.6; }
+  .home-format__icon { width: 40px; height: 40px; flex-basis: 40px; }
+  .home-format h3 { font-size: 22px; }
+  .home-format__links { align-items: center; flex-direction: row; gap: 8px 16px; padding-top: 8px; }
+  .home-page .home-format__cta { width: 100%; }
+  .home-about { padding: 36px 0; }
+  .home-page .home-about__intro h2 { font-size: 26px; }
+  .home-about__description { margin-top: 16px !important; }
+  .home-about__link { gap: 12px; }
+  .home-impact { padding: 24px 20px; }
+  .home-impact__grid { grid-template-columns: minmax(0,1fr); gap: 0; margin-top: 12px !important; }
+  .home-impact__grid > div { display: grid; grid-template-columns: minmax(0,1fr) auto; align-items: center; gap: 16px; padding: 20px 0; border-left: 0; border-bottom: 1px solid #d3deec; }
+  .home-impact__grid > div:last-child { padding-bottom: 0; border-bottom: 0; }
+  .home-impact dd { order: initial; margin: 0; font-size: clamp(30px,8vw,38px); white-space: nowrap; }
+  .home-impact dt { font-size: 14px; }
+  .home-contact { padding: 32px 0 40px; }
+  .home-contact__inner { padding: 28px 24px; }
+  .home-contact .home-button { width: 100%; }
+  .home-contact h2 { font-size: 26px; }
+  .home-contact p { font-size: 15px; }
+  .home-site > .edu2-chrome-footer .edu2-chrome-footer__column a { min-height: 44px; }
+}
+@media(max-width:360px) {
+  
+  
+  .home-format { padding: 20px 18px; }
+  .home-format h3 { font-size: 21px; }
+  .home-impact__grid > div { gap: 10px; }
+  .home-impact dt { font-size: 13px; }
+  .home-contact__inner { padding: 26px 20px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .home-page *, .home-page *::before, .home-page *::after { transition: none !important; animation: none !important; }
+}
+
+/* Shared panoramic intro: keep this block identical on all five pages. */
+.panorama {
+  --panorama-bg: #f6f8fb;
+  --panorama-ink: #14243d;
+  --panorama-text: #47586d;
+  --panorama-muted: #596a7f;
+  --panorama-blue: #0a58ca;
+  --panorama-image-position: 100% 15%;
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  align-items: start;
+  min-height: 480px;
+  padding: 64px 0 32px;
+  overflow: hidden;
+  border-bottom: 1px solid #e1e7ef;
+  background: var(--panorama-bg);
+  color: var(--panorama-ink);
+  font: 16px/1.6 Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  scroll-margin-top: 76px;
+}
+.panorama, .panorama *, .panorama::before, .panorama::after,
+.panorama *::before, .panorama *::after { box-sizing: border-box; }
+.panorama::after {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background: linear-gradient(90deg,var(--panorama-bg) 0%,var(--panorama-bg) 35%,rgba(246,248,251,.9) 43%,transparent 56%);
+  pointer-events: none;
+  content: "";
+}
+.panorama .panorama__layout {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: min(1120px,calc(100% - 40px));
+  margin: 0 auto;
+}
+.panorama .panorama__content { width: min(560px,52%); min-width: 0; margin: 0; padding: 0; }
+.panorama .panorama__eyebrow { margin: 0 0 14px; color: var(--panorama-muted); font-size: 13px; font-weight: 550; line-height: 1.5; }
+.panorama .panorama__title { max-width: none; margin: 0; color: var(--panorama-ink); font-size: clamp(40px,4vw,48px); font-weight: 650; line-height: 1.08; letter-spacing: -.045em; text-wrap: initial; }
+.panorama .panorama__title :is(span,em) { color: var(--panorama-blue); font-style: normal; }
+/* Reserve three description lines on desktop to align the primary links. */
+.panorama .panorama__lead { max-width: 460px; min-height: 4.8em; margin: 16px 0 0; color: var(--panorama-text); font-size: 18px; line-height: 1.6; }
+.panorama .panorama__actions { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 24px; margin: 20px 0 0; }
+.panorama .panorama__link { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 8px; min-height: 44px; margin: 0; padding: 4px 0; color: var(--panorama-blue); font-size: 15px; font-weight: 600; line-height: 1.5; text-decoration: none; }
+.panorama .panorama__link--secondary { color: var(--panorama-muted); font-size: 14px; font-weight: 500; }
+.panorama .panorama__link:hover { color: #0849a9; text-decoration: underline; text-underline-offset: 4px; }
+.panorama .panorama__link:focus-visible { border-radius: 4px; outline: 3px solid #79adf1; outline-offset: 4px; }
+.panorama .panorama__link > :is(span,svg) { flex: 0 0 auto; width: 18px; height: 18px; font-size: 18px; line-height: 1; }
+.panorama .panorama__facts { display: flex; flex-wrap: wrap; gap: 8px 20px; margin: 16px 0 0; padding: 0; list-style: none; color: var(--panorama-muted); font-size: 13px; line-height: 1.5; }
+.panorama .panorama__facts li { display: inline-flex; align-items: flex-start; gap: 8px; }
+.panorama .panorama__facts svg { flex: 0 0 auto; width: 17px; height: 17px; margin-top: 1px; }
+.panorama .panorama__stats { display: grid; grid-template-columns: repeat(3,max-content); gap: 24px; min-height: 56px; max-width: 100%; margin: 16px 0 0; }
+.panorama .panorama__stats .stat-card { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; min-width: 0; }
+.panorama .panorama__stats .stat-number { color: var(--panorama-ink); font-size: 28px; font-weight: 650; line-height: 1.15; letter-spacing: -.035em; font-variant-numeric: tabular-nums; }
+.panorama .panorama__stats .stat-label { color: var(--panorama-muted); font-size: 13px; line-height: 1.5; white-space: nowrap; }
+.panorama .panorama__stats.is-loading .stat-card { gap: 4px; }
+.panorama .panorama__visual { position: absolute; z-index: 0; inset: 0 0 0 auto; width: 100%; margin: 0; overflow: hidden; }
+.panorama .panorama__visual img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: var(--panorama-image-position); }
+.panorama .panorama__visual::after { position: absolute; inset: 0; background: linear-gradient(180deg,var(--panorama-bg),transparent 10%,transparent 92%,var(--panorama-bg)); pointer-events: none; content: ""; }
+/* Only the crop of each existing illustration differs. */
+.panorama--education { --panorama-image-position: 100% 65%; }
+@media (max-width:960px) {
+  .panorama { display: block; min-height: 0; padding: 32px 0 0; }
+  .panorama::after { display: none; }
+  .panorama .panorama__layout { width: calc(100% - 36px); }
+  .panorama .panorama__content { width: 100%; max-width: 650px; }
+  .panorama .panorama__lead { min-height: 0; }
+  .panorama .panorama__title { font-size: 44px; }
+  .panorama .panorama__visual { position: relative; inset: auto; width: 100%; height: clamp(240px,38vw,340px); margin-top: 20px; }
+}
+@media (max-width:620px) {
+  .panorama { padding-top: 20px; }
+  .panorama .panorama__layout { width: calc(100% - 28px); }
+  .panorama .panorama__eyebrow { margin-bottom: 10px; }
+  .panorama .panorama__title { font-size: clamp(30px,8vw,36px); line-height: 1.08; letter-spacing: -.04em; }
+  .panorama .panorama__lead { margin-top: 12px; font-size: 17px; line-height: 1.5; }
+  .panorama .panorama__actions { gap: 0 20px; margin-top: 8px; }
+  .panorama .panorama__visual { height: clamp(176px,50vw,220px); margin-top: -8px; }
+  .panorama .panorama__facts { flex-direction: column; gap: 8px; margin-top: 12px; }
+  .panorama .panorama__stats { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; min-height: 50px; margin-top: 12px; }
+  .panorama .panorama__stats .stat-number { font-size: 24px; }
+}
+@media (max-width:360px) {
+  .panorama .panorama__actions { gap: 0 16px; }
+  .panorama .panorama__link { font-size: 14px; }
+  .panorama .panorama__link--secondary { font-size: 13px; }
+}
+/* End shared panoramic intro. */
+</style>
+<link rel="icon" type="image/x-icon" sizes="16x16 32x32 48x48 256x256" href="assets/brand/favicon-v4.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/brand/favicon-v4-32.png">
+</head>
+<body class="home-site">
+<a class="home-skip" href="#home-main">Перейти к содержимому</a>
+<header class="edu2-chrome edu2-chrome-header">
+    <div class="edu2-chrome-container edu2-chrome-header__inner">
+      <a class="edu2-chrome-brand" href="index.html" aria-label="РОСДОРСПК — главная">
+        <span class="edu2-chrome-brand__mark" aria-hidden="true"><img src="assets/brand/rosdorspk-mark-v4.png" width="256" height="256" alt="" decoding="async"></span>
+        <span class="edu2-chrome-brand__text"><strong>РОСДОРСПК</strong><small>Система повышения квалификации</small></span>
+      </a>
+      <nav class="edu2-chrome-nav" aria-label="Основная навигация">
+        <a class="is-active" href="index.html" aria-current="page">Главная</a>
+        <a href="education.html">Обучение</a>
+        <a href="webinars.html">Вебинары</a>
+        <a href="regulations.html">Нормативные обзоры</a>
+      <div class="edu2-chrome-about" data-edu2-chrome-about>
+        <button class="edu2-chrome-about__trigger" type="button" aria-controls="edu2-chrome-about-menu" aria-expanded="false" data-edu2-chrome-about-trigger>О&nbsp;нас <span class="edu2-chrome-about__chevron" aria-hidden="true">⌄</span>
+        </button>
+        <div class="edu2-chrome-about__menu" id="edu2-chrome-about-menu" aria-hidden="true" inert data-edu2-chrome-about-menu>
+          <p class="edu2-chrome-about__heading">О системе РОСДОРСПК</p>
+          <a class="edu2-chrome-about__item" data-about-icon="results" href="results.html"><strong>Результаты в цифрах</strong><small>Масштаб, география и аудитория</small></a>
+          <a class="edu2-chrome-about__item" data-about-icon="organization" href="organization.html"><strong>Сведения об организации</strong><small>Документы, структура и руководство</small></a>
+          <a class="edu2-chrome-about__item" data-about-icon="contacts" href="contacts.html"><strong>Контакты</strong><small>Телефон, почта и адрес</small></a>
+          <a class="edu2-chrome-about__item" data-about-icon="history" href="history.html"><strong>История создания</strong><small>Этапы развития системы</small></a>
+        </div>
+      </div>
+      </nav>
+      <button class="edu2-chrome-menu-button" type="button" aria-expanded="false" aria-controls="edu2-chrome-mobile-menu" aria-label="Открыть меню" data-edu2-chrome-menu-button>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="edu2-chrome-mobile-menu" id="edu2-chrome-mobile-menu" aria-label="Мобильная навигация" aria-hidden="true" inert>
+      <a class="is-active" href="index.html" aria-current="page">Главная</a>
+      <a href="education.html">Обучение</a>
+      <a href="webinars.html">Вебинары</a>
+      <a href="regulations.html">Нормативные обзоры</a>
+    <div class="edu2-chrome-mobile-about" data-edu2-chrome-mobile-about>
+      <button class="edu2-chrome-mobile-about__toggle" type="button" aria-expanded="false" aria-controls="edu2-chrome-about-mobile-menu" data-edu2-chrome-mobile-about-toggle>
+        О&nbsp;нас <span aria-hidden="true">⌄</span>
+      </button>
+      <div class="edu2-chrome-mobile-about__menu" id="edu2-chrome-about-mobile-menu" aria-hidden="true" inert data-edu2-chrome-mobile-about-menu>
+        <div class="edu2-chrome-mobile-about__inner">
+        <a data-about-icon="results" href="results.html">Результаты в цифрах</a>
+        <a data-about-icon="organization" href="organization.html">Сведения об организации</a>
+        <a data-about-icon="contacts" href="contacts.html">Контакты</a>
+        <a data-about-icon="history" href="history.html">История создания</a>
+              </div>
+      </div>
+    </div>
+    </nav>
+  </header>
+
+<main class="home-page" id="home-main">
+  <section class="home-hero panorama" aria-labelledby="home-title">
+    <div class="home-shell home-hero__layout panorama__layout">
+      <div class="home-hero__content panorama__content">
+      <p class="home-hero__eyebrow panorama__eyebrow">Образовательный проект ФАУ «РОСДОРНИИ»</p>
+      <h1 class="panorama__title" id="home-title">Обучение и знания<br><span>для дорожной отрасли</span></h1>
+      <p class="home-hero__lead panorama__lead">Повышение квалификации, вебинары и нормативные обзоры для специалистов дорожного хозяйства.</p>
+      <div class="home-actions panorama__actions">
+        <a class="home-text-link panorama__link" href="education.html">Выбрать программу <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="home-hero__about panorama__link panorama__link--secondary" href="results.html">О системе <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <ul class="home-hero__facts panorama__facts" aria-label="Формат обучения">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="3" width="14" height="13" rx="2"/><path d="M2 20h20l-3-4H5Z"/></svg>Дистанционный формат</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8m-7 5 2 2 4-4"/></svg>Удостоверение о повышении квалификации</li>
+      </ul>
+      </div>
+    </div>
+    <div class="home-road panorama__visual" aria-hidden="true">
+      <img class="home-road__drawing" src="assets/hero-digital-road-v5.jpg" width="2172" height="724" alt="" decoding="async" fetchpriority="high">
+    </div>
+  </section>
+
+  <section class="home-formats" aria-labelledby="home-formats-title">
+    <div class="home-shell">
+      <div class="home-section-heading">
+        <h2 id="home-formats-title">Выберите свою задачу</h2>
+        <p>Подберите подходящий формат: обучение, опыт коллег или нормативные материалы.</p>
+      </div>
+      <div class="home-format-grid">
+        <a class="home-format home-format--education" href="education.html" aria-labelledby="home-education-title home-education-link">
+          <div class="home-format__heading">
+          <div class="home-format__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 6c-3-2-6-2-10-1v14c4-1 7-1 10 1 3-2 6-2 10-1V5c-4-1-7-1-10 1Z"/><path d="M12 6v14M5 9h3M5 12h3M16 9h3M16 12h3"/></svg></div>
+          <h3 id="home-education-title">Освоить тему системно</h3>
+          </div>
+          <p class="home-format__description">Повышение квалификации для специалистов дорожной отрасли.</p>
+          <div class="home-format__links">
+            <span class="home-text-link home-format__cta" id="home-education-link">Программы обучения <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </div>
+        </a>
+
+        <a class="home-format" href="webinars.html" aria-labelledby="home-webinars-title home-webinars-link">
+          <div class="home-format__heading">
+          <div class="home-format__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="m10 8 6 4-6 4Z"/></svg></div>
+          <h3 id="home-webinars-title">Разобрать практику коллег</h3>
+          </div>
+          <p class="home-format__description">Встречи с экспертами и записи по практическим вопросам.</p>
+          <div class="home-format__links">
+            <span class="home-text-link" id="home-webinars-link">Вебинары и записи <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </div>
+        </a>
+
+        <a class="home-format" href="regulations.html" aria-labelledby="home-reviews-title home-reviews-link">
+          <div class="home-format__heading">
+          <div class="home-format__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9Z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></div>
+          <h3 id="home-reviews-title">Свериться с&nbsp;изменениями</h3>
+          </div>
+          <p class="home-format__description">Изменения законодательства и сметных нормативов.</p>
+          <div class="home-format__links">
+            <span class="home-text-link" id="home-reviews-link">Нормативные обзоры <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-programs" aria-labelledby="home-programs-title">
+    <div class="home-shell">
+      <div class="home-programs__header">
+        <div class="home-section-heading">
+          <h2 id="home-programs-title">Программы повышения квалификации</h2>
+          <p>Программы из каталога 2026 года</p>
+        </div>
+        <a class="home-text-link" href="education.html">Весь каталог <span aria-hidden="true">→</span></a>
+      </div>
+      <!-- Подборка проверена по API каталога 28.10.2026. При смене учебного года обновить. -->
+      <div class="home-program-grid">
+        <a class="home-program" href="education.html?program=448775247832" aria-labelledby="home-program-diagnostics">
+          <div class="home-program__media" aria-hidden="true"><img src="assets/education/448775247832-bridge-diagnostics-v2.webp" width="1280" height="720" alt="" loading="lazy" decoding="async"></div>
+          <div class="home-program__content">
+            <div class="home-program__meta"><span class="home-program__hours">36 часов</span></div>
+            <h3 id="home-program-diagnostics">Диагностика искусственных сооружений</h3>
+            <p class="home-program__description">Методы обследования мостов, тоннелей и водопропускных труб. Оценка износа и грузоподъёмности сооружений.</p>
+            <span class="home-text-link">О программе <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+        <a class="home-program" href="education.html?program=526811941332" aria-labelledby="home-program-drainage">
+          <div class="home-program__media" aria-hidden="true"><img src="assets/education/526811941332-bridge-drainage-v2.webp" width="1280" height="720" alt="" loading="lazy" decoding="async"></div>
+          <div class="home-program__content">
+            <div class="home-program__meta"><span class="home-program__hours">24 часа</span></div>
+            <h3 id="home-program-drainage">Водоотвод мостовых сооружений</h3>
+            <p class="home-program__description">Проектирование, строительство и эксплуатация систем водоотвода на мостовых сооружениях.</p>
+            <span class="home-text-link">О программе <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+        <a class="home-program" href="education.html?program=120173290422" aria-labelledby="home-program-asphalt">
+          <div class="home-program__media" aria-hidden="true"><img src="assets/education/120173290422-asphalt-layers-v2.webp" width="1280" height="720" alt="" loading="lazy" decoding="async"></div>
+          <div class="home-program__content">
+            <div class="home-program__meta"><span class="home-program__hours">40 часов</span></div>
+            <h3 id="home-program-asphalt">Устройство асфальтобетонных покрытий</h3>
+            <p class="home-program__description">Применение смесей, разработанных по методологии объёмно-функционального проектирования, при устройстве слоёв покрытия.</p>
+            <span class="home-text-link">О программе <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-about" aria-labelledby="home-about-title">
+    <div class="home-shell home-about__layout">
+      <div class="home-impact">
+        <div class="home-impact__heading"><h2>РОСДОРСПК в цифрах</h2><p>2022 — август 2026 года</p></div>
+        <dl class="home-impact__grid">
+          <div><dt>Выпускников программ<br>повышения квалификации</dt><dd>17&#8239;476</dd></div>
+          <div><dt>Проведённых<br>вебинаров</dt><dd>203</dd></div>
+          <div><dt>Участников<br>вебинаров</dt><dd>44&#8239;471</dd></div>
+        </dl>
+        <a class="home-impact__more" href="results.html">Подробнее о результатах <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="home-about__intro">
+        <p class="home-about__eyebrow">О системе РОСДОРСПК</p>
+        <h2 id="home-about-title">Образовательный проект<br>ФАУ «РОСДОРНИИ»</h2>
+        <p class="home-about__description">С 2019 года ФАУ «РОСДОРНИИ» развивает систему повышения квалификации специалистов дорожного хозяйства.</p>
+      </div>
+      <nav class="home-about__links" aria-label="Об организации">
+        <a class="home-about__link" href="organization.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 21V5l8-3v19M12 7h8v14M2 21h20M7 7v1M7 11v1M7 15v1M16 11h1M16 15h1"/></svg><span><strong>Сведения об организации</strong><small>Документы, структура и руководство</small></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="home-about__link" href="history.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span><strong>История создания</strong><small>Как развивалась система повышения квалификации</small></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </nav>
+    </div>
+  </section>
+
+  <section class="home-contact" aria-labelledby="home-contact-title">
+    <div class="home-shell home-contact__inner">
+      <div>
+        <h2 id="home-contact-title">Есть вопрос об обучении?</h2>
+        <p>Ответим на вопросы о программах, формате и организации обучения.</p>
+      </div>
+      <a class="home-button" href="contacts.html">Задать вопрос <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </section>
+</main>
+<footer class="edu2-chrome edu2-chrome-footer">
+  <div class="edu2-chrome-container edu2-chrome-footer__grid">
+    <div class="edu2-chrome-footer__brand">
+      <a class="edu2-chrome-brand edu2-chrome-brand--footer" href="index.html" aria-label="РОСДОРСПК — главная">
+        <span class="edu2-chrome-brand__mark" aria-hidden="true"><img src="assets/brand/rosdorspk-mark-v4.png" width="256" height="256" alt="" decoding="async"></span>
+        <span class="edu2-chrome-brand__text"><strong>РОСДОРСПК</strong><small>Система повышения квалификации</small></span>
+      </a>
+      <p>Знания для специалистов <br>дорожного хозяйства.</p>
+    </div>
+    <nav class="edu2-chrome-footer__column" aria-label="Обучение и материалы">
+      <h2>Обучение и материалы</h2>
+      <a href="education.html">Программы обучения</a>
+      <a href="webinars.html">Вебинары</a>
+      <a href="regulations.html">Нормативные обзоры</a>
+    </nav>
+    <nav class="edu2-chrome-footer__column" aria-label="О системе">
+      <h2>О системе</h2>
+      <a href="results.html">Результаты в цифрах</a>
+      <a href="organization.html">Сведения об организации</a>
+      <a href="history.html">История создания</a>
+      <a href="contacts.html">Контакты</a>
+    </nav>
+    <div class="edu2-chrome-footer__contact">
+      <h2>По вопросам обучения</h2>
+      <a class="edu2-chrome-footer__email" href="mailto:info@rosdorspk.ru">info@rosdorspk.ru <span aria-hidden="true">↗</span></a>
+      <a class="edu2-chrome-footer__phone" href="tel:+74955400820">+7 (495) 540-08-20</a>
+      <p>Добавочный <strong>6259</strong></p>
+    </div>
+  </div>
+  <div class="edu2-chrome-container edu2-chrome-footer__bottom">
+    <span>© 2021–2026 ФАУ «РОСДОРНИИ»</span>
+    <a class="edu2-chrome-footer__policy" href="policy.html#top">Политика конфиденциальности</a>
+  </div>
+</footer>
+<script src="site-chrome.js"></script>
+</body>
+</html>

@@ -1,0 +1,2881 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Обучение — РОСДОРСПК</title>
+<link rel="stylesheet" href="site-chrome.css">
+<style>
+
+.edu2 {
+  --edu2-ink: #14243d;
+  --edu2-muted: #637086;
+  --edu2-blue: #0a58ca;
+  --edu2-blue-dark: #0849a9;
+  --edu2-blue-soft: #edf4ff;
+  --edu2-line: #e1e7ef;
+  --edu2-bg: #f6f8fb;
+  --edu2-surface: #fff;
+  min-width: 0;
+  color: var(--edu2-ink);
+  background: var(--edu2-bg);
+  font: 16px/1.6 Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+.edu2 *, .edu2 *::before, .edu2 *::after { box-sizing: border-box; }
+.edu2 [hidden] { display: none !important; }
+.edu2 :where(button,input,select) { font: inherit; }
+.edu2 button { cursor: pointer; }
+.edu2 a { color: inherit; text-decoration: none; }
+.edu2 :is(a,button,input,select):focus-visible { outline: 3px solid #79adf1; outline-offset: 3px; }
+.edu2 svg { display: block; }
+.edu2-visually-hidden { position: absolute !important; width: 1px !important; height: 1px !important; padding: 0 !important; margin: -1px !important; overflow: hidden !important; clip-path: inset(50%) !important; white-space: nowrap !important; border: 0 !important; }
+.edu2-container { width: min(1120px, calc(100% - 40px)); margin-inline: auto; }
+
+
+
+
+
+
+
+
+.edu2-catalog { padding: 32px 0 64px; scroll-margin-top: 88px; }
+.edu2-catalog__layout { display: grid; grid-template-columns: 248px minmax(0,1fr); align-items: start; gap: 32px; }
+.edu2-filters { position: sticky; top: 96px; z-index: 20; display: flex; min-width: 0; flex-direction: column; gap: 24px; padding-right: 24px; border-right: 1px solid var(--edu2-line); }
+.edu2-filters__heading { display: flex; min-height: 24px; align-items: center; justify-content: space-between; gap: 8px; }
+.edu2-filters__heading h2 { margin: 0; font-size: 14px; font-weight: 600; letter-spacing: -.015em; }
+.edu2-filters__reset { min-height: 32px; margin-block: -4px; padding: 4px 0 4px 4px; border: 0; color: var(--edu2-blue); background: transparent; font-size: 12px !important; }
+.edu2-filters__reset:hover { text-decoration: underline; text-underline-offset: 3px; }
+.edu2-filters__help { margin-top: 4px; padding: 18px; border: 1px solid #e1eaf8; border-radius: 12px; background: #edf3fc; }
+.edu2-filters__help-icon { display: grid; width: 24px; height: 24px; place-items: center; border: 1px solid #bbd0ed; border-radius: 50%; color: var(--edu2-blue); font-size: 13px; font-weight: 600; }
+.edu2-filters__help p { margin: 12px 0 6px; font-size: 14px; font-weight: 600; }
+.edu2-filters__help > span:last-of-type { display: block; color: #596b82; font-size: 12px; line-height: 1.65; }
+.edu2 .edu2-filters__help a { display: flex; min-height: 44px; align-items: center; justify-content: space-between; gap: 8px; margin-top: 8px; color: var(--edu2-blue); font-size: 12px; font-weight: 600; }
+.edu2-filters__help a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.edu2-filter-group { min-width: 0; }
+.edu2-filter-group__label { display: block; margin-bottom: 10px; color: var(--edu2-muted); font-size: 12px; font-weight: 500; }
+.edu2-filter-group--search { margin-bottom: 24px; }
+.edu2[aria-busy="true"] .edu2-filters { opacity: .7; pointer-events: none; }
+.edu2-filters :disabled { cursor: wait; }
+.edu2-search { display: flex; min-width: 0; height: 52px; align-items: center; gap: 12px; padding: 0 6px 0 16px; border: 1px solid #d7dfea; border-radius: 12px; background: #fff; transition: border-color .16s ease,box-shadow .16s ease; }
+.edu2-search:focus-within { border-color: var(--edu2-blue); box-shadow: 0 0 0 3px var(--edu2-blue-soft); }
+.edu2-search > svg { width: 18px; height: 18px; flex: 0 0 18px; fill: none; stroke: #7b8ba0; stroke-width: 1.7; stroke-linecap: round; }
+.edu2-search input { width: 100%; min-width: 0; height: 44px; padding: 0; border: 0; outline: 0 !important; color: var(--edu2-ink); background: transparent; font-size: 14px; }
+.edu2-search input::placeholder { color: #758297; opacity: 1; }
+.edu2-search input::-webkit-search-cancel-button { display: none; }
+.edu2-search__clear, .edu2-direction-picker__clear { display: grid; width: 40px; height: 40px; flex: 0 0 40px; place-items: center; padding: 0; border: 0; border-radius: 7px; color: #637086; background: transparent; }
+.edu2-search__clear:hover, .edu2-direction-picker__clear:hover { background: #f0f4f9; }
+.edu2-search__clear-icon, .edu2-direction-picker__clear-icon { position: relative; display: block; width: 12px; height: 12px; pointer-events: none; }
+.edu2-search__clear-icon::before, .edu2-search__clear-icon::after, .edu2-direction-picker__clear-icon::before, .edu2-direction-picker__clear-icon::after { position: absolute; top: 5px; left: 0; width: 12px; height: 1.5px; border-radius: 2px; background: currentColor; content: ""; transform: rotate(45deg); }
+.edu2-search__clear-icon::after, .edu2-direction-picker__clear-icon::after { transform: rotate(-45deg); }
+.edu2-status-filter { display: flex; max-width: 100%; flex-direction: column; gap: 4px; }
+.edu2-status-filter button { display: flex; min-height: 44px; align-items: center; justify-content: space-between; gap: 8px; padding: 10px 12px; border: 1px solid transparent; border-radius: 8px; background: transparent; color: #637086; font-size: 13px; font-weight: 500; white-space: nowrap; transition: background-color .16s ease,color .16s ease; }
+.edu2-status-filter button:hover { color: var(--edu2-ink); background: #edf1f7; }
+.edu2-status-filter button.is-active { border-color: #dce8fa; background: #e8f0fd; color: var(--edu2-blue); }
+.edu2-status-filter strong { display: inline-flex; min-width: 24px; height: 22px; align-items: center; justify-content: center; padding: 0 5px; border-radius: 5px; color: inherit; background: #e9edf3; font-size: 11px; font-weight: 600; line-height: 1; font-variant-numeric: tabular-nums; }
+.edu2-status-filter button.is-active strong { background: #fff; }
+.edu2-status-filter__compact { display: none; }
+.edu2-direction-picker { position: relative; min-width: 0; }
+.edu2-direction-picker__toggle, .edu2-direction-native { position: relative; display: flex; width: 100%; min-width: 0; min-height: 48px; align-items: center; padding: 10px 44px 10px 14px; border: 1px solid #d7dfea; border-radius: 9px; color: var(--edu2-ink); background: #fff; font-size: 14px; text-align: left; }
+.edu2-direction-native.is-enhanced { display: none !important; }
+.edu2-direction-picker__toggle > span:first-child { min-width: 0; overflow-wrap: anywhere; line-height: 1.5; }
+.edu2-direction-picker.has-value .edu2-direction-picker__toggle { padding-right: 88px; }
+.edu2-direction-picker__toggle:hover { border-color: #adbed4; }
+.edu2-direction-picker.is-open .edu2-direction-picker__toggle { border-color: var(--edu2-blue); }
+.edu2-direction-picker__chevron { position: absolute; top: 18px; right: 18px; width: 8px; height: 8px; border-right: 1.5px solid #637086; border-bottom: 1.5px solid #637086; transform: rotate(45deg); transition: transform .16s ease; }
+.edu2-direction-picker.is-open .edu2-direction-picker__chevron { top: 21px; transform: rotate(225deg); }
+.edu2-direction-picker__clear { position: absolute; z-index: 2; top: 4px; right: 40px; }
+.edu2-direction-picker__menu { position: absolute; z-index: 60; top: calc(100% + 7px); left: 0; width: 360px; max-width: calc(100vw - 48px); max-height: min(360px,52dvh); overflow-y: auto; overscroll-behavior: contain; padding: 6px; border: 1px solid var(--edu2-line); border-radius: 10px; background: #fff; box-shadow: 0 12px 32px rgb(20 36 61 / 12%); scrollbar-width: thin; }
+.edu2-direction-picker__option { display: flex; width: 100%; min-height: 46px; align-items: center; justify-content: space-between; gap: 14px; padding: 10px; border: 0; border-radius: 6px; color: #47586d; background: transparent; font-size: 13px; line-height: 1.5; text-align: left; }
+.edu2-direction-picker__option:hover, .edu2-direction-picker__option:focus-visible { background: #f3f6fb; }
+.edu2-direction-picker__option[aria-selected="true"] { color: var(--edu2-blue); background: var(--edu2-blue-soft); }
+.edu2-direction-picker__option-label { min-width: 0; overflow-wrap: anywhere; }
+.edu2-direction-picker__option-count { flex: 0 0 auto; font-size: 12px; color: #758297; }
+.edu2-direction-picker__option:disabled { opacity: .5; cursor: default; }
+.edu2-results { min-width: 0; }
+.edu2-results__heading { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 8px 16px; margin-bottom: 16px; }
+.edu2-results__heading h2 { margin: 0; color: var(--edu2-ink); font-size: 19px; font-weight: 600; letter-spacing: -.025em; line-height: 1.4; }
+.edu2-results__note { margin: 0; color: var(--edu2-muted); font-size: 13px; }
+.edu2-program-list { display: grid; grid-template-columns: minmax(0,1fr); gap: 12px; margin: 0; padding: 0; list-style: none; }
+.edu2-program-item { display: flex; min-width: 0; margin: 0; padding: 0; list-style: none; scroll-margin-top: 92px; }
+.edu2-program-card { display: grid; width: 100%; min-width: 0; grid-template-columns: 40px minmax(0,1fr); gap: 0 18px; padding: 22px 24px 10px; border: 1px solid var(--edu2-line); border-radius: 14px; background: #fff; transition: border-color .18s ease,box-shadow .18s ease; }
+.edu2-program-card__icon { display: grid; width: 40px; height: 40px; grid-row: 1 / 3; place-items: center; border: 1px solid #e0eafa; border-radius: 10px; color: var(--edu2-blue); background: #f0f5fe; }
+.edu2-program-card__icon svg { width: 21px; height: 21px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.edu2-program-card.is-archive .edu2-program-card__icon { color: #758297; border-color: #e7ebf1; background: #f3f5f8; }
+.edu2-program-card.is-interactive { cursor: pointer; }
+.edu2-program-card.is-interactive:hover, .edu2-program-card.is-interactive:focus-within { border-color: #b9cee9; box-shadow: 0 5px 18px rgb(20 36 61 / 5%); }
+.edu2-program-card.is-linked-program { outline: 2px solid var(--edu2-blue); outline-offset: 3px; }
+.edu2-program-card__content { min-width: 0; grid-column: 2; }
+.edu2-program-card__subline { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; margin-bottom: 7px; }
+.edu2-program-card__direction { color: #637086; font-size: 12px; line-height: 1.5; }
+.edu2-program-card__title { margin: 0; color: var(--edu2-ink); font-size: 18px; font-weight: 600; line-height: 1.45; letter-spacing: -.02em; overflow-wrap: break-word; }
+.edu2-program-card.is-interactive:hover .edu2-program-card__title { color: var(--edu2-blue-dark); }
+.edu2-program-card__match { margin: 14px 0 0; color: #637086; font-size: 13px; line-height: 1.6; }
+.edu2-program-card__match-label { font-weight: 500; }
+.edu2-program-card__match mark { padding: 1px 2px; border-radius: 3px; background: #e7f0ff; color: var(--edu2-ink); }
+.edu2-program-card__availability { display: block; margin-top: 12px; color: #758297; font-size: 12px; }
+.edu2-program-card__footer { display: flex; grid-column: 2; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px 16px; margin-top: 18px; padding-top: 5px; border-top: 1px solid #edf0f5; }
+.edu2-program-card__meta { min-width: 0; }
+.edu2-program-hours { display: inline-flex; align-items: baseline; gap: 5px; padding: 5px 0; color: #637086; font-size: 12px; }
+.edu2-program-hours strong { font-size: 14px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.edu2-program-hours small { font-size: 11px; }
+.edu2-program-card__open { display: inline-flex; min-height: 44px; align-items: center; gap: 10px; padding: 8px 0 8px 8px; border: 0; border-radius: 6px; color: var(--edu2-blue); background: transparent; font-size: 13px !important; font-weight: 600 !important; line-height: 1.5; }
+.edu2-program-card__open > span:last-child { font-size: 20px; font-weight: 400; }
+.edu2-program-card__open:hover { color: var(--edu2-blue-dark); }
+.edu2-program-status { display: inline-flex; align-items: center; gap: 6px; color: #187145; font-size: 12px; font-weight: 500; line-height: 1.5; }
+.edu2-program-status::before { width: 5px; height: 5px; flex: 0 0 5px; border-radius: 50%; background: #22a965; content: ""; }
+.edu2-program-status.is-archive { color: #758297; }
+.edu2-program-status.is-archive::before { background: #98a4b5; }
+.edu2-program-item--entering { animation: edu2-card-in .2s ease-out var(--edu2-item-delay,0ms) backwards; }
+@keyframes edu2-card-in { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+.edu2-program-skeleton { position: relative; display: grid; width: 100%; min-height: 186px; align-content: start; gap: 14px; padding: 24px; overflow: hidden; border: 1px solid var(--edu2-line); border-radius: 14px; background: #fff; }
+.edu2-program-skeleton > span { display: block; height: 12px; border-radius: 4px; background: #e9eef5; }
+.edu2-program-skeleton__meta { width: 48%; margin-bottom: 4px; }
+.edu2-program-skeleton__title { width: 94%; height: 18px !important; }
+.edu2-program-skeleton__title--short { width: 63%; }
+.edu2-program-skeleton__title--medium { width: 78%; }
+.edu2-program-skeleton__direction { width: 24%; margin-top: 20px; }
+.edu2-program-skeleton__action { position: absolute; right: 24px; bottom: 32px; width: 26%; }
+.edu2-program-skeleton::after, .edu2-results__heading-skeleton::after { position: absolute; inset: 0; background: linear-gradient(105deg,transparent 25%,rgb(255 255 255 / 75%) 48%,transparent 72%); content: ""; animation: edu2-skeleton 1.5s linear infinite; }
+@keyframes edu2-skeleton { from { transform: translateX(-100%); } to { transform: translateX(100%); } }
+.edu2-results__heading-skeleton { position: relative; width: 230px; height: 24px; overflow: hidden; border-radius: 5px; background: #e9eef5; }
+.edu2-results__footer { display: flex; align-items: center; justify-content: space-between; gap: 12px 24px; flex-wrap: wrap; padding-top: 24px; }
+.edu2-results__footer p { margin: 0; color: var(--edu2-muted); font-size: 13px; }
+.edu2-results__actions, .edu2-empty__actions { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; }
+.edu2-show-more, .edu2-back-to-catalog, .edu2-catalog-state__retry, .edu2-empty__switch, .edu2-empty__clear-search, .edu2-empty__reset { display: inline-flex; min-height: 44px; align-items: center; justify-content: center; gap: 8px; padding: 10px 16px; border: 1px solid #d4deeb; border-radius: 8px; color: var(--edu2-blue); background: #fff; font-size: 13px !important; font-weight: 500 !important; }
+.edu2-show-more:hover, .edu2-back-to-catalog:hover, .edu2-catalog-state__retry:hover, .edu2-empty__actions button:hover { background: #edf4ff; border-color: #bdcfeb; }
+.edu2-empty, .edu2-catalog-state { padding: 40px 24px; border: 1px solid var(--edu2-line); border-radius: 14px; background: #fff; }
+.edu2-empty strong, .edu2-catalog-state strong { display: block; font-size: 20px; font-weight: 600; line-height: 1.4; }
+.edu2-empty p, .edu2-catalog-state p { max-width: 620px; margin: 12px 0 20px; color: var(--edu2-muted); font-size: 14px; line-height: 1.65; }
+.edu2-modal { position: fixed; z-index: 1000; inset: 0; display: flex; justify-content: flex-end; }
+.edu2-modal__backdrop { position: absolute; inset: 0; background: rgb(20 36 61 / 30%); }
+.edu2-modal__dialog { position: relative; z-index: 1; display: flex; width: min(720px,calc(100% - 48px)); height: 100vh; height: 100dvh; flex-direction: column; overflow: hidden; border-left: 1px solid #dce4ef; border-radius: 16px 0 0 16px; outline: 0; background: #fff; box-shadow: -12px 0 48px rgb(20 36 61 / 12%); }
+.edu2-modal:not([hidden]) .edu2-modal__dialog { animation: edu2-panel-in .22s cubic-bezier(.2,.7,.3,1); }
+.edu2-modal:not([hidden]) .edu2-modal__backdrop { animation: edu2-backdrop-in .18s ease; }
+@keyframes edu2-panel-in { from { opacity: .5; transform: translateX(32px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes edu2-backdrop-in { from { opacity: 0; } to { opacity: 1; } }
+.edu2-modal__toolbar { display: flex; min-height: 64px; flex: 0 0 auto; align-items: center; justify-content: space-between; gap: 20px; padding: 10px 24px 10px 32px; border-bottom: 1px solid var(--edu2-line); }
+.edu2-modal__toolbar > span { color: var(--edu2-muted); font-size: 13px; }
+.edu2-modal__close { display: grid; width: 44px; height: 44px; flex: 0 0 44px; place-items: center; padding: 0; border: 0; border-radius: 9px; color: #47586d; background: #f2f5f9; }
+.edu2-modal__close:hover { background: #e8eef7; }
+.edu2-modal__close svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; }
+.edu2-modal__content { display: flex; min-height: 0; flex: 1 1 auto; flex-direction: column; }
+.edu2-modal__body { min-height: 0; flex: 1 1 auto; padding: 28px 32px 32px; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-gutter: stable; scrollbar-color: #aab8ca transparent; }
+.edu2-modal__body:focus-visible { outline-offset: -3px; }
+.edu2-modal__header { margin-bottom: 24px; }
+.edu2-modal__meta { display: grid; grid-template-columns: auto 1fr; gap: 10px 16px; align-items: center; margin: 0; }
+.edu2-modal__meta-item { min-width: 0; }
+.edu2-modal__meta dt { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.edu2-modal__meta dd { display: flex; align-items: center; margin: 0; }
+.edu2-modal__meta-item--direction { grid-column: 1 / -1; }
+.edu2-modal__hours { color: #637086; font-size: 12px; line-height: 1.5; white-space: nowrap; }
+.edu2-modal__direction { color: #637086; font-size: 13px; line-height: 1.5; }
+.edu2-modal h2 { margin: 18px 0 0; font-size: 26px; font-weight: 650; line-height: 1.3; letter-spacing: -.025em; overflow-wrap: break-word; }
+.edu2-modal h2.is-long-title { font-size: 24px; }
+.edu2-modal h2:focus { outline: 0; }
+.edu2-modal__details { color: #47586d; font-size: 15px; line-height: 1.75; }
+.edu2-modal__intro p { margin: 0 0 12px; }
+.edu2-modal__intro p:last-child { margin-bottom: 0; }
+.edu2-modal__sections { display: grid; gap: 24px; margin-top: 28px; }
+.edu2-modal__section { min-width: 0; }
+.edu2-modal__section h3 { margin: 0 0 12px; color: var(--edu2-ink); font-size: 16px; font-weight: 600; line-height: 1.4; }
+.edu2-modal__section ul { margin: 0; padding-left: 19px; }
+.edu2-modal__section li { padding-left: 3px; margin: 8px 0; }
+.edu2-modal__section li::marker { color: var(--edu2-blue); font-size: 12px; }
+.edu2-modal__section p { margin: 0 0 12px; }
+.edu2-modal__section p:last-child { margin-bottom: 0; }
+.edu2-modal__section--results { padding: 20px; border: 1px solid #dfe9f7; border-radius: 11px; background: #f6f9ff; }
+.edu2-modal__footer { display: flex; flex: 0 0 auto; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 24px 14px 32px; border-top: 1px solid var(--edu2-line); background: #fff; }
+.edu2 .edu2-modal__contact { display: inline-flex; min-height: 46px; align-items: center; justify-content: center; padding: 10px 16px; border: 1px solid var(--edu2-blue); border-radius: 8px; color: #fff; background: var(--edu2-blue); font-size: 13px; font-weight: 600; line-height: 1.5; }
+.edu2 .edu2-modal__contact:hover { border-color: var(--edu2-blue-dark); background: var(--edu2-blue-dark); }
+.edu2-modal__nav { display: grid; grid-template-columns: 44px auto 44px; flex: 0 0 auto; align-items: center; gap: 10px; }
+.edu2-modal__nav button { display: grid; width: 44px; height: 44px; place-items: center; padding: 0; border: 0; border-radius: 8px; color: var(--edu2-blue); background: #f2f5f9; font-size: 20px; }
+.edu2-modal__nav button:last-child { justify-self: end; }
+.edu2-modal__nav button:hover:not(:disabled) { color: var(--edu2-blue-dark); background: #e8eef7; }
+.edu2-modal__nav button:disabled { color: #9aa7b8; cursor: default; }
+.edu2-modal__position { color: #758297; font-size: 12px; white-space: nowrap; }
+.edu2-modal__dialog:is(.is-stepping-next,.is-stepping-previous) .edu2-modal__header, .edu2-modal__dialog:is(.is-stepping-next,.is-stepping-previous) .edu2-modal__details { animation: edu2-content-in .18s ease-out; }
+@keyframes edu2-content-in { from { opacity: .3; } to { opacity: 1; } }
+@media(min-width:1001px) and (max-height:700px) {
+  .edu2-filters { position: relative; top: auto; }
+}
+@media(max-width:1000px) {
+  .edu2-catalog__layout { grid-template-columns: minmax(0,1fr); gap: 24px; }
+  .edu2-filters { position: relative; top: auto; display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); align-items: start; gap: 16px 24px; padding: 20px; border: 1px solid var(--edu2-line); border-radius: 14px; background: #fff; }
+  .edu2-filters__heading { grid-column: 1 / -1; }
+  .edu2-filters__help { display: none; }
+  .edu2-status-filter { flex-direction: row; gap: 4px; }
+  .edu2-status-filter button { flex: 1 1 auto; justify-content: center; gap: 8px; padding-inline: 10px; }
+  .edu2-status-filter__full { display: none; }
+  .edu2-status-filter__compact { display: inline; }
+  .edu2-filter-group--search { margin-bottom: 20px; }
+  .edu2-direction-picker__menu { width: 100%; max-width: none; }
+}
+@media(max-width:760px) {
+  .edu2-filters { grid-template-columns: minmax(0,1fr); }
+  .edu2-program-skeleton { min-height: 186px; }
+  .edu2-modal__dialog { width: 100%; border: 0; border-radius: 0; }
+}
+@media(max-width:560px) {
+  .edu2-container { width: calc(100% - 36px); }
+  
+  
+  
+  
+  .edu2-catalog { padding-top: 20px; padding-bottom: 40px; }
+  .edu2-filters { gap: 16px; padding: 16px; border-radius: 12px; }
+  .edu2-status-filter { width: 100%; gap: 4px; }
+  .edu2-status-filter button { flex: 1 1 0; gap: 6px; min-height: 44px; padding: 6px; font-size: 12px; }
+  .edu2-status-filter__full { display: none; }
+  .edu2-status-filter__compact { display: inline; }
+  .edu2-status-filter strong { min-width: 20px; padding-inline: 4px; font-size: 10px; }
+  .edu2-catalog__layout { gap: 24px; }
+  .edu2-results__heading h2 { font-size: 20px; }
+  .edu2-program-card { grid-template-columns: minmax(0,1fr); padding: 18px 18px 8px; border-radius: 12px; }
+  .edu2-program-card__icon { display: none; }
+  .edu2-program-card__content, .edu2-program-card__footer { grid-column: 1; }
+  .edu2-program-card__title { font-size: 17px; }
+  .edu2-program-card__footer { margin-top: 16px; padding-top: 4px; }
+  .edu2-results__footer { justify-content: center; text-align: center; }
+  .edu2-results__actions { justify-content: center; }
+  .edu2-empty, .edu2-catalog-state { padding: 28px 20px; }
+  .edu2-modal__toolbar { padding: max(10px,env(safe-area-inset-top)) 16px 10px 20px; }
+  .edu2-modal__body { padding: 24px 20px 28px; }
+  .edu2-modal h2, .edu2-modal h2.is-long-title { font-size: 23px; line-height: 1.35; }
+  .edu2-modal__details { font-size: 14px; line-height: 1.75; }
+  .edu2-modal__section--results { padding: 16px; }
+  .edu2-modal__footer { flex-direction: column; align-items: stretch; gap: 8px; padding: 12px 20px max(12px,env(safe-area-inset-bottom)); }
+  .edu2-modal__nav { align-self: center; gap: 10px; }
+  .edu2-modal__position { font-size: 11px; }
+}
+@media(max-width:360px) {
+  .edu2-container { width: calc(100% - 28px); }
+  .edu2-filters { padding: 14px; }
+  .edu2-status-filter button { padding-inline: 4px; gap: 4px; }
+  .edu2-program-card { padding: 16px 16px 6px; }
+  .edu2-modal__body { padding-inline: 16px; }
+  .edu2-modal h2, .edu2-modal h2.is-long-title { font-size: 22px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .edu2 *, .edu2 *::before, .edu2 *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+@media(forced-colors:active) {
+  .edu2-program-card, .edu2-filters, .edu2-modal__dialog { border: 1px solid CanvasText; }
+  .edu2-status-filter button.is-active { outline: 2px solid Highlight; }
+}
+
+/* Visual course catalog. All rules are limited to the education page. */
+.edu2--catalog { --edu2-bg:#f6f8fb; }
+/* Panoramic intro follows the home, results, webinars and regulatory reviews. */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.edu2--catalog .edu2-catalog { padding-top:28px; }
+.edu2--catalog .edu2-catalog__layout { grid-template-columns:248px minmax(0,1fr); grid-template-areas:"filters search" "filters results"; gap:20px 28px; }
+.edu2--catalog .edu2-filters { grid-area:filters; padding:20px; gap:20px; border:1px solid #e1e7ef; border-radius:12px; background:white; }
+.edu2--catalog .edu2-results { grid-area:results; min-width:0; }
+.edu2-filters__options { display:flex; flex-direction:column; gap:24px; min-width:0; }
+.edu2-filters__toggle { display:none; }
+.edu2--catalog .edu2-filters__help { margin:0; padding:16px 0 0; border:0; border-top:1px solid var(--edu2-line); border-radius:0; background:transparent; }
+.edu2--catalog .edu2-filters__help p { margin:0; font-size:14px; font-weight:500; }
+.edu2--catalog .edu2-filters__help a { margin-top:2px; font-size:14px; }
+.edu2--catalog .edu2-search { height:52px; border-color:#c9d5e5; }
+.edu2--catalog .edu2-search input { font-size:16px; }
+.edu2--catalog .edu2-filter-group--search { grid-area:search; min-width:0; margin:0; }
+.edu2--catalog .edu2-program-list { grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; }
+.edu2--catalog .edu2-program-item { display:flex; min-width:0; }
+.edu2--catalog .edu2-program-card { display:flex; flex:1; flex-direction:column; gap:0; padding:0; border-radius:14px; }
+.edu2--catalog .edu2-program-card__content { flex:1; padding:20px; }
+.edu2-program-card__media { flex:0 0 auto; width:100%; overflow:hidden; aspect-ratio:16 / 9; border-radius:13px 13px 0 0; background:#e9eef4; }
+.edu2-program-card__image { display:block; width:100%; height:100%; object-fit:cover; }
+.edu2--catalog .edu2-program-card__title { font-size:19px; line-height:1.4; }
+.edu2--catalog .edu2-program-card__subline { margin-bottom:10px; }
+.edu2--catalog .edu2-program-card__direction { font-size:14px; line-height:1.5; }
+.edu2-program-card__summary { margin:10px 0 0; color:#47586d; font-size:14px; line-height:1.55; }
+.edu2-program-card__summary > span { color:var(--edu2-ink); font-weight:500; }
+.edu2--catalog .edu2-program-card__footer { min-height:62px; margin:0 20px; padding:8px 0; }
+.edu2--catalog .edu2-program-skeleton { min-height:480px; padding:20px; }
+.edu2--catalog .edu2-program-skeleton::before { display:block; width:calc(100% + 40px); aspect-ratio:16 / 9; margin:-20px -20px 6px; background:#e9eef5; content:""; }
+.edu2--catalog .edu2-program-hours { gap:0; color:#47586d; font-size:14px; font-weight:500; }
+.edu2--catalog .edu2-filter-group__label, .edu2--catalog .edu2-status-filter button,
+.edu2--catalog .edu2-direction-picker__option, .edu2--catalog .edu2-modal__hours,
+.edu2--catalog .edu2-modal__direction, .edu2--catalog .edu2-results__note { font-size:14px; }
+.edu2--catalog .edu2-status-filter strong { font-size:12px; }
+.edu2--catalog .edu2-modal__details { font-size:16px; line-height:1.65; }
+.edu2--catalog .edu2-modal__position { color:#637086; font-size:13px; white-space:nowrap; }
+.edu2-modal__conditions { margin-top:28px; padding-top:24px; border-top:1px solid var(--edu2-line); }
+.edu2-modal__conditions h3 { margin:0 0 10px; font-size:16px; font-weight:600; }
+.edu2-modal__conditions p { margin:0; color:#47586d; font-size:15px; line-height:1.65; }
+.edu2 .edu2-modal__conditions a { display:inline-flex; align-items:center; gap:10px; min-height:44px; margin-top:8px; color:var(--edu2-blue); font-size:14px; }
+.edu2-modal__conditions a:hover { text-decoration:underline; text-underline-offset:4px; }
+
+/* Program panel */
+.edu2--catalog .edu2-modal__toolbar { display:grid; grid-template-columns:minmax(0,1fr) auto 44px; grid-template-areas:"heading navigation close"; gap:12px; }
+.edu2-modal__toolbar-heading { grid-area:heading; display:flex; min-width:0; min-height:44px; align-items:center; }
+.edu2-modal__toolbar-label { color:var(--edu2-muted); font-size:13px; }
+.edu2-modal__mobile-position { display:none; }
+.edu2-modal__toolbar-title { display:-webkit-box; overflow:hidden; -webkit-box-orient:vertical; -webkit-line-clamp:2; color:var(--edu2-ink); font-size:14px; font-weight:600; line-height:1.35; overflow-wrap:anywhere; }
+.edu2--catalog .edu2-modal__toolbar .edu2-modal__nav { grid-area:navigation; width:auto; align-self:center; justify-self:end; gap:8px; }
+.edu2--catalog .edu2-modal__toolbar .edu2-modal__close { grid-area:close; }
+.edu2--catalog .edu2-modal__body { padding-top:24px; }
+.edu2--catalog .edu2-modal__direction { margin:0 0 10px; color:#637086; font-size:14px; line-height:1.5; }
+.edu2--catalog .edu2-modal h2 { margin:0; }
+.edu2--catalog .edu2-modal__meta { display:flex; flex-wrap:wrap; gap:8px; margin:16px 0 0; }
+.edu2--catalog .edu2-modal .edu2-program-status,
+.edu2--catalog .edu2-modal__hours, .edu2--catalog .edu2-modal__format { display:inline-flex; min-height:32px; align-items:center; padding:6px 10px; border-radius:6px; color:#47586d; background:#f1f4f8; font-size:13px; font-weight:500; line-height:1.5; }
+.edu2--catalog .edu2-modal .edu2-program-status { color:#187145; background:#edf7f1; }
+.edu2--catalog .edu2-modal .edu2-program-status.is-archive { color:#637086; background:#f1f4f8; }
+.edu2--catalog .edu2-modal__details strong { color:var(--edu2-ink); font-weight:600; }
+.edu2--catalog .edu2-modal__section--results { border-color:#e2ebf6; background:#f4f8fe; }
+.edu2--catalog .edu2-modal__section--results ul { padding:0; list-style:none; }
+.edu2--catalog .edu2-modal__section--results :is(li,p) { position:relative; padding-left:26px; }
+.edu2--catalog .edu2-modal__section--results li { margin:12px 0; }
+.edu2--catalog .edu2-modal__section--results li:first-child { margin-top:0; }
+.edu2--catalog .edu2-modal__section--results li:last-child { margin-bottom:0; }
+.edu2--catalog .edu2-modal__section--results :is(li,p)::before { position:absolute; top:5px; left:0; width:16px; height:16px; background:var(--edu2-blue); content:""; -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m4 10 4 4 8-8'/%3E%3C/svg%3E") center / contain no-repeat; mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m4 10 4 4 8-8'/%3E%3C/svg%3E") center / contain no-repeat; }
+.edu2--catalog .edu2-modal__section--topics li { margin:12px 0; }
+.edu2--catalog .edu2-modal__footer { padding:16px 32px; }
+.edu2--catalog .edu2-modal__contact { flex:1; width:100%; min-height:48px; padding:12px 20px; font-size:14px; }
+@media(max-width:1000px) {
+ .edu2--catalog .edu2-catalog__layout { grid-template-columns:minmax(0,1fr); grid-template-areas:"search" "filters" "results"; gap:20px; }
+ .edu2--catalog .edu2-filters { position:static; display:flex; align-items:stretch; }
+ .edu2-filters__options { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:20px; }
+ .edu2--catalog .edu2-status-filter button { padding-inline:8px; }
+}
+
+@media(max-width:760px) {
+ .edu2--catalog .edu2-filters { gap:0; padding:4px 16px; }
+ .edu2-filters__heading h2 { display:none; }
+ .edu2-filters__heading { min-height:44px; }
+ .edu2-filters__toggle { display:flex; flex:1; min-width:0; align-items:center; justify-content:space-between; gap:12px; min-height:44px; padding:8px 0; border:0; color:var(--edu2-ink); background:transparent; font-size:14px; font-weight:600; text-align:left; }
+ .edu2-filters__toggle span { width:8px; height:8px; flex:0 0 8px; margin:-4px 3px 0 0; border-right:1.5px solid #637086; border-bottom:1.5px solid #637086; transform:rotate(45deg); transition:transform .16s ease; }
+ .edu2-filters__toggle[aria-expanded="true"] span { margin-top:4px; transform:rotate(225deg); }
+ .edu2-filters__options { grid-template-columns:minmax(0,1fr); gap:16px; padding:12px 0; }
+ .edu2--catalog .edu2-catalog__layout { gap:14px; }
+ .edu2--catalog .edu2-modal__details { font-size:15px; }
+}
+@media(max-width:700px) {
+ .edu2--catalog .edu2-catalog { padding-top:20px; }
+ .edu2--catalog .edu2-program-list { gap:20px; }
+ .edu2--catalog .edu2-program-card__content { padding:18px; }
+ .edu2--catalog .edu2-program-card__footer { margin-inline:18px; }
+ .edu2--catalog .edu2-program-card__title { font-size:18px; }
+}
+@media(max-width:680px) {
+ .edu2--catalog .edu2-program-list { grid-template-columns:minmax(0,1fr); }
+}
+
+@media(max-width:560px) {
+ .edu2--catalog .edu2-catalog { padding-top:16px; }
+ .edu2--catalog .edu2-catalog__layout { gap:12px; }
+ .edu2--catalog .edu2-search { height:48px; gap:10px; }
+ .edu2--catalog .edu2-search__clear { width:44px; height:44px; flex-basis:44px; }
+ .edu2--catalog .edu2-filters { padding:0 14px; }
+ .edu2--catalog .edu2-filters__heading { gap:12px; }
+ .edu2--catalog .edu2-filters__reset { min-height:44px; margin-block:0; }
+ .edu2--catalog .edu2-filters__options { gap:12px; padding:8px 0 12px; }
+ .edu2--catalog .edu2-filter-group__label { margin-bottom:6px; }
+ .edu2--catalog .edu2-filter-group--status > .edu2-filter-group__label { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+ .edu2--catalog .edu2-status-filter { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:2px; padding:3px; border:1px solid #e3e9f1; border-radius:9px; background:#f1f4f8; }
+ .edu2--catalog .edu2-status-filter button { min-width:0; min-height:44px; flex-direction:row; gap:4px; padding:6px 4px; border-color:transparent; border-radius:6px; font-size:13px; }
+ .edu2--catalog .edu2-status-filter button.is-active { background:#fff; color:var(--edu2-blue); box-shadow:0 1px 3px rgb(20 36 61 / 9%); }
+ .edu2--catalog .edu2-status-filter strong, .edu2--catalog .edu2-status-filter button.is-active strong { min-width:0; height:auto; padding:0; background:transparent; font-size:12px; line-height:1.3; }
+ .edu2--catalog .edu2-direction-picker__toggle, .edu2--catalog .edu2-direction-native { min-height:44px; padding-top:8px; padding-bottom:8px; }
+ .edu2--catalog .edu2-results__heading { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:4px 12px; margin-bottom:14px; }
+ .edu2--catalog .edu2-results__heading h2 { min-width:0; font-size:18px; line-height:1.35; }
+ .edu2--catalog .edu2-results__note { font-size:13px; white-space:nowrap; }
+ .edu2--catalog .edu2-results__heading-skeleton { max-width:100%; }
+ .edu2--catalog .edu2-program-card__media { aspect-ratio:2 / 1; }
+ .edu2--catalog .edu2-program-card__content { padding:16px; }
+ .edu2--catalog .edu2-program-card__direction { font-size:13px; line-height:1.45; }
+ .edu2--catalog .edu2-program-card__footer { min-height:56px; margin-inline:16px; padding:6px 0; }
+ .edu2--catalog .edu2-modal__toolbar { grid-template-columns:minmax(0,1fr) auto 44px; grid-template-areas:"heading navigation close"; gap:8px; padding:max(10px,env(safe-area-inset-top)) 20px 10px; }
+ .edu2--catalog .edu2-modal__toolbar-heading { flex-direction:column; align-items:stretch; justify-content:center; gap:2px; }
+ .edu2--catalog .edu2-modal__toolbar-label, .edu2--catalog .edu2-modal__toolbar-title { display:block; min-width:0; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; line-height:1.35; }
+ .edu2--catalog .edu2-modal__mobile-position { display:block; color:#637086; font-size:12px; line-height:1.35; white-space:nowrap; }
+ .edu2--catalog .edu2-modal__toolbar .edu2-modal__nav { width:auto; grid-template-columns:repeat(2,44px); gap:8px; }
+ .edu2--catalog .edu2-modal__nav .edu2-modal__position { display:none; }
+ .edu2--catalog .edu2-modal__body { padding-top:20px; padding-bottom:24px; }
+ .edu2--catalog .edu2-modal__header { margin-bottom:20px; }
+ .edu2--catalog .edu2-modal__details { font-size:15px; line-height:1.55; }
+ .edu2--catalog .edu2-modal__sections { gap:20px; margin-top:24px; }
+ .edu2--catalog .edu2-modal__section h3 { margin-bottom:10px; }
+ .edu2--catalog .edu2-modal__section--results { padding:14px; }
+ .edu2--catalog .edu2-modal__section--results :is(li,p) { padding-left:22px; }
+ .edu2--catalog .edu2-modal__section--results :is(li,p)::before { top:4px; }
+ .edu2--catalog .edu2-modal__section--topics li { margin-block:10px; }
+ .edu2--catalog .edu2-modal__conditions { margin-top:24px; padding-top:20px; }
+ .edu2--catalog .edu2-modal__conditions p { line-height:1.55; }
+ .edu2--catalog .edu2-modal__footer { padding:12px 20px max(12px,env(safe-area-inset-bottom)); }
+}
+@media(max-width:374px) {
+ .edu2--catalog .edu2-status-filter button { min-height:56px; flex-direction:column; gap:2px; }
+}
+
+
+/* Shared panoramic intro: keep this block identical on all five pages. */
+.panorama {
+  --panorama-bg: #f6f8fb;
+  --panorama-ink: #14243d;
+  --panorama-text: #47586d;
+  --panorama-muted: #596a7f;
+  --panorama-blue: #0a58ca;
+  --panorama-image-position: 100% 15%;
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  align-items: start;
+  min-height: 480px;
+  padding: 64px 0 32px;
+  overflow: hidden;
+  border-bottom: 1px solid #e1e7ef;
+  background: var(--panorama-bg);
+  color: var(--panorama-ink);
+  font: 16px/1.6 Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  scroll-margin-top: 76px;
+}
+.panorama, .panorama *, .panorama::before, .panorama::after,
+.panorama *::before, .panorama *::after { box-sizing: border-box; }
+.panorama::after {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background: linear-gradient(90deg,var(--panorama-bg) 0%,var(--panorama-bg) 35%,rgba(246,248,251,.9) 43%,transparent 56%);
+  pointer-events: none;
+  content: "";
+}
+.panorama .panorama__layout {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: min(1120px,calc(100% - 40px));
+  margin: 0 auto;
+}
+.panorama .panorama__content { width: min(560px,52%); min-width: 0; margin: 0; padding: 0; }
+.panorama .panorama__eyebrow { margin: 0 0 14px; color: var(--panorama-muted); font-size: 13px; font-weight: 550; line-height: 1.5; }
+.panorama .panorama__title { max-width: none; margin: 0; color: var(--panorama-ink); font-size: clamp(40px,4vw,48px); font-weight: 650; line-height: 1.08; letter-spacing: -.045em; text-wrap: initial; }
+.panorama .panorama__title :is(span,em) { color: var(--panorama-blue); font-style: normal; }
+/* Reserve three description lines on desktop to align the primary links. */
+.panorama .panorama__lead { max-width: 460px; min-height: 4.8em; margin: 16px 0 0; color: var(--panorama-text); font-size: 18px; line-height: 1.6; }
+.panorama .panorama__actions { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 24px; margin: 20px 0 0; }
+.panorama .panorama__link { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 8px; min-height: 44px; margin: 0; padding: 4px 0; color: var(--panorama-blue); font-size: 15px; font-weight: 600; line-height: 1.5; text-decoration: none; }
+.panorama .panorama__link--secondary { color: var(--panorama-muted); font-size: 14px; font-weight: 500; }
+.panorama .panorama__link:hover { color: #0849a9; text-decoration: underline; text-underline-offset: 4px; }
+.panorama .panorama__link:focus-visible { border-radius: 4px; outline: 3px solid #79adf1; outline-offset: 4px; }
+.panorama .panorama__link > :is(span,svg) { flex: 0 0 auto; width: 18px; height: 18px; font-size: 18px; line-height: 1; }
+.panorama .panorama__facts { display: flex; flex-wrap: wrap; gap: 8px 20px; margin: 16px 0 0; padding: 0; list-style: none; color: var(--panorama-muted); font-size: 13px; line-height: 1.5; }
+.panorama .panorama__facts li { display: inline-flex; align-items: flex-start; gap: 8px; }
+.panorama .panorama__facts svg { flex: 0 0 auto; width: 17px; height: 17px; margin-top: 1px; }
+.panorama .panorama__stats { display: grid; grid-template-columns: repeat(3,max-content); gap: 24px; min-height: 56px; max-width: 100%; margin: 16px 0 0; }
+.panorama .panorama__stats .stat-card { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; min-width: 0; }
+.panorama .panorama__stats .stat-number { color: var(--panorama-ink); font-size: 28px; font-weight: 650; line-height: 1.15; letter-spacing: -.035em; font-variant-numeric: tabular-nums; }
+.panorama .panorama__stats .stat-label { color: var(--panorama-muted); font-size: 13px; line-height: 1.5; white-space: nowrap; }
+.panorama .panorama__stats.is-loading .stat-card { gap: 4px; }
+.panorama .panorama__visual { position: absolute; z-index: 0; inset: 0 0 0 auto; width: 100%; margin: 0; overflow: hidden; }
+.panorama .panorama__visual img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: var(--panorama-image-position); }
+.panorama .panorama__visual::after { position: absolute; inset: 0; background: linear-gradient(180deg,var(--panorama-bg),transparent 10%,transparent 92%,var(--panorama-bg)); pointer-events: none; content: ""; }
+/* Only the crop of each existing illustration differs. */
+.panorama--education { --panorama-image-position: 100% 65%; }
+@media (max-width:960px) {
+  .panorama { display: block; min-height: 0; padding: 32px 0 0; }
+  .panorama::after { display: none; }
+  .panorama .panorama__layout { width: calc(100% - 36px); }
+  .panorama .panorama__content { width: 100%; max-width: 650px; }
+  .panorama .panorama__lead { min-height: 0; }
+  .panorama .panorama__title { font-size: 44px; }
+  .panorama .panorama__visual { position: relative; inset: auto; width: 100%; height: clamp(240px,38vw,340px); margin-top: 20px; }
+}
+@media (max-width:620px) {
+  .panorama { padding-top: 20px; }
+  .panorama .panorama__layout { width: calc(100% - 28px); }
+  .panorama .panorama__eyebrow { margin-bottom: 10px; }
+  .panorama .panorama__title { font-size: clamp(30px,8vw,36px); line-height: 1.08; letter-spacing: -.04em; }
+  .panorama .panorama__lead { margin-top: 12px; font-size: 17px; line-height: 1.5; }
+  .panorama .panorama__actions { gap: 0 20px; margin-top: 8px; }
+  .panorama .panorama__visual { height: clamp(176px,50vw,220px); margin-top: -8px; }
+  .panorama .panorama__facts { flex-direction: column; gap: 8px; margin-top: 12px; }
+  .panorama .panorama__stats { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; min-height: 50px; margin-top: 12px; }
+  .panorama .panorama__stats .stat-number { font-size: 24px; }
+}
+@media (max-width:360px) {
+  .panorama .panorama__actions { gap: 0 16px; }
+  .panorama .panorama__link { font-size: 14px; }
+  .panorama .panorama__link--secondary { font-size: 13px; }
+}
+/* End shared panoramic intro. */
+</style>
+
+<link rel="icon" type="image/x-icon" sizes="16x16 32x32 48x48 256x256" href="assets/brand/favicon-v4.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/brand/favicon-v4-32.png">
+</head>
+<body>
+
+<header class="edu2-chrome edu2-chrome-header">
+    <div class="edu2-chrome-container edu2-chrome-header__inner">
+      <a class="edu2-chrome-brand" href="index.html" aria-label="РОСДОРСПК — главная">
+        <span class="edu2-chrome-brand__mark" aria-hidden="true"><img src="assets/brand/rosdorspk-mark-v4.png" width="256" height="256" alt="" decoding="async"></span>
+        <span class="edu2-chrome-brand__text"><strong>РОСДОРСПК</strong><small>Система повышения квалификации</small></span>
+      </a>
+      <nav class="edu2-chrome-nav" aria-label="Основная навигация">
+        <a href="index.html">Главная</a>
+        <a class="is-active" href="education.html" aria-current="page">Обучение</a>
+        <a href="webinars.html">Вебинары</a>
+        <a href="regulations.html">Нормативные обзоры</a>
+      <div class="edu2-chrome-about" data-edu2-chrome-about>
+        <button class="edu2-chrome-about__trigger" type="button" aria-controls="edu2-chrome-about-menu" aria-expanded="false" data-edu2-chrome-about-trigger>О&nbsp;нас <span class="edu2-chrome-about__chevron" aria-hidden="true">⌄</span>
+        </button>
+        <div class="edu2-chrome-about__menu" id="edu2-chrome-about-menu" aria-hidden="true" inert data-edu2-chrome-about-menu>
+          <p class="edu2-chrome-about__heading">О системе РОСДОРСПК</p>
+          <a class="edu2-chrome-about__item" data-about-icon="results" href="results.html"><strong>Результаты в цифрах</strong><small>Масштаб, география и аудитория</small></a>
+          <a class="edu2-chrome-about__item" data-about-icon="organization" href="organization.html"><strong>Сведения об организации</strong><small>Документы, структура и руководство</small></a>
+          <a class="edu2-chrome-about__item" data-about-icon="contacts" href="contacts.html"><strong>Контакты</strong><small>Телефон, почта и адрес</small></a>
+          <a class="edu2-chrome-about__item" data-about-icon="history" href="history.html"><strong>История создания</strong><small>Этапы развития системы</small></a>
+        </div>
+      </div>
+      </nav>
+      <button class="edu2-chrome-menu-button" type="button" aria-expanded="false" aria-controls="edu2-chrome-mobile-menu" aria-label="Открыть меню" data-edu2-chrome-menu-button>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="edu2-chrome-mobile-menu" id="edu2-chrome-mobile-menu" aria-label="Мобильная навигация" aria-hidden="true" inert>
+      <a href="index.html">Главная</a>
+      <a class="is-active" href="education.html" aria-current="page">Обучение</a>
+      <a href="webinars.html">Вебинары</a>
+      <a href="regulations.html">Нормативные обзоры</a>
+    <div class="edu2-chrome-mobile-about" data-edu2-chrome-mobile-about>
+      <button class="edu2-chrome-mobile-about__toggle" type="button" aria-expanded="false" aria-controls="edu2-chrome-about-mobile-menu" data-edu2-chrome-mobile-about-toggle>
+        О&nbsp;нас <span aria-hidden="true">⌄</span>
+      </button>
+      <div class="edu2-chrome-mobile-about__menu" id="edu2-chrome-about-mobile-menu" aria-hidden="true" inert data-edu2-chrome-mobile-about-menu>
+        <div class="edu2-chrome-mobile-about__inner">
+        <a data-about-icon="results" href="results.html">Результаты в цифрах</a>
+        <a data-about-icon="organization" href="organization.html">Сведения об организации</a>
+        <a data-about-icon="contacts" href="contacts.html">Контакты</a>
+        <a data-about-icon="history" href="history.html">История создания</a>
+              </div>
+      </div>
+    </div>
+    </nav>
+  </header>
+
+<div class="edu2 edu2--catalog" id="edu2-site" data-edu2-program-source="api-loading" aria-busy="true">
+
+  <main>
+    <section class="edu2-hero panorama panorama--education" id="top" aria-labelledby="edu2-title">
+      <div class="edu2-container edu2-hero__grid panorama__layout">
+        <div class="edu2-hero__content panorama__content">
+          <p class="edu2-hero__eyebrow panorama__eyebrow">Дистанционное обучение</p>
+          <h1 class="panorama__title" id="edu2-title">Повышение<br><span>квалификации</span></h1>
+          <p class="edu2-hero__lead panorama__lead">Программы для&nbsp;специалистов дорожного хозяйства.</p>
+          <div class="edu2-hero__actions panorama__actions">
+            <a class="edu2-hero__more panorama__link" href="#edu2-programs">К программам <span aria-hidden="true">↓</span></a>
+            <a class="edu2-hero__link panorama__link panorama__link--secondary" href="contacts.html">Вопросы об обучении <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+      <figure class="edu2-hero__visual panorama__visual" aria-hidden="true">
+        <img src="assets/hero-education-engineering-v1.jpg" width="2172" height="724" alt="" decoding="async" fetchpriority="high">
+      </figure>
+    </section>
+
+    <section class="edu2-catalog" id="edu2-programs">
+      <div class="edu2-container">
+        <div class="edu2-catalog__layout">
+          <div class="edu2-filter-group edu2-filter-group--search">
+            <label class="edu2-visually-hidden" for="edu2-search-input">Найти программу</label>
+            <div class="edu2-search">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m16 16 5 5"></path></svg>
+              <input id="edu2-search-input" type="search" placeholder="Найти программу или тему" autocomplete="off" spellcheck="false" enterkeyhint="search">
+              <button class="edu2-search__clear" type="button" data-edu2-search-clear aria-label="Очистить поиск" hidden>
+                <span class="edu2-search__clear-icon" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
+          <aside class="edu2-filters" aria-label="Фильтры каталога">
+            <div class="edu2-filters__heading">
+              <h2>Подбор программы</h2>
+              <button class="edu2-filters__toggle" type="button" aria-expanded="true" aria-controls="edu2-filter-options" data-edu2-toggle-filters>Фильтры <span aria-hidden="true"></span></button>
+              <button class="edu2-filters__reset" type="button" data-edu2-reset-filters hidden>Сбросить</button>
+            </div>
+            <div class="edu2-filters__options" id="edu2-filter-options">
+            <div class="edu2-filter-group edu2-filter-group--status">
+              <span class="edu2-filter-group__label" id="edu2-status-label">Статус программы</span>
+              <div class="edu2-status-filter" role="group" aria-labelledby="edu2-status-label">
+                <button class="is-active" type="button" data-edu2-status="active" aria-pressed="true">
+                  <span class="edu2-status-filter__full">Действующие</span><span class="edu2-status-filter__compact">Действуют</span><strong data-edu2-count="active">…</strong>
+                </button>
+                <button type="button" data-edu2-status="archive" aria-pressed="false">
+                  <span class="edu2-status-filter__full">Архивные</span><span class="edu2-status-filter__compact">Архив</span><strong data-edu2-count="archive">…</strong>
+                </button>
+                <button type="button" data-edu2-status="all" aria-pressed="false">
+                  <span class="edu2-status-filter__full">Все</span><span class="edu2-status-filter__compact">Все</span><strong data-edu2-count="all">…</strong>
+                </button>
+              </div>
+            </div>
+
+            <div class="edu2-filter-group edu2-filter-group--direction">
+              <label class="edu2-filter-group__label" id="edu2-direction-label" for="edu2-direction-select">Направление</label>
+              <div class="edu2-direction-picker" data-edu2-direction-picker hidden>
+                <button
+                  id="edu2-direction-trigger"
+                  class="edu2-direction-picker__toggle"
+                  type="button"
+                  data-edu2-direction-toggle
+                  aria-haspopup="listbox"
+                  aria-expanded="false"
+                  aria-controls="edu2-direction-listbox"
+                  aria-labelledby="edu2-direction-label edu2-direction-value">
+                  <span id="edu2-direction-value" data-edu2-direction-value>Все направления</span>
+                  <span class="edu2-direction-picker__chevron" aria-hidden="true"></span>
+                </button>
+                <button class="edu2-direction-picker__clear" type="button" data-edu2-clear-direction aria-label="Сбросить выбранное направление" hidden>
+                  <span class="edu2-direction-picker__clear-icon" aria-hidden="true"></span>
+                </button>
+                <div
+                  class="edu2-direction-picker__menu"
+                  id="edu2-direction-listbox"
+                  data-edu2-direction-listbox
+                  role="listbox"
+                  aria-labelledby="edu2-direction-label"
+                  hidden></div>
+              </div>
+              <select class="edu2-direction-native" id="edu2-direction-select">
+                <option value="all">Все направления</option>
+              </select>
+            </div>
+
+            <div class="edu2-filters__help">
+              <p>Нужна помощь с выбором?</p>
+              <a href="contacts.html">Связаться с нами <span aria-hidden="true">→</span></a>
+            </div>
+            </div>
+          </aside>
+
+          <div class="edu2-results" aria-busy="true">
+            <div class="edu2-results__heading">
+              <h2 id="edu2-results-title" data-edu2-results-title hidden>Найдено 0 программ</h2>
+              <span class="edu2-results__heading-skeleton" data-edu2-results-heading-skeleton aria-hidden="true" hidden></span>
+              <p class="edu2-results__note" data-edu2-results-note hidden></p>
+            </div>
+            <p class="edu2-visually-hidden" id="edu2-results-summary" aria-live="polite" aria-atomic="true">Действующие программы</p>
+
+            <div class="edu2-catalog-state" data-edu2-catalog-state role="status" aria-live="polite" aria-atomic="true" hidden>
+              <strong data-edu2-catalog-state-title>Загружаем программы…</strong>
+              <p data-edu2-catalog-state-text>Получаем актуальный список программ.</p>
+              <button class="edu2-catalog-state__retry" type="button" data-edu2-retry hidden>Повторить</button>
+            </div>
+            <ul class="edu2-program-list" id="edu2-program-list" data-edu2-live-grid role="list" aria-labelledby="edu2-results-title">
+              <li class="edu2-program-item edu2-program-item--skeleton" aria-hidden="true">
+                <article class="edu2-program-skeleton">
+                  <span class="edu2-program-skeleton__meta"></span>
+                  <span class="edu2-program-skeleton__title"></span>
+                  <span class="edu2-program-skeleton__title edu2-program-skeleton__title--short"></span>
+                  <span class="edu2-program-skeleton__direction"></span>
+                  <span class="edu2-program-skeleton__action"></span>
+                </article>
+              </li>
+              <li class="edu2-program-item edu2-program-item--skeleton" aria-hidden="true">
+                <article class="edu2-program-skeleton">
+                  <span class="edu2-program-skeleton__meta"></span>
+                  <span class="edu2-program-skeleton__title"></span>
+                  <span class="edu2-program-skeleton__title edu2-program-skeleton__title--medium"></span>
+                  <span class="edu2-program-skeleton__direction"></span>
+                  <span class="edu2-program-skeleton__action"></span>
+                </article>
+              </li>
+              <li class="edu2-program-item edu2-program-item--skeleton" aria-hidden="true">
+                <article class="edu2-program-skeleton">
+                  <span class="edu2-program-skeleton__meta"></span>
+                  <span class="edu2-program-skeleton__title"></span>
+                  <span class="edu2-program-skeleton__title edu2-program-skeleton__title--short"></span>
+                  <span class="edu2-program-skeleton__direction"></span>
+                  <span class="edu2-program-skeleton__action"></span>
+                </article>
+              </li>
+              <li class="edu2-program-item edu2-program-item--skeleton" aria-hidden="true">
+                <article class="edu2-program-skeleton">
+                  <span class="edu2-program-skeleton__meta"></span>
+                  <span class="edu2-program-skeleton__title"></span>
+                  <span class="edu2-program-skeleton__title edu2-program-skeleton__title--medium"></span>
+                  <span class="edu2-program-skeleton__direction"></span>
+                  <span class="edu2-program-skeleton__action"></span>
+                </article>
+              </li>
+            </ul>
+            <div class="edu2-results__footer" data-edu2-results-footer hidden>
+              <p data-edu2-results-progress aria-live="polite" aria-atomic="true"></p>
+              <div class="edu2-results__actions">
+                <button class="edu2-show-more" type="button" data-edu2-show-more aria-controls="edu2-program-list">Показать ещё 12 программ</button>
+                <button class="edu2-back-to-catalog" type="button" data-edu2-back-to-catalog hidden>
+                  К началу каталога
+                  <span aria-hidden="true">↑</span>
+                </button>
+              </div>
+            </div>
+            <div class="edu2-empty" data-edu2-empty hidden>
+              <strong data-edu2-empty-title>Ничего не найдено</strong>
+              <p data-edu2-empty-text>Измените запрос или параметры фильтрации.</p>
+              <div class="edu2-empty__actions">
+                <button class="edu2-empty__switch" type="button" data-edu2-empty-switch hidden></button>
+                <button class="edu2-empty__clear-search" type="button" data-edu2-empty-clear-search hidden>Очистить поиск</button>
+                <button class="edu2-empty__reset" type="button" data-edu2-empty-reset hidden>Сбросить все фильтры</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+</main>
+
+  <div class="edu2-modal" id="edu2-program-modal" hidden>
+    <div class="edu2-modal__backdrop" data-edu2-modal-close aria-hidden="true"></div>
+    <section class="edu2-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="edu2-modal-title" tabindex="-1">
+      <div class="edu2-modal__toolbar">
+        <div class="edu2-modal__toolbar-heading">
+          <span class="edu2-modal__toolbar-label" data-edu2-modal-toolbar-label aria-hidden="true">Описание программы</span>
+          <span class="edu2-modal__toolbar-title" data-edu2-modal-toolbar-title aria-hidden="true" hidden></span>
+          <span class="edu2-modal__mobile-position" data-edu2-modal-mobile-position></span>
+        </div>
+        <nav class="edu2-modal__nav" data-edu2-modal-nav aria-label="Другие программы с опубликованным описанием в текущей выдаче" hidden>
+          <button type="button" data-edu2-modal-prev aria-label="Предыдущая программа" title="Предыдущая программа">
+            <span aria-hidden="true">←</span>
+          </button>
+          <span class="edu2-modal__position" data-edu2-modal-position></span>
+          <button type="button" data-edu2-modal-next aria-label="Следующая программа" title="Следующая программа">
+            <span aria-hidden="true">→</span>
+          </button>
+        </nav>
+        <button class="edu2-modal__close" type="button" data-edu2-modal-close aria-label="Закрыть описание программы">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"></path></svg>
+      </button>
+      </div>
+      <div class="edu2-modal__content">
+        <div class="edu2-modal__body" role="region" aria-label="Содержание программы">
+          <div class="edu2-modal__header">
+            <p class="edu2-modal__direction" id="edu2-modal-direction"></p>
+            <h2 id="edu2-modal-title" tabindex="-1"></h2>
+            <dl class="edu2-modal__meta">
+            <div class="edu2-modal__meta-item">
+              <dt>Статус</dt>
+              <dd><span class="edu2-program-status" id="edu2-modal-status"></span></dd>
+            </div>
+            <div class="edu2-modal__meta-item">
+              <dt>Трудоёмкость</dt>
+              <dd><span class="edu2-modal__hours" id="edu2-modal-hours"></span></dd>
+            </div>
+            <div class="edu2-modal__meta-item">
+              <dt>Формат</dt>
+              <dd><span class="edu2-modal__format">Дистанционно</span></dd>
+            </div>
+          </dl>
+          </div>
+          <div class="edu2-modal__details" id="edu2-modal-details"></div>
+          <section class="edu2-modal__conditions" aria-labelledby="edu2-modal-conditions-title">
+            <h3 id="edu2-modal-conditions-title">Как узнать условия обучения</h3>
+            <p data-edu2-modal-conditions>Стоимость, даты, порядок зачисления и итоговый документ уточните у образовательного подразделения.</p>
+            <a href="contacts.html">Все контакты <span aria-hidden="true">→</span></a>
+          </section>
+        </div>
+        <div class="edu2-modal__footer">
+          <a class="edu2-modal__contact" href="mailto:info@rosdorspk.ru">Уточнить условия по почте</a>
+        </div>
+        <p class="edu2-visually-hidden" data-edu2-modal-announcement aria-live="polite" aria-atomic="true"></p>
+      </div>
+    </section>
+  </div>
+
+  <footer class="edu2-chrome edu2-chrome-footer">
+  <div class="edu2-chrome-container edu2-chrome-footer__grid">
+    <div class="edu2-chrome-footer__brand">
+      <a class="edu2-chrome-brand edu2-chrome-brand--footer" href="index.html" aria-label="РОСДОРСПК — главная">
+        <span class="edu2-chrome-brand__mark" aria-hidden="true"><img src="assets/brand/rosdorspk-mark-v4.png" width="256" height="256" alt="" decoding="async"></span>
+        <span class="edu2-chrome-brand__text"><strong>РОСДОРСПК</strong><small>Система повышения квалификации</small></span>
+      </a>
+      <p>Знания для специалистов <br>дорожного хозяйства.</p>
+    </div>
+    <nav class="edu2-chrome-footer__column" aria-label="Обучение и материалы">
+      <h2>Обучение и материалы</h2>
+      <a href="education.html">Программы обучения</a>
+      <a href="webinars.html">Вебинары</a>
+      <a href="regulations.html">Нормативные обзоры</a>
+    </nav>
+    <nav class="edu2-chrome-footer__column" aria-label="О системе">
+      <h2>О системе</h2>
+      <a href="results.html">Результаты в цифрах</a>
+      <a href="organization.html">Сведения об организации</a>
+      <a href="history.html">История создания</a>
+      <a href="contacts.html">Контакты</a>
+    </nav>
+    <div class="edu2-chrome-footer__contact">
+      <h2>По вопросам обучения</h2>
+      <a class="edu2-chrome-footer__email" href="mailto:info@rosdorspk.ru">info@rosdorspk.ru <span aria-hidden="true">↗</span></a>
+      <a class="edu2-chrome-footer__phone" href="tel:+74955400820">+7 (495) 540-08-20</a>
+      <p>Добавочный <strong>6259</strong></p>
+    </div>
+  </div>
+  <div class="edu2-chrome-container edu2-chrome-footer__bottom">
+    <span>© 2021–2026 ФАУ «РОСДОРНИИ»</span>
+    <a class="edu2-chrome-footer__policy" href="policy.html#top">Политика конфиденциальности</a>
+  </div>
+</footer>
+</div>
+
+
+
+<script>
+
+  (function () {
+    var root = document.getElementById('edu2-site');
+    if (!root || root.dataset.edu2Ready === 'true') return;
+    root.dataset.edu2Ready = 'true';
+
+    var PROGRAMS_API_URL = 'https://script.google.com/macros/s/AKfycbwXpP-66qgvItylsGANyo8NuRd1L0Mkxg9jjSoqSl83QKXZsNGeg4BiMw0klqo8e-RE/exec';
+    var PROGRAMS_REQUEST_TIMEOUT = 15000;
+    var PROGRAMS_SLOW_NOTICE_DELAY = 7000;
+    var PROGRAMS_AUTO_RETRY_DELAY = 450;
+    var PROGRAMS_CACHE_KEY = 'rosdorspk:education:programs:v1';
+    var programData = [];
+    var requestedProgramId = new URLSearchParams(window.location.search).get('program');
+    var requestedProgramOpened = false;
+
+    function readProgramsCache() {
+      try {
+        var cached = JSON.parse(window.localStorage.getItem(PROGRAMS_CACHE_KEY));
+        return cached && Array.isArray(cached.data) ? cached.data : null;
+      } catch (error) {
+        return null;
+      }
+    }
+
+    function writeProgramsCache(data) {
+      try {
+        window.localStorage.setItem(PROGRAMS_CACHE_KEY, JSON.stringify({ savedAt: Date.now(), data: data }));
+      } catch (error) {
+        console.warn('РОСДОРСПК: не удалось сохранить кеш программ', error);
+      }
+    }
+
+    function isSameProgramsData(first, second) {
+      try {
+        return JSON.stringify(first) === JSON.stringify(second);
+      } catch (error) {
+        return false;
+      }
+    }
+
+    var programGrid = root.querySelector('[data-edu2-live-grid]');
+    var filtersPanel = root.querySelector('.edu2-filters');
+    var filtersToggle = root.querySelector('[data-edu2-toggle-filters]');
+    var filterOptions = root.querySelector('#edu2-filter-options');
+    var compactFiltersMedia = window.matchMedia('(max-width: 760px)');
+    var compactFiltersExpanded = false;
+    var emptyState = root.querySelector('[data-edu2-empty]');
+    var emptyStateTitle = root.querySelector('[data-edu2-empty-title]');
+    var emptyStateText = root.querySelector('[data-edu2-empty-text]');
+    var emptyStateSwitchButton = root.querySelector('[data-edu2-empty-switch]');
+    var emptyStateClearSearchButton = root.querySelector('[data-edu2-empty-clear-search]');
+    var emptyStateResetButton = root.querySelector('[data-edu2-empty-reset]');
+    var catalogStatePanel = root.querySelector('[data-edu2-catalog-state]');
+    var catalogStateTitle = root.querySelector('[data-edu2-catalog-state-title]');
+    var catalogStateText = root.querySelector('[data-edu2-catalog-state-text]');
+    var retryButton = root.querySelector('[data-edu2-retry]');
+    var searchInput = root.querySelector('#edu2-search-input');
+    var searchPlaceholder = searchInput ? searchInput.placeholder : '';
+    var searchClearButton = root.querySelector('[data-edu2-search-clear]');
+    var resetFiltersButton = root.querySelector('[data-edu2-reset-filters]');
+    var directionSelect = root.querySelector('#edu2-direction-select');
+    var directionPicker = root.querySelector('[data-edu2-direction-picker]');
+    var directionToggle = root.querySelector('[data-edu2-direction-toggle]');
+    var directionValue = root.querySelector('[data-edu2-direction-value]');
+    var directionListbox = root.querySelector('[data-edu2-direction-listbox]');
+    var directionLabel = root.querySelector('#edu2-direction-label');
+    var clearDirectionButton = root.querySelector('[data-edu2-clear-direction]');
+    var statusButtons = Array.prototype.slice.call(root.querySelectorAll('[data-edu2-status]'));
+    var resultsPanel = root.querySelector('.edu2-results');
+    var resultsSummary = root.querySelector('#edu2-results-summary');
+    var resultsHeading = root.querySelector('.edu2-results__heading');
+    var resultsTitle = root.querySelector('[data-edu2-results-title]');
+    var resultsHeadingSkeleton = root.querySelector('[data-edu2-results-heading-skeleton]');
+    var resultsNote = root.querySelector('[data-edu2-results-note]');
+    var resultsFooter = root.querySelector('[data-edu2-results-footer]');
+    var resultsProgress = root.querySelector('[data-edu2-results-progress]');
+    var showMoreButton = root.querySelector('[data-edu2-show-more]');
+    var backToCatalogButton = root.querySelector('[data-edu2-back-to-catalog]');
+    var pageHeader = document.querySelector('.edu2-chrome-header');
+    var menuButton = root.querySelector('[data-edu2-menu-button]');
+    var mobileMenu = root.querySelector('#edu2-mobile-menu');
+    var programModal = root.querySelector('#edu2-program-modal');
+    var modalDialog = root.querySelector('.edu2-modal__dialog');
+    var modalCloseButton = root.querySelector('.edu2-modal__close');
+    var modalStatus = root.querySelector('#edu2-modal-status');
+    var modalDirection = root.querySelector('#edu2-modal-direction');
+    var modalTitle = root.querySelector('#edu2-modal-title');
+    var modalToolbarLabel = root.querySelector('[data-edu2-modal-toolbar-label]');
+    var modalToolbarTitle = root.querySelector('[data-edu2-modal-toolbar-title]');
+    var modalHours = root.querySelector('#edu2-modal-hours');
+    var modalDetails = root.querySelector('#edu2-modal-details');
+    var modalContact = root.querySelector('.edu2-modal__contact');
+    var modalConditions = root.querySelector('[data-edu2-modal-conditions]');
+    var modalBody = root.querySelector('.edu2-modal__body');
+    var modalNavigation = root.querySelector('[data-edu2-modal-nav]');
+    var modalPreviousButton = root.querySelector('[data-edu2-modal-prev]');
+    var modalNextButton = root.querySelector('[data-edu2-modal-next]');
+    var modalPosition = root.querySelector('[data-edu2-modal-position]');
+    var modalMobilePosition = root.querySelector('[data-edu2-modal-mobile-position]');
+    var modalAnnouncement = root.querySelector('[data-edu2-modal-announcement]');
+    var PAGE_SIZE = 12;
+    var selectedStatus = 'active';
+    var visibleProgramLimit = PAGE_SIZE;
+    var programLoadState = 'loading';
+    var currentFilteredPrograms = [];
+    var currentModalProgramId = null;
+    var lastFocusedElement = null;
+    var previousBodyOverflow = '';
+    var modalInertedElements = [];
+    var modalStepAnimationTimer = null;
+    var stickyFiltersMedia = typeof window.matchMedia === 'function' ? window.matchMedia('(min-width: 1001px)') : null;
+    var stickyFiltersFrame = 0;
+    var directionTypeaheadBuffer = '';
+    var directionTypeaheadTimer = null;
+    var programsRequestSequence = 0;
+    var programsSlowNoticeTimer = null;
+
+    function escapeHtml(value) {
+      var entities = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' };
+      return String(value == null ? '' : value).replace(/[&<>"']/g, function (character) {
+        return entities[character];
+      });
+    }
+
+    var RUSSIAN_CONNECTOR_PATTERN = /(^|[^0-9A-Za-zА-Яа-яЁё-])(благодаря|вблизи|ввиду|вдоль|включая|вместо|вне|внутри|вокруг|возле|вопреки|вследствие|исключая|исходя|касательно|кроме|между|навстречу|наперекор|наподобие|напротив|насчёт|начиная|несмотря|около|относительно|перед|помимо|посередине|посреди|посредством|путём|сверх|свыше|согласно|сообразно|сквозь|спустя|среди|через|без|близ|вслед|внутрь|для|из-за|из-под|надо|обо|передо|подо|после|ради|поскольку|причём|причем|притом|однако|нежели|пускай|оттого|словно|точно|будто|ежели|когда|только|впрочем|следовательно|иначе|хотя|чтобы|чтоб|потому|также|тоже|зато|либо|если|дабы|ведь|ибо|пока|пусть|коли|коль|раз|как|чем|что|так|то|же|ли|ни|но|да|бы|во|до|за|из|ко|на|над|ото|при|про|со|или|в|к|о|об|от|по|под|с|у|а|б|и)[ \t]+(?=\S)/giu;
+
+    function applyRussianNoBreakSpaces(value) {
+      var result = String(value == null ? '' : value);
+      var previous = '';
+      while (result !== previous) {
+        previous = result;
+        result = result.replace(RUSSIAN_CONNECTOR_PATTERN, function (match, prefix, connector) {
+          return prefix + connector + '\u00a0';
+        });
+      }
+      return result.replace(/([А-Яа-яЁё])-([А-Яа-яЁё])/g, '$1\u2011$2');
+    }
+
+    function escapeDisplayHtml(value) {
+      return escapeHtml(applyRussianNoBreakSpaces(value));
+    }
+
+    function applyRussianTypography(element) {
+      if (!element || !element.childNodes) return;
+      Array.prototype.forEach.call(element.childNodes, function (node) {
+        if (node.nodeType === 3) {
+          node.nodeValue = applyRussianNoBreakSpaces(node.nodeValue);
+          return;
+        }
+        if (node.nodeType !== 1 || /^(?:SCRIPT|STYLE|TEXTAREA|PRE|CODE)$/i.test(node.tagName)) return;
+        applyRussianTypography(node);
+      });
+    }
+
+    function normalizeRemoteProgram(program, index) {
+      var hours = Number(program.hours);
+      return {
+        id: String(program.id || 'api-' + index),
+        t: String(program.title || ''),
+        d: String(program.direction || ''),
+        h: isNaN(hours) ? 0 : hours,
+        a: program.status === 'active' || String(program.mark || '') === '2026',
+        text: String(program.details || '')
+      };
+    }
+
+    function hasProgramDetails(program) {
+      return Boolean(program && String(program.text || '').trim());
+    }
+
+    // Match the official title as well as the ID so an updated source never gets an outdated label.
+    var catalogTitles = {
+      '137581121902': ['Основные требования и методы испытаний дорожно-строительных материалов, применяемых при строительстве и ремонте автомобильных дорог общего пользования', 'Требования и методы испытаний дорожно-строительных материалов'],
+      '974722567822': ['Оценка развития и причины образования дефектов и повреждений железобетонных мостовых конструкций для прогнозирования их эксплуатационной надежности', 'Дефекты железобетонных мостовых конструкций и прогноз их надёжности'],
+      '718152011012': ['Правовые основы дорожной деятельности. Техническое регулирование, стандартизация, аккредитация и метрологическое обеспечение дорожного хозяйства Российской Федерации', 'Правовые основы дорожной деятельности и техническое регулирование'],
+      '476541233262': ['Проектирование, производство и укладка асфальтобетонных смесей, соответствующих требованиям ГОСТ Р 58406.1-2020 (взамен ПНСТ 183-2019), ГОСТ Р 58406.2-2020 (взамен ПНСТ 184-2019)', 'Асфальтобетонные смеси по ГОСТ Р 58406.1 и 58406.2: проектирование, производство и укладка'],
+      '120173290422': ['Устройство слоев покрытия с применением асфальтобетонных смесей, запроектированных по методологии объемно-функционального проектирования', 'Устройство покрытий из асфальтобетонных смесей SP и SMA']
+    };
+
+    function getCatalogTitle(program) {
+      var entry = catalogTitles[program.id];
+      return entry && entry[0] === program.t ? entry[1] : program.t;
+    }
+
+    var programIllustrations = {
+      '448775247832': '448775247832-bridge-diagnostics',
+      '137581121902': '137581121902-materials-testing',
+      '974722567822': '974722567822-bridge-defects',
+      '718152011012': '718152011012-road-regulation',
+      '476541233262': '476541233262-asphalt-production',
+      '526811941332': '526811941332-bridge-drainage',
+      '154570320742': '154570320742-road-estimates',
+      '257525619012': '257525619012-bridge-operation',
+      '120173290422': '120173290422-asphalt-layers',
+      '398886194662': '398886194662-road-safety',
+      '371845470452': '371845470452-route-guidance',
+      '150206375502': '150206375502-road-weather',
+      '998872884872': '998872884872-traffic-flow-control',
+      '965665475862': '965665475862-geosynthetics-surface',
+      '995733256342': '995733256342-geosynthetics-intro',
+      '837949362812': '837949362812-geosynthetics-base',
+      '636765053142': '636765053142-road-culverts',
+      '789514883682': '789514883682-modified-binders',
+      '739656974782': '739656974782-local-soils',
+      '165327320352': '165327320352-technology-register',
+      '430423329862': '430423329862-soil-stabilization',
+      '885772034552': '885772034552-road-durability',
+      '818943777732': '818943777732-thin-surface-treatment',
+      '799275985442': '799275985442-recycled-road-materials',
+      '550598581312': '550598581312-project-communications',
+      '453290781312': '453290781312-bim-supervision',
+      '236938099622': '236938099622-bim-design',
+      '483400393502': '483400393502-bim-intro',
+      '930765073252': '930765073252-its-principles',
+      '596936366422': '596936366422-its-feasibility',
+      '450583066522': '450583066522-street-network',
+      '609496792122': '609496792122-road-quality-monitoring',
+      '443726321752': '443726321752-national-road-project',
+      '346137473312': '346137473312-road-fund-control',
+      '973686567172': '973686567172-winter-road-maintenance',
+      '524867185622': '524867185622-road-operation'
+    };
+    var directionIllustrations = {
+      'Мосты и искусственные сооружения': '448775247832-bridge-diagnostics',
+      'Контроль качества и лабораторное сопровождение': '137581121902-materials-testing',
+      'Нормативно-техническое регулирование и стандартизация': '718152011012-road-regulation',
+      'Материалы, технологии и инновационные решения': '120173290422-asphalt-layers',
+      'Организация дорожной деятельности и управление': '443726321752-national-road-project',
+      'Интеллектуальные транспортные системы': '930765073252-its-principles',
+      'Технологии информационного моделирования': '483400393502-bim-intro',
+      'Проектирование автомобильных дорог и искусственных сооружений': '450583066522-street-network',
+      'Безопасность дорожного движения и охрана труда': '398886194662-road-safety',
+      'Эксплуатация автомобильных дорог': '524867185622-road-operation'
+    };
+
+    function getProgramIllustration(program) {
+      var name = programIllustrations[program.id] || directionIllustrations[program.d] || '443726321752-national-road-project';
+      return 'assets/education/' + name + '-v2.webp';
+    }
+
+    // Use edited card copy only while the published result still matches its source.
+    var catalogSummaries = {
+      '448775247832': ['определение фактического класса нагрузки на пролётное строение по результатам обследования', 'Определение класса нагрузки на мост по данным обследования'],
+      '137581121902': ['организация контроля качества дорожно-строительных материалов и работы специализированных подрядных организаций', 'Контроль качества дорожных материалов и работы подрядчиков'],
+      '974722567822': ['классификация дефектов и повреждений', 'Классификация дефектов и повреждений мостов'],
+      '718152011012': ['планирование работ в сфере дорожной деятельности', 'Планирование дорожных работ'],
+      '476541233262': ['организация и контроль специализированных работ с асфальтобетонными смесями при строительстве и ремонте дорог', 'Организация и контроль работ с асфальтобетонными смесями'],
+      '526811941332': ['расчёт геометрических параметров лотков и водоотводных трубок', 'Расчёт параметров лотков и водоотводных трубок'],
+      '257525619012': ['оценка износа мостового сооружения по выявленным дефектам и повреждениям', 'Оценка износа моста по дефектам и повреждениям'],
+      '120173290422': ['расчёт марки битумного вяжущего', 'Расчёт марки битумного вяжущего']
+    };
+
+    function getProgramSummary(program) {
+      var groups = parseProgramDetails(program.text);
+      var item = groups.results[0];
+      if (!item) return '';
+      var summary = item.text.replace(/[;.]\s*$/, '');
+      var entry = catalogSummaries[program.id];
+      return entry && entry[0] === summary ? entry[1] : summary;
+    }
+
+    function getProgramContactUrl(program) {
+      var subject = (program.a ? 'Обучение: ' : 'Архивная программа: ') + program.t;
+      var body = 'Здравствуйте!\r\n\r\n' + (program.a
+        ? 'Прошу уточнить стоимость, ближайшие даты, порядок зачисления и документ по итогам обучения по программе «'
+        : 'Интересует архивная программа «') + program.t + '».';
+      if (!program.a) body += '\r\nПодскажите, доступно ли обучение по этой теме или есть актуальная программа на замену.';
+      body += '\r\n\r\nКод программы: ' + program.id;
+      return 'mailto:info@rosdorspk.ru?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    }
+
+    function syncCompactFilters() {
+      if (searchInput) searchInput.placeholder = compactFiltersMedia.matches ? 'Название или тема' : searchPlaceholder;
+      if (!filtersToggle || !filterOptions) return;
+      var expanded = !compactFiltersMedia.matches || compactFiltersExpanded;
+      if (!expanded && filterOptions.contains(document.activeElement)) filtersToggle.focus({ preventScroll: true });
+      filterOptions.hidden = !expanded;
+      filtersToggle.setAttribute('aria-expanded', String(expanded));
+    }
+
+    if (filtersToggle) {
+      filtersToggle.addEventListener('click', function () {
+        compactFiltersExpanded = !compactFiltersExpanded;
+        if (!compactFiltersExpanded) closeDirectionPicker(false);
+        syncCompactFilters();
+      });
+      if (typeof compactFiltersMedia.addEventListener === 'function') compactFiltersMedia.addEventListener('change', syncCompactFilters);
+      else compactFiltersMedia.addListener(syncCompactFilters);
+      syncCompactFilters();
+    }
+
+    function getMoreProgramsLabel(count) {
+      var lastTwoDigits = count % 100;
+      var lastDigit = count % 10;
+      var noun = 'программ';
+
+      if (lastDigit === 1 && lastTwoDigits !== 11) noun = 'программу';
+      else if (lastDigit >= 2 && lastDigit <= 4 && (lastTwoDigits < 12 || lastTwoDigits > 14)) noun = 'программы';
+
+      return 'Показать ещё ' + count + ' ' + noun;
+    }
+
+    function getProgramsTitle() {
+      return selectedStatus === 'active'
+        ? 'Действующие программы'
+        : selectedStatus === 'archive'
+          ? 'Архивные программы'
+          : 'Все программы';
+    }
+
+    function getProgramsTotalLabel(count) {
+      var lastTwoDigits = count % 100;
+      var lastDigit = count % 10;
+      var noun = 'программ';
+
+      if (lastDigit === 1 && lastTwoDigits !== 11) noun = 'программа';
+      else if (lastDigit >= 2 && lastDigit <= 4 && (lastTwoDigits < 12 || lastTwoDigits > 14)) noun = 'программы';
+
+      return count + ' ' + noun;
+    }
+
+    function getStatusSwitchLabel(status, count) {
+      var lastTwoDigits = count % 100;
+      var lastDigit = count % 10;
+      var isSingular = lastDigit === 1 && lastTwoDigits !== 11;
+      var isFew = lastDigit >= 2 && lastDigit <= 4 && (lastTwoDigits < 12 || lastTwoDigits > 14);
+      var noun;
+
+      if (status === 'archive') noun = isSingular ? 'архивную программу' : isFew ? 'архивные программы' : 'архивных программ';
+      else noun = isSingular ? 'действующую программу' : isFew ? 'действующие программы' : 'действующих программ';
+
+      return 'Показать ' + count + ' ' + noun;
+    }
+
+    function getFoundProgramsLabel(count) {
+      var lastTwoDigits = count % 100;
+      var lastDigit = count % 10;
+      return lastDigit === 1 && lastTwoDigits !== 11
+        ? 'Найдена ' + count + ' программа'
+        : 'Найдено ' + getProgramsTotalLabel(count);
+    }
+
+    function getProgramsCountLabel(count) {
+      return getProgramsTitle() + '. ' + getProgramsTotalLabel(count);
+    }
+
+    function setMenu(open) {
+      if (!menuButton || !mobileMenu) return;
+      menuButton.classList.toggle('is-open', open);
+      mobileMenu.classList.toggle('is-open', open);
+      menuButton.setAttribute('aria-expanded', String(open));
+      menuButton.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню');
+      mobileMenu.setAttribute('aria-hidden', String(!open));
+      if (open) mobileMenu.removeAttribute('inert');
+      else mobileMenu.setAttribute('inert', '');
+    }
+
+    function updateStickyFiltersState() {
+      stickyFiltersFrame = 0;
+      if (!filtersPanel) return;
+
+      var canStick = !stickyFiltersMedia || stickyFiltersMedia.matches;
+      if (!canStick || window.getComputedStyle(filtersPanel).position !== 'sticky') {
+        filtersPanel.classList.remove('is-stuck');
+        return;
+      }
+
+      var stickyTop = parseFloat(window.getComputedStyle(filtersPanel).top) || 0;
+      var panelTop = filtersPanel.getBoundingClientRect().top;
+      filtersPanel.classList.toggle('is-stuck', Math.abs(panelTop - stickyTop) <= 1.5);
+    }
+
+    function requestStickyFiltersUpdate() {
+      if (!filtersPanel || stickyFiltersFrame) return;
+      stickyFiltersFrame = window.requestAnimationFrame(updateStickyFiltersState);
+    }
+
+    function scrollToSection(hash, animate, updateHistory) {
+      if (!/^#edu2-[a-z0-9-]+$/i.test(hash)) return false;
+      var target = document.getElementById(hash.slice(1));
+      if (!target || !root.contains(target)) return false;
+
+      var headerHeight = pageHeader ? Math.ceil(pageHeader.getBoundingClientRect().height) : 0;
+      var targetTop = Math.max(0, Math.round(window.pageYOffset + target.getBoundingClientRect().top - headerHeight - 10));
+      var reduceMotion = typeof window.matchMedia === 'function' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var behavior = animate && !reduceMotion ? 'smooth' : 'auto';
+
+      try {
+        window.scrollTo({ top: targetTop, left: 0, behavior: behavior });
+      } catch (error) {
+        window.scrollTo(0, targetTop);
+      }
+
+      if (updateHistory && window.history && typeof window.history.pushState === 'function' && window.location.hash !== hash) {
+        try {
+          window.history.pushState(null, '', hash);
+        } catch (error) {
+          // Скролл уже выполнен; ограничение History API не должно ломать переход.
+        }
+      }
+      return true;
+    }
+
+    function revealFilteredResults(animate, force) {
+      var target = resultsTitle && !resultsTitle.hidden
+        ? (resultsHeading || resultsTitle)
+        : emptyState && !emptyState.hidden
+          ? emptyState
+          : null;
+      if (!target) return;
+      if (!force && (!filtersPanel || !filtersPanel.classList.contains('is-stuck'))) return;
+
+      window.requestAnimationFrame(function () {
+        var targetRect = target.getBoundingClientRect();
+        var headerHeight = pageHeader ? Math.ceil(pageHeader.getBoundingClientRect().height) : 0;
+        var topBoundary = headerHeight + 12;
+
+        var targetIsNearResultsStart = targetRect.top >= topBoundary - 2 && targetRect.top <= topBoundary + 240;
+        if (targetIsNearResultsStart) return;
+
+        var targetTop = Math.max(0, Math.round(window.pageYOffset + targetRect.top - topBoundary));
+        var reduceMotion = typeof window.matchMedia === 'function' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var behavior = animate && !reduceMotion ? 'smooth' : 'auto';
+
+        try {
+          window.scrollTo({ top: targetTop, left: 0, behavior: behavior });
+        } catch (error) {
+          window.scrollTo(0, targetTop);
+        }
+      });
+    }
+
+    function alignInitialHash() {
+      var initialHash = window.location.hash;
+      if (!initialHash) return;
+
+      function align() {
+        if (window.location.hash === initialHash) scrollToSection(initialHash, false, false);
+      }
+
+      window.requestAnimationFrame(function () {
+        window.requestAnimationFrame(align);
+      });
+
+      if (document.readyState === 'complete') {
+        window.setTimeout(align, 80);
+      } else {
+        window.addEventListener('load', function () {
+          window.setTimeout(align, 80);
+        }, { once: true });
+      }
+    }
+
+    function focusResultsHeadingAfterUpdate() {
+      window.requestAnimationFrame(function () {
+        var focusTarget = resultsTitle && !resultsTitle.hidden
+          ? resultsTitle
+          : resultsHeading && !resultsHeading.hidden
+            ? resultsHeading
+            : null;
+        if (!focusTarget || typeof focusTarget.focus !== 'function') return;
+
+        var hadTabindex = focusTarget.hasAttribute('tabindex');
+        if (!hadTabindex) focusTarget.setAttribute('tabindex', '-1');
+        focusTarget.focus({ preventScroll: true });
+
+        if (!hadTabindex) {
+          focusTarget.addEventListener('blur', function () {
+            focusTarget.removeAttribute('tabindex');
+          }, { once: true });
+        }
+      });
+    }
+
+    function setCatalogControlsState(state) {
+      var catalogReady = state === 'ready';
+
+      [directionSelect, directionToggle, clearDirectionButton].forEach(function (control) {
+        if (control) control.disabled = !catalogReady;
+      });
+
+      [searchInput, searchClearButton, resetFiltersButton].concat(statusButtons).forEach(function (control) {
+        if (control) control.disabled = !catalogReady;
+      });
+
+      [emptyStateSwitchButton, emptyStateClearSearchButton, emptyStateResetButton].forEach(function (control) {
+        if (control) control.disabled = !catalogReady;
+      });
+    }
+
+    function syncSearchClearVisibility() {
+      if (searchClearButton) {
+        searchClearButton.hidden = !normalizeSearchText(searchInput ? searchInput.value : '');
+      }
+    }
+
+    function setProgramCountPlaceholder(value) {
+      statusButtons.forEach(function (button) {
+        var counter = button.querySelector('[data-edu2-count]');
+        if (counter) counter.textContent = value;
+      });
+    }
+
+    function showCatalogState(state, title, text, allowRetry) {
+      programLoadState = state;
+      if (programGrid) {
+        programGrid.innerHTML = '';
+        programGrid.hidden = true;
+      }
+      if (emptyState) emptyState.hidden = true;
+      if (resultsFooter) resultsFooter.hidden = true;
+      if (resultsHeading) resultsHeading.hidden = true;
+      if (resultsTitle) resultsTitle.hidden = true;
+      if (resultsHeadingSkeleton) resultsHeadingSkeleton.hidden = true;
+      if (resultsNote) resultsNote.hidden = true;
+      if (catalogStateTitle) catalogStateTitle.textContent = title;
+      if (catalogStateText) catalogStateText.textContent = text;
+      if (retryButton) retryButton.hidden = !allowRetry;
+      if (catalogStatePanel) catalogStatePanel.hidden = state === 'loading';
+      if (resultsSummary) resultsSummary.textContent = title;
+      var catalogLoading = state === 'loading';
+      root.setAttribute('aria-busy', String(catalogLoading));
+      if (resultsPanel) resultsPanel.setAttribute('aria-busy', String(catalogLoading));
+      setCatalogControlsState(state);
+      syncSearchClearVisibility();
+      applyRussianTypography(catalogStatePanel);
+      applyRussianTypography(resultsSummary);
+    }
+
+    function hideCatalogState() {
+      programLoadState = 'ready';
+      if (catalogStatePanel) catalogStatePanel.hidden = true;
+      if (resultsHeadingSkeleton) resultsHeadingSkeleton.hidden = true;
+      if (resultsNote) resultsNote.hidden = true;
+      root.removeAttribute('aria-busy');
+      if (resultsPanel) resultsPanel.removeAttribute('aria-busy');
+      setCatalogControlsState('ready');
+      syncSearchClearVisibility();
+    }
+
+    function clearProgramsSlowNoticeTimer() {
+      if (!programsSlowNoticeTimer) return;
+      window.clearTimeout(programsSlowNoticeTimer);
+      programsSlowNoticeTimer = null;
+    }
+
+    function renderProgramsSlowNotice() {
+      if (programLoadState !== 'loading') return;
+      if (resultsHeading) resultsHeading.hidden = false;
+      if (resultsHeadingSkeleton) resultsHeadingSkeleton.hidden = true;
+      if (resultsTitle) {
+        resultsTitle.textContent = 'Загрузка занимает больше обычного';
+        resultsTitle.hidden = false;
+      }
+      if (resultsNote) {
+        resultsNote.textContent = 'Продолжаем загрузку и автоматически повторяем запрос.';
+        resultsNote.hidden = false;
+      }
+      if (resultsSummary) resultsSummary.textContent = 'Загрузка программ занимает больше обычного.';
+      applyRussianTypography(resultsHeading);
+      applyRussianTypography(resultsSummary);
+    }
+
+    function renderProgramsLoading() {
+      programData = [];
+      populateDirections();
+      updateActiveDirectionFilter('all', 'Все направления');
+      setProgramCountPlaceholder('…');
+      root.setAttribute('data-edu2-program-source', 'api-loading');
+      showCatalogState('loading', 'Загружаем программы…', 'Получаем актуальный список программ.', false);
+      if (resultsHeading) resultsHeading.hidden = false;
+      if (resultsTitle) {
+        resultsTitle.textContent = 'Загружаем программы…';
+        resultsTitle.hidden = true;
+      }
+      if (resultsHeadingSkeleton) resultsHeadingSkeleton.hidden = false;
+      if (resultsNote) resultsNote.hidden = true;
+      if (programGrid) {
+        programGrid.hidden = false;
+        programGrid.innerHTML = [
+          '<li class="edu2-program-item edu2-program-item--skeleton" aria-hidden="true"><article class="edu2-program-skeleton"><span class="edu2-program-skeleton__meta"></span><span class="edu2-program-skeleton__title"></span><span class="edu2-program-skeleton__title edu2-program-skeleton__title--short"></span><span class="edu2-program-skeleton__direction"></span><span class="edu2-program-skeleton__action"></span></article></li>',
+          '<li class="edu2-program-item edu2-program-item--skeleton" aria-hidden="true"><article class="edu2-program-skeleton"><span class="edu2-program-skeleton__meta"></span><span class="edu2-program-skeleton__title"></span><span class="edu2-program-skeleton__title edu2-program-skeleton__title--medium"></span><span class="edu2-program-skeleton__direction"></span><span class="edu2-program-skeleton__action"></span></article></li>',
+          '<li class="edu2-program-item edu2-program-item--skeleton" aria-hidden="true"><article class="edu2-program-skeleton"><span class="edu2-program-skeleton__meta"></span><span class="edu2-program-skeleton__title"></span><span class="edu2-program-skeleton__title edu2-program-skeleton__title--short"></span><span class="edu2-program-skeleton__direction"></span><span class="edu2-program-skeleton__action"></span></article></li>',
+          '<li class="edu2-program-item edu2-program-item--skeleton" aria-hidden="true"><article class="edu2-program-skeleton"><span class="edu2-program-skeleton__meta"></span><span class="edu2-program-skeleton__title"></span><span class="edu2-program-skeleton__title edu2-program-skeleton__title--medium"></span><span class="edu2-program-skeleton__direction"></span><span class="edu2-program-skeleton__action"></span></article></li>'
+        ].join('');
+      }
+    }
+
+    function renderProgramsLoadError() {
+      programData = [];
+      currentFilteredPrograms = [];
+      populateDirections();
+      setProgramCountPlaceholder('—');
+      root.setAttribute('data-edu2-program-source', 'api-error');
+      showCatalogState('error', 'Не удалось загрузить программы', 'Автоматическая повторная попытка не помогла. Проверьте подключение и попробуйте ещё раз.', true);
+    }
+
+    function normalizeSearchText(value) {
+      return String(value || '')
+        .toLocaleLowerCase('ru-RU')
+        .replace(/ё/g, 'е')
+        .replace(/\u2011/g, '-')
+        .replace(/\s+/g, ' ')
+        .trim();
+    }
+
+    function getSearchTokens(query) {
+      return normalizeSearchText(query).split(' ').filter(function (token) {
+        return Boolean(token);
+      });
+    }
+
+    function getDisplayQuery(value) {
+      var query = String(value || '').replace(/\s+/g, ' ').trim();
+      return query.length > 64 ? query.slice(0, 61) + '…' : query;
+    }
+
+    function escapeSearchPattern(value) {
+      return String(value || '')
+        .replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+        .replace(/-/g, '[-\u2011]')
+        .replace(/е/g, '[её]');
+    }
+
+    function highlightSearchTokens(value, tokens) {
+      var displayValue = applyRussianNoBreakSpaces(value);
+      var patterns = tokens.slice().sort(function (first, second) {
+        return second.length - first.length;
+      }).map(escapeSearchPattern).filter(Boolean);
+      if (!patterns.length) return escapeHtml(displayValue);
+
+      var expression = new RegExp(patterns.join('|'), 'gi');
+      var highlighted = '';
+      var lastIndex = 0;
+
+      displayValue.replace(expression, function (match, offset) {
+        highlighted += escapeHtml(displayValue.slice(lastIndex, offset));
+        highlighted += '<mark>' + escapeHtml(match) + '</mark>';
+        lastIndex = offset + match.length;
+        return match;
+      });
+
+      return highlighted + escapeHtml(displayValue.slice(lastIndex));
+    }
+
+    function getProgramSearchMatchMarkup(program, query, matchId) {
+      var tokens = getSearchTokens(query);
+      var detailsText = String(program && program.text || '')
+        .replace(/\r\n?/g, '\n')
+        .replace(/^\s*(?:Ключевые темы|Практические результаты)\s*:?\s*$/gim, ' ')
+        .replace(/^\s*Практический результат\s*(?:—|–|-|:)\s*/gim, '')
+        .replace(/^\s*(?:•|[-–—*])\s*/gm, '')
+        .replace(/\s+/g, ' ')
+        .trim();
+      if (!tokens.length || !detailsText) return '';
+
+      var primaryText = normalizeSearchText((program.t || '') + ' ' + (program.d || ''));
+      var matchesWithoutDetails = tokens.every(function (token) {
+        return primaryText.indexOf(token) !== -1;
+      });
+      if (matchesWithoutDetails) return '';
+
+      var normalizedDetails = normalizeSearchText(detailsText);
+      var focusToken = tokens.filter(function (token) {
+        return primaryText.indexOf(token) === -1 && normalizedDetails.indexOf(token) !== -1;
+      })[0] || tokens.filter(function (token) {
+        return normalizedDetails.indexOf(token) !== -1;
+      })[0];
+      if (!focusToken) return '';
+
+      var matchIndex = normalizedDetails.indexOf(focusToken);
+      var start = Math.max(0, matchIndex - 54);
+      var end = Math.min(detailsText.length, Math.max(matchIndex + focusToken.length + 78, start + 164));
+
+      if (start > 0) {
+        var nextSpace = detailsText.indexOf(' ', start);
+        if (nextSpace !== -1 && nextSpace < matchIndex) start = nextSpace + 1;
+      }
+      if (end < detailsText.length) {
+        var previousSpace = detailsText.lastIndexOf(' ', end);
+        if (previousSpace > matchIndex + focusToken.length) end = previousSpace;
+      }
+
+      var snippet = detailsText.slice(start, end).trim().replace(/^(?:•|[-–—])\s*/, '');
+      var prefix = start > 0 ? '…' : '';
+      var suffix = end < detailsText.length ? '…' : '';
+
+      return '<p class="edu2-program-card__match" id="' + escapeHtml(matchId) + '">' +
+        '<span class="edu2-program-card__match-label">Совпадение в описании:</span> ' +
+        prefix + highlightSearchTokens(snippet, tokens) + suffix +
+      '</p>';
+    }
+
+    function refreshCounts(query, direction) {
+      var activeQuery = typeof query === 'string' ? query : normalizeSearchText(searchInput ? searchInput.value : '');
+      var activeDirection = direction || (directionSelect ? directionSelect.value : 'all');
+      var counts = {
+        active: countProgramsForStatus('active', activeQuery, activeDirection),
+        archive: countProgramsForStatus('archive', activeQuery, activeDirection),
+        all: countProgramsForStatus('all', activeQuery, activeDirection)
+      };
+
+      statusButtons.forEach(function (button) {
+        var status = button.getAttribute('data-edu2-status');
+        var counter = button.querySelector('[data-edu2-count]');
+        if (!counter) return;
+        counter.textContent = counts[status] == null ? counts.all : counts[status];
+      });
+    }
+
+    function setSelectedStatus(status) {
+      selectedStatus = status === 'archive' || status === 'all' ? status : 'active';
+      statusButtons.forEach(function (button) {
+        var active = button.getAttribute('data-edu2-status') === selectedStatus;
+        button.classList.toggle('is-active', active);
+        button.setAttribute('aria-pressed', String(active));
+      });
+    }
+
+    function programMatchesFilters(program, status, query, direction) {
+      var statusMatches = status === 'all' || (status === 'active' && program.a) || (status === 'archive' && !program.a);
+      var directionMatches = direction === 'all' || program.d === direction;
+      var haystack = normalizeSearchText(program.t + ' ' + getCatalogTitle(program) + ' ' + program.d + ' ' + program.text);
+      var searchMatches = getSearchTokens(query).every(function (token) {
+        return haystack.indexOf(token) !== -1;
+      });
+      return statusMatches && directionMatches && searchMatches;
+    }
+
+    function countProgramsForStatus(status, query, direction) {
+      return programData.filter(function (program) {
+        return programMatchesFilters(program, status, query, direction);
+      }).length;
+    }
+
+    function updateEmptyState(query, direction, filteredCount, rawQuery, selectedDirectionLabel) {
+      if (!emptyState) return;
+
+      emptyState.hidden = filteredCount > 0;
+      if (emptyStateSwitchButton) emptyStateSwitchButton.hidden = true;
+      if (emptyStateClearSearchButton) {
+        emptyStateClearSearchButton.hidden = true;
+        emptyStateClearSearchButton.classList.remove('is-primary');
+      }
+      if (emptyStateResetButton) emptyStateResetButton.hidden = true;
+      if (filteredCount > 0) return;
+
+      var hasQuery = Boolean(query);
+      var hasDirection = direction !== 'all';
+      var hasStatusFilter = selectedStatus !== 'active';
+      var targetStatus = selectedStatus === 'active' ? 'archive' : selectedStatus === 'archive' ? 'active' : '';
+      var alternateCount = targetStatus ? countProgramsForStatus(targetStatus, query, direction) : 0;
+      var displayQuery = getDisplayQuery(rawQuery);
+      var directionName = selectedDirectionLabel || 'выбранном направлении';
+
+      if (emptyStateTitle) {
+        if (hasQuery) emptyStateTitle.textContent = 'По запросу «' + displayQuery + '» ничего не найдено';
+        else if (hasDirection && selectedStatus === 'active') emptyStateTitle.textContent = 'Нет действующих программ';
+        else if (hasDirection && selectedStatus === 'archive') emptyStateTitle.textContent = 'Нет архивных программ';
+        else if (hasDirection) emptyStateTitle.textContent = 'Нет программ по выбранному направлению';
+        else emptyStateTitle.textContent = 'Ничего не найдено';
+      }
+
+      if (emptyStateText) {
+        if (alternateCount > 0) {
+          var alternateContext = [];
+          if (hasQuery) alternateContext.push('по запросу «' + displayQuery + '»');
+          if (hasDirection) alternateContext.push('в направлении «' + directionName + '»');
+          emptyStateText.textContent = (targetStatus === 'archive' ? 'В архиве' : 'Среди действующих программ') +
+            ' есть ' + getProgramsTotalLabel(alternateCount) + (alternateContext.length ? ' ' + alternateContext.join(' ') : '') + '.';
+        } else if (hasQuery && hasDirection) {
+          emptyStateText.textContent = 'В направлении «' + directionName + '» нет программ по запросу «' + displayQuery + '». Очистите поиск или выберите другое направление.';
+        } else if (hasDirection) {
+          var statusDescription = selectedStatus === 'active' ? 'действующих' : selectedStatus === 'archive' ? 'архивных' : '';
+          emptyStateText.textContent = 'В направлении «' + directionName + '» нет ' + (statusDescription ? statusDescription + ' ' : '') + 'программ. Выберите другое направление.';
+        } else if (hasQuery) {
+          emptyStateText.textContent = (selectedStatus === 'active' ? 'Среди действующих программ' : selectedStatus === 'archive' ? 'В архиве' : 'В каталоге') +
+            ' нет совпадений по запросу «' + displayQuery + '». Измените формулировку или очистите поиск.';
+        } else {
+          emptyStateText.textContent = 'Попробуйте другой раздел каталога.';
+        }
+      }
+
+      if (emptyStateSwitchButton && alternateCount > 0) {
+        emptyStateSwitchButton.hidden = false;
+        emptyStateSwitchButton.setAttribute('data-edu2-target-status', targetStatus);
+        emptyStateSwitchButton.textContent = getStatusSwitchLabel(targetStatus, alternateCount);
+        emptyStateSwitchButton.setAttribute('aria-label', emptyStateSwitchButton.textContent + ' с теми же условиями фильтрации');
+      }
+
+      if (emptyStateClearSearchButton && hasQuery) {
+        emptyStateClearSearchButton.hidden = false;
+        emptyStateClearSearchButton.classList.toggle('is-primary', alternateCount === 0);
+      }
+
+      if (emptyStateResetButton) {
+        var resetMode = '';
+        var resetLabel = '';
+
+        if (hasDirection) {
+          resetMode = 'direction';
+          resetLabel = 'Сбросить направление';
+        } else if (alternateCount === 0 && !hasQuery && hasStatusFilter) {
+          resetMode = 'status';
+          resetLabel = 'Вернуться к действующим';
+        }
+
+        emptyStateResetButton.hidden = !resetMode;
+        emptyStateResetButton.setAttribute('data-edu2-reset-mode', resetMode);
+        emptyStateResetButton.textContent = resetLabel;
+      }
+      applyRussianTypography(emptyState);
+    }
+
+    function getDirectionProgramCount(value, query) {
+      return programData.filter(function (program) {
+        return programMatchesFilters(program, selectedStatus, query || '', value);
+      }).length;
+    }
+
+    function updateDirectionOptionCounts(query) {
+      if (!directionSelect) return;
+      var selectedValue = directionSelect.value || 'all';
+      Array.prototype.slice.call(directionSelect.options).forEach(function (nativeOption) {
+        var label = nativeOption.getAttribute('data-label') || nativeOption.textContent.trim();
+        var count = getDirectionProgramCount(nativeOption.value, query);
+        var unavailable = nativeOption.value !== 'all' && count === 0;
+        var shouldHide = unavailable && nativeOption.value !== selectedValue;
+        nativeOption.setAttribute('data-label', label);
+        nativeOption.setAttribute('data-count', String(count));
+        nativeOption.textContent = label + ' — ' + count;
+        nativeOption.disabled = unavailable;
+        nativeOption.hidden = shouldHide;
+      });
+
+      getDirectionOptionElements().forEach(function (option) {
+        var value = option.getAttribute('data-value') || 'all';
+        var label = option.getAttribute('data-label') || '';
+        var count = getDirectionProgramCount(value, query);
+        var unavailable = value !== 'all' && count === 0;
+        var shouldHide = unavailable && value !== selectedValue;
+        var countElement = option.querySelector('.edu2-direction-picker__option-count');
+        if (countElement) countElement.textContent = count;
+        option.disabled = unavailable;
+        option.hidden = shouldHide;
+        option.setAttribute('aria-disabled', String(unavailable));
+        option.setAttribute('aria-label', label + '. ' + getProgramsTotalLabel(count) + (unavailable ? '. Нет программ в выбранном разделе каталога' : ''));
+      });
+    }
+
+    function populateDirections() {
+      if (!directionSelect) return;
+      while (directionSelect.options.length > 1) directionSelect.remove(1);
+      directionSelect.options[0].setAttribute('data-label', 'Все направления');
+      directionSelect.options[0].textContent = 'Все направления';
+
+      var directions = programData.map(function (program) { return program.d; }).filter(function (direction, index, list) {
+        return direction && list.indexOf(direction) === index;
+      }).sort(function (first, second) {
+        return first.localeCompare(second, 'ru');
+      });
+
+      directions.forEach(function (direction) {
+        var option = document.createElement('option');
+        option.value = direction;
+        option.setAttribute('data-label', direction);
+        option.textContent = direction;
+        directionSelect.appendChild(option);
+      });
+
+      renderDirectionPickerOptions();
+    }
+
+    function getDirectionOptionElements() {
+      if (!directionListbox) return [];
+      return Array.prototype.slice.call(directionListbox.querySelectorAll('[data-edu2-direction-option]'));
+    }
+
+    function getEnabledDirectionOptionElements() {
+      return getDirectionOptionElements().filter(function (option) {
+        return !option.disabled && !option.hidden;
+      });
+    }
+
+    function updateDirectionPickerSelection() {
+      if (!directionSelect) return;
+      var selectedOption = directionSelect.options[directionSelect.selectedIndex] || directionSelect.options[0];
+      var selectedValue = selectedOption ? selectedOption.value : 'all';
+      var selectedLabel = selectedOption ? (selectedOption.getAttribute('data-label') || selectedOption.textContent.trim()) : 'Все направления';
+
+      if (directionValue) directionValue.textContent = applyRussianNoBreakSpaces(selectedLabel);
+      if (directionToggle) directionToggle.title = selectedLabel;
+
+      getDirectionOptionElements().forEach(function (option) {
+        option.setAttribute('aria-selected', String(option.getAttribute('data-value') === selectedValue));
+      });
+    }
+
+    function updateActiveDirectionFilter(value, label) {
+      var hasDirection = value && value !== 'all';
+      if (directionPicker) directionPicker.classList.toggle('has-value', hasDirection);
+      if (clearDirectionButton) {
+        clearDirectionButton.hidden = !hasDirection;
+        clearDirectionButton.setAttribute('aria-label', hasDirection ? 'Сбросить направление «' + label + '»' : 'Сбросить выбранное направление');
+      }
+      requestStickyFiltersUpdate();
+    }
+
+    function renderDirectionPickerOptions() {
+      if (!directionSelect || !directionListbox) return;
+      closeDirectionPicker(false);
+      getDirectionOptionElements().forEach(function (option) { option.remove(); });
+
+      Array.prototype.slice.call(directionSelect.options).forEach(function (nativeOption, index) {
+        var option = document.createElement('button');
+        option.type = 'button';
+        option.id = 'edu2-direction-option-' + index;
+        option.className = 'edu2-direction-picker__option';
+        option.setAttribute('role', 'option');
+        option.setAttribute('tabindex', '-1');
+        option.setAttribute('data-edu2-direction-option', '');
+        option.setAttribute('data-value', nativeOption.value);
+        option.setAttribute('data-label', nativeOption.getAttribute('data-label') || nativeOption.textContent.trim());
+
+        var label = document.createElement('span');
+        label.className = 'edu2-direction-picker__option-label';
+        label.textContent = option.getAttribute('data-label');
+
+        var count = document.createElement('span');
+        count.className = 'edu2-direction-picker__option-count';
+        count.setAttribute('aria-hidden', 'true');
+
+        option.appendChild(label);
+        option.appendChild(count);
+        directionListbox.appendChild(option);
+      });
+
+      updateDirectionOptionCounts();
+      updateDirectionPickerSelection();
+      applyRussianTypography(directionListbox);
+      if (directionPicker && directionToggle) {
+        directionPicker.hidden = false;
+        directionSelect.classList.add('is-enhanced');
+        directionSelect.tabIndex = -1;
+        directionSelect.setAttribute('aria-hidden', 'true');
+        if (directionLabel) directionLabel.setAttribute('for', directionToggle.id);
+      }
+    }
+
+    function clearDirectionTypeahead() {
+      directionTypeaheadBuffer = '';
+      if (directionTypeaheadTimer) {
+        window.clearTimeout(directionTypeaheadTimer);
+        directionTypeaheadTimer = null;
+      }
+    }
+
+    function closeDirectionPicker(restoreFocus) {
+      if (!directionToggle || !directionListbox) return;
+      clearDirectionTypeahead();
+      directionToggle.setAttribute('aria-expanded', 'false');
+      directionListbox.hidden = true;
+      if (directionPicker) directionPicker.classList.remove('is-open', 'opens-upward');
+      if (restoreFocus) directionToggle.focus({ preventScroll: true });
+    }
+
+    function openDirectionPicker() {
+      if (!directionToggle || !directionListbox || directionToggle.disabled) return;
+      directionToggle.setAttribute('aria-expanded', 'true');
+      directionListbox.hidden = false;
+      if (directionPicker) directionPicker.classList.add('is-open');
+
+      window.requestAnimationFrame(function () {
+        if (directionPicker) {
+          var triggerRect = directionToggle.getBoundingClientRect();
+          var expectedHeight = Math.min(directionListbox.scrollHeight, 360, window.innerHeight * 0.45);
+          var spaceBelow = window.innerHeight - triggerRect.bottom - 12;
+          var spaceAbove = triggerRect.top - 12;
+          directionPicker.classList.toggle('opens-upward', spaceBelow < expectedHeight && spaceAbove > spaceBelow);
+        }
+        var options = getEnabledDirectionOptionElements();
+        var selectedOption = options.filter(function (option) {
+          return option.getAttribute('aria-selected') === 'true';
+        })[0] || options[0];
+        if (selectedOption) selectedOption.focus({ preventScroll: true });
+      });
+    }
+
+    function selectDirection(value) {
+      if (!directionSelect) return;
+      var nativeOption = Array.prototype.slice.call(directionSelect.options).filter(function (option) {
+        return option.value === value;
+      })[0];
+      if (!nativeOption || nativeOption.disabled) return;
+      directionSelect.value = value;
+      updateDirectionPickerSelection();
+      closeDirectionPicker(true);
+      renderPrograms({ revealResults: true, animateReveal: true });
+    }
+
+    function moveDirectionFocus(currentOption, offset) {
+      var options = getEnabledDirectionOptionElements();
+      var currentIndex = options.indexOf(currentOption);
+      if (currentIndex < 0 || !options.length) return;
+      var nextIndex = Math.max(0, Math.min(options.length - 1, currentIndex + offset));
+      options[nextIndex].focus({ preventScroll: true });
+    }
+
+    function focusDirectionByTypeahead(key, currentOption) {
+      var options = getEnabledDirectionOptionElements();
+      if (!options.length) return;
+
+      directionTypeaheadBuffer += key.toLocaleLowerCase('ru-RU');
+      if (directionTypeaheadTimer) window.clearTimeout(directionTypeaheadTimer);
+      directionTypeaheadTimer = window.setTimeout(clearDirectionTypeahead, 700);
+
+      var currentIndex = Math.max(-1, options.indexOf(currentOption));
+      var search = directionTypeaheadBuffer;
+      var match = null;
+
+      for (var step = 1; step <= options.length; step += 1) {
+        var candidate = options[(currentIndex + step + options.length) % options.length];
+        var label = (candidate.getAttribute('data-label') || candidate.textContent.trim()).toLocaleLowerCase('ru-RU');
+        if (label.indexOf(search) === 0) {
+          match = candidate;
+          break;
+        }
+      }
+
+      if (!match && search.length > 1) {
+        directionTypeaheadBuffer = key.toLocaleLowerCase('ru-RU');
+        for (var retryStep = 1; retryStep <= options.length; retryStep += 1) {
+          var retryCandidate = options[(currentIndex + retryStep + options.length) % options.length];
+          if ((retryCandidate.getAttribute('data-label') || retryCandidate.textContent.trim()).toLocaleLowerCase('ru-RU').indexOf(directionTypeaheadBuffer) === 0) {
+            match = retryCandidate;
+            break;
+          }
+        }
+      }
+
+      if (match) match.focus({ preventScroll: true });
+    }
+
+    function renderPrograms(options) {
+      if (!programGrid || programLoadState !== 'ready') return;
+
+      var preserveLimit = Boolean(options && options.preserveLimit === true);
+      var shouldRevealResults = Boolean(options && options.revealResults === true);
+      var animateReveal = Boolean(options && options.animateReveal === true);
+      var animateItems = animateReveal || Boolean(options && options.animateItems === true);
+      var animateFrom = Math.max(0, Number(options && options.animateFrom) || 0);
+      var forceRevealResults = Boolean(options && options.forceRevealResults === true);
+      if (!preserveLimit) visibleProgramLimit = PAGE_SIZE;
+
+      var rawQuery = searchInput ? searchInput.value.trim() : '';
+      var query = normalizeSearchText(rawQuery);
+      var direction = directionSelect ? directionSelect.value : 'all';
+      var selectedDirectionLabel = 'Все направления';
+      if (resetFiltersButton) resetFiltersButton.hidden = !query && direction === 'all' && selectedStatus === 'active';
+      if (filtersToggle) {
+        var filterCount = (selectedStatus !== 'active' ? 1 : 0) + (direction !== 'all' ? 1 : 0);
+        filtersToggle.firstChild.nodeValue = 'Фильтры' + (filterCount ? ' · ' + filterCount : '') + ' ';
+      }
+
+      refreshCounts(query, direction);
+      updateDirectionOptionCounts(query);
+
+      if (directionSelect) {
+        var selectedDirectionOption = directionSelect.options[directionSelect.selectedIndex];
+        selectedDirectionLabel = selectedDirectionOption ? (selectedDirectionOption.getAttribute('data-label') || selectedDirectionOption.textContent.trim()) : selectedDirectionLabel;
+        directionSelect.title = selectedDirectionLabel;
+        if (directionToggle) directionToggle.title = selectedDirectionLabel;
+      }
+      updateActiveDirectionFilter(direction, selectedDirectionLabel);
+
+      syncSearchClearVisibility();
+
+      var filtered = programData.filter(function (program) {
+        return programMatchesFilters(program, selectedStatus, query, direction);
+      });
+
+      currentFilteredPrograms = filtered.slice();
+      var visiblePrograms = filtered.slice(0, visibleProgramLimit);
+
+      programGrid.hidden = filtered.length === 0;
+      programGrid.innerHTML = visiblePrograms.map(function (program, programIndex) {
+        var shouldAnimateItem = animateItems && programIndex >= animateFrom;
+        var itemClass = shouldAnimateItem ? ' edu2-program-item--entering' : '';
+        var itemStyle = shouldAnimateItem
+          ? ' style="--edu2-item-delay: ' + (Math.min(programIndex - animateFrom, 7) * 36) + 'ms"'
+          : '';
+        var detailsAvailable = hasProgramDetails(program);
+        var statusLabel = program.a ? 'Действует в 2026' : 'Архивная программа';
+        var archiveClass = program.a ? '' : ' is-archive';
+        var missingClass = detailsAvailable ? '' : ' is-description-missing';
+        var interactiveClass = detailsAvailable ? ' is-interactive' : '';
+        var statusMarkup = selectedStatus === 'all'
+          ? '<span class="edu2-program-status' + archiveClass + '">' + escapeDisplayHtml(statusLabel) + '</span>'
+          : '';
+        var availabilityMarkup = detailsAvailable
+          ? ''
+          : '<span class="edu2-program-card__availability">Описание пока не опубликовано</span>';
+        var cardKey = String(program.id).replace(/[^a-zA-Z0-9_-]/g, '-') + '-' + programIndex;
+        var titleId = 'edu2-program-title-' + cardKey;
+        var metaId = 'edu2-program-meta-' + cardKey;
+        var directionId = 'edu2-program-direction-' + cardKey;
+        var matchId = 'edu2-program-match-' + cardKey;
+        var searchMatchMarkup = getProgramSearchMatchMarkup(program, query, matchId);
+        var summary = getProgramSummary(program);
+        var summaryMarkup = summary && !searchMatchMarkup
+          ? '<p class="edu2-program-card__summary"><span>На практике:</span> ' + escapeDisplayHtml(lowercaseFirstLetter(summary)) + '</p>'
+          : '';
+        var describedBy = metaId + ' ' + directionId + (searchMatchMarkup ? ' ' + matchId : '');
+        var action = detailsAvailable
+          ? '<button class="edu2-program-card__open" type="button" data-edu2-program-id="' + escapeHtml(program.id) + '" aria-label="О программе: ' + escapeHtml(program.t) + '" aria-describedby="' + describedBy + '" aria-haspopup="dialog" aria-controls="edu2-program-modal"><span>О программе</span><span aria-hidden="true">→</span></button>'
+          : '';
+
+        return '<li class="edu2-program-item' + itemClass + '"' + itemStyle + '>' +
+          '<article class="edu2-program-card' + archiveClass + missingClass + interactiveClass + '" aria-labelledby="' + titleId + '">' +
+          '<div class="edu2-program-card__media"><img class="edu2-program-card__image" src="' + getProgramIllustration(program) + '" alt="" width="1280" height="720" loading="' + (programIndex < 2 ? 'eager' : 'lazy') + '" decoding="async"></div>' +
+          '<div class="edu2-program-card__content">' +
+            '<div class="edu2-program-card__subline" id="' + directionId + '">' +
+              '<span class="edu2-program-card__direction">' + escapeDisplayHtml(program.d) + '</span>' +
+              statusMarkup +
+            '</div>' +
+            '<h3 class="edu2-program-card__title" id="' + titleId + '">' + escapeDisplayHtml(getCatalogTitle(program)) + '</h3>' +
+            summaryMarkup +
+            availabilityMarkup +
+            searchMatchMarkup +
+          '</div>' +
+          '<div class="edu2-program-card__footer">' +
+            '<div class="edu2-program-card__meta" id="' + metaId + '">' +
+              '<span class="edu2-program-hours">' + (program.h > 0 ? program.h + ' ак. ч.' : 'Трудоёмкость не указана') + '</span>' +
+            '</div>' +
+            action +
+          '</div>' +
+          '</article>' +
+        '</li>';
+      }).join('');
+
+      updateEmptyState(query, direction, filtered.length, rawQuery, selectedDirectionLabel);
+      if (resultsHeading) resultsHeading.hidden = filtered.length === 0;
+      if (resultsHeadingSkeleton) resultsHeadingSkeleton.hidden = true;
+      if (resultsNote) {
+        resultsNote.textContent = getProgramsTotalLabel(filtered.length);
+        resultsNote.hidden = Boolean(query) || direction !== 'all' || filtered.length === 0;
+      }
+      if (resultsTitle) {
+        resultsTitle.textContent = query || direction !== 'all' ? getFoundProgramsLabel(filtered.length) : getProgramsTitle();
+        resultsTitle.hidden = filtered.length === 0;
+      }
+      var visibleCount = Math.min(filtered.length, visibleProgramLimit);
+      var usesProgressiveDisclosure = filtered.length > PAGE_SIZE;
+      if (resultsFooter) resultsFooter.hidden = !usesProgressiveDisclosure;
+      if (resultsProgress) resultsProgress.textContent = 'Показано ' + visibleCount + ' из ' + filtered.length;
+      if (showMoreButton) {
+        var nextBatchCount = Math.min(PAGE_SIZE, Math.max(0, filtered.length - visibleCount));
+        showMoreButton.textContent = nextBatchCount ? getMoreProgramsLabel(nextBatchCount) : 'Показать ещё';
+        showMoreButton.hidden = !usesProgressiveDisclosure || visibleCount >= filtered.length;
+      }
+      if (backToCatalogButton) backToCatalogButton.hidden = !usesProgressiveDisclosure || visibleCount < filtered.length;
+      if (resultsSummary) {
+        var summaryText = getProgramsCountLabel(filtered.length);
+        if (resultsSummary.textContent !== summaryText) resultsSummary.textContent = summaryText;
+      }
+      applyRussianTypography(programGrid);
+      applyRussianTypography(resultsHeading);
+      applyRussianTypography(resultsFooter);
+      if (shouldRevealResults) revealFilteredResults(animateReveal, forceRevealResults);
+    }
+
+    function resetFilters(fromEmptyState) {
+      var resetWasInsideEmptyState = Boolean(fromEmptyState) || Boolean(document.activeElement && document.activeElement.closest && document.activeElement.closest('[data-edu2-empty]'));
+      setSelectedStatus('active');
+      if (searchInput) searchInput.value = '';
+      if (directionSelect) directionSelect.value = 'all';
+      updateDirectionPickerSelection();
+      renderPrograms({ revealResults: true, animateReveal: true, forceRevealResults: resetWasInsideEmptyState });
+      window.requestAnimationFrame(function () {
+        if (searchInput) searchInput.focus({ preventScroll: true });
+      });
+    }
+
+    function findProgramById(id) {
+      for (var index = 0; index < programData.length; index += 1) {
+        if (String(programData[index].id) === String(id)) return programData[index];
+      }
+      return null;
+    }
+
+    function openRequestedProgram() {
+      if (!requestedProgramId || requestedProgramOpened || !programGrid) return;
+      var program = findProgramById(requestedProgramId);
+      if (!program) return;
+      requestedProgramOpened = true;
+
+      setSelectedStatus(program.a ? 'active' : 'archive');
+      var statusPrograms = programData.filter(function (item) { return item.a === program.a; });
+      var programIndex = statusPrograms.indexOf(program);
+      visibleProgramLimit = Math.max(PAGE_SIZE, programIndex + 1);
+      renderPrograms({ preserveLimit: true });
+
+      var item = programGrid.children[programIndex];
+      var card = item && item.querySelector('.edu2-program-card');
+      if (!card) return;
+      card.setAttribute('tabindex', '-1');
+      card.classList.add('is-linked-program');
+      window.requestAnimationFrame(function () {
+        var headerHeight = pageHeader ? pageHeader.getBoundingClientRect().height : 0;
+        var top = window.pageYOffset + card.getBoundingClientRect().top - headerHeight - 24;
+        window.scrollTo({ top: Math.max(0, top), behavior: 'instant' });
+        var trigger = card.querySelector('button[data-edu2-program-id]');
+        if (hasProgramDetails(program)) openProgramModal(program, trigger || card);
+        else card.focus({ preventScroll: true });
+      });
+    }
+
+    // Editorial phrases keep topic accents concise and avoid emphasizing entire bullets.
+    var topicEmphasisPhrases = [
+      'конструктивные элементы', 'современные материалы', 'нормативные требования',
+      'диагностика', 'оценка износа', 'мониторинг мостов',
+      'каменных материалов', 'минеральные и органические вяжущие', 'нефтяным дорожным битумам',
+      'отбор, маркировка', 'лабораторные испытания',
+      'коррозия арматуры', 'повреждения фундаментов', 'оценка технического состояния',
+      'влияние нагрузок', 'ремонт, усиление', 'нормативных документов',
+      'законодательство', 'техническое регулирование', 'Федеральный закон',
+      'оценка соответствия', 'аккредитация', 'планирование проектирования',
+      'исходным материалам', 'подбор состава', 'производство, транспортирование',
+      'испытания на колееобразование', 'характеристик по Маршаллу', 'контроль качества',
+      'влияние воды', 'мостовое полотно', 'материалы и технологии', 'содержание водоотвода',
+      'сметные нормативы', 'ФГИС ЦС', 'сметной документации', 'ресурсно-индексный метод',
+      'накладные расходы', 'цены контракта', 'смета контракта',
+      'типы сооружений', 'деформационные швы', 'геосинтетические материалы',
+      'дефекты', 'содержание сооружений', 'анализ аварийных ситуаций',
+      'исходные материалы', 'марки вяжущего', 'проектирование составов',
+      'контролю качества', 'колёсной нагрузки', 'проектирование слоёв',
+      'нормативные документы', 'виды и причины ДТП', 'дорожных условий',
+      'технические средства', 'временная организация движения', 'аудит безопасности',
+      'контрольно-надзорной деятельности'
+    ];
+
+    var resultEmphasisPhrases = [
+      'класса нагрузки', 'регулированию движения', 'контроля качества',
+      'классификация дефектов', 'анализ данных обследования', 'оценка технического состояния',
+      'планирование работ', 'подготовка документов', 'организация и контроль',
+      'параметров лотков', 'системы водоотвода', 'оценка износа',
+      'марки битумного вяжущего', 'подбор состава', 'расчёт стоимости',
+      'цены контракта', 'сметы контракта', 'выбор мероприятий', 'технических средств'
+    ];
+
+    function getDetailEmphasisRange(text, modifier) {
+      var normalized = text.toLocaleLowerCase('ru-RU').replace(/\u00a0/g, ' ');
+      var range = null;
+      var phrases = modifier === 'results' ? resultEmphasisPhrases : topicEmphasisPhrases;
+      phrases.forEach(function (phrase) {
+        var start = normalized.indexOf(phrase.toLocaleLowerCase('ru-RU'));
+        if (start < 0) return;
+        // A known phrase must be a complete term and leave some ordinary text in the item.
+        if (start > 0 && /[A-Za-zА-Яа-яЁё0-9-]/.test(normalized.charAt(start - 1))) return;
+        if (/[A-Za-zА-Яа-яЁё0-9-]/.test(normalized.charAt(start + phrase.length))) return;
+        if (start === 0 && !text.slice(phrase.length).replace(/[\s.;:,!?]/g, '')) return;
+        if (!range || start < range.start || (start === range.start && phrase.length > range.length)) {
+          range = { start: start, length: phrase.length };
+        }
+      });
+      return range;
+    }
+
+    function appendDetailText(container, value, modifier) {
+      var text = String(value || '');
+      if (modifier !== 'topics' && modifier !== 'results') {
+        container.textContent = text;
+        return;
+      }
+
+      var range = getDetailEmphasisRange(text, modifier);
+      if (!range) {
+        container.textContent = text;
+        return;
+      }
+      if (range.start) container.appendChild(document.createTextNode(text.slice(0, range.start)));
+      var strong = document.createElement('strong');
+      strong.textContent = text.slice(range.start, range.start + range.length);
+      container.appendChild(strong);
+      container.appendChild(document.createTextNode(text.slice(range.start + range.length)));
+    }
+
+    function appendDetailItems(container, items, modifier) {
+      var list = null;
+      items.forEach(function (itemData) {
+        if (itemData.type === 'bullet') {
+          if (!list) {
+            list = document.createElement('ul');
+            if (modifier === 'results') list.setAttribute('role', 'list');
+            container.appendChild(list);
+          }
+          var item = document.createElement('li');
+          appendDetailText(item, itemData.text, modifier);
+          list.appendChild(item);
+          return;
+        }
+
+        list = null;
+        var paragraph = document.createElement('p');
+        appendDetailText(paragraph, itemData.text, modifier);
+        container.appendChild(paragraph);
+      });
+    }
+
+    function lowercaseFirstLetter(value) {
+      var text = String(value == null ? '' : value);
+      var firstLetterIndex = text.search(/[A-Za-zА-Яа-яЁё]/);
+      if (firstLetterIndex < 0) return text;
+
+      var startsWithAbbreviation = /^[A-ZА-ЯЁ]{2,}/.test(text.slice(firstLetterIndex));
+      if (startsWithAbbreviation) return text;
+
+      return text.slice(0, firstLetterIndex) +
+        text.charAt(firstLetterIndex).toLocaleLowerCase('ru-RU') +
+        text.slice(firstLetterIndex + 1);
+    }
+
+    function createDetailSection(title, items, modifier) {
+      var section = document.createElement('section');
+      section.className = 'edu2-modal__section edu2-modal__section--' + modifier;
+
+      var heading = document.createElement('h3');
+      heading.textContent = applyRussianNoBreakSpaces(title);
+      section.appendChild(heading);
+      appendDetailItems(section, modifier === 'results' ? items.map(function (itemData) {
+        return {
+          type: itemData.type,
+          text: itemData.type === 'bullet' ? lowercaseFirstLetter(itemData.text) : itemData.text
+        };
+      }) : items, modifier);
+      return section;
+    }
+
+    function parseProgramDetails(details) {
+      var text = String(details || '').trim();
+      var groups = { intro: [], audience: [], topics: [], results: [] };
+      var currentGroup = 'intro';
+
+      text.replace(/\r\n?/g, '\n').split('\n').forEach(function (rawLine) {
+        var line = rawLine.trim();
+        if (!line) return;
+
+        if (/^(?:Для кого|Целевая аудитория)\s*:?\s*$/i.test(line)) {
+          currentGroup = 'audience';
+          return;
+        }
+
+        if (/^Ключевые темы\s*:?\s*$/i.test(line)) {
+          currentGroup = 'topics';
+          return;
+        }
+        if (/^Практические результаты\s*:?\s*$/i.test(line)) {
+          currentGroup = 'results';
+          return;
+        }
+        var singleResult = line.match(/^Практический результат\s*(?:—|–|-)\s*(.+)$/i);
+        if (singleResult) {
+          currentGroup = 'results';
+          line = singleResult[1].trim();
+        }
+
+        var bullet = line.match(/^(?:•|[-–*])\s+(.+)$/);
+        groups[currentGroup].push({
+          type: bullet ? 'bullet' : 'paragraph',
+          text: bullet ? bullet[1].trim() : line
+        });
+      });
+
+      return groups;
+    }
+
+    function renderProgramDetails(container, details, isActive) {
+      var text = String(details || '').trim();
+      container.innerHTML = '';
+      container.classList.toggle('is-empty', !text);
+      if (!text) {
+        container.textContent = applyRussianNoBreakSpaces(isActive
+          ? 'Подробное описание пока не заполнено в официальном реестре.'
+          : 'Описание архивной программы отсутствует в официальном реестре.');
+        return;
+      }
+      var groups = parseProgramDetails(text);
+
+      if (groups.intro.length) {
+        var intro = document.createElement('div');
+        intro.className = 'edu2-modal__intro';
+        appendDetailItems(intro, groups.intro);
+        container.appendChild(intro);
+      }
+
+      if (groups.audience.length || groups.topics.length || groups.results.length) {
+        var sections = document.createElement('div');
+        sections.className = 'edu2-modal__sections';
+        if (groups.audience.length) sections.appendChild(createDetailSection('Для кого', groups.audience, 'audience'));
+        if (groups.results.length) {
+          sections.appendChild(createDetailSection(
+            groups.results.length === 1 ? 'Практический результат' : 'Практические результаты',
+            groups.results,
+            'results'
+          ));
+        }
+        if (groups.topics.length) sections.appendChild(createDetailSection('Ключевые темы', groups.topics, 'topics'));
+        container.appendChild(sections);
+      }
+      applyRussianTypography(container);
+    }
+
+    function getModalPrograms() {
+      return currentFilteredPrograms.slice(0, visibleProgramLimit).filter(hasProgramDetails);
+    }
+
+    function updateModalNavigation() {
+      var modalPrograms = getModalPrograms();
+      var currentIndex = -1;
+
+      for (var index = 0; index < modalPrograms.length; index += 1) {
+        if (String(modalPrograms[index].id) === String(currentModalProgramId)) {
+          currentIndex = index;
+          break;
+        }
+      }
+
+      if (modalNavigation) modalNavigation.hidden = modalPrograms.length <= 1 || currentIndex < 0;
+      var positionLabel = currentIndex >= 0 ? 'Программа ' + (currentIndex + 1) + ' из ' + modalPrograms.length : '';
+      if (modalPosition) modalPosition.textContent = positionLabel;
+      if (modalMobilePosition) modalMobilePosition.textContent = positionLabel;
+      if (modalAnnouncement && currentIndex >= 0 && programModal && !programModal.hidden) {
+        modalAnnouncement.textContent = 'Программа ' + (currentIndex + 1) + ' из ' + modalPrograms.length + ': ' + modalPrograms[currentIndex].t;
+      }
+      if (modalPreviousButton) modalPreviousButton.disabled = currentIndex <= 0;
+      if (modalNextButton) modalNextButton.disabled = currentIndex < 0 || currentIndex >= modalPrograms.length - 1;
+    }
+
+    function updateModalBodyOverflow() {
+      if (!modalBody) return;
+      if (modalBody.scrollHeight > modalBody.clientHeight + 1) modalBody.setAttribute('tabindex', '0');
+      else modalBody.removeAttribute('tabindex');
+      updateModalToolbarTitle();
+    }
+
+    function updateModalToolbarTitle() {
+      if (!modalBody || !modalTitle || !modalToolbarTitle || !modalToolbarLabel || !programModal || programModal.hidden) return;
+      var pinned = modalTitle.getBoundingClientRect().bottom <= modalBody.getBoundingClientRect().top + 4;
+      modalToolbarTitle.hidden = !pinned;
+      modalToolbarLabel.hidden = pinned;
+    }
+
+    function makeModalBackgroundInert() {
+      if (!programModal || modalInertedElements.length) return;
+      var branch = programModal;
+
+      while (branch && branch !== document.body) {
+        var parent = branch.parentElement;
+        if (!parent) break;
+
+        Array.prototype.forEach.call(parent.children, function (element) {
+          if (element === branch || element.matches('script, style, link, template') || element.hasAttribute('inert')) return;
+          element.setAttribute('inert', '');
+          modalInertedElements.push(element);
+        });
+        branch = parent;
+      }
+    }
+
+    function restoreModalBackground() {
+      modalInertedElements.forEach(function (element) {
+        if (element && element.isConnected) element.removeAttribute('inert');
+      });
+      modalInertedElements = [];
+    }
+
+    function renderModalProgram(program) {
+      if (!program || !hasProgramDetails(program)) return false;
+      var statusLabel = program.a ? 'Действует в 2026' : 'Архивная программа';
+      var details = String(program.text || '').trim();
+
+      currentModalProgramId = String(program.id);
+      if (modalStatus) {
+        modalStatus.textContent = statusLabel;
+        modalStatus.classList.toggle('is-archive', !program.a);
+      }
+      if (modalDirection) modalDirection.textContent = applyRussianNoBreakSpaces(program.d || 'Направление не указано');
+      if (modalTitle) {
+        modalTitle.textContent = applyRussianNoBreakSpaces(program.t);
+        modalTitle.classList.toggle('is-long-title', String(program.t || '').trim().length > 92);
+      }
+      if (modalToolbarTitle) {
+        modalToolbarTitle.textContent = applyRussianNoBreakSpaces(getCatalogTitle(program));
+        modalToolbarTitle.setAttribute('title', program.t);
+        modalToolbarTitle.hidden = true;
+      }
+      if (modalToolbarLabel) modalToolbarLabel.hidden = false;
+      if (modalHours) modalHours.textContent = program.h ? program.h + ' ак. ч.' : 'Трудоёмкость не указана';
+      if (modalContact) {
+        modalContact.href = getProgramContactUrl(program);
+        modalContact.textContent = program.a ? 'Уточнить условия по почте' : 'Узнать об актуальной программе';
+      }
+      if (modalConditions) modalConditions.textContent = program.a
+        ? 'Стоимость, даты, порядок зачисления и итоговый документ уточните у образовательного подразделения.'
+        : 'Программа в архиве. Уточните у образовательного подразделения возможность обучения или актуальную замену.';
+      if (modalDetails) renderProgramDetails(modalDetails, details, program.a);
+      if (modalBody) modalBody.scrollTop = 0;
+      updateModalNavigation();
+      applyRussianTypography(modalDialog);
+      window.requestAnimationFrame(updateModalBodyOverflow);
+      return true;
+    }
+
+    function openProgramModal(program, trigger) {
+      if (!programModal || !modalDialog || !program || !hasProgramDetails(program)) return;
+
+      closeDirectionPicker(false);
+      setMenu(false);
+      clearModalStepAnimation();
+      lastFocusedElement = trigger && trigger.isConnected ? trigger : document.activeElement;
+      if (!renderModalProgram(program)) return;
+
+      previousBodyOverflow = document.body.style.overflow;
+      programModal.hidden = false;
+      makeModalBackgroundInert();
+      document.body.style.overflow = 'hidden';
+      window.requestAnimationFrame(function () {
+        if (programModal.hidden) return;
+        updateModalBodyOverflow();
+        if (modalTitle) modalTitle.focus({ preventScroll: true });
+        else if (modalCloseButton) modalCloseButton.focus({ preventScroll: true });
+        else modalDialog.focus({ preventScroll: true });
+      });
+    }
+
+    function clearModalStepAnimation() {
+      if (modalStepAnimationTimer) {
+        window.clearTimeout(modalStepAnimationTimer);
+        modalStepAnimationTimer = null;
+      }
+      if (modalDialog) modalDialog.classList.remove('is-stepping-next', 'is-stepping-previous');
+    }
+
+    function animateModalStep(offset) {
+      if (!modalDialog || !offset) return;
+      clearModalStepAnimation();
+      void modalDialog.offsetWidth;
+      modalDialog.classList.add(offset > 0 ? 'is-stepping-next' : 'is-stepping-previous');
+      modalStepAnimationTimer = window.setTimeout(function () {
+        if (modalDialog) modalDialog.classList.remove('is-stepping-next', 'is-stepping-previous');
+        modalStepAnimationTimer = null;
+      }, 280);
+    }
+
+    function stepModal(offset, focusTarget) {
+      var modalPrograms = getModalPrograms();
+      var currentIndex = -1;
+
+      for (var index = 0; index < modalPrograms.length; index += 1) {
+        if (String(modalPrograms[index].id) === String(currentModalProgramId)) {
+          currentIndex = index;
+          break;
+        }
+      }
+
+      if (currentIndex < 0) return;
+      var nextProgram = modalPrograms[currentIndex + offset];
+      if (!nextProgram || !renderModalProgram(nextProgram)) return;
+      animateModalStep(offset);
+      window.requestAnimationFrame(function () {
+        updateModalBodyOverflow();
+        if (focusTarget && focusTarget.isConnected && programModal.contains(focusTarget) && !focusTarget.disabled) focusTarget.focus({ preventScroll: true });
+        else if (offset > 0 && modalPreviousButton && !modalPreviousButton.disabled) modalPreviousButton.focus({ preventScroll: true });
+        else if (offset < 0 && modalNextButton && !modalNextButton.disabled) modalNextButton.focus({ preventScroll: true });
+        else if (modalCloseButton) modalCloseButton.focus({ preventScroll: true });
+      });
+    }
+
+    function isEditableKeyboardTarget(target) {
+      return Boolean(target && target.closest && target.closest('input, textarea, select, [contenteditable]:not([contenteditable="false"]), [role="textbox"], [role="combobox"], [role="listbox"]'));
+    }
+
+    function closeProgramModal() {
+      if (!programModal || programModal.hidden) return;
+      clearModalStepAnimation();
+      programModal.hidden = true;
+      restoreModalBackground();
+      currentModalProgramId = null;
+      if (modalAnnouncement) modalAnnouncement.textContent = '';
+      document.body.style.overflow = previousBodyOverflow;
+      if (lastFocusedElement && document.contains(lastFocusedElement) && typeof lastFocusedElement.focus === 'function') {
+        lastFocusedElement.focus({ preventScroll: true });
+      } else if (resultsSummary && typeof resultsSummary.focus === 'function') {
+        resultsSummary.setAttribute('tabindex', '-1');
+        resultsSummary.focus({ preventScroll: true });
+      }
+    }
+
+    function applyProgramsData(rows, source, preserveFilters, animateItems) {
+      var previousDirection = preserveFilters && directionSelect ? directionSelect.value : 'all';
+      programData = rows.map(normalizeRemoteProgram).filter(function (program) { return program.t; });
+      populateDirections();
+
+      if (directionSelect) {
+        var directionExists = Array.prototype.some.call(directionSelect.options, function (option) {
+          return option.value === previousDirection;
+        });
+        directionSelect.value = directionExists ? previousDirection : 'all';
+        updateDirectionPickerSelection();
+        var selectedDirection = directionSelect.options[directionSelect.selectedIndex] || directionSelect.options[0];
+        updateActiveDirectionFilter(
+          selectedDirection ? selectedDirection.value : 'all',
+          selectedDirection ? (selectedDirection.getAttribute('data-label') || selectedDirection.textContent.trim()) : 'Все направления'
+        );
+      }
+
+      refreshCounts();
+
+      if (!programData.length) {
+        root.setAttribute('data-edu2-program-source', source + '-empty');
+        showCatalogState('source-empty', 'Программы пока не опубликованы', 'Актуальный список появится здесь после публикации программ.', false);
+        return;
+      }
+
+      hideCatalogState();
+      renderPrograms({ animateItems: animateItems, preserveLimit: preserveFilters && requestedProgramOpened });
+      root.setAttribute('data-edu2-program-source', source);
+      openRequestedProgram();
+    }
+
+    function loadProgramsFromApi() {
+      programsRequestSequence += 1;
+      var requestSequence = programsRequestSequence;
+      clearProgramsSlowNoticeTimer();
+      var cachedPrograms = readProgramsCache();
+      var hasCachedPrograms = cachedPrograms !== null;
+
+      if (hasCachedPrograms) applyProgramsData(cachedPrograms, 'browser-cache', false, false);
+      else renderProgramsLoading();
+
+      var apiUrl = PROGRAMS_API_URL.trim();
+      if (!apiUrl || !/^https:\/\//.test(apiUrl) || typeof window.fetch !== 'function') {
+        console.error('РОСДОРСПК: URL API программ не задан или Fetch API недоступен');
+        clearProgramsSlowNoticeTimer();
+        if (!hasCachedPrograms) renderProgramsLoadError();
+        return;
+      }
+
+      var separator = apiUrl.indexOf('?') === -1 ? '?' : '&';
+      if (!hasCachedPrograms) {
+        programsSlowNoticeTimer = window.setTimeout(function () {
+          if (requestSequence === programsRequestSequence) renderProgramsSlowNotice();
+        }, PROGRAMS_SLOW_NOTICE_DELAY);
+      }
+
+      function requestPrograms(attempt) {
+        if (requestSequence !== programsRequestSequence) return;
+        var controller = typeof window.AbortController === 'function' ? new window.AbortController() : null;
+        var timeoutId = controller ? window.setTimeout(function () { controller.abort(); }, PROGRAMS_REQUEST_TIMEOUT) : null;
+        var requestOptions = { method: 'GET', redirect: 'follow', cache: 'no-store' };
+        if (controller) requestOptions.signal = controller.signal;
+
+        window.fetch(apiUrl + separator + 'source=education-page', requestOptions)
+          .then(function (response) {
+            if (!response.ok) throw new Error('Programs API returned ' + response.status);
+            return response.json();
+          })
+          .then(function (payload) {
+            if (!payload || payload.ok !== true || !Array.isArray(payload.programs)) throw new Error('Invalid programs response');
+            if (timeoutId) window.clearTimeout(timeoutId);
+            if (requestSequence !== programsRequestSequence) return;
+            clearProgramsSlowNoticeTimer();
+            writeProgramsCache(payload.programs);
+
+            if (!hasCachedPrograms || !isSameProgramsData(cachedPrograms, payload.programs)) {
+              applyProgramsData(payload.programs, 'google-sheets', hasCachedPrograms, true);
+            }
+          })
+          .catch(function (error) {
+            if (timeoutId) window.clearTimeout(timeoutId);
+            if (requestSequence !== programsRequestSequence) return;
+            if (attempt === 0) {
+              root.setAttribute('data-edu2-program-source', 'api-retrying');
+              window.setTimeout(function () { requestPrograms(1); }, PROGRAMS_AUTO_RETRY_DELAY);
+              return;
+            }
+            clearProgramsSlowNoticeTimer();
+            console.error('РОСДОРСПК: ошибка загрузки программ после повторной попытки', error);
+            if (!hasCachedPrograms) renderProgramsLoadError();
+          });
+      }
+
+      requestPrograms(0);
+    }
+
+    if (menuButton && mobileMenu) {
+      menuButton.addEventListener('click', function () {
+        setMenu(!mobileMenu.classList.contains('is-open'));
+      });
+      mobileMenu.addEventListener('click', function (event) {
+        if (event.target.closest('a')) setMenu(false);
+      });
+      document.addEventListener('click', function (event) {
+        if (mobileMenu.classList.contains('is-open') && !event.target.closest('.edu2-header')) setMenu(false);
+      });
+    }
+
+    Array.prototype.slice.call(root.querySelectorAll('a[href^="#edu2-"]')).forEach(function (link) {
+      link.addEventListener('click', function (event) {
+        if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+        var hash = link.getAttribute('href');
+        if (!hash) return;
+        event.preventDefault();
+        event.stopPropagation();
+        setMenu(false);
+        scrollToSection(hash, true, true);
+      });
+    });
+
+    window.addEventListener('hashchange', function () {
+      scrollToSection(window.location.hash, false, false);
+    });
+
+    if (programGrid) {
+      programGrid.addEventListener('click', function (event) {
+        var trigger = event.target.closest('button[data-edu2-program-id]');
+        if (!trigger) {
+          var card = event.target.closest('.edu2-program-card.is-interactive');
+          var selection = typeof window.getSelection === 'function' ? window.getSelection() : null;
+          var selectionInsideCard = Boolean(card && selection && !selection.isCollapsed && ((selection.anchorNode && card.contains(selection.anchorNode)) || (selection.focusNode && card.contains(selection.focusNode))));
+          if (card && programGrid.contains(card) && !selectionInsideCard) {
+            trigger = card.querySelector('button[data-edu2-program-id]');
+          }
+        }
+        if (trigger && programGrid.contains(trigger)) {
+          openProgramModal(findProgramById(trigger.getAttribute('data-edu2-program-id')), trigger);
+        }
+      });
+    }
+
+    statusButtons.forEach(function (button) {
+      button.addEventListener('click', function () {
+        setSelectedStatus(button.getAttribute('data-edu2-status') || 'active');
+        renderPrograms({ revealResults: true, animateReveal: true });
+      });
+    });
+
+    if (emptyStateSwitchButton) {
+      emptyStateSwitchButton.addEventListener('click', function () {
+        var targetStatus = emptyStateSwitchButton.getAttribute('data-edu2-target-status');
+        if (!targetStatus) return;
+        setSelectedStatus(targetStatus);
+        renderPrograms({ revealResults: true, animateReveal: true, forceRevealResults: true });
+        focusResultsHeadingAfterUpdate();
+      });
+    }
+    if (emptyStateClearSearchButton) {
+      emptyStateClearSearchButton.addEventListener('click', function () {
+        if (!searchInput) return;
+        searchInput.value = '';
+        renderPrograms({ revealResults: true, animateReveal: true, forceRevealResults: true });
+        window.requestAnimationFrame(function () {
+          searchInput.focus({ preventScroll: true });
+        });
+      });
+    }
+    if (emptyStateResetButton) {
+      emptyStateResetButton.addEventListener('click', function () {
+        var resetMode = emptyStateResetButton.getAttribute('data-edu2-reset-mode');
+        if (resetMode === 'all') {
+          resetFilters(true);
+          return;
+        }
+
+        if (resetMode === 'direction' && directionSelect) {
+          directionSelect.value = 'all';
+          updateDirectionPickerSelection();
+          renderPrograms({ revealResults: true, animateReveal: true, forceRevealResults: true });
+          window.requestAnimationFrame(function () {
+            if (filterOptions && filterOptions.hidden) filtersToggle.focus({ preventScroll: true });
+            else if (directionToggle) directionToggle.focus({ preventScroll: true });
+          });
+          return;
+        }
+
+        if (resetMode === 'status') {
+          setSelectedStatus('active');
+          renderPrograms({ revealResults: true, animateReveal: true, forceRevealResults: true });
+          window.requestAnimationFrame(function () {
+            var activeStatusButton = statusButtons.filter(function (button) {
+              return button.getAttribute('data-edu2-status') === 'active';
+            })[0];
+            if (filterOptions && filterOptions.hidden) filtersToggle.focus({ preventScroll: true });
+            else if (activeStatusButton) activeStatusButton.focus({ preventScroll: true });
+          });
+        }
+      });
+    }
+    if (retryButton) retryButton.addEventListener('click', loadProgramsFromApi);
+    if (resetFiltersButton) resetFiltersButton.addEventListener('click', function () { resetFilters(false); });
+    if (searchInput) {
+      searchInput.addEventListener('input', function () {
+        syncSearchClearVisibility();
+        renderPrograms({ revealResults: true });
+      });
+    }
+    if (directionSelect) {
+      directionSelect.addEventListener('change', function () {
+        updateDirectionPickerSelection();
+        renderPrograms({ revealResults: true, animateReveal: true });
+      });
+    }
+
+    if (directionToggle) {
+      directionToggle.addEventListener('click', function () {
+        if (directionToggle.getAttribute('aria-expanded') === 'true') closeDirectionPicker(false);
+        else openDirectionPicker();
+      });
+
+      directionToggle.addEventListener('keydown', function (event) {
+        if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+          event.preventDefault();
+          openDirectionPicker();
+        } else if (event.key === 'Escape' && directionToggle.getAttribute('aria-expanded') === 'true') {
+          event.preventDefault();
+          event.stopPropagation();
+          closeDirectionPicker(false);
+        } else if (event.key.length === 1 && event.key !== ' ' && !event.ctrlKey && !event.metaKey && !event.altKey) {
+          event.preventDefault();
+          openDirectionPicker();
+          window.requestAnimationFrame(function () {
+            var selectedOption = getDirectionOptionElements().filter(function (option) {
+              return option.getAttribute('aria-selected') === 'true';
+            })[0];
+            focusDirectionByTypeahead(event.key, selectedOption);
+          });
+        }
+      });
+    }
+
+    if (directionListbox) {
+      directionListbox.addEventListener('click', function (event) {
+        var option = event.target.closest('[data-edu2-direction-option]');
+        if (option) selectDirection(option.getAttribute('data-value'));
+      });
+
+      directionListbox.addEventListener('keydown', function (event) {
+        var option = event.target.closest('[data-edu2-direction-option]');
+        if (!option) return;
+
+        if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+          event.preventDefault();
+          moveDirectionFocus(option, event.key === 'ArrowDown' ? 1 : -1);
+        } else if (event.key === 'Home' || event.key === 'End') {
+          event.preventDefault();
+          var options = getEnabledDirectionOptionElements();
+          var targetOption = event.key === 'Home' ? options[0] : options[options.length - 1];
+          if (targetOption) targetOption.focus({ preventScroll: true });
+        } else if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          selectDirection(option.getAttribute('data-value'));
+        } else if (event.key === 'Escape') {
+          event.preventDefault();
+          event.stopPropagation();
+          closeDirectionPicker(true);
+        } else if (event.key === 'Tab') {
+          closeDirectionPicker(false);
+        } else if (event.key.length === 1 && !event.ctrlKey && !event.metaKey && !event.altKey) {
+          event.preventDefault();
+          focusDirectionByTypeahead(event.key, option);
+        }
+      });
+    }
+
+    document.addEventListener('click', function (event) {
+      if (directionPicker && directionToggle && directionToggle.getAttribute('aria-expanded') === 'true' && !directionPicker.contains(event.target)) {
+        closeDirectionPicker(false);
+      }
+    });
+
+    if (clearDirectionButton) {
+      clearDirectionButton.addEventListener('click', function () {
+        if (!directionSelect) return;
+        directionSelect.value = 'all';
+        updateDirectionPickerSelection();
+        closeDirectionPicker(false);
+        renderPrograms({ revealResults: true, animateReveal: true });
+        window.requestAnimationFrame(function () {
+          if (directionToggle) directionToggle.focus({ preventScroll: true });
+        });
+      });
+    }
+
+    if (searchClearButton) {
+      searchClearButton.addEventListener('click', function () {
+        if (searchInput) {
+          searchInput.value = '';
+          syncSearchClearVisibility();
+          renderPrograms({ revealResults: true, animateReveal: true });
+          searchInput.focus({ preventScroll: true });
+        }
+      });
+    }
+
+    if (showMoreButton) {
+      showMoreButton.addEventListener('click', function () {
+        var previousCardCount = programGrid ? programGrid.children.length : 0;
+        visibleProgramLimit += PAGE_SIZE;
+        renderPrograms({ preserveLimit: true, animateItems: true, animateFrom: previousCardCount });
+        window.requestAnimationFrame(function () {
+          var firstNewItem = null;
+          var firstNewControl = null;
+          if (programGrid) {
+            for (var index = previousCardCount; index < programGrid.children.length; index += 1) {
+              var control = programGrid.children[index].querySelector('button[data-edu2-program-id]');
+              if (control) {
+                firstNewItem = programGrid.children[index];
+                firstNewControl = control;
+                break;
+              }
+            }
+          }
+          if (firstNewItem && firstNewControl) {
+            try {
+              firstNewItem.scrollIntoView({ block: 'start', behavior: 'auto' });
+            } catch (error) {
+              firstNewItem.scrollIntoView(true);
+            }
+            firstNewControl.focus({ preventScroll: true });
+          }
+          else if (!showMoreButton.hidden) showMoreButton.focus({ preventScroll: true });
+          else if (backToCatalogButton && !backToCatalogButton.hidden) backToCatalogButton.focus({ preventScroll: true });
+        });
+      });
+    }
+
+    if (backToCatalogButton) {
+      backToCatalogButton.addEventListener('click', function () {
+        scrollToSection('#edu2-programs', true, false);
+        window.requestAnimationFrame(function () {
+          if (searchInput) searchInput.focus({ preventScroll: true });
+        });
+      });
+    }
+
+    if (modalBody) modalBody.addEventListener('scroll', updateModalToolbarTitle, { passive: true });
+
+    if (modalPreviousButton) {
+      modalPreviousButton.addEventListener('click', function () {
+        stepModal(-1, modalPreviousButton);
+      });
+    }
+
+    if (modalNextButton) {
+      modalNextButton.addEventListener('click', function () {
+        stepModal(1, modalNextButton);
+      });
+    }
+
+    Array.prototype.slice.call(root.querySelectorAll('[data-edu2-modal-close]')).forEach(function (control) {
+      control.addEventListener('click', closeProgramModal);
+    });
+
+    if (programModal) {
+      programModal.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
+          event.preventDefault();
+          event.stopPropagation();
+          closeProgramModal();
+          return;
+        }
+        if ((event.key === 'ArrowLeft' || event.key === 'ArrowRight') &&
+            !event.defaultPrevented &&
+            !event.repeat &&
+            !event.isComposing &&
+            !event.ctrlKey &&
+            !event.metaKey &&
+            !event.altKey &&
+            !event.shiftKey &&
+            !isEditableKeyboardTarget(event.target)) {
+          var offset = event.key === 'ArrowLeft' ? -1 : 1;
+          var targetButton = offset < 0 ? modalPreviousButton : modalNextButton;
+          if (targetButton && !targetButton.disabled) {
+            event.preventDefault();
+            event.stopPropagation();
+            stepModal(offset, document.activeElement);
+          }
+          return;
+        }
+        if (event.key !== 'Tab') return;
+        var focusable = Array.prototype.slice.call(programModal.querySelectorAll('button:not([hidden]):not(:disabled), a[href]:not([hidden]), [tabindex]:not([tabindex="-1"]):not([hidden])')).filter(function (element) {
+          return !element.closest('[hidden]');
+        });
+        if (!focusable.length) return;
+        var first = focusable[0];
+        var last = focusable[focusable.length - 1];
+        var activeElement = document.activeElement;
+        if (focusable.indexOf(activeElement) < 0) {
+          event.preventDefault();
+          (event.shiftKey ? last : first).focus();
+        } else if (event.shiftKey && activeElement === first) {
+          event.preventDefault();
+          last.focus();
+        } else if (!event.shiftKey && activeElement === last) {
+          event.preventDefault();
+          first.focus();
+        }
+      });
+    }
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') {
+        setMenu(false);
+        closeDirectionPicker(false);
+      }
+    });
+
+    window.addEventListener('scroll', requestStickyFiltersUpdate, { passive: true });
+
+    window.addEventListener('resize', function () {
+      closeDirectionPicker(false);
+      requestStickyFiltersUpdate();
+      if (!programModal || programModal.hidden) return;
+      window.requestAnimationFrame(updateModalBodyOverflow);
+    });
+
+    if (stickyFiltersMedia) {
+      if (typeof stickyFiltersMedia.addEventListener === 'function') stickyFiltersMedia.addEventListener('change', requestStickyFiltersUpdate);
+      else if (typeof stickyFiltersMedia.addListener === 'function') stickyFiltersMedia.addListener(requestStickyFiltersUpdate);
+    }
+
+    applyRussianTypography(root);
+    requestStickyFiltersUpdate();
+    loadProgramsFromApi();
+    alignInitialHash();
+  })();
+
+</script>
+<script src="site-chrome.js"></script>
+
+</body>
+</html>

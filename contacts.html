@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Контакты — РОСДОРСПК</title>
+<meta name="description" content="Контакты РОСДОРСПК: телефон и электронная почта образовательного подразделения, адрес ФАУ РОСДОРНИИ и режим работы.">
+<link rel="stylesheet" href="site-chrome.css">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#fff;color:#18283d}
+.contact-page{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+.contact-page,.contact-page *{box-sizing:border-box}
+.contact-shell{width:min(1120px,calc(100% - 40px));margin-inline:auto}
+.contact-page a{color:#0869e8;text-underline-offset:4px}
+.contact-page :is(a,button):focus-visible{outline:3px solid #79adf1;outline-offset:4px;border-radius:5px}
+.contact-skip{position:fixed;left:16px;top:-100px;z-index:1000;background:#0869e8;color:#fff;padding:12px 16px;border-radius:8px}
+.contact-skip:focus{top:16px}
+.contact-hero{padding:40px 0 24px}
+.contact-hero h1{font-size:44px;line-height:1.15;margin:0;font-weight:750}
+.contact-lead{max-width:620px;margin:14px 0 0;color:#59697c;font-size:17px;line-height:1.6}
+.contact-training{padding:28px 0 32px;border-top:1px solid #e3e8ef;min-width:0}
+.contact-page h2{margin:0;font-size:22px;font-weight:600;line-height:1.4;letter-spacing:-.02em;color:#18283d}
+.contact-affiliation{margin:6px 0 0;font-size:14px;line-height:1.6;color:#59697c}
+.contact-details{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 48px;margin:24px 0 0;min-width:0}
+.contact-detail{min-width:0}
+.contact-detail dt{font-size:14px;line-height:1.5;color:#59697c;margin-bottom:0}
+.contact-detail dd{margin:0;min-width:0;font-size:17px;line-height:1.5}
+.contact-detail a{display:inline-flex;align-items:flex-start;min-height:44px;max-width:100%;padding-top:4px;vertical-align:top;overflow-wrap:anywhere;font-size:24px;line-height:1.4;letter-spacing:-.025em;font-weight:550;text-decoration:none;color:#0869e8}
+.contact-detail a:hover{color:#0869e8;text-decoration:underline}
+.contact-extension{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-top:0;font-size:14px;line-height:1.5;color:#59697c}
+.contact-extension strong{color:#18283d;font-size:16px;line-height:1.5;font-weight:600;font-variant-numeric:tabular-nums}
+.contact-location-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-areas:"address hours" "map map";gap:28px 48px;padding:32px 0 36px;border-top:1px solid #e3e8ef;align-items:start}
+.contact-location-grid>section{min-width:0}
+.contact-address-section{grid-area:address}
+.contact-hours-section{grid-area:hours}
+.contact-location-grid h2{margin-bottom:14px}
+.contact-address{font-style:normal;font-size:20px;line-height:1.5;max-width:460px}
+.contact-address small{display:block;color:#59697c;font-size:14px;margin-top:8px}
+.contact-address small span{display:block}
+.contact-route{margin-top:18px}
+.contact-map-link{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;max-width:100%;padding:10px 16px;border:1px solid #c2d9f9;border-radius:8px;background:#edf4ff;font-size:14px;font-weight:550;line-height:1.5;text-decoration:none}
+.contact-map-link:hover{background:#e0edff}
+.contact-hours-note{margin:-6px 0 14px;color:#59697c;font-size:14px;line-height:1.5}
+.contact-schedule{margin:0}
+.contact-schedule>div{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:baseline;gap:16px;padding:10px 0;border-bottom:1px solid #e3e8ef;font-size:15px;line-height:1.5}
+.contact-schedule>div:first-child{padding-top:0}
+.contact-schedule>div:last-child{border:0}
+.contact-schedule dt{color:#59697c}
+.contact-schedule dd{margin:0;font-variant-numeric:tabular-nums}
+.contact-schedule-short{display:none}
+.contact-weekend{margin:12px 0 0;font-size:14px;line-height:1.6;color:#59697c}
+.contact-map-section{grid-area:map;min-width:0;margin:0}
+.contact-map{height:320px;overflow:hidden;border:1px solid #e3e8ef;border-radius:12px;background:#f8fafc}
+.contact-map iframe{display:block;width:100%;height:100%;border:0}
+@media(max-width:960px){
+ .contact-shell{width:calc(100% - 36px)}
+ .contact-hero{padding:28px 0 24px}.contact-hero h1{font-size:36px}
+ .contact-details,.contact-location-grid{column-gap:28px}
+}
+@media(max-width:760px){
+ .contact-details{grid-template-columns:1fr;gap:20px}
+ .contact-location-grid{grid-template-columns:1fr;grid-template-areas:"address" "hours" "map";gap:28px}
+}
+@media(max-width:640px){
+ .contact-hero{padding:24px 0 20px}.contact-hero h1{font-size:32px}
+ .contact-lead{font-size:16px;margin-top:8px;line-height:1.5}
+ .contact-training{padding:24px 0}.contact-page h2{font-size:20px}.contact-details{margin-top:20px}.contact-detail a{font-size:22px}
+ .contact-location-grid{padding:24px 0 28px}.contact-location-grid h2{margin-bottom:12px}
+ .contact-address{font-size:18px}.contact-hours-note{margin:0 0 12px}
+ .contact-schedule-full{display:none}.contact-schedule-short{display:inline}
+ .contact-weekend{margin-top:8px}.contact-map{height:240px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.contact-lead,.contact-detail dt,.contact-extension,.contact-schedule dt,.contact-weekend{color:#47586d}
+</style>
+<link rel="icon" type="image/x-icon" sizes="16x16 32x32 48x48 256x256" href="assets/brand/favicon-v4.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/brand/favicon-v4-32.png">
+</head>
+<body>
+<a class="contact-skip" href="#contact-main">Перейти к контактам</a>
+<header class="edu2-chrome edu2-chrome-header">
+    <div class="edu2-chrome-container edu2-chrome-header__inner">
+      <a class="edu2-chrome-brand" href="index.html" aria-label="РОСДОРСПК — главная">
+        <span class="edu2-chrome-brand__mark" aria-hidden="true"><img src="assets/brand/rosdorspk-mark-v4.png" width="256" height="256" alt="" decoding="async"></span>
+        <span class="edu2-chrome-brand__text"><strong>РОСДОРСПК</strong><small>Система повышения квалификации</small></span>
+      </a>
+      <nav class="edu2-chrome-nav" aria-label="Основная навигация">
+        <a href="index.html">Главная</a>
+        <a href="education.html">Обучение</a>
+        <a href="webinars.html">Вебинары</a>
+        <a href="regulations.html">Нормативные обзоры</a>
+      <div class="edu2-chrome-about" data-edu2-chrome-about>
+        <button class="edu2-chrome-about__trigger is-active" type="button" aria-controls="edu2-chrome-about-menu" aria-expanded="false" data-edu2-chrome-about-trigger>О&nbsp;нас <span class="edu2-chrome-about__chevron" aria-hidden="true">⌄</span>
+        </button>
+        <div class="edu2-chrome-about__menu" id="edu2-chrome-about-menu" aria-hidden="true" inert data-edu2-chrome-about-menu>
+          <p class="edu2-chrome-about__heading">О системе РОСДОРСПК</p>
+          <a class="edu2-chrome-about__item" data-about-icon="results" href="results.html"><strong>Результаты в цифрах</strong><small>Масштаб, география и аудитория</small></a>
+          <a class="edu2-chrome-about__item" data-about-icon="organization" href="organization.html"><strong>Сведения об организации</strong><small>Документы, структура и руководство</small></a>
+          <a class="edu2-chrome-about__item is-active" data-about-icon="contacts" href="contacts.html" aria-current="page"><strong>Контакты</strong><small>Телефон, почта и адрес</small></a>
+          <a class="edu2-chrome-about__item" data-about-icon="history" href="history.html"><strong>История создания</strong><small>Этапы развития системы</small></a>
+        </div>
+      </div>
+      </nav>
+      <button class="edu2-chrome-menu-button" type="button" aria-expanded="false" aria-controls="edu2-chrome-mobile-menu" aria-label="Открыть меню" data-edu2-chrome-menu-button>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="edu2-chrome-mobile-menu" id="edu2-chrome-mobile-menu" aria-label="Мобильная навигация" aria-hidden="true" inert>
+      <a href="index.html">Главная</a>
+      <a href="education.html">Обучение</a>
+      <a href="webinars.html">Вебинары</a>
+      <a href="regulations.html">Нормативные обзоры</a>
+    <div class="edu2-chrome-mobile-about" data-edu2-chrome-mobile-about>
+      <button class="edu2-chrome-mobile-about__toggle is-active" type="button" aria-expanded="false" aria-controls="edu2-chrome-about-mobile-menu" data-edu2-chrome-mobile-about-toggle>
+        О&nbsp;нас <span aria-hidden="true">⌄</span>
+      </button>
+      <div class="edu2-chrome-mobile-about__menu" id="edu2-chrome-about-mobile-menu" aria-hidden="true" inert data-edu2-chrome-mobile-about-menu>
+        <div class="edu2-chrome-mobile-about__inner">
+        <a data-about-icon="results" href="results.html">Результаты в цифрах</a>
+        <a data-about-icon="organization" href="organization.html">Сведения об организации</a>
+        <a data-about-icon="contacts" class="is-active" href="contacts.html" aria-current="page">Контакты</a>
+        <a data-about-icon="history" href="history.html">История создания</a>
+              </div>
+      </div>
+    </div>
+    </nav>
+  </header>
+<main class="contact-page" id="contact-main">
+ <section class="contact-hero"><div class="contact-shell"><h1>Контакты</h1><p class="contact-lead">По вопросам обучения и выбора программ.</p></div></section>
+ <div class="contact-shell">
+  <section class="contact-training" aria-labelledby="contact-training-title">
+   <h2 id="contact-training-title">Департамент развития отраслевого образования</h2>
+   <p class="contact-affiliation">ФАУ «РОСДОРНИИ»</p>
+   <dl class="contact-details">
+    <div class="contact-detail">
+     <dt>Электронная почта</dt>
+     <dd><a href="mailto:info@rosdorspk.ru">info@rosdorspk.ru</a></dd>
+    </div>
+    <div class="contact-detail">
+     <dt>Телефон</dt>
+     <dd>
+      <a href="tel:+74955400820" aria-describedby="contact-training-extension">+7 (495) 540-08-20</a>
+      <span class="contact-extension" id="contact-training-extension"><span>Добавочный</span> <strong>6259</strong></span>
+     </dd>
+    </div>
+   </dl>
+  </section>
+  <div class="contact-location-grid">
+   <section class="contact-address-section" aria-labelledby="contact-address-title">
+    <h2 id="contact-address-title">Где мы находимся</h2>
+    <address class="contact-address">Москва, ул. Смольная, д. 2<small><span>125493, Россия · ФАУ «РОСДОРНИИ»</span><span>Юридический и фактический адрес</span></small></address>
+    <div class="contact-route"><a class="contact-map-link" href="https://yandex.ru/maps/?rtext=~55.844382%2C37.501204&amp;rtt=auto" target="_blank" rel="noopener noreferrer" aria-label="Построить маршрут до института в Яндекс Картах (откроется новая вкладка)">Маршрут в Яндекс Картах <span aria-hidden="true">↗</span></a></div>
+   </section>
+   <section class="contact-hours-section" aria-labelledby="contact-hours-title">
+    <h2 id="contact-hours-title">Режим работы института</h2>
+    <p class="contact-hours-note">Время московское</p>
+    <dl class="contact-schedule"><div><dt><span class="contact-schedule-full">Понедельник — четверг</span><span class="contact-schedule-short">Пн–чт</span></dt><dd>09:00–18:00</dd></div><div><dt><span class="contact-schedule-full">Пятница</span><span class="contact-schedule-short">Пт</span></dt><dd>09:00–16:45</dd></div><div><dt><span class="contact-schedule-full">Обеденный перерыв</span><span class="contact-schedule-short">Перерыв</span></dt><dd>12:15–13:00</dd></div></dl>
+    <p class="contact-weekend">Выходные: суббота, воскресенье и праздники.</p>
+   </section>
+   <figure class="contact-map-section" aria-label="Расположение института на карте">
+    <div class="contact-map"><iframe id="contact-map-frame" src="https://yandex.ru/map-widget/v1/?ll=37.501204%2C55.844382&amp;pt=37.501204%2C55.844382%2Cpm2rdm&amp;z=16&amp;lang=ru_RU" title="Яндекс Карта: Москва, улица Смольная, 2 — ФАУ РОСДОРНИИ" loading="lazy" allowfullscreen></iframe></div>
+   </figure>
+  </div>
+ </div>
+</main>
+<footer class="edu2-chrome edu2-chrome-footer">
+  <div class="edu2-chrome-container edu2-chrome-footer__grid">
+    <div class="edu2-chrome-footer__brand">
+      <a class="edu2-chrome-brand edu2-chrome-brand--footer" href="index.html" aria-label="РОСДОРСПК — главная">
+        <span class="edu2-chrome-brand__mark" aria-hidden="true"><img src="assets/brand/rosdorspk-mark-v4.png" width="256" height="256" alt="" decoding="async"></span>
+        <span class="edu2-chrome-brand__text"><strong>РОСДОРСПК</strong><small>Система повышения квалификации</small></span>
+      </a>
+      <p>Знания для специалистов <br>дорожного хозяйства.</p>
+    </div>
+    <nav class="edu2-chrome-footer__column" aria-label="Обучение и материалы">
+      <h2>Обучение и материалы</h2>
+      <a href="education.html">Программы обучения</a>
+      <a href="webinars.html">Вебинары</a>
+      <a href="regulations.html">Нормативные обзоры</a>
+    </nav>
+    <nav class="edu2-chrome-footer__column" aria-label="О системе">
+      <h2>О системе</h2>
+      <a href="results.html">Результаты в цифрах</a>
+      <a href="organization.html">Сведения об организации</a>
+      <a href="history.html">История создания</a>
+      <a href="contacts.html">Контакты</a>
+    </nav>
+    <div class="edu2-chrome-footer__contact">
+      <h2>По вопросам обучения</h2>
+      <a class="edu2-chrome-footer__email" href="mailto:info@rosdorspk.ru">info@rosdorspk.ru <span aria-hidden="true">↗</span></a>
+      <a class="edu2-chrome-footer__phone" href="tel:+74955400820">+7 (495) 540-08-20</a>
+      <p>Добавочный <strong>6259</strong></p>
+    </div>
+  </div>
+  <div class="edu2-chrome-container edu2-chrome-footer__bottom">
+    <span>© 2022&#8288;–&#8288;2026 ФАУ «РОСДОРНИИ»</span>
+    <a class="edu2-chrome-footer__policy" href="policy.html#top">Политика конфиденциальности</a>
+  </div>
+</footer>
+<script src="site-chrome.js"></script>
+</body>
+</html>

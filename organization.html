@@ -1,0 +1,1736 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Официальные сведения об образовательной деятельности ФАУ «РОСДОРНИИ»: документы, структура, руководство, программы и условия обучения.">
+  <title>Сведения об организации — РОСДОРСПК</title>
+  <link rel="stylesheet" href="site-chrome.css">
+  <style>
+:root { --org-ink:#18283d; --org-muted:#59697c; --org-blue:#0869e8; --org-line:#e3e8ef; }
+html { scroll-behavior:smooth; }
+body { margin:0; background:#fff; color:var(--org-ink); }
+.org-page { font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif; -webkit-font-smoothing:antialiased; }
+.org-page,.org-page *,.org-page *::before,.org-page *::after { box-sizing:border-box; }
+.org-page [hidden] { display:none!important; }
+.org-shell { width:min(1120px,calc(100% - 40px)); margin-inline:auto; }
+.visually-hidden { position:absolute!important; width:1px!important; height:1px!important; padding:0!important; margin:-1px!important; overflow:hidden!important; clip:rect(0,0,0,0)!important; white-space:nowrap!important; border:0!important; }
+.org-skip-link { position:fixed; left:16px; top:-80px; z-index:1000; padding:12px 16px; background:var(--org-blue); color:white; border-radius:8px; }
+.org-skip-link:focus { top:16px; }
+.org-page a { color:var(--org-blue); text-underline-offset:3px; }
+.org-page :is(a,button,input,summary):focus-visible { outline:3px solid #79adf1; outline-offset:4px; border-radius:5px; }
+.org-page button,.org-page input { font:inherit; }
+.org-hero { padding:42px 0 28px; border-bottom:1px solid var(--org-line); background:#fafbfd; }
+.org-eyebrow { margin:0 0 12px; color:var(--org-muted); font-size:12px; font-weight:650; letter-spacing:.065em; text-transform:uppercase; }
+.org-hero h1 { margin:0; font-size:clamp(30px,3.3vw,44px); line-height:1.15; letter-spacing:-.035em; font-weight:750; }
+.org-hero__lead { max-width:770px; margin:14px 0 0; color:var(--org-muted); font-size:16px; line-height:1.6; }
+.org-quicklinks { display:flex; flex-wrap:wrap; gap:10px 24px; margin-top:22px; }
+.org-quicklinks a { font-size:14px; font-weight:600; text-decoration:none; }
+.org-quicklinks a:hover { text-decoration:underline; }
+.org-main { padding:26px 0 80px; }
+.org-tools { max-width:100%; margin:0 0 30px; }
+.org-search { position:relative; }
+.org-search svg { position:absolute; left:16px; top:16px; width:20px; height:20px; color:#6c7d92; pointer-events:none; }
+.org-search input { width:100%; height:52px; padding:0 54px 0 47px; border:1px solid #cbd5e1; border-radius:10px; color:var(--org-ink); background:#fff; font-size:16px; appearance:none; }
+.org-search input::-webkit-search-cancel-button { display:none; }
+.org-search input:focus { border-color:var(--org-blue); }
+.org-search button { position:absolute; right:7px; top:6px; height:40px; width:40px; border:0; border-radius:7px; background:#f0f3f7; color:var(--org-ink); font-size:24px; cursor:pointer; }
+.org-search-status { margin:10px 0 0; font-size:14px; color:var(--org-muted); }
+.org-search-status:empty { display:none; }
+.org-search-results { margin-top:14px; padding:6px 18px; border:1px solid var(--org-line); border-radius:10px; background:#fafbfd; max-height:440px; overflow:auto; }
+.org-result { display:block; padding:14px 0; text-decoration:none; border-bottom:1px solid var(--org-line); }
+.org-result:last-child { border-bottom:0; }
+.org-result strong { display:block; font-size:15px; }
+.org-result small { display:block; margin-top:5px; color:var(--org-muted); font-size:14px; line-height:1.6; }
+.org-result:hover strong { text-decoration:underline; }
+.org-layout { display:grid; grid-template-columns:250px minmax(0,1fr); gap:44px; align-items:start; }
+.org-contents { position:sticky; top:100px; min-width:0; }
+.org-contents>strong { display:block; margin:0 12px 12px; font-size:12px; font-weight:650; text-transform:uppercase; letter-spacing:.06em; color:var(--org-muted); }
+.org-contents .org-back-search { display:block; margin:0 3px 10px; padding:9px 10px; color:var(--org-blue); font-size:14px; }
+#org-search { scroll-margin-top:105px; }
+.org-contents nav { display:grid; gap:2px; max-height:var(--org-nav-height,calc(100dvh - 210px)); overflow:auto; overscroll-behavior:contain; scrollbar-width:thin; padding:3px; }
+.org-contents a { display:grid; grid-template-columns:22px 1fr; align-items:baseline; gap:8px; padding:9px 10px; border-radius:7px; color:#526176; font-size:14px; line-height:1.45; text-decoration:none; }
+.org-contents a span { color:#697b91; font-size:12px; font-variant-numeric:tabular-nums; }
+.org-contents a:hover { background:#f3f5f8; color:var(--org-ink); }
+.org-contents a[aria-current="location"] { background:#edf4ff; color:#095fcd; font-weight:650; }
+.org-contents a[aria-current="location"] span { color:inherit; }
+.org-mobile-toggle { display:none; }
+.org-sections { min-width:0; }
+.org-section { padding:0 0 28px; margin:0 0 30px; border-bottom:2px solid var(--org-line); scroll-margin-top:105px; }
+.org-section:last-child { margin-bottom:0; border-bottom:0; padding-bottom:0; }
+.org-section-heading { position:relative; padding-bottom:16px; }
+.org-disclosure__number { position:absolute; right:calc(100% + 12px); top:8px; color:#697b91; font-size:12px; font-weight:600; font-variant-numeric:tabular-nums; }
+.org-disclosure__heading { min-width:0; }
+.org-section h2 { margin:0; font-size:25px; line-height:1.3; font-weight:700; letter-spacing:-.025em; }
+.org-section-heading small { display:block; margin-top:6px; font-size:14px; line-height:1.55; color:var(--org-muted); }
+.org-prose { font-size:16px; line-height:1.7; overflow-wrap:anywhere; }
+.org-entry { padding:18px 0; scroll-margin-top:105px; }
+.org-entry + .org-entry { border-top:0; }
+#paid-services .org-section-heading { margin-bottom:12px; }
+#paid-services .org-entry { padding:6px 0 0; }
+#paid-services { padding-bottom:24px; }
+#finance-own-funds { padding:12px 0 20px; }
+#finance-own-funds h3 { font-size:18px; margin-bottom:8px; }
+#finance .org-fact-row dd { font-weight:400; }
+#standards .org-fact-row { grid-template-columns:minmax(0,1.4fr) minmax(0,1fr); padding:16px 0; }
+#standards .org-fact-row dt { color:var(--org-ink); font-size:16px; font-weight:500; }
+#standards .org-fact-row dd { font-weight:400; }
+@media(max-width:540px) { #standards .org-fact-row { grid-template-columns:1fr; gap:8px; } }
+
+#food-health .org-health-group { margin-top:28px; }
+#food-health .org-entry > h3 { font-size:20px; line-height:1.4; }
+#food-health .org-health-group h4 { margin:0 0 12px; font-size:17px; line-height:1.45; }
+#food-health .org-health-basis { color:var(--org-muted); font-size:14px; }
+#food-health .org-fact-row dd { font-weight:400; }
+#food-health .org-health-group { scroll-margin-top:var(--org-scroll-offset,105px); }
+
+#support .org-entry { padding:8px 0 0; }
+#support .org-fact-row { grid-template-columns:minmax(0,1.4fr) minmax(0,1fr); padding:16px 0; }
+#support dt > span { display:block; color:var(--org-ink); font-size:16px; font-weight:500; }
+#support dt > small { display:block; margin-top:4px; font-size:14px; line-height:1.55; color:var(--org-muted); }
+#support dd { font-weight:400; }
+@media(max-width:540px) { #support .org-fact-row { grid-template-columns:1fr; gap:8px; } }
+
+#vacancies .org-vacancies-heading { margin:16px 0 12px; }
+#vacancies .org-fact-row dd { font-weight:400; }
+#vacancies .org-vacancies-note { padding:20px 0 0; color:var(--org-muted); font-size:14px; }
+
+
+#facilities .org-local-nav { gap:8px 22px; margin:4px 0 26px; }
+#facilities .org-local-nav a { flex:0 1 auto; padding:4px 0; border:0; border-radius:0; background:none; text-decoration:underline; text-underline-offset:4px; }
+#facilities .org-local-nav a[aria-current="location"] { font-weight:600; color:var(--org-ink); }
+#facilities .org-facilities-anchor { scroll-margin-top:105px; }
+#facilities .org-entry { padding:16px 0; }
+#facilities .org-topic + .org-topic { margin-top:32px; }
+#facilities .org-topic-title { font-size:20px; }
+#facilities .org-facilities-access-content .org-records { margin:0; }
+#facilities .org-facilities-access-content .org-entry { border-top:1px solid var(--org-line); }
+#facilities #facilities-equipment .org-fact-row dd { font-variant-numeric:tabular-nums; }
+#facilities #facilities-computer-access ul { margin:8px 0 14px; }
+@media(max-width:960px) {
+ #facilities .org-facilities-anchor { scroll-margin-top:var(--org-scroll-offset,175px); }
+}
+
+#teachers .org-entry { padding:20px 0; }
+#teachers h3 { font-size:18px; margin-bottom:14px; }
+#teachers h3.org-teacher-name { font-size:22px; line-height:1.4; margin-bottom:6px; }
+#teachers .org-teacher-role { margin-bottom:10px; }
+#teachers .org-teacher-experience { font-size:15px; color:var(--org-muted); }
+#teachers .org-teacher-programs { list-style:none; padding:0; margin:0; max-width:none; }
+#teachers .org-teacher-programs li { margin:0; padding:12px 0; border-bottom:1px solid var(--org-line); }
+#teachers .org-teacher-programs a { text-decoration-thickness:1px; text-underline-offset:3px; }
+#teachers .org-teacher-course { padding:14px 0; border-bottom:1px solid var(--org-line); scroll-margin-top:105px; }
+#teachers .org-teacher-course:first-child { padding-top:0; }
+#teachers .org-teacher-course h4 { font-size:16px; font-weight:500; margin-bottom:6px; }
+#teachers .org-teacher-course-meta { font-size:14px; margin:0 0 4px; }
+#teachers .org-teacher-course-document { font-size:13px; color:var(--org-muted); margin:0; }
+@media(max-width:960px) {
+ #teachers .org-teacher-course { scroll-margin-top:var(--org-scroll-offset,175px); }
+}
+
+#leadership .org-leader { padding:20px 0 24px; }
+#leadership .org-leader + .org-leader { border-top:1px solid var(--org-line); padding-top:24px; }
+#leadership .org-leader-caption { font-size:14px; color:var(--org-muted); margin:0 0 8px; }
+#leadership h3.org-person-name { font-size:20px; font-weight:650; line-height:1.45; margin:0 0 6px; }
+#leadership .org-leader-position { margin:0 0 18px; font-size:16px; }
+#leadership .org-leader-extension { display:inline-block; white-space:nowrap; }
+#leadership .org-leader-branches { padding-top:24px; border-top:1px solid var(--org-line); }
+#leadership .org-leader-branches h3 { font-size:18px; margin-bottom:12px; }
+@media(max-width:540px) {
+ #leadership .org-leader-extension { display:block; margin-top:2px; }
+}
+
+#education .org-prose > .org-entry > h3,
+#education #education-learning-title h3 { font-size:20px; margin-bottom:18px; }
+#education .org-education-common { margin:20px 0 26px; scroll-margin-top:105px; }
+#education .org-education-common h4 { margin-bottom:8px; }
+#education #popup-table1 .org-education-program { display:grid; grid-template-columns:24px minmax(0,1fr) 104px; gap:16px; align-items:baseline; padding:18px 0; }
+#education .org-education-program h4 { font-size:16px; font-weight:600; line-height:1.55; margin:0; }
+#education .org-education-hours { font-size:14px; color:var(--org-muted); text-align:right; white-space:nowrap; }
+#education .org-education-group { margin-top:28px; scroll-margin-top:105px; }
+#education #education-learning-title { scroll-margin-top:105px; }
+#education .org-education-group .org-entry { padding:16px 0; }
+#education .org-education-note { font-size:14px; color:var(--org-muted); margin-top:10px; }
+#education .org-education-language { font-size:18px; font-weight:600; }
+#education #education-item-2 { margin-top:28px; }
+#education #education-item-2 li { margin:12px 0; }
+@media(max-width:960px) {
+ #education .org-education-common, #education .org-education-group, #education #education-learning-title { scroll-margin-top:var(--org-scroll-offset,175px); }
+}
+@media(max-width:540px) {
+ #education #popup-table1 .org-education-program { grid-template-columns:22px minmax(0,1fr); gap:6px 10px; }
+ #education .org-education-hours { grid-column:2; text-align:left; }
+}
+
+#documents .org-documents-group + .org-documents-group { margin-top:36px; }
+#documents .org-documents-group-heading { scroll-margin-top:105px; }
+#documents .org-documents-group-heading h3 { font-size:20px; margin:0 0 8px; }
+#documents .org-document { display:grid; grid-template-columns:minmax(0,1fr) 168px; gap:24px; padding:18px 0; border-bottom:1px solid var(--org-line); }
+#documents .org-document-content { min-width:0; }
+#documents .org-document h4 { font-size:16px; font-weight:600; margin:0 0 6px; }
+#documents .org-document-purpose { font-size:14px; line-height:1.6; margin:0; }
+#documents .org-document > .org-file-status { margin:2px 0 0; font-size:13px; line-height:1.55; }
+#documents .org-documents-control { padding:20px 0 0; }
+#documents .org-documents-control h4 { margin-bottom:8px; }
+@media(max-width:960px) {
+ #documents .org-document { grid-template-columns:minmax(0,1fr); gap:8px; }
+ #documents .org-documents-group-heading { scroll-margin-top:var(--org-scroll-offset,175px); }
+}
+
+#structure .org-entry > h3 { font-size:18px; margin-bottom:14px; }
+#structure .org-structure-name { font-size:20px; font-weight:600; line-height:1.5; margin-bottom:16px; }
+#structure .org-structure-person { font-size:17px; font-weight:500; margin-bottom:12px; }
+#popup-table0 { margin:0; }
+#popup-table0 .org-record { border:0; border-radius:0; padding:18px 0; margin:0; }
+#popup-table0 .org-record + .org-record { border-top:1px solid var(--org-line); }
+#popup-table0 .org-record h4 { margin-bottom:12px; }
+#popup-table0 .org-fact-row dd { font-weight:400; }
+
+#general .org-general-group { padding:24px 0 18px; }
+#general .org-general-group > h3 { font-size:18px; margin-bottom:12px; }
+#general .org-general-group > .org-entry { padding:10px 0; }
+#general .org-general-group > .org-entry:last-child { padding-bottom:0; }
+#general .org-general-sites p { margin-bottom:10px; }
+#general .org-general-sites a { font-size:15px; }
+
+.org-prose :is(h3,h4) { margin:0 0 10px; font-size:16px; font-weight:650; line-height:1.5; color:var(--org-ink); }
+.org-prose p { max-width:740px; margin:0 0 12px; }
+.org-prose p:last-child { margin-bottom:0; }
+.org-prose ul { max-width:740px; margin:10px 0; padding-left:22px; }
+.org-prose li { padding-left:3px; margin:7px 0; }
+.org-prose li::marker { color:#7c8ca1; }
+.org-prose__lead { font-weight:500; }
+.org-facts { margin:0 0 8px; }
+.org-fact-row { display:grid; grid-template-columns:250px minmax(0,1fr); gap:24px; padding:16px 0; border-bottom:1px solid var(--org-line); scroll-margin-top:105px; }
+.org-fact-row dt { color:var(--org-muted); font-size:14px; }
+.org-fact-row dd { margin:0; font-weight:500; }
+.org-document { padding:20px 0; border-bottom:1px solid var(--org-line); }
+
+.org-document h3 { max-width:760px; margin-bottom:6px; font-size:16px; font-weight:600; }
+.org-document .org-document-purpose { margin-bottom:8px; font-size:14px; color:var(--org-muted); }
+.org-document-source { margin-top:10px!important; font-size:13px; font-weight:400!important; }
+.org-file-status { display:block; color:#59697c; font-size:13px; margin-top:8px; font-weight:400; }
+.org-records { margin:18px 0 12px; scroll-margin-top:105px; }
+.org-record { border:1px solid var(--org-line); border-radius:10px; margin-top:12px; padding:20px; background:#fff; scroll-margin-top:105px; }
+.org-record h4 { margin:0 0 16px; font-size:17px; line-height:1.4; }
+.org-record-fields { margin:0; }
+.org-record-fields>div { display:grid; grid-template-columns:250px minmax(0,1fr); gap:24px; padding:12px 0; border-top:1px solid #edf0f4; }
+.org-record-fields dt { font-size:14px; color:var(--org-muted); line-height:1.55; }
+.org-record-fields dd { margin:0; font-size:15px; line-height:1.65; }
+#popup-table1 .org-record { padding:0; margin-top:0; border-radius:0; border-width:0 0 1px; }
+#popup-table1 { border-top:1px solid var(--org-line); }
+.org-program>summary { display:flex; gap:14px; align-items:baseline; padding:18px 10px; cursor:pointer; list-style:none; }
+.org-program>summary::-webkit-details-marker { display:none; }
+.org-program>summary:hover { background:#f8fafc; }
+.org-record-number { flex:none; color:#7c8ca1; font-size:12px; font-variant-numeric:tabular-nums; }
+.org-program-title { flex:1; min-width:0; }
+.org-program-title strong { display:block; font-size:15px; line-height:1.6; font-weight:600; }
+.org-program-title small { display:block; margin-top:6px; font-size:13px; color:var(--org-muted); }
+.org-chevron { flex:none; width:8px; height:8px; border-right:1.5px solid #687b94; border-bottom:1.5px solid #687b94; transform:rotate(45deg); margin:0 7px 3px; }
+.org-program[open] .org-chevron { transform:rotate(225deg); }
+.org-program .org-record-fields { padding:0 16px 14px 40px; }
+.org-page mark { background:#fff0aa; color:#16263d; border-radius:2px; padding:1px 0; }
+.org-page [tabindex="-1"]:focus { outline:none; }
+@media(max-width:1000px) {
+ .org-layout { grid-template-columns:220px minmax(0,1fr); gap:28px; }
+ .org-fact-row { grid-template-columns:250px minmax(0,1fr); gap:20px; }
+}
+@media(max-width:960px) {
+ .org-shell { width:calc(100% - 36px); }
+ .org-hero { padding:22px 0 18px; }
+ .org-hero h1 { font-size:32px; }
+ .org-hero__lead { margin-top:10px; font-size:15px; }
+ .org-quicklinks { gap:10px 18px; margin-top:14px; }
+ .org-quicklinks a { font-size:14px; }
+ .org-main { padding:16px 0 48px; }
+ .org-tools { margin-bottom:18px; }
+ .org-layout { display:block; }
+ .org-contents { top:76px; z-index:15; margin:0 -18px 24px; padding:0 18px; background:#fff; border-block:1px solid var(--org-line); }
+ .org-contents>strong { display:none; }
+ .org-mobile-toggle { display:flex; width:100%; min-height:64px; padding:10px 26px 10px 0; flex-direction:column; align-items:flex-start; gap:3px; border:0; background:#fff; color:var(--org-ink); text-align:left; cursor:pointer; position:relative; }
+ .org-mobile-toggle::after { content:''; position:absolute; right:8px; top:25px; width:8px; height:8px; border-right:1.5px solid currentColor; border-bottom:1.5px solid currentColor; transform:rotate(45deg); transition:transform 180ms ease; }
+ .org-mobile-toggle[aria-expanded="true"]::after { transform:translateY(4px) rotate(225deg); }
+ .org-mobile-toggle span { font-size:12px; color:var(--org-muted); }
+ .org-mobile-toggle strong { font-size:14px; font-weight:600; line-height:1.4; }
+ .org-contents nav { display:grid; max-height:calc(100dvh - 260px); padding:4px 0 14px; }
+ .org-page.is-enhanced .org-contents nav { display:none; }
+ .org-contents .org-back-search { display:none; }
+ .org-contents.is-open .org-back-search { display:block; }
+ .org-page.is-enhanced .org-contents.is-open nav { display:grid; }
+ #org-search { scroll-margin-top:var(--org-scroll-offset,175px); }
+ .org-contents a { min-height:44px; align-items:center; font-size:14px; }
+ .org-section,.org-entry,.org-records,.org-record,.org-fact-row { scroll-margin-top:var(--org-scroll-offset,175px); }
+ .org-section { margin-bottom:28px; padding-bottom:28px; }
+ .org-section h2 { font-size:23px; }
+ .org-section-heading { padding-bottom:10px; }
+ .org-disclosure__number { right:0; top:5px; font-size:12px; }
+ .org-section h2 { padding-right:30px; }
+ .org-prose { font-size:16px; }
+ .org-fact-row { grid-template-columns:250px minmax(0,1fr); gap:20px; padding:12px 0; }
+ .org-entry { padding:14px 0; }
+ .org-document { padding:18px 0; }
+ .org-record { padding:16px; }
+ .org-record-fields>div { grid-template-columns:250px minmax(0,1fr); gap:24px; }
+ .org-program>summary { padding:16px 2px; gap:10px; }
+ .org-program .org-record-fields { padding:0 10px 10px 28px; }
+ .org-search-results { padding-inline:12px; max-height:50dvh; }
+}
+
+.org-facts--details { margin:0; }
+.org-facts--details .org-fact-row { grid-template-columns:250px minmax(0,1fr); gap:24px; padding:12px 0; }
+.org-facts--details .org-fact-row:last-child { border-bottom:0; }
+.org-facts--details dd { font-weight:400; }
+.org-person-name { font-size:18px; font-weight:600; }
+.org-result .org-result-context { display:block; margin-bottom:4px; font-size:13px; color:var(--org-muted); }
+.org-local-nav { display:flex; flex-wrap:wrap; gap:8px; margin:4px 0 28px; }
+.org-local-nav a { padding:9px 13px; border:1px solid var(--org-line); border-radius:8px; text-decoration:none; font-size:14px; line-height:1.5; }
+.org-local-nav a:hover,.org-local-nav a[aria-current="location"] { color:#095fcd; background:#edf4ff; border-color:#c2d9f9; }
+.org-topic,[data-search-heading] { scroll-margin-top:105px; }
+.org-topic { margin-top:30px; }
+.org-prose .org-topic-title { margin:0 0 14px; padding-bottom:12px; border-bottom:1px solid var(--org-line); font-size:20px; line-height:1.4; }
+.org-topic .org-entry:first-of-type { padding-top:4px; }
+.org-topic .org-entry:empty { padding:0; }
+@media(max-width:960px) { .org-topic,[data-search-heading] { scroll-margin-top:var(--org-scroll-offset,175px); } }
+@media(max-width:540px) {
+ .org-fact-row,.org-facts--details .org-fact-row,.org-record-fields>div { grid-template-columns:1fr; gap:5px; padding:10px 0; }
+ .org-hero h1 { font-size:30px; }
+ .org-section h2 { font-size:22px; }
+ .org-section-heading small { font-size:14px; }
+ .org-local-nav { gap:8px; margin-bottom:20px; }
+ .org-local-nav a { flex:1 1 calc(50% - 8px); padding:9px; }
+}
+
+
+.org-contents .org-subnav { margin:2px 0 8px 30px; padding-left:9px; border-left:1px solid var(--org-line); }
+.org-contents .org-subnav a { display:block; padding:8px 10px; font-size:13px; line-height:1.5; }
+.org-accessibility-record { border:0; border-radius:0; padding:16px 0; margin:0; }
+.org-accessibility-record + .org-accessibility-record { border-top:1px solid var(--org-line); }
+.org-accessibility-record p { max-width:740px; }
+.org-document-group { margin:22px 0 4px; padding:16px 0 0; border-top:1px solid var(--org-line); }
+.org-prose .org-document-group h3 { font-size:19px; }
+.org-prose > .org-entry:last-child { padding-bottom:0; }
+@media(max-width:960px) { .org-contents .org-subnav a { font-size:14px; } }
+
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+
+/* Shared hierarchy and navigation for the information directory. */
+.org-page { --org-topic-size:20px; --org-item-size:16px; }
+.org-page .org-section-heading { padding-bottom:16px; }
+.org-page .org-section-heading + .org-jump-links { margin-top:0; }
+.org-page .org-prose h3:not(.org-person-name):not(.org-teacher-name) { font-size:var(--org-topic-size); line-height:1.4; margin-bottom:16px; }
+.org-page .org-prose h4 { font-size:var(--org-item-size); line-height:1.5; margin-bottom:10px; }
+.org-page .org-prose .org-topic-title { font-size:var(--org-topic-size); }
+.org-page .org-entry { padding-block:18px; }
+.org-page .org-prose > .org-entry:last-child { padding-bottom:0; }
+.org-jump-links { display:flex; flex-wrap:wrap; gap:8px 22px; margin:12px 0 24px; }
+.org-jump-links a { padding:6px 0; font-size:14px; line-height:1.5; text-underline-offset:4px; }
+.org-mobile-search { display:none!important; }
+@media(max-width:960px) {
+ .org-page .org-contents { top:var(--org-header-height,76px); display:grid; grid-template-columns:minmax(0,1fr) 44px; align-items:center; column-gap:12px; }
+ .org-page .org-mobile-search { display:flex!important; align-items:center; justify-content:center; min-height:44px; padding:0; grid-column:2; grid-row:1; }
+ .org-page .org-contents nav,.org-page .org-back-search { grid-column:1 / -1; }
+ .org-page .org-mobile-toggle { grid-column:1; grid-row:1; }
+ .org-page .org-entry { padding-block:16px; }
+ .org-jump-links { gap:6px 20px; margin-bottom:20px; }
+ .org-jump-links a { min-height:44px; display:flex; align-items:center; }
+}
+@media(max-width:720px) {
+ .org-page .org-section .org-fact-row,.org-page .org-record-fields>div { grid-template-columns:minmax(0,1fr); gap:6px; }
+ .org-page .org-section .org-fact-row { padding:12px 0; }
+}
+
+
+/* Final directory hierarchy: identical roles use identical sizes. */
+.org-page :is(#general,#structure,#documents,#education,#leadership,#teachers,#facilities,#finance,#vacancies,#support,#international,#food-health,#standards) .org-prose h3:not(.org-person-name):not(.org-teacher-name) { font-size:20px; line-height:1.4; margin-bottom:16px; }
+.org-count-tail { white-space:nowrap; }
+.org-page .org-contents a,.org-page .org-jump-links a { transition:background-color 160ms ease,color 160ms ease; }
+.org-page .org-jump-links a:hover { color:#034ba7; }
+@media(max-width:960px) {
+ .org-page .org-section-heading + .org-jump-links { margin-bottom:6px; gap:0 18px; }
+ .org-page .org-section-heading + .org-jump-links + .org-disclosure__body .org-prose > .org-entry:first-child { padding-top:8px; }
+}
+@media(prefers-reduced-motion:reduce) {
+ html { scroll-behavior:auto; }
+ .org-page *, .org-page *::before, .org-page *::after { transition:none!important; animation:none!important; }
+}
+
+@media print {
+ .edu2-chrome,.org-contents,.org-tools,.org-quicklinks,.org-skip-link { display:none!important; }
+ .org-shell { width:100%; } .org-layout { display:block; } .org-hero { padding:0 0 20px; background:#fff; }
+ .org-section { break-before:auto; } .org-section-heading { break-after:avoid; }
+ .org-record { break-inside:avoid; } .org-program::details-content { display:block; }
+}
+
+
+/* First section: compact, open information groups. */
+.org-page #general .org-prose > .org-facts { margin:0; }
+.org-page #general .org-prose > .org-facts .org-fact-row:last-child { border-bottom:0; }
+.org-page #general .org-prose > .org-general-group { margin:28px 0 0; padding:28px 0 0; border-top:1px solid var(--org-line); }
+.org-page #general .org-prose > .org-general-group > h3 { margin:0 0 12px; }
+.org-page #general .org-prose > .org-general-group .org-entry { padding:0; }
+.org-page #general .org-prose > .org-general-group p { max-width:660px; }
+.org-page #general .org-fact-row { padding:12px 0; }
+.org-page #general .org-general-group > .org-facts .org-fact-row:first-child,
+.org-page #general #general-contact-details .org-fact-row:first-child { padding-top:0; }
+.org-page #general .org-general-schedule .org-fact-row { grid-template-columns:180px minmax(0,1fr); padding:8px 0; }
+.org-page #general .org-prose > .org-general-license { padding:24px; background:#f7f9fc; border:1px solid var(--org-line); border-radius:12px; }
+.org-page #general .org-general-license > .org-facts { margin-bottom:16px; }
+.org-page #general .org-general-license #general-item-9 { margin-top:20px; padding-top:16px; border-top:1px solid var(--org-line); }
+.org-page #general #general-item-9 .org-fact-row { padding:0; }
+.org-page #general .org-general-resources { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:24px; }
+.org-page #general .org-general-resources h4 { margin:0 0 10px; }
+.org-page #general .org-general-resources ul { list-style:none; margin:0; padding:0; }
+.org-page #general .org-general-resources li { margin:0; padding:0; }
+.org-page #general .org-general-resources a { display:inline-block; padding:8px 0; font-size:15px; line-height:1.55; }
+@media(max-width:1100px) {
+ .org-page #general .org-general-resources { grid-template-columns:1fr; gap:20px; }
+}
+@media(max-width:720px) {
+ .org-page #general .org-prose > .org-general-group { margin-top:24px; padding-top:24px; }
+ .org-page #general .org-prose > .org-general-license { padding:18px; }
+ .org-page #general .org-general-schedule .org-fact-row { grid-template-columns:1fr; gap:4px; padding:10px 0; }
+ .org-page #general .org-general-resources a { padding:10px 0; }
+}
+
+
+/* Structure: consistent identities and shared management details. */
+.org-page #structure .org-prose > .org-entry { padding:0; }
+.org-page #structure .org-prose > .org-entry + .org-entry { margin-top:28px; padding-top:28px; border-top:1px solid var(--org-line); }
+.org-page #structure .org-prose > .org-entry > h3 { margin-bottom:12px; }
+.org-page #structure .org-structure-label { margin:0 0 8px; color:var(--org-muted); font-size:13px; line-height:1.5; }
+.org-page #structure .org-structure-leader { margin:20px 0 16px; }
+.org-page #structure .org-structure-leader h4,
+.org-page #structure #popup-table0 h4 { margin:0 0 8px; }
+.org-page #structure .org-structure-person { margin:0; font-size:17px; font-weight:500; }
+.org-page #structure .org-fact-row { padding:12px 0; }
+.org-page #structure .org-structure-document { margin-top:20px; padding-top:16px; border-top:1px solid var(--org-line); }
+.org-page #structure .org-structure-document h4 { margin-bottom:8px; }
+.org-page #structure .org-structure-document p { max-width:660px; margin-bottom:0; }
+.org-page #structure .org-structure-note { color:var(--org-muted); font-size:14px; font-weight:400; line-height:1.6; }
+.org-page #structure #popup-table0 { margin:0; }
+.org-page #structure #popup-table0 .org-record { padding:16px 0; border:0; }
+.org-page #structure #popup-table0 .org-record + .org-record { border-top:1px solid var(--org-line); }
+.org-page #structure #popup-table0 .org-record p { max-width:660px; margin-bottom:0; }
+.org-page #structure .org-structure-common { margin-top:8px; padding-top:20px; border-top:1px solid var(--org-line); }
+.org-page #structure .org-structure-common h4 { margin-bottom:6px; }
+.org-page #structure .org-structure-common > p { margin-bottom:12px; }
+.org-page #structure .org-structure-common .org-fact-row:first-child,
+.org-page #structure #structure-branches .org-fact-row:first-child { padding-top:0; }
+@media(max-width:720px) {
+ .org-page #structure .org-prose > .org-entry + .org-entry { margin-top:24px; padding-top:24px; }
+ .org-page #structure .org-structure-person { font-size:16px; }
+}
+
+
+/* Documents: metadata beside content and extracts grouped by source. */
+.org-page #documents .org-section-heading { padding-bottom:0; }
+.org-page #documents > .org-jump-links { margin:12px 0 24px; }
+.org-page #documents .org-documents-group + .org-documents-group { margin-top:28px; }
+.org-page #documents .org-documents-group-heading h3 { margin:0 0 12px; }
+.org-page #documents .org-document { display:block; padding:16px 0; }
+.org-page #documents .org-documents-group-heading + .org-document { padding-top:0; }
+.org-page #documents .org-document h4 { margin:0 0 6px; font-size:16px; font-weight:600; }
+.org-page #documents .org-document-purpose { max-width:660px; margin:0; }
+.org-page #documents .org-document-content > .org-file-status { margin:6px 0 0; font-size:13px; line-height:1.55; }
+.org-page #documents .org-document-actions { display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 16px; margin-top:8px; }
+.org-page #documents .org-document-open { display:inline-block; padding:4px 0; font-size:14px; font-weight:600; }
+.org-page #documents .org-document-actions .org-file-status { margin:0; }
+.org-page #documents .org-document-source { margin-top:8px!important; }
+.org-page #documents .org-document-source-group { margin-bottom:16px; }
+.org-page #documents .org-document-source-group > .org-document { padding-top:0; border-bottom:0; padding-bottom:12px; }
+.org-page #documents .org-document-extracts-label { margin:0 0 8px; color:var(--org-muted); font-size:13px; line-height:1.55; }
+.org-page #documents .org-document-extracts { padding-left:16px; border-left:2px solid var(--org-line); }
+.org-page #documents .org-document-extracts .org-document { padding:12px 0; }
+.org-page #documents .org-document-extracts .org-document:first-child { padding-top:0; }
+.org-page #documents .org-document-extracts .org-document:last-child { padding-bottom:0; border-bottom:0; }
+.org-page #documents .org-document-source-group + .org-document-source-group { padding-top:20px; border-top:1px solid var(--org-line); }
+.org-page #documents .org-document-source-title { margin:0 0 8px; }
+.org-page #documents .org-documents-control { padding-top:20px; }
+.org-page #documents .org-documents-control .org-fact-row { padding:12px 0; }
+@media(max-width:720px) {
+ .org-page #documents .org-documents-group + .org-documents-group { margin-top:24px; }
+ .org-page #documents .org-document-open { padding:10px 0; }
+ .org-page #documents .org-document-extracts { padding-left:12px; }
+}
+
+
+/* Education: common conditions first, concise facts and readable research topics. */
+.org-page #education .org-prose > .org-entry { padding:0; }
+.org-page #education .org-prose > .org-entry > h3,
+.org-page #education .org-education-group h3 { margin-bottom:12px; }
+.org-page #education .org-education-count { color:var(--org-muted); font-size:15px; font-weight:400; white-space:nowrap; margin-left:6px; }
+.org-page #education .org-education-common { margin:0 0 24px; }
+.org-page #education .org-education-common h4 { margin-bottom:12px; }
+.org-page #education .org-fact-row { padding:12px 0; }
+.org-page #education .org-education-columns { display:grid; grid-template-columns:minmax(0,1fr) 80px; gap:16px; padding:0 0 10px 40px; color:var(--org-muted); font-size:12px; }
+.org-page #education .org-education-columns span:last-child { text-align:right; }
+.org-page #education #popup-table1 { margin:0; }
+.org-page #education #popup-table1 .org-education-program { grid-template-columns:24px minmax(0,1fr) 80px; gap:16px; padding:16px 0; }
+.org-page #education #popup-table1 .org-education-program h4 { margin:0; font-size:16px; font-weight:500; line-height:1.55; }
+.org-page #education .org-education-hours { font-variant-numeric:tabular-nums; }
+.org-page #education .org-education-hours-unit { display:none; }
+.org-page #education .org-education-group,
+.org-page #education #education-item-2 { margin-top:28px; padding-top:28px; border-top:1px solid var(--org-line); }
+.org-page #education .org-education-group .org-entry { padding:16px 0 0; }
+.org-page #education .org-education-group .org-entry + .org-entry { margin-top:20px; padding-top:20px; border-top:1px solid var(--org-line); }
+.org-page #education .org-education-group h4 { margin-bottom:12px; }
+.org-page #education .org-education-note { max-width:660px; margin-top:8px; font-size:14px; line-height:1.6; color:var(--org-muted); }
+.org-page #education .org-education-stat { display:block; font-size:20px; line-height:1.4; font-weight:650; }
+.org-page #education .org-education-stat-description { display:block; margin-top:6px; }
+.org-page #education .org-education-group p,
+.org-page #education #education-item-2 :is(p,ul) { max-width:660px; }
+.org-page #education #education-item-2 ul { list-style:none; padding:0; margin:20px 0; }
+.org-page #education #education-item-2 li { padding:16px 0; margin:0; border-top:1px solid var(--org-line); }
+.org-page #education #education-item-2 li:first-child { border-top:0; padding-top:0; }
+.org-page #education #education-item-2 li h4 { margin:0 0 6px; }
+.org-page #education #education-item-2 li p { margin:0; }
+@media(max-width:720px) {
+ .org-page #education .org-education-columns { display:none; }
+ .org-page #education #popup-table1 .org-education-program { grid-template-columns:22px minmax(0,1fr); gap:6px 10px; padding:14px 0; }
+ .org-page #education .org-education-hours { grid-column:2; text-align:left; }
+ .org-page #education .org-education-hours-unit { display:inline; }
+ .org-page #education .org-education-group,
+ .org-page #education #education-item-2 { margin-top:24px; padding-top:24px; }
+}
+
+
+/* Leadership: compact contacts and secondary branch information. */
+.org-page #leadership .org-leader { padding:12px 0 0; }
+.org-page #leadership .org-leader + .org-leader { margin-top:28px; padding-top:28px; border-top:1px solid var(--org-line); }
+.org-page #leadership .org-leader-position { margin:0 0 12px; }
+.org-page #leadership .org-fact-row { grid-template-columns:180px minmax(0,1fr); gap:24px; padding:12px 0; }
+.org-page #leadership .org-fact-row:first-child { padding-top:0; }
+.org-page #leadership .org-leader-extension { display:block; margin-top:4px; color:var(--org-muted); font-size:14px; line-height:1.6; white-space:normal; }
+.org-page #leadership .org-leader-branches { margin-top:28px; padding:28px 0 0; border-top:1px solid var(--org-line); }
+.org-page #leadership #leadership-branches > h3 { font-size:17px; line-height:1.45; margin:0 0 12px; }
+.org-page #leadership .org-leader-branches dd { font-size:14px; line-height:1.6; color:var(--org-muted); }
+@media(max-width:720px) {
+ .org-page #leadership .org-fact-row { grid-template-columns:minmax(0,1fr); gap:6px; }
+ .org-page #leadership .org-leader + .org-leader,
+ .org-page #leadership .org-leader-branches { margin-top:24px; padding-top:24px; }
+}
+
+
+/* Teacher profile: qualifications first and consistent training records. */
+.org-page #teachers .org-section-heading { padding-bottom:0; }
+.org-page #teachers > .org-jump-links { margin:12px 0 24px; }
+.org-page #teachers .org-entry { padding:0; }
+.org-page #teachers h3.org-teacher-name { font-size:20px; font-weight:650; line-height:1.45; margin:0 0 6px; }
+.org-page #teachers .org-teacher-role { margin:0 0 8px; }
+.org-page #teachers .org-teacher-credentials { margin:0 0 8px; font-size:15px; line-height:1.6; }
+.org-page #teachers .org-teacher-experience { margin:0; }
+.org-page #teachers .org-prose > .org-entry + .org-entry,
+.org-page #teachers .org-teacher-training,
+.org-page #teachers .org-teacher-training > .org-entry + .org-entry { margin-top:28px; padding-top:28px; border-top:1px solid var(--org-line); }
+.org-page #teachers :is(#teachers-item-2,#teachers-item-3,#teachers-item-5,#teachers-item-6) > h3 { margin-bottom:12px; }
+.org-page #teachers .org-teacher-program-help { max-width:680px; margin:0 0 12px; font-size:14px; line-height:1.6; color:var(--org-muted); }
+.org-page #teachers .org-teacher-programs li { padding:0; }
+.org-page #teachers .org-teacher-programs li:last-child { border-bottom:0; }
+.org-page #teachers .org-teacher-programs a { display:grid; grid-template-columns:minmax(0,1fr) 18px; gap:16px; padding:12px 0; color:var(--org-ink); text-decoration:none; font-size:16px; line-height:1.6; }
+.org-page #teachers .org-teacher-program-title { max-width:680px; }
+.org-page #teachers .org-teacher-program-arrow { color:var(--org-blue); }
+.org-page #teachers .org-teacher-programs a:is(:hover,:focus-visible) .org-teacher-program-title { color:var(--org-blue); text-decoration:underline; text-underline-offset:3px; }
+.org-page #teachers .org-fact-row { padding:12px 0; }
+.org-page #teachers .org-fact-row:first-child { padding-top:0; }
+.org-page #teachers .org-teacher-course { padding:16px 0; }
+.org-page #teachers .org-teacher-course:first-child { padding-top:0; }
+.org-page #teachers .org-teacher-course:last-child { padding-bottom:0; border-bottom:0; }
+.org-page #teachers .org-teacher-course h4 { max-width:680px; margin:0 0 8px; font-size:16px; font-weight:500; line-height:1.6; }
+.org-page #teachers .org-teacher-course-meta { display:flex; flex-wrap:wrap; gap:4px 20px; max-width:680px; margin:0 0 4px; font-size:14px; line-height:1.6; color:var(--org-muted); }
+.org-page #teachers .org-teacher-course-meta > span { white-space:nowrap; }
+.org-page #teachers .org-teacher-course-document { margin:0; font-size:13px; line-height:1.6; color:var(--org-muted); }
+@media(max-width:720px) {
+ .org-page #teachers .org-prose > .org-entry + .org-entry,
+ .org-page #teachers .org-teacher-training,
+ .org-page #teachers .org-teacher-training > .org-entry + .org-entry { margin-top:24px; padding-top:24px; }
+ .org-page #teachers .org-teacher-programs a { gap:12px; }
+}
+
+
+/* Facilities: clear topic rhythm, readable prose and explicit accessibility limits. */
+.org-page #facilities .org-local-nav { margin:0 0 24px; gap:8px 22px; }
+.org-page #facilities .org-local-nav a { background:none; }
+.org-page #facilities .org-topic { margin:0; }
+.org-page #facilities .org-topic + .org-topic { margin-top:28px; padding-top:28px; border-top:1px solid var(--org-line); }
+.org-page #facilities .org-topic-title { padding:0; border:0; margin:0 0 12px; }
+.org-page #facilities .org-entry { padding:0; }
+.org-page #facilities .org-topic > .org-entry + .org-entry { margin-top:24px; padding-top:24px; border-top:1px solid var(--org-line); }
+.org-page #facilities .org-topic .org-entry:first-of-type { padding-top:0; }
+.org-page #facilities h4 { margin-bottom:12px; }
+.org-page #facilities h5 { margin:0 0 8px; font-size:15px; line-height:1.5; font-weight:600; }
+.org-page #facilities :is(p,ul) { max-width:680px; }
+.org-page #facilities .org-fact-row { padding:12px 0; }
+.org-page #facilities .org-fact-row:first-child { padding-top:0; }
+.org-page #facilities .org-facilities-text-group { max-width:680px; margin-top:20px; }
+.org-page #facilities .org-facilities-text-group > :last-child { margin-bottom:0; }
+.org-page #facilities .org-facilities-network .org-facilities-text-group { padding-bottom:16px; border-bottom:1px solid var(--org-line); }
+.org-page #facilities .org-facilities-network .org-facilities-text-group:last-child { border-bottom:0; padding-bottom:0; }
+.org-page #facilities .org-facilities-secondary-nav { margin:0 0 20px; }
+.org-page #facilities .org-facilities-secondary-nav > p { margin:0 0 4px; font-size:12px; color:var(--org-muted); }
+.org-page #facilities .org-facilities-secondary-nav .org-jump-links { gap:4px 18px; margin:0; }
+.org-page #facilities .org-facilities-secondary-nav a { font-size:13px; }
+.org-page #facilities #facilities-equipment :is(dl,.org-equipment-columns) { max-width:460px; }
+.org-page #facilities .org-equipment-columns { display:grid; grid-template-columns:minmax(0,1fr) 90px; gap:20px; padding-bottom:8px; font-size:12px; color:var(--org-muted); }
+.org-page #facilities .org-equipment-columns > :last-child { text-align:right; }
+.org-page #facilities #facilities-equipment .org-fact-row { grid-template-columns:minmax(0,1fr) 90px; gap:20px; padding:8px 0; }
+.org-page #facilities #facilities-equipment dd { text-align:right; white-space:nowrap; }
+.org-page #facilities #facilities-other dd { color:var(--org-muted); font-size:14px; }
+.org-page #facilities #facilities-item-4 h5 { margin-top:20px; }
+.org-page #facilities #facilities-item-10 { margin-top:20px; padding-top:20px; border-top:1px solid var(--org-line); }
+.org-page #facilities .org-facilities-access-content .org-record { border:0; border-radius:0; padding:0; margin:0; background:transparent; }
+.org-page #facilities .org-facilities-limitations { margin-top:24px; padding:20px; border:1px solid #e1d9c9; border-radius:10px; background:#fbfaf6; }
+.org-page #facilities .org-facilities-limitations > h4 { margin-bottom:16px; }
+.org-page #facilities .org-facilities-limitations .org-entry { border:0; padding:0; }
+.org-page #facilities .org-facilities-limitations :is(#facilities-room-access,#popup-table2-record-2) h4 { font-size:15px; margin-bottom:6px; }
+.org-page #facilities .org-facilities-limit-summary { font-weight:500; }
+.org-page #facilities .org-facilities-limitations #popup-table2-record-2 { margin-top:16px; padding-top:16px; border-top:1px solid #e1d9c9; }
+.org-page #facilities #facilities-computer-access { margin-top:24px; padding-top:24px; }
+.org-page #facilities #facilities-computer-access h5 { margin-top:20px; }
+.org-page .org-contents #org-section-links > a[href="#facilities"] { padding-block:7px; }
+.org-page .org-contents #org-facilities-subnav a { padding-block:6px; font-size:12px; line-height:1.45; }
+@media(max-width:720px) {
+ .org-page #facilities .org-topic + .org-topic { margin-top:24px; padding-top:24px; }
+ .org-page #facilities .org-facilities-limitations { padding:16px; }
+ .org-page #facilities .org-facilities-secondary-nav a { font-size:14px; min-height:44px; }
+ .org-page .org-contents #org-facilities-subnav a { padding-block:10px; font-size:14px; }
+}
+
+
+/* Paid services and finance: concise facts and a clear funding source. */
+.org-page #paid-services .org-section-heading { margin:0; padding-bottom:12px; }
+.org-page #paid-services .org-entry { padding:0; }
+.org-page #paid-services { padding-bottom:24px; }
+.org-page #finance .org-section-heading { padding-bottom:16px; }
+.org-page #finance #finance-own-funds { padding:0; margin-bottom:24px; }
+.org-page #finance .org-finance-label { margin:0 0 8px; font-size:13px; line-height:1.5; color:var(--org-muted); }
+.org-page #finance #finance-own-funds h3 { margin:0 0 8px; font-size:20px; line-height:1.4; }
+.org-page #finance #finance-own-funds > p:last-child { max-width:660px; margin:0; }
+.org-page #finance .org-fact-row { padding:12px 0; }
+.org-page #finance .org-fact-row:first-child { padding-top:0; }
+.org-page #finance .org-fact-row dt > span { display:block; }
+.org-page #finance .org-fact-row dt > small { display:block; margin-top:4px; font-size:13px; line-height:1.55; }
+
+
+/* Vacancies: distinguish missing counts from funding activity. */
+.org-page #vacancies .org-section-heading { padding-bottom:16px; }
+.org-page #vacancies .org-vacancies-status { max-width:660px; margin:0 0 20px; font-size:16px; line-height:1.65; }
+.org-page #vacancies .org-disclosure__body .org-prose h3.org-vacancies-heading { margin:0 0 12px; font-size:17px; line-height:1.45; }
+.org-page #vacancies .org-fact-row { padding:12px 0; }
+.org-page #vacancies .org-fact-row:first-child { padding-top:0; }
+.org-page #vacancies .org-vacancies-review { display:block; font-weight:500; }
+.org-page #vacancies .org-vacancies-source-note { display:block; margin-top:6px; color:var(--org-muted); font-size:14px; line-height:1.6; }
+.org-page #vacancies .org-vacancies-note { margin-top:16px; padding:0; font-size:14px; line-height:1.6; color:var(--org-muted); }
+.org-page #vacancies .org-vacancies-note p { margin:0; max-width:660px; }
+
+
+/* Support: one summary, two compact groups, no repeated scope notes. */
+.org-page #support .org-section-heading { padding-bottom:12px; }
+.org-page #support .org-support-summary { max-width:660px; margin:0 0 24px; font-size:16px; line-height:1.65; }
+.org-page #support #support-item-1 { padding:0; }
+.org-page #support .org-support-group + .org-support-group { margin-top:28px; padding-top:28px; border-top:1px solid var(--org-line); }
+.org-page #support .org-support-group h3 { margin:0 0 8px; }
+.org-page #support .org-support-group-note { max-width:660px; margin:0 0 12px; color:var(--org-muted); font-size:14px; line-height:1.6; }
+.org-page #support .org-fact-row { grid-template-columns:minmax(0,1fr) 180px; gap:24px; padding:12px 0; }
+.org-page #support .org-fact-row:first-child { padding-top:0; }
+.org-page #support .org-fact-row dt > small { margin-top:6px; }
+@media(max-width:720px) {
+ .org-page #support .org-fact-row { grid-template-columns:minmax(0,1fr); gap:6px; }
+ .org-page #support .org-support-group + .org-support-group { margin-top:24px; padding-top:24px; }
+}
+
+
+/* International cooperation and standards: clear scope and concise structure. */
+.org-page #international .org-section-heading { padding-bottom:16px; }
+.org-page #international #international-item-1 { padding:0; }
+.org-page #international #international-item-1 h3 { max-width:680px; margin:0 0 12px; }
+.org-page #international #international-item-1 :is(p,ul) { max-width:680px; }
+.org-page #international .org-international-scope { margin-top:16px; }
+.org-page #international #international-item-1 ul { margin:8px 0 0; }
+.org-page #international #international-item-1 li { margin:6px 0; }
+.org-page #standards .org-section-heading { padding-bottom:16px; }
+.org-page #standards #standards-item-1 { padding:0; }
+.org-page #standards .org-fact-row { grid-template-columns:minmax(0,1fr) 180px; gap:24px; padding:12px 0; }
+.org-page #standards .org-fact-row:first-child { padding-top:0; }
+@media(max-width:720px) {
+ .org-page #standards .org-fact-row { grid-template-columns:minmax(0,1fr); gap:6px; }
+}
+
+  
+/* Nutrition and health: six equal topics with readable descriptions. */
+.org-page #food-health .org-health-intro { padding:0; margin:0 0 24px; }
+.org-page #food-health .org-health-basis { max-width:700px; margin:0; }
+.org-page #food-health .org-prose > .org-health-group { margin:32px 0 0; padding:0; scroll-margin-top:var(--org-scroll-offset,105px); }
+.org-page #food-health .org-health-intro + .org-health-group { margin-top:0; }
+.org-page #food-health .org-prose .org-health-group > h3 { font-size:20px; line-height:1.4; margin:0 0 16px; }
+.org-page #food-health .org-health-group h4 { font-size:16px; line-height:1.5; margin:20px 0 10px; }
+.org-page #food-health .org-health-group > p,.org-page #food-health .org-health-safety-item > :is(p,ul) { max-width:700px; }
+.org-page #food-health .org-health-group p { margin:0 0 12px; }
+.org-page #food-health .org-fact-row { grid-template-columns:220px minmax(0,1fr); gap:24px; padding:12px 0; }
+.org-page #food-health .org-fact-row dd p { margin:0 0 8px; }
+.org-page #food-health .org-fact-row dd p:last-child { margin-bottom:0; }
+.org-page #food-health .org-health-detail-label { color:var(--org-muted); }
+.org-page #food-health .org-health-medical-lead,.org-page #food-health .org-health-medical-detail { display:block; }
+.org-page #food-health .org-health-medical-detail { margin-top:10px; color:var(--org-muted); font-size:14px; line-height:1.65; }
+.org-page #food-health .org-health-safety-item { padding:16px 0; border-bottom:1px solid var(--org-line,#dce4ee); }
+.org-page #food-health .org-health-safety-item:last-child { border-bottom:0; padding-bottom:0; }
+.org-page #food-health .org-health-safety-item h4 { margin:0 0 10px; }
+.org-page #food-health .org-health-safety-item p { margin:0; }
+.org-page #food-health .org-health-safety-item ul { margin:0; }
+.org-page #food-health .org-health-safety-item li { margin:6px 0; }
+@media(max-width:720px) {
+ .org-page #food-health .org-fact-row { grid-template-columns:minmax(0,1fr); gap:6px; }
+ .org-page #food-health .org-fact-row dd { overflow-wrap:anywhere; }
+ .org-page #food-health > .org-jump-links { gap:0 18px; margin-bottom:20px; }
+ .org-page #food-health > .org-jump-links a { min-height:44px; }
+}
+
+/* Mobile introduction and first-section reading rhythm. */
+.org-hero__lead-mobile,.org-general-nav { display:none; }
+.org-general-extension { margin-left:6px; }
+.org-resource-arrow { margin-left:6px; }
+@media screen and (max-width:960px) {
+ .org-page .org-hero { padding:18px 0 16px; }
+ .org-page .org-eyebrow { margin-bottom:8px; }
+ .org-page .org-hero__lead { margin-top:8px; line-height:1.5; }
+ .org-hero__lead-full { display:none; }
+ .org-hero__lead-mobile { display:inline; }
+ .org-page .org-quicklinks { display:none; }
+ .org-page .org-tools { margin-bottom:16px; }
+ .org-page #general .org-section-heading { padding-bottom:0; }
+ .org-page #general .org-section-heading small { display:none; }
+ .org-page #general .org-general-nav { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0 16px; margin:12px 0 18px; }
+ .org-page #general .org-general-nav a { display:flex; align-items:center; justify-content:space-between; min-height:44px; gap:8px; padding:8px 0; border-bottom:1px solid var(--org-line); font-size:14px; font-weight:500; text-decoration:none; }
+ .org-page #general .org-general-nav a::after { content:'↓'; color:#697b91; }
+ .org-page #general .org-general-nav a:is(:hover,:focus-visible) { color:#095fcd; text-decoration:underline; }
+ .org-page #general .org-prose > .org-general-group { margin-top:24px; padding-top:24px; }
+ .org-page #general .org-fact-row { padding:10px 0; }
+ .org-page #general .org-general-extension { display:block; margin:4px 0 0; font-size:14px; color:var(--org-muted); }
+ .org-page #general .org-general-resources { grid-template-columns:1fr; gap:24px; }
+ .org-page #general .org-general-resources h4 { margin-bottom:6px; font-size:15px; }
+ .org-page #general .org-general-resources a { display:flex; align-items:center; justify-content:space-between; gap:16px; min-height:48px; padding:12px 0; border-bottom:1px solid var(--org-line); text-decoration:none; font-size:15px; }
+ .org-page #general .org-general-resources a:hover span:first-child { text-decoration:underline; }
+ .org-page #general .org-resource-arrow { flex:none; margin:0; }
+}
+@media screen and (max-width:720px) {
+ .org-page #general .org-general-schedule .org-fact-row { grid-template-columns:minmax(0,1fr) auto; gap:12px; padding:10px 0; align-items:baseline; }
+ .org-page #general .org-general-schedule dd { text-align:right; white-space:nowrap; font-variant-numeric:tabular-nums; }
+ .org-page #general .org-general-schedule .org-fact-row:last-child { grid-template-columns:1fr; gap:4px; }
+ .org-page #general .org-general-schedule .org-fact-row:last-child dd { text-align:left; white-space:normal; }
+ .org-page #general .org-prose > .org-general-license { padding:16px; }
+ .org-page #general .org-general-license > h3 { font-size:19px; line-height:1.35; }
+ .org-page #general .org-general-license > .org-facts { display:grid; grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr); gap:16px; margin:0 0 16px; padding-bottom:16px; border-bottom:1px solid var(--org-line); }
+ .org-page #general .org-general-license > .org-facts .org-fact-row { display:block; padding:0; border:0; }
+ .org-page #general .org-general-license > .org-facts dt { font-size:13px; line-height:1.5; margin-bottom:6px; }
+ .org-page #general .org-general-license > .org-facts dd { font-size:15px; line-height:1.5; }
+ .org-page #general .org-general-license > p { font-size:15px; line-height:1.6; }
+ .org-page #general .org-general-license #general-item-9 { margin-top:16px; padding-top:16px; }
+ .org-page #general #general-item-9 dd { font-size:15px; line-height:1.6; }
+}
+@media print {
+ .org-general-nav { display:none!important; }
+}
+
+
+/* Mobile structure: subsection hierarchy, identities and document actions. */
+.org-structure-nav { display:none; }
+.org-structure-arrow { margin-left:6px; }
+.org-page #structure .org-structure-charter { margin-top:16px; padding-top:16px; border-top:1px solid var(--org-line); }
+.org-page #structure .org-structure-charter .org-file-status { margin-top:4px; }
+@media screen and (max-width:960px) {
+ .org-page #structure .org-section-heading { padding-bottom:0; }
+ .org-page #structure .org-section-heading small { display:none; }
+ .org-page #structure .org-structure-nav { display:flex; flex-wrap:wrap; gap:0 20px; margin:10px 0 20px; }
+ .org-page #structure .org-structure-nav a { display:flex; align-items:center; gap:8px; min-height:44px; padding:8px 0; font-size:14px; text-decoration:none; }
+ .org-page #structure .org-structure-nav a::after { content:'↓'; color:#697b91; }
+ .org-page #structure .org-structure-nav a:is(:hover,:focus-visible) { text-decoration:underline; }
+ .org-page #structure .org-prose > .org-entry + .org-entry { margin-top:24px; padding-top:24px; }
+ .org-page #structure .org-prose > .org-entry > h3 { font-size:20px; margin-bottom:12px; }
+ .org-page #structure #structure-item-1 > h3 { font-size:18px; line-height:1.45; font-weight:650; }
+ .org-page #structure .org-structure-label { margin-bottom:6px; }
+ .org-page #structure .org-structure-leader { margin:16px 0; }
+ .org-page #structure .org-structure-leader h4,
+ .org-page #structure #popup-table0-record-1 h4 { font-size:14px; line-height:1.5; font-weight:400; color:var(--org-muted); margin-bottom:4px; }
+ .org-page #structure .org-structure-person { font-size:16px; font-weight:500; line-height:1.6; }
+ .org-page #structure .org-fact-row { padding:10px 0; gap:4px; }
+ .org-page #structure .org-fact-row:has(dd > a) { padding-bottom:4px; }
+ .org-page #structure .org-fact-row dd > a { display:inline-flex; align-items:center; min-height:44px; padding:6px 0; }
+ .org-page #structure .org-structure-site { gap:12px; }
+ .org-page #structure .org-structure-arrow { flex:none; margin:0; }
+ .org-page #structure .org-structure-document { margin-top:16px; padding-top:16px; }
+ .org-page #structure .org-structure-document h4 { font-size:15px; font-weight:500; line-height:1.5; margin:0 0 6px; }
+ .org-page #structure .org-structure-document .org-file-status { margin:0; }
+ .org-page #structure #popup-table0 .org-record { margin:0; padding:12px 0; }
+ .org-page #structure #popup-table0 .org-record:first-child { padding-top:0; }
+ .org-page #structure #popup-table0-record-2 h4 { font-size:16px; margin-bottom:4px; }
+ .org-page #structure .org-structure-common { margin-top:4px; padding-top:16px; }
+ .org-page #structure .org-structure-common > h4 { font-size:16px; }
+ .org-page #structure .org-structure-common > p { margin-bottom:12px; }
+ .org-page #structure .org-structure-common .org-facts { margin-bottom:0; }
+ .org-page #structure .org-structure-charter { margin-top:12px; padding-top:12px; }
+ .org-page #structure .org-structure-charter .org-structure-document-label { font-size:14px; color:var(--org-muted); font-weight:400; margin-bottom:2px; }
+ .org-page #structure .org-structure-charter-link { display:flex; align-items:center; justify-content:space-between; gap:16px; min-height:44px; padding:8px 0; font-size:16px; }
+ .org-page #structure .org-structure-charter .org-file-status { font-size:13px; line-height:1.5; }
+ .org-page #structure #structure-branches .org-fact-row { padding:10px 0; gap:4px; }
+}
+@media print { .org-structure-nav { display:none!important; } }
+
+
+/* Mobile documents: clear file actions and compact unavailable records. */
+.org-page #documents .org-document-source-caption { display:block; color:var(--org-muted); font-size:13px; line-height:1.5; }
+@media screen and (max-width:960px) {
+ .org-page #documents .org-section-heading small { display:none; }
+ .org-page #documents > .org-jump-links { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0 16px; margin:12px 0 24px; }
+ .org-page #documents > .org-jump-links a { display:flex; align-items:center; justify-content:space-between; gap:8px; min-height:52px; padding:8px 0; border-bottom:1px solid var(--org-line); font-size:14px; line-height:1.45; font-weight:500; text-decoration:none; }
+ .org-page #documents > .org-jump-links a::after { content:'↓'; flex:none; color:#697b91; }
+ .org-page #documents > .org-jump-links a:is(:hover,:focus-visible) { text-decoration:underline; }
+ .org-page #documents .org-documents-group + .org-documents-group { margin-top:24px; }
+ .org-page #documents .org-documents-group-heading h3 { font-size:20px; margin-bottom:12px; }
+ .org-page #documents .org-document { padding:12px 0; }
+ .org-page #documents .org-document h4 { font-size:16px; font-weight:600; line-height:1.5; margin-bottom:4px; }
+ .org-page #documents .org-document:not(:has(a)) { padding:10px 0; }
+ .org-page #documents .org-documents-group-heading + .org-document { padding-top:0; }
+ .org-page #documents .org-document-purpose { margin-top:6px; font-size:14px; line-height:1.5; }
+ .org-page #documents .org-document-content > .org-file-status { margin-top:4px; font-size:13px; line-height:1.5; }
+ .org-page #documents .org-document-actions { align-items:center; gap:8px 12px; margin-top:12px; }
+ .org-page #documents .org-document-open { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:10px 14px; border:1px solid #c2d9f9; border-radius:8px; background:#edf4ff; color:#095fcd; line-height:1.5; text-decoration:none; }
+ .org-page #documents .org-document-open:is(:hover,:focus-visible) { background:#e0edff; border-color:#8eb7ec; }
+ .org-page #documents .org-document-actions .org-file-status { flex:1 1 120px; font-size:13px; line-height:1.5; }
+ .org-page #documents .org-document-source { margin-top:12px!important; }
+ .org-page #documents .org-document-source-link { display:inline-flex; align-items:center; min-height:44px; padding:8px 0; font-size:14px; line-height:1.5; }
+ .org-page #documents .org-document-source-caption { margin-top:0; }
+ .org-page #documents .org-document-source-group { margin-bottom:16px; }
+ .org-page #documents .org-document-source-group > .org-document { padding:0 0 12px; }
+ .org-page #documents .org-document-extracts-label { margin:0 0 8px; font-size:13px; }
+ .org-page #documents .org-document-extracts { padding-left:12px; }
+ .org-page #documents .org-document-extracts .org-document { padding:10px 0; }
+ .org-page #documents .org-document-extracts .org-document h4 { font-size:15px; font-weight:500; line-height:1.5; }
+ .org-page #documents .org-document-extracts .org-document:first-child { padding-top:0; }
+ .org-page #documents .org-document-extracts .org-document:last-child { padding-bottom:0; }
+ .org-page #documents .org-document-source-group + .org-document-source-group { padding-top:16px; }
+ .org-page #documents .org-documents-control { padding-top:16px; }
+ .org-page #documents .org-documents-control > h4 { margin-bottom:12px; font-size:16px; line-height:1.5; }
+ .org-page #documents .org-documents-control .org-facts { margin:0; }
+ .org-page #documents .org-documents-control .org-fact-row { padding:10px 0; gap:4px; }
+ .org-page #documents .org-documents-control .org-fact-row:first-child { padding-top:0; }
+ .org-page #documents .org-documents-control dd { font-size:15px; line-height:1.6; }
+}
+
+
+/* Mobile education: full-width program names and concise reference facts. */
+.org-page #education .org-education-science-link { display:none; }
+@media screen and (max-width:960px) {
+ .org-page #education .org-section-heading { padding-bottom:0; }
+ .org-page #education .org-section-heading small { display:none; }
+ .org-page #education > .org-jump-links { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0 16px; margin:12px 0 24px; }
+ .org-page #education > .org-jump-links a { display:flex; align-items:center; justify-content:space-between; gap:8px; min-height:52px; padding:8px 0; border-bottom:1px solid var(--org-line); font-size:14px; font-weight:500; line-height:1.45; text-decoration:none; }
+ .org-page #education > .org-jump-links a::after { content:'↓'; flex:none; color:#697b91; }
+ .org-page #education > .org-jump-links a:is(:hover,:focus-visible) { text-decoration:underline; }
+ .org-page #education .org-education-common { margin-bottom:20px; }
+ .org-page #education .org-education-common h4 { margin-bottom:12px; font-size:16px; }
+ .org-page #education .org-education-common .org-fact-row { grid-template-columns:minmax(0,1fr); gap:4px; padding:10px 0; }
+ .org-page #education .org-education-common .org-fact-row:first-child { padding-top:0; }
+ .org-page #education .org-education-common .org-fact-row:nth-child(2),
+ .org-page #education .org-education-common .org-fact-row:nth-child(3) { grid-template-columns:minmax(0,1fr) auto; align-items:baseline; gap:12px; }
+ .org-page #education .org-education-common .org-fact-row:nth-child(2) dd,
+ .org-page #education .org-education-common .org-fact-row:nth-child(3) dd { text-align:right; }
+ .org-page #education .org-education-columns { display:none; }
+ .org-page #education #popup-table1 .org-education-program { display:grid; grid-template-columns:auto minmax(0,1fr); gap:6px 8px; margin:0; padding:14px 0; }
+ .org-page #education #popup-table1 .org-record-number { grid-column:1; grid-row:1; align-self:baseline; font-size:13px; line-height:1.5; }
+ .org-page #education #popup-table1 .org-education-hours { grid-column:2; grid-row:1; text-align:left; font-size:13px; line-height:1.5; color:var(--org-muted); }
+ .org-page #education #popup-table1 .org-education-hours::before { content:'·'; margin-right:8px; color:#697b91; }
+ .org-page #education #popup-table1 .org-education-hours-unit { display:inline; }
+ .org-page #education #popup-table1 .org-education-program h4 { grid-column:1 / -1; grid-row:2; margin:0; font-size:16px; line-height:1.55; font-weight:500; }
+ .org-page #education .org-education-group,
+ .org-page #education #education-item-2 { margin-top:24px; padding-top:24px; }
+ .org-page #education .org-education-group .org-entry { padding-top:12px; }
+ .org-page #education #education-item-5 { padding-top:0; }
+ .org-page #education #education-item-5 .org-fact-row { padding:0; }
+ .org-page #education .org-education-group .org-entry + .org-entry { margin-top:16px; padding-top:16px; }
+ .org-page #education .org-education-group h4 { margin-bottom:12px; }
+ .org-page #education .org-education-group .org-fact-row { padding:10px 0; gap:4px; }
+ .org-page #education .org-education-group .org-fact-row:first-child { padding-top:0; }
+ .org-page #education .org-education-note { margin-top:6px; font-size:14px; line-height:1.5; }
+ .org-page #education #education-item-3 .org-education-federal { display:grid; grid-template-columns:minmax(0,1fr); gap:6px; margin:0 0 8px; padding:16px; background:#f7f9fc; border:1px solid var(--org-line); border-radius:10px; }
+ .org-page #education .org-education-stat { font-size:24px; line-height:1.35; }
+ .org-page #education .org-education-stat-description { margin-top:8px; font-size:15px; line-height:1.6; }
+ .org-page #education .org-education-federal .org-education-note { margin-top:8px; }
+ .org-page #education #education-item-3 .org-fact-row:not(.org-education-federal) dd,
+ .org-page #education #education-item-6 dd { font-size:15px; line-height:1.5; }
+ .org-page #education #education-item-4 .org-education-note + .org-education-note { margin-top:8px; }
+ .org-page #education #education-item-7 > p { font-size:15px; line-height:1.6; }
+ .org-page #education #education-item-2 > h3 { margin-bottom:4px; }
+ .org-page #education .org-education-science-link { display:block; margin:0 0 12px; }
+ .org-page #education #education-item-2 a { display:inline-flex; align-items:center; min-height:44px; padding:8px 0; font-size:14px; line-height:1.5; }
+ .org-page #education #education-item-2 > p:not(.org-education-science-link) { font-size:15px; line-height:1.6; }
+ .org-page #education #education-item-2 ul { margin:16px 0; }
+ .org-page #education #education-item-2 li { padding:12px 0; }
+ .org-page #education #education-item-2 li:first-child { padding-top:0; }
+ .org-page #education #education-item-2 li h4 { margin-bottom:6px; font-size:16px; line-height:1.5; font-weight:600; }
+ .org-page #education #education-item-2 li p { font-size:15px; line-height:1.6; }
+}
+@media print { .org-page #education .org-education-science-link { display:none; } }
+
+/* Mobile leadership: compact profiles and comfortable contact targets. */
+@media screen and (max-width:960px) {
+ .org-page #leadership .org-section-heading { padding-bottom:20px; }
+ .org-page #leadership .org-section-heading small { display:none; }
+ .org-page #leadership .org-leader { padding:0; }
+ .org-page #leadership .org-leader-caption { margin:0 0 6px; font-size:14px; line-height:1.5; }
+ .org-page #leadership h3.org-person-name { margin:0 0 6px; font-size:20px; line-height:1.45; }
+ .org-page #leadership .org-leader-position { margin:0 0 16px; font-size:16px; line-height:1.5; }
+ .org-page #leadership .org-leader > .org-facts { margin:0; }
+ .org-page #leadership .org-fact-row { grid-template-columns:minmax(0,1fr); gap:4px; padding:10px 0; }
+ .org-page #leadership .org-fact-row:first-child { padding-top:0; }
+ .org-page #leadership .org-leader .org-fact-row:last-child { padding-bottom:0; }
+ .org-page #leadership .org-leader dd > a { display:inline-flex; align-items:center; min-height:44px; min-width:44px; padding:6px 0; line-height:1.5; }
+ .org-page #leadership .org-leader-extension { margin-top:0; font-size:14px; line-height:1.5; }
+ .org-page #leadership .org-leader + .org-leader,
+ .org-page #leadership .org-leader-branches { margin-top:12px; padding:12px 0 0; }
+ .org-page #leadership #leadership-branches > h3 { margin:0 0 12px; font-size:20px; line-height:1.4; }
+ .org-page #leadership .org-leader-branches > .org-facts { margin:0; }
+ .org-page #leadership .org-leader-branches dd { color:var(--org-ink); font-size:15px; line-height:1.6; }
+ .org-page #leadership .org-leader-branches .org-fact-row:last-child { padding-bottom:0; }
+}
+/* Mobile teacher profile: clear navigation, linked programs and concise credentials. */
+@media screen and (max-width:960px) {
+ .org-page #teachers .org-section-heading small { display:none; }
+ .org-page #teachers > .org-jump-links { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0 16px; margin:12px 0 24px; }
+ .org-page #teachers > .org-jump-links a { display:flex; align-items:center; justify-content:space-between; gap:8px; min-height:52px; padding:8px 0; border-bottom:1px solid var(--org-line); font-size:14px; font-weight:500; line-height:1.45; text-decoration:none; }
+ .org-page #teachers > .org-jump-links a::after { content:'↓'; flex:none; color:#697b91; }
+ .org-page #teachers > .org-jump-links a:is(:hover,:focus-visible) { text-decoration:underline; }
+ .org-page #teachers h3.org-teacher-name { font-size:22px; line-height:1.4; margin-bottom:6px; }
+ .org-page #teachers .org-teacher-role { margin-bottom:6px; font-size:15px; line-height:1.5; }
+ .org-page #teachers .org-teacher-credentials { margin-bottom:6px; font-size:15px; line-height:1.5; }
+ .org-page #teachers .org-teacher-experience { font-size:14px; line-height:1.5; }
+ .org-page #teachers .org-prose > .org-entry + .org-entry,
+ .org-page #teachers .org-teacher-training,
+ .org-page #teachers .org-teacher-training > .org-entry + .org-entry { margin-top:12px; padding-top:12px; }
+ .org-page #teachers :is(#teachers-item-2,#teachers-item-3,#teachers-item-5,#teachers-item-6) > h3 { font-size:20px; line-height:1.4; margin-bottom:12px; }
+ .org-page #teachers .org-teacher-program-help { margin-bottom:8px; font-size:14px; line-height:1.5; }
+ .org-page #teachers .org-teacher-programs { margin:0; }
+ .org-page #teachers .org-teacher-programs a { min-height:44px; padding:12px 0; gap:12px; color:var(--org-blue); font-size:16px; line-height:1.55; }
+ .org-page #teachers .org-teacher-program-arrow { align-self:start; }
+ .org-page #teachers .org-fact-row { grid-template-columns:minmax(0,1fr); gap:4px; padding:10px 0; }
+ .org-page #teachers .org-fact-row:first-child { padding-top:0; }
+ .org-page #teachers .org-fact-row:last-child { padding-bottom:0; }
+ .org-page #teachers .org-facts { margin:0; }
+ .org-page #teachers .org-teacher-course { padding:12px 0; }
+ .org-page #teachers .org-teacher-course:first-child { padding-top:0; }
+ .org-page #teachers .org-teacher-course:last-child { padding-bottom:0; }
+ .org-page #teachers .org-teacher-course h4 { margin-bottom:6px; font-size:16px; line-height:1.5; font-weight:500; }
+ .org-page #teachers .org-teacher-course-meta { gap:4px 12px; margin:0 0 4px; font-size:13px; line-height:1.5; }
+ .org-page #teachers .org-teacher-course-document { font-size:13px; line-height:1.5; overflow-wrap:anywhere; }
+}
+
+/* Mobile facilities: topic navigation, clear actions and visible access limits. */
+.org-page #facilities .org-facilities-room-notice { display:none; }
+@media screen and (max-width:960px) {
+ .org-page #facilities .org-section-heading { padding-bottom:0; }
+ .org-page #facilities .org-section-heading small { display:none; }
+ .org-page #facilities .org-local-nav { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0 16px; margin:12px 0 24px; }
+ .org-page #facilities .org-local-nav a { display:flex; align-items:center; justify-content:space-between; gap:8px; min-height:52px; padding:8px 0; border:0; border-bottom:1px solid var(--org-line); border-radius:0; font-size:14px; font-weight:500; line-height:1.45; text-decoration:none; }
+ .org-page #facilities .org-local-nav a::after { content:'↓'; flex:none; color:#697b91; }
+ .org-page #facilities .org-local-nav a:is(:hover,:focus-visible) { text-decoration:underline; }
+ .org-page #facilities .org-local-nav a[aria-current="location"] { color:#095fcd; font-weight:600; }
+ .org-page #facilities .org-topic + .org-topic { margin-top:12px; padding-top:12px; }
+ .org-page #facilities .org-topic-title { font-size:20px; line-height:1.4; margin-bottom:12px; }
+ .org-page #facilities h4 { font-size:16px; line-height:1.5; margin-bottom:12px; }
+ .org-page #facilities h5 { font-size:15px; line-height:1.5; margin-bottom:6px; }
+ .org-page #facilities .org-topic > .org-entry + .org-entry { margin-top:8px; padding-top:8px; }
+ .org-page #facilities .org-fact-row { grid-template-columns:minmax(0,1fr); padding:10px 0; gap:4px; }
+ .org-page #facilities .org-fact-row:first-child { padding-top:0; }
+ .org-page #facilities .org-fact-row:last-child { padding-bottom:0; }
+ .org-page #facilities .org-facts { margin:0; }
+ .org-page #facilities .org-facilities-room-notice { display:block; margin-bottom:4px; font-size:15px; line-height:1.6; font-weight:500; }
+ .org-page #facilities a:not(.org-local-nav a):not(.org-jump-links a) { display:inline-flex; align-items:center; min-height:44px; padding:8px 0; font-size:14px; line-height:1.5; }
+ .org-page #facilities :is(#facilities-item-4,#facilities-item-8) a.org-facilities-primary-action { padding:10px 14px; border:1px solid #c2d9f9; border-radius:8px; background:#edf4ff; color:#095fcd; text-decoration:none; font-weight:500; }
+ .org-page #facilities a.org-facilities-primary-action:is(:hover,:focus-visible) { background:#e0edff; border-color:#8eb7ec; }
+ .org-page #facilities #facilities-other dd { color:var(--org-ink); font-size:15px; line-height:1.6; }
+ .org-page #facilities .org-facilities-secondary-nav { margin:0 0 20px; padding:12px; background:#f7f9fc; border-radius:8px; }
+ .org-page #facilities .org-facilities-secondary-nav > p { margin:0 0 6px; font-size:13px; line-height:1.5; }
+ .org-page #facilities .org-facilities-secondary-nav .org-jump-links { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0 12px; margin:0; }
+ .org-page #facilities .org-facilities-secondary-nav a { display:flex; align-items:center; justify-content:space-between; gap:8px; min-height:44px; padding:8px 0; font-size:14px; line-height:1.5; text-decoration:none; }
+ .org-page #facilities .org-facilities-secondary-nav a::after { content:'↓'; flex:none; color:#697b91; }
+ .org-page #facilities .org-facilities-secondary-nav a:is(:hover,:focus-visible) { text-decoration:underline; }
+ .org-page #facilities .org-facilities-text-group { margin-top:16px; }
+ .org-page #facilities .org-facilities-text-group :is(p,ul),
+ .org-page #facilities .org-facilities-text-group > div { font-size:15px; line-height:1.6; }
+ .org-page #facilities li { margin:8px 0; }
+ .org-page #facilities .org-facilities-network .org-facilities-text-group { padding-bottom:12px; }
+ .org-page #facilities #facilities-item-10 { margin-top:16px; padding-top:16px; }
+ .org-page #facilities #facilities-item-10 h4 { font-size:15px; margin-bottom:8px; }
+ .org-page #facilities #facilities-item-4 h5 { margin-top:16px; }
+ .org-page #facilities .org-facilities-limitations { margin-top:16px; padding:16px; }
+ .org-page #facilities .org-facilities-limitations > h4 { margin-bottom:12px; }
+ .org-page #facilities .org-facilities-limitations p { font-size:15px; line-height:1.6; }
+ .org-page #facilities #facilities-computer-access { margin-top:16px; padding-top:16px; }
+ .org-page #facilities #facilities-computer-access h5 { margin-top:16px; }
+ .org-page #facilities #facilities-computer-access :is(p,ul) { font-size:15px; line-height:1.6; }
+ .org-page #facilities #facilities-equipment .org-fact-row { grid-template-columns:minmax(0,1fr) 90px; gap:20px; padding:8px 0; }
+}
+
+/* Mobile paid services and finance: clear funding summary and compact facts. */
+@media screen and (max-width:960px) {
+ .org-page #paid-services .org-section-heading { padding-bottom:12px; }
+ .org-page #paid-services .org-entry { padding:0; }
+ .org-page #paid-services .org-prose p { font-size:16px; line-height:1.6; margin:0; }
+ .org-page #paid-services { padding-bottom:24px; margin-bottom:24px; }
+ .org-page #finance .org-section-heading { padding-bottom:16px; }
+ .org-page #finance .org-section-heading small { display:none; }
+ .org-page #finance #finance-own-funds { margin:0 0 16px; padding:16px; border:1px solid var(--org-line); border-radius:10px; background:#f7f9fc; }
+ .org-page #finance .org-finance-label { margin:0 0 6px; font-size:13px; line-height:1.5; }
+ .org-page #finance #finance-own-funds h3 { margin:0 0 8px; font-size:18px; font-weight:650; line-height:1.4; }
+ .org-page #finance #finance-own-funds > p:last-child { font-size:15px; line-height:1.6; }
+ .org-page #finance .org-facts { margin:0; }
+ .org-page #finance .org-fact-row { grid-template-columns:minmax(0,1fr); gap:4px; padding:10px 0; }
+ .org-page #finance .org-fact-row:first-child { padding-top:0; }
+ .org-page #finance .org-fact-row:last-child { padding-bottom:0; }
+ .org-page #finance .org-fact-row dt { font-size:14px; line-height:1.5; }
+ .org-page #finance .org-fact-row dt > small { margin-top:2px; font-size:13px; line-height:1.5; }
+ .org-page #finance .org-fact-row dd { font-size:15px; line-height:1.6; }
+}
+/* Mobile vacancies: distinguish missing counts from a source mismatch. */
+@media screen and (max-width:960px) {
+ .org-page #vacancies .org-section-heading { padding-bottom:16px; }
+ .org-page #vacancies .org-section-heading small { display:none; }
+ .org-page #vacancies .org-vacancies-status { margin:0 0 20px; padding:16px; border:1px solid var(--org-line); border-radius:10px; background:#f7f9fc; font-size:16px; line-height:1.6; }
+ .org-page #vacancies .org-disclosure__body .org-prose h3.org-vacancies-heading { margin-bottom:12px; font-size:18px; line-height:1.4; }
+ .org-page #vacancies .org-facts { margin:0; }
+ .org-page #vacancies .org-fact-row { grid-template-columns:minmax(0,1fr); gap:4px; padding:10px 0; }
+ .org-page #vacancies .org-fact-row dt { font-size:14px; line-height:1.5; }
+ .org-page #vacancies .org-fact-row dd { font-size:15px; line-height:1.6; }
+ .org-page #vacancies #vacancies-item-2 { margin:0 0 8px; padding:16px; border:1px solid #e1d9c9; border-radius:10px; background:#fbfaf6; }
+ .org-page #vacancies .org-vacancies-review { font-size:15px; font-weight:600; line-height:1.5; }
+ .org-page #vacancies .org-vacancies-source-note { margin-top:6px; font-size:14px; line-height:1.5; }
+ .org-page #vacancies .org-fact-row:last-child { padding-bottom:0; }
+ .org-page #vacancies .org-vacancies-note { margin-top:16px; padding:0; font-size:14px; line-height:1.5; }
+ .org-page #vacancies .org-vacancies-note a { display:inline-flex; align-items:center; min-height:44px; padding:8px 0; font-size:14px; line-height:1.5; }
+ .org-page #vacancies .org-vacancies-note .org-vacancies-charter-action { margin-top:4px; }
+}
+/* Mobile support: one clear summary and compact, readable reference fields. */
+.org-page #support .org-support-document-note { display:block; margin-top:6px; color:var(--org-muted); font-size:14px; line-height:1.55; }
+@media screen and (max-width:960px) {
+ .org-page #support .org-section-heading { padding-bottom:16px; }
+ .org-page #support .org-support-summary { margin:0 0 20px; padding:16px; border:1px solid var(--org-line); border-radius:10px; background:#f7f9fc; font-size:16px; line-height:1.6; }
+ .org-page #support .org-support-group h3 { margin:0 0 6px; font-size:20px; line-height:1.4; }
+ .org-page #support .org-support-group-note { margin:0 0 12px; font-size:14px; line-height:1.5; }
+ .org-page #support .org-support-group + .org-support-group { margin-top:12px; padding-top:12px; }
+ .org-page #support .org-facts { margin:0; }
+ .org-page #support .org-fact-row { grid-template-columns:minmax(0,1fr); gap:4px; padding:10px 0; }
+ .org-page #support .org-fact-row:first-child { padding-top:0; }
+ .org-page #support .org-fact-row:last-child { padding-bottom:0; }
+ .org-page #support .org-fact-row dt > span { color:var(--org-muted); font-size:14px; font-weight:400; line-height:1.5; }
+ .org-page #support .org-fact-row dd { color:var(--org-ink); font-size:15px; line-height:1.6; }
+ .org-page #support #support-detail-1 { grid-template-columns:minmax(0,1fr) auto; gap:12px; align-items:baseline; }
+ .org-page #support #support-detail-1 dd { text-align:right; }
+ .org-page #support .org-support-document-note { margin-top:6px; font-size:13px; line-height:1.5; }
+}
+.org-page #international .org-international-directions-title { display:none; }
+/* Mobile international cooperation: partner hierarchy and readable directions. */
+@media screen and (max-width:960px) {
+ .org-page #international .org-section-heading { padding-bottom:16px; }
+ .org-page #international .org-section-heading small { display:none; }
+ .org-page #international #international-item-1 > h3 { margin:0 0 10px; font-size:18px; font-weight:650; line-height:1.4; }
+ .org-page #international #international-item-1 > p:not(.org-international-scope) { margin:0; font-size:16px; line-height:1.6; }
+ .org-page #international #international-item-1 .org-international-directions-title { display:block; margin:16px 0 6px; font-size:16px; font-weight:600; line-height:1.5; }
+ .org-page #international .org-international-scope { margin:0 0 10px; color:var(--org-muted); font-size:15px; line-height:1.5; }
+ .org-page #international #international-item-1 ul { margin:0; padding-left:22px; font-size:16px; line-height:1.6; }
+ .org-page #international #international-item-1 li { margin:8px 0; }
+ .org-page #international #international-item-1 li:first-child { margin-top:0; }
+ .org-page #international #international-item-1 li:last-child { margin-bottom:0; }
+ .org-page #international { padding-bottom:24px; margin-bottom:24px; }
+}
+
+/* Mobile health: six visible topics and concise practical information. */
+.org-page #food-health .org-health-territory-title { display:none; }
+@media screen and (max-width:960px) {
+ .org-page #food-health .org-section-heading { padding-bottom:0; }
+ .org-page #food-health .org-section-heading small { display:none; }
+ .org-page #food-health > .org-jump-links { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0 16px; margin:12px 0 20px; }
+ .org-page #food-health > .org-jump-links a { display:flex; align-items:center; justify-content:space-between; gap:8px; min-height:52px; padding:8px 0; border-bottom:1px solid var(--org-line); font-size:14px; font-weight:500; line-height:1.45; text-decoration:none; }
+ .org-page #food-health > .org-jump-links a::after { content:'↓'; flex:none; color:#697b91; }
+ .org-page #food-health > .org-jump-links a:is(:hover,:focus-visible) { text-decoration:underline; }
+ .org-page #food-health > .org-jump-links a[aria-current="location"] { color:#095fcd; font-weight:600; }
+ .org-page #food-health .org-health-intro { margin:0 0 20px; }
+ .org-page #food-health .org-health-basis { font-size:13px; line-height:1.5; }
+ .org-page #food-health .org-prose > .org-health-group { margin:12px 0 0; padding:12px 0 0; border-top:1px solid var(--org-line); }
+ .org-page #food-health .org-health-intro + .org-health-group { margin:0; padding:0; border:0; }
+ .org-page #food-health .org-prose .org-health-group > h3 { margin:0 0 12px; font-size:20px; line-height:1.4; }
+ .org-page #food-health .org-health-group h4 { margin:16px 0 8px; font-size:16px; line-height:1.5; }
+ .org-page #food-health .org-health-group > h3 + h4 { margin-top:0; }
+ .org-page #food-health .org-health-group p { font-size:16px; line-height:1.6; margin:0 0 12px; }
+ .org-page #food-health .org-health-group > p:last-child { margin-bottom:0; }
+ .org-page #food-health .org-facts { margin:0; }
+ .org-page #food-health .org-fact-row { grid-template-columns:minmax(0,1fr); gap:4px; padding:10px 0; }
+ .org-page #food-health .org-fact-row:first-child { padding-top:0; }
+ .org-page #food-health .org-fact-row:last-child { padding-bottom:0; }
+ .org-page #food-health .org-fact-row dt { font-size:14px; line-height:1.5; }
+ .org-page #food-health .org-fact-row dd { overflow-wrap:anywhere; }
+ .org-page #food-health #food-health-meals-1 { margin:0 0 8px; padding:16px; border:1px solid var(--org-line); border-radius:10px; background:#f7f9fc; }
+ .org-page #food-health #food-health-meals-3 dd p:not(:first-child) { margin-bottom:8px; font-size:15px; line-height:1.6; }
+ .org-page #food-health #food-health-meals-3 dd p:last-child { margin-bottom:0; }
+ .org-page #food-health .org-health-detail-label { font-size:14px; }
+ .org-page #food-health .org-health-certificate { padding:12px; border:1px solid var(--org-line); border-radius:8px; }
+ .org-page #food-health .org-health-certificate .org-fact-row { gap:4px; padding:8px 0; }
+ .org-page #food-health .org-health-certificate .org-fact-row:first-child { padding-top:0; }
+ .org-page #food-health .org-health-certificate .org-fact-row:last-child { padding-bottom:0; }
+ .org-page #food-health .org-health-certificate dd { font-size:15px; line-height:1.5; }
+ .org-page #food-health .org-health-medical-detail { margin-top:8px; font-size:14px; line-height:1.5; }
+ .org-page #food-health .org-health-group .org-health-territory-title { display:block; font-size:15px; margin-top:12px; }
+ .org-page #food-health .org-health-safety-item { padding:12px 0; }
+ .org-page #food-health .org-health-safety-item h4 { margin:0 0 8px; }
+ .org-page #food-health .org-health-safety-item p { margin:0; }
+ .org-page #food-health .org-health-safety-item:last-child { padding-bottom:0; }
+ .org-page #food-health .org-health-safety-item ul { margin:0; font-size:16px; line-height:1.6; }
+ .org-page #food-health .org-health-safety-item li { margin:8px 0; }
+ .org-page #food-health .org-health-safety-item li:first-child { margin-top:0; }
+ .org-page #food-health .org-health-safety-item li:last-child { margin-bottom:0; }
+}
+
+/* Mobile standards: compact labels and a controlled gap before the footer. */
+@media screen and (max-width:960px) {
+ .org-page #standards .org-section-heading { padding-bottom:16px; }
+ .org-page #standards .org-section-heading small { font-size:14px; line-height:1.5; }
+ .org-page #standards .org-facts { margin:0; }
+ .org-page #standards .org-fact-row { grid-template-columns:minmax(0,1fr); gap:4px; padding:10px 0; }
+ .org-page #standards .org-fact-row:first-child { padding-top:0; }
+ .org-page #standards .org-fact-row:last-child { padding-bottom:0; }
+ .org-page #standards .org-fact-row dt { color:var(--org-muted); font-size:15px; font-weight:400; line-height:1.5; }
+ .org-page #standards .org-fact-row dd { color:var(--org-ink); font-size:16px; line-height:1.5; }
+ .org-page .org-main:has(#standards) { padding-bottom:28px; }
+}
+/* Keep the mobile contents bar stable when its menu opens near the footer. */
+@media screen and (max-width:960px) {
+ .org-page .org-contents #org-section-links { position:absolute; top:100%; left:0; right:0; max-height:min(var(--org-menu-space,100dvh),calc(100dvh - var(--org-header-height,76px) - var(--org-toggle-height,64px) - 18px)); padding:8px 18px 14px; background:#fff; border-bottom:1px solid var(--org-line); box-shadow:0 8px 18px rgb(24 40 61 / 8%); overflow-y:auto; overscroll-behavior:contain; }
+ .org-page .org-contents.is-open .org-back-search { display:none; }
+}
+</style>
+<link rel="icon" type="image/x-icon" sizes="16x16 32x32 48x48 256x256" href="assets/brand/favicon-v4.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/brand/favicon-v4-32.png">
+</head>
+<body>
+  <a class="org-skip-link" href="#org-content">Перейти к содержанию</a>
+
+  <header class="edu2-chrome edu2-chrome-header">
+    <div class="edu2-chrome-container edu2-chrome-header__inner">
+      <a class="edu2-chrome-brand" href="index.html" aria-label="РОСДОРСПК — главная">
+        <span class="edu2-chrome-brand__mark" aria-hidden="true"><img src="assets/brand/rosdorspk-mark-v4.png" width="256" height="256" alt="" decoding="async"></span>
+        <span class="edu2-chrome-brand__text"><strong>РОСДОРСПК</strong><small>Система повышения квалификации</small></span>
+      </a>
+      <nav class="edu2-chrome-nav" aria-label="Основная навигация">
+        <a href="index.html">Главная</a>
+        <a href="education.html">Обучение</a>
+        <a href="webinars.html">Вебинары</a>
+        <a href="regulations.html">Нормативные обзоры</a>
+      <div class="edu2-chrome-about" data-edu2-chrome-about>
+        <button class="edu2-chrome-about__trigger is-active" type="button" aria-controls="edu2-chrome-about-menu" aria-expanded="false" data-edu2-chrome-about-trigger>О&nbsp;нас <span class="edu2-chrome-about__chevron" aria-hidden="true">⌄</span>
+        </button>
+        <div class="edu2-chrome-about__menu" id="edu2-chrome-about-menu" aria-hidden="true" inert data-edu2-chrome-about-menu>
+          <p class="edu2-chrome-about__heading">О системе РОСДОРСПК</p>
+          <a class="edu2-chrome-about__item" data-about-icon="results" href="results.html"><strong>Результаты в цифрах</strong><small>Масштаб, география и аудитория</small></a>
+          <a class="edu2-chrome-about__item is-active" data-about-icon="organization" href="organization.html" aria-current="page"><strong>Сведения об организации</strong><small>Документы, структура и руководство</small></a>
+          <a class="edu2-chrome-about__item" data-about-icon="contacts" href="contacts.html"><strong>Контакты</strong><small>Телефон, почта и адрес</small></a>
+          <a class="edu2-chrome-about__item" data-about-icon="history" href="history.html"><strong>История создания</strong><small>Этапы развития системы</small></a>
+        </div>
+      </div>
+      </nav>
+      <button class="edu2-chrome-menu-button" type="button" aria-expanded="false" aria-controls="edu2-chrome-mobile-menu" aria-label="Открыть меню" data-edu2-chrome-menu-button>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="edu2-chrome-mobile-menu" id="edu2-chrome-mobile-menu" aria-label="Мобильная навигация" aria-hidden="true" inert>
+      <a href="index.html">Главная</a>
+      <a href="education.html">Обучение</a>
+      <a href="webinars.html">Вебинары</a>
+      <a href="regulations.html">Нормативные обзоры</a>
+    <div class="edu2-chrome-mobile-about" data-edu2-chrome-mobile-about>
+      <button class="edu2-chrome-mobile-about__toggle is-active" type="button" aria-expanded="false" aria-controls="edu2-chrome-about-mobile-menu" data-edu2-chrome-mobile-about-toggle>
+        О&nbsp;нас <span aria-hidden="true">⌄</span>
+      </button>
+      <div class="edu2-chrome-mobile-about__menu" id="edu2-chrome-about-mobile-menu" aria-hidden="true" inert data-edu2-chrome-mobile-about-menu>
+        <div class="edu2-chrome-mobile-about__inner">
+        <a data-about-icon="results" href="results.html">Результаты в цифрах</a>
+        <a data-about-icon="organization" class="is-active" href="organization.html" aria-current="page">Сведения об организации</a>
+        <a data-about-icon="contacts" href="contacts.html">Контакты</a>
+        <a data-about-icon="history" href="history.html">История создания</a>
+              </div>
+      </div>
+    </div>
+    </nav>
+  </header>
+
+  <div class="org-page">
+
+    <main id="org-content">
+      <section class="org-hero"><div class="org-shell"><p class="org-eyebrow">Официальная информация</p><h1>Сведения об организации</h1><p class="org-hero__lead"><span class="org-hero__lead-full">Документы, программы и условия образовательной деятельности ФАУ «РОСДОРНИИ».</span><span class="org-hero__lead-mobile">Официальные сведения ФАУ «РОСДОРНИИ».</span></p><nav class="org-quicklinks" aria-label="Быстрый доступ"><a href="#general-license">Лицензия ↓</a><a href="#documents">Документы ↓</a><a href="#popup-table1">Образовательные программы ↓</a><a href="#general-contacts">Контакты ↓</a></nav></div></section><section class="org-main">
+        <div class="org-shell">
+          <div class="org-tools" aria-label="Инструменты страницы">
+            <div class="org-search">
+              <label class="visually-hidden" for="org-search">Найти в сведениях</label>
+              <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
+              <input id="org-search" type="search" placeholder="Поиск по сведениям" autocomplete="off" aria-controls="org-search-results">
+              <button id="org-search-clear" type="button" aria-label="Очистить поиск" hidden>×</button>
+            </div>
+            <p class="org-search-status" id="org-search-status" aria-live="polite"></p>
+          <div id="org-search-results" hidden="hidden" class="org-search-results"></div></div>
+
+          <div class="org-layout">
+            <aside class="org-contents" aria-label="Содержание страницы" id="org-contents">
+              <button class="org-mobile-toggle" type="button" aria-expanded="false" aria-controls="org-section-links"><span>Разделы страницы</span><strong id="org-current-section">Основные сведения</strong></button><strong>На этой странице</strong>
+              <a class="org-mobile-search" href="#org-search" aria-label="Поиск по сведениям" title="Поиск по сведениям"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m16 16 4.5 4.5"></path></svg></a><a href="#org-search" class="org-back-search">↑ Поиск по сведениям</a><nav id="org-section-links"><a href="#general"><span>01</span>Основные сведения</a><a href="#structure"><span>02</span>Структура и органы управления</a><a href="#documents"><span>03</span>Документы</a><a href="#education"><span>04</span>Образование</a><a href="#leadership"><span>05</span>Руководство</a><a href="#teachers"><span>06</span>Педагогический состав</a><a href="#facilities"><span>07</span>Оснащение и доступная среда</a><div id="org-facilities-subnav" class="org-subnav" hidden="hidden" aria-label="Темы раздела 7"><a href="#facilities-rooms">Помещения и оснащение</a><a href="#facilities-library">Библиотека</a><a href="#facilities-digital">Цифровая среда</a><a href="#facilities-accessibility">Доступность</a></div><a href="#paid-services"><span>08</span>Платные образовательные услуги</a><a href="#finance"><span>09</span>Финансово-хозяйственная деятельность</a><a href="#vacancies"><span>10</span>Вакантные места</a><a href="#support"><span>11</span>Стипендии и меры поддержки</a><a href="#international"><span>12</span>Международное сотрудничество</a><a href="#food-health"><span>13</span>Питание и охрана здоровья</a><a href="#standards"><span>14</span>Образовательные стандарты и требования</a></nav>
+            </aside>
+            <div class="org-sections">
+    <section class="org-section" id="general" data-org-section="" aria-labelledby="general-title">
+      <header class="org-section-heading">
+        <span class="org-disclosure__number">01</span>
+        <span class="org-disclosure__heading">
+          <h2 id="general-title">Основные сведения</h2>
+          <small>Наименование, учредитель, адреса, режим работы и лицензия</small>
+        </span>
+        </header>
+      <nav class="org-general-nav" aria-label="В основных сведениях"><a href="#general-contacts">Контакты</a><a href="#general-item-7">Режим работы</a><a href="#general-license">Лицензия</a><a href="#general-item-5">Учредитель</a></nav>
+      <div class="org-disclosure__body"><div class="org-prose"><dl class="org-facts"><div id="general-item-1" class="org-fact-row" data-search-item=""><dt>Полное наименование организации</dt><dd class="">Федеральное автономное учреждение «Российский дорожный научно-исследовательский институт»</dd></div><div id="general-item-2" class="org-fact-row" data-search-item=""><dt>Сокращенное наименование организации</dt><dd class="">ФАУ «РОСДОРНИИ»</dd></div><div id="general-item-3" class="org-fact-row" data-search-item=""><dt>Дата создания</dt><dd class="">01 сентября 1988 года</dd></div></dl><div id="general-contacts" class="org-general-group org-entry"><h3>Адрес и контакты</h3><div id="general-contact-details" class="" data-search-item=""><dl class="org-facts org-facts--details"><div class="org-fact-row" id="general-item-6" data-search-item=""><dt>Юридический и фактический адрес</dt><dd>125493, Россия, г. Москва, ул. Смольная, д. 2</dd></div><div class="org-fact-row"><dt title="Контактные телефоны">Телефон</dt><dd><a href="tel:+74955400820">+7 (495) 540-08-20</a><span class="org-general-extension">доб. 6857, 6503</span></dd></div><div class="org-fact-row"><dt title="Адреса электронной почты">Электронная почта</dt><dd><a href="mailto:post@rosdornii.ru">post@rosdornii.ru</a><br><a href="mailto:info@rosdorspk.ru">info@rosdorspk.ru</a></dd></div></dl></div></div><div id="general-item-7" class="org-entry org-general-group org-general-schedule" data-search-item=""><h3 title="Информация о режиме и графике работы">Режим работы</h3><dl class="org-facts org-facts--details"><div class="org-fact-row"><dt>Пн–чт</dt><dd>09:00–18:00</dd></div><div class="org-fact-row"><dt>Пт</dt><dd>09:00–16:45</dd></div><div class="org-fact-row"><dt>Обеденный перерыв</dt><dd>12:15–13:00</dd></div><div class="org-fact-row"><dt>Выходные</dt><dd>суббота–воскресенье, праздничные дни</dd></div></dl></div><div id="general-license" class="org-entry org-general-group org-general-license" data-search-item=""><h3 title="Лицензия на осуществление образовательной деятельности (выписка из реестра лицензий на осуществление образовательной деятельности)">Лицензия на образовательную деятельность</h3><dl class="org-facts org-facts--details"><div class="org-fact-row"><dt title="Регистрационный номер лицензии">Номер лицензии</dt><dd>№ 041962</dd></div><div class="org-fact-row"><dt title="Дата предоставления лицензии">Дата предоставления</dt><dd>21 февраля 2022 года</dd></div></dl><p class="">ФАУ «РОСДОРНИИ» имеет действующую лицензию на осуществление образовательной деятельности по реализации образовательных программ дополнительного профессионального образования, выданную Департаментом образования и науки города Москвы.</p><div id="general-item-9" class="org-entry" data-search-item=""><dl class="org-facts org-facts--details"><div class="org-fact-row"><dt title="Информация о местах осуществления образовательной деятельности, сведения о которых в соответствии с частью 4 статьи 91 Федерального закона от 29 декабря 2012 г. № 273-ФЗ «Об образовании в Российской Федерации» не включаются в соответствующую запись в реестре лицензий на осуществление образовательной деятельности в виде адреса места нахождения">Места обучения вне записи в реестре лицензий</dt><dd>Места осуществления образовательной деятельности, которые не включаются в соответствующую запись в реестре лицензий на осуществление образовательной деятельности, отсутствуют</dd></div></dl></div></div><div id="general-item-5" class="org-entry org-general-group" data-search-item=""><h3>Учредитель</h3><dl class="org-facts org-facts--details"><div class="org-fact-row"><dt title="Наименование учредителя">Наименование</dt><dd>Российская Федерация в лице Федерального дорожного агентства</dd></div><div class="org-fact-row"><dt title="Адрес местонахождения учредителя(ей)">Адрес</dt><dd>129085, г. Москва, ул. Бочкова, д. 4</dd></div><div class="org-fact-row"><dt title="Контактные телефоны">Телефон</dt><dd><a href="tel:+74958709713">+7 (495) 870-97-13</a></dd></div><div class="org-fact-row"><dt title="Адрес электронной почты">Электронная почта</dt><dd><a href="mailto:rad@fda.gov.ru">rad@fda.gov.ru</a></dd></div><div class="org-fact-row"><dt title="Адрес сайта учредителя(ей) в сети «Интернет»">Сайт</dt><dd><a href="https://rosavtodor.gov.ru/" target="_blank" rel="noopener noreferrer">Росавтодор ↗</a></dd></div></dl></div><div id="general-item-4" class="org-entry org-general-group" data-search-item=""><h3>Краткая история</h3><p class="">В рамках национального проекта «Безопасные качественные дороги» специалистами ФАУ «РОСДОРНИИ» в 2019 году была создана система повышения квалификации для работников дорожного хозяйства, которая предусматривает реализацию программ обучения специалистов по различным направлениям дорожного хозяйства.</p><p><a href="https://rosdornii.ru/about/history/" target="_blank" rel="noopener noreferrer">Подробнее об истории института ↗</a></p></div><div id="general-item-11" class="org-entry org-general-sites org-general-group" data-search-item=""><h3>Официальные ресурсы</h3><div class="org-general-resources"><div><h4>Государственные ресурсы</h4><ul><li><a href="https://www.mos.ru/donm/" target="_blank" rel="noopener noreferrer" title="Департамент образования и науки г. Москвы"><span>Департамент образования и науки Москвы</span><span class="org-resource-arrow" aria-hidden="true">↗</span></a></li><li><a href="https://minobrnauki.gov.ru/" target="_blank" rel="noopener noreferrer" title="Министерство науки и высшего образования Российской Федерации"><span>Минобрнауки России</span><span class="org-resource-arrow" aria-hidden="true">↗</span></a></li><li><a href="https://mintrans.gov.ru/" target="_blank" rel="noopener noreferrer" title="Министерство транспорта Российской Федерации"><span>Минтранс России</span><span class="org-resource-arrow" aria-hidden="true">↗</span></a></li></ul></div><div><h4>Ресурсы РОСДОРСПК</h4><ul><li><a href="https://rosdorspk.ru/" target="_blank" rel="noopener noreferrer" title="Сайт Системы повышения квалификации для работников дорожного хозяйства"><span>Основной сайт РОСДОРСПК</span><span class="org-resource-arrow" aria-hidden="true">↗</span></a></li><li><a href="https://edu.rosdorspk.ru/" target="_blank" rel="noopener noreferrer" title="Образовательный портал для работников дорожного хозяйства"><span>Образовательный портал РОСДОРСПК</span><span class="org-resource-arrow" aria-hidden="true">↗</span></a></li></ul></div></div></div></div></div>
+    </section>
+    
+    <section class="org-section" id="structure" data-org-section="" aria-labelledby="structure-title">
+      <header class="org-section-heading">
+        <span class="org-disclosure__number">02</span>
+        <span class="org-disclosure__heading">
+          <h2 id="structure-title">Структура и органы управления</h2>
+          <small>Подразделение, руководитель и органы управления</small>
+        </span>
+        </header>
+      <nav class="org-structure-nav" aria-label="В структуре и органах управления"><a href="#structure-item-1">Подразделение</a><a href="#structure-item-2">Органы управления</a><a href="#structure-branches">Филиалы</a></nav>
+      <div class="org-disclosure__body"><div class="org-prose"><div id="structure-item-1" class="org-entry" data-search-item=""><p class="org-structure-label" title="Специализированное структурное подразделение">Структурное подразделение</p><h3>Департамент развития отраслевого образования</h3><div class="org-structure-leader"><h4>Директор департамента</h4><p class="org-structure-person">Игнатьев Алексей Александрович</p></div><dl class="org-facts org-facts--details"><div class="org-fact-row"><dt title="Адрес местонахождения">Адрес</dt><dd>125493, Россия, г. Москва, ул. Смольная, д. 2</dd></div><div class="org-fact-row"><dt title="Адрес официального сайта в сети «Интернет»">Сайт</dt><dd><a href="https://rosdorspk.ru/" target="_blank" rel="noopener noreferrer" class="org-structure-site"><span>rosdorspk.ru</span><span class="org-structure-arrow" aria-hidden="true">↗</span></a></dd></div><div class="org-fact-row"><dt title="Адреса электронной почты">Электронная почта</dt><dd><a href="mailto:info@rosdorspk.ru">info@rosdorspk.ru</a></dd></div></dl><div id="structure-department-document" class="org-structure-document" data-search-item=""><h4>Положение о департаменте развития отраслевого образования</h4><span class="org-file-status">Ссылка на документ не указана</span></div></div><div id="structure-item-2" class="org-entry" data-search-item=""><h3>Органы управления</h3>
+    <div id="popup-table0" class="org-records"><article id="popup-table0-record-1" class="org-record" data-search-item=""><h4>Генеральный директор</h4><p class="org-structure-person">Бедусенко Александр Александрович</p></article><article id="popup-table0-record-2" class="org-record" data-search-item=""><h4>Наблюдательный совет</h4><p class="org-structure-note">Сведения о руководителе и его должности в источнике не указаны.</p></article></div><div id="structure-management-common" class="org-structure-common" data-search-item=""><h4>Контакты и документы</h4><p class="org-structure-note">Для генерального директора и наблюдательного совета.</p><dl class="org-facts org-facts--details"><div class="org-fact-row"><dt title="Адрес местонахождения органа управления">Адрес</dt><dd>125493, Россия, г. Москва, ул. Смольная, д. 2</dd></div><div class="org-fact-row"><dt title="Адрес официального сайта в сети &quot;Интернет&quot; органа управления (при наличии)">Отдельный сайт</dt><dd class="org-structure-note">Отсутствует</dd></div><div class="org-fact-row"><dt title="Адреса электронной почты органа управления (при наличии)">Электронная почта</dt><dd><a href="mailto:post@rosdornii.ru">post@rosdornii.ru</a></dd></div></dl><div id="structure-charter" class="org-structure-charter" data-search-item=""><h4 class="org-structure-document-label">Учредительный документ</h4><a href="https://rosdornii.ru/upload/iblock/34f/6my6egm5q8sqretee7t6jqyhsa9nqktd/Ustav-s-otmetkoy-o-gosregistratsii.pdf" target="_blank" rel="noopener noreferrer" class="org-structure-charter-link"><span>Устав ФАУ «РОСДОРНИИ»</span><span class="org-structure-arrow" aria-hidden="true">↗</span></a><span class="org-file-status">PDF · 37 страниц · откроется в новой вкладке</span></div></div></div><div class="org-entry" id="structure-branches"><h3>Филиалы и представительства</h3><dl class="org-facts org-facts--details"><div id="structure-item-3" class="org-fact-row" data-search-item=""><dt title="Информация о филиалах (в том числе находящихся за пределами Российской Федерации)">Филиалы</dt><dd>Отсутствуют филиалы, осуществляющие образовательную деятельность</dd></div><div id="structure-item-4" class="org-fact-row" data-search-item=""><dt title="Информация о представительствах (в том числе находящихся за пределами Российской Федерации)">Представительства</dt><dd>Отсутствуют представительства, осуществляющие образовательную деятельность</dd></div></dl></div></div></div>
+    </section>
+    
+    <section class="org-section" id="documents" data-org-section="" aria-labelledby="documents-title">
+      <header class="org-section-heading">
+        <span class="org-disclosure__number">03</span>
+        <span class="org-disclosure__heading">
+          <h2 id="documents-title">Документы</h2>
+          <small>Устав, локальные акты и документы об образовательной деятельности</small>
+        </span>
+        </header><nav class="org-jump-links" aria-label="Группы документов"><a href="#documents-basic">Основные документы</a><a href="#documents-local-acts">Организация обучения</a><a href="#documents-reporting">Отчётность и контроль</a><a href="#documents-samples">Образцы документов</a></nav>
+      <div class="org-disclosure__body"><div class="org-prose"><div class="org-documents-group"><div class="org-documents-group-heading" id="documents-basic" data-search-heading=""><h3>Основные документы</h3></div><div id="documents-item-1" class="org-entry org-document" data-search-item=""><div class="org-document-content"><h4>Устав ФАУ «РОСДОРНИИ»</h4><div class="org-document-actions"><a href="https://rosdornii.ru/upload/iblock/34f/6my6egm5q8sqretee7t6jqyhsa9nqktd/Ustav-s-otmetkoy-o-gosregistratsii.pdf" target="_blank" rel="noopener noreferrer" class="org-document-open" aria-label="Открыть устав ФАУ «РОСДОРНИИ» в формате PDF в новой вкладке">Открыть PDF ↗</a><span class="org-file-status">37 страниц · в новой вкладке</span></div><p class="org-document-source"><a href="https://rosdornii.ru/about/documents/" target="_blank" rel="noopener noreferrer" class="org-document-source-link">Изменения к уставу ↗</a><span class="org-document-source-caption">На сайте РОСДОРНИИ</span></p></div></div><div id="documents-item-2" class="org-entry org-document" data-search-item=""><div class="org-document-content"><h4>Правила внутреннего распорядка слушателей</h4><span class="org-file-status">Ссылка не указана</span></div></div><div id="documents-item-3" class="org-entry org-document" data-search-item=""><div class="org-document-content"><h4>Правила трудового распорядка ФАУ «РОСДОРНИИ»</h4><span class="org-file-status">Ссылка не указана</span></div></div><div id="documents-item-4" class="org-entry org-document" data-search-item=""><div class="org-document-content"><h4>Коллективный договор (при наличии)</h4><p class="org-file-status">Сведения о документе не указаны в источнике.</p></div></div></div><div class="org-documents-group" id="documents-item-10" title="Локальные нормативные акты и иные документы, которые размещаются, опубликовываются по решению организации, осуществляющей обучение и (или) размещение, опубликование которых является обязательным в соответствии с законодательством Российской Федерации"><div class="org-documents-group-heading" id="documents-local-acts" data-search-heading=""><h3>Организация обучения</h3></div><div class="org-document-source-group"><div id="documents-item-11" class="org-entry org-document" data-search-item=""><div class="org-document-content"><h4>Организация образовательной деятельности</h4><p class="org-document-purpose" title="Положение об организации и осуществлении образовательной деятельности">Положение об организации и осуществлении образовательной деятельности по дополнительным профессиональным программам</p><span class="org-file-status">Ссылка не указана</span></div></div><p class="org-document-extracts-label">Выписки из положения</p><div class="org-document-extracts"><div id="documents-item-5" class="org-entry org-document" data-search-item=""><div class="org-document-content"><h4 title="Правила приема обучающихся">Приём на обучение</h4><span class="org-file-status">Ссылка не указана</span></div></div><div id="documents-item-7" class="org-entry org-document" data-search-item=""><div class="org-document-content"><h4 title="Формы, периодичность и порядок текущего контроля успеваемости и промежуточной аттестации обучающихся">Текущий контроль и промежуточная аттестация</h4><span class="org-file-status">Ссылка не указана</span></div></div><div id="documents-item-8" class="org-entry org-document" data-search-item=""><div class="org-document-content"><h4 title="Порядок и основания перевода, отчисления и восстановления обучающихся">Перевод, отчисление и восстановление</h4><span class="org-file-status">Ссылка не указана</span></div></div><div id="documents-item-13" class="org-entry org-document" data-search-item=""><div class="org-document-content"><h4 title="Положение о документах о квалификации и обучении">Документы о квалификации</h4><span class="org-file-status">Ссылка не указана</span></div></div><div id="documents-item-14" class="org-entry org-document" data-search-item=""><div class="org-document-content"><h4 title="Положение об итоговой аттестации">Итоговая аттестация</h4><span class="org-file-status">Ссылка не указана</span></div></div></div></div><div class="org-document-source-group" id="documents-schedule-source" data-search-heading=""><h4 class="org-document-source-title">Правила внутреннего распорядка слушателей</h4><p class="org-document-extracts-label">Выписка из правил</p><div class="org-document-extracts"><div id="documents-item-6" class="org-entry org-document" data-search-item=""><div class="org-document-content"><h4 title="Режим занятий обучающихся">Режим занятий</h4><span class="org-file-status">Ссылка не указана</span></div></div></div></div><div id="documents-item-9" class="org-entry org-document" data-search-item=""><div class="org-document-content"><h4>Оформление образовательных отношений</h4><p title="Оформление образовательных отношений" class="org-document-purpose">Порядок оформления возникновения, приостановления и прекращения отношений между образовательной организацией и обучающимися и (или) родителями (законными представителями) несовершеннолетних обучающихся</p><span class="org-file-status">Ссылка не указана</span></div></div><div id="documents-item-12" class="org-entry org-document" data-search-item=""><div class="org-document-content"><h4 title="Положение о реализации программ дополнительного профессионального образования с использованием дистанционных образовательных технологий">Дистанционные образовательные технологии</h4><p class="org-document-purpose">Положение о реализации программ дополнительного профессионального образования с использованием дистанционных образовательных технологий</p><span class="org-file-status">Ссылка не указана</span></div></div></div><div class="org-documents-group"><div class="org-documents-group-heading" id="documents-reporting" data-search-heading=""><h3>Отчётность и контроль</h3></div><div id="documents-item-15" class="org-entry org-document" data-search-item=""><div class="org-document-content"><h4>Отчёт о самообследовании за 2024 год</h4><span class="org-file-status">Ссылка не указана</span></div></div><div class="org-documents-control"><h4>Предписания и отчёты об исполнении</h4><dl class="org-facts org-facts--details"><div class="org-fact-row" id="documents-item-16" data-search-item=""><dt title="Предписания органов, осуществляющих государственный контроль (надзор) в сфере образования">Предписания</dt><dd>Предписания органов государственного контроля (надзора) в сфере образования отсутствуют.</dd></div><div class="org-fact-row" id="documents-item-17" data-search-item=""><dt title="Отчеты об исполнении предписаний (до подтверждения органом, осуществляющим государственный контроль (надзор) в сфере образования, исполнения предписания или признания его недействительным в установленном законом порядке) (при наличии)">Отчёты об исполнении</dt><dd>Предписания отсутствуют.</dd></div></dl></div></div><div class="org-documents-group"><div class="org-documents-group-heading" id="documents-samples" data-search-heading=""><h3>Образцы документов</h3></div><div id="documents-item-18" class="org-entry org-document" data-search-item=""><div class="org-document-content"><h4>Удостоверение о повышении квалификации</h4><p class="org-document-purpose" title="Образцы документов о квалификации">Образец документа о квалификации</p><span class="org-file-status">Ссылка не указана</span></div></div></div></div></div>
+    </section>
+    
+    <section class="org-section" id="education" data-org-section="" aria-labelledby="education-title">
+      <header class="org-section-heading">
+        <span class="org-disclosure__number">04</span>
+        <span class="org-disclosure__heading">
+          <h2 id="education-title">Образование</h2>
+          <small>Программы, направления научной работы и численность слушателей</small>
+        </span>
+        </header>
+      <nav class="org-jump-links" aria-label="Темы раздела «Образование»"><a href="#education-item-1">Программы и условия</a><a href="#education-learning-title">Сведения об обучении</a><a href="#education-other-levels-title">Другие уровни образования</a><a href="#education-item-2">Научная деятельность</a></nav><div class="org-disclosure__body"><div class="org-prose"><div id="education-item-1" class="org-entry" data-search-item=""><h3 title="Информация о реализуемых образовательных программах с указанием учебных предметов, курсов, дисциплин (модулей), практики, предусмотренных соответствующей образовательной программой">Образовательные программы <span class="org-education-count" aria-label="10 программ">10</span></h3>
+    <div id="education-common" class="org-education-common" data-search-item=""><h4>Общие условия для всех 10 программ</h4><dl class="org-facts org-facts--details"><div class="org-fact-row"><dt>Уровень образования</dt><dd>Дополнительное профессиональное образование — повышение квалификации</dd></div><div class="org-fact-row"><dt>Форма обучения</dt><dd>Заочная</dd></div><div class="org-fact-row"><dt title="Практики, предусмотренные соответствующей образовательной программой">Практика</dt><dd>Не предусмотрено</dd></div><div class="org-fact-row"><dt title="Использование при реализации образовательных программ электронного обучения и дистанционных образовательных технологий">Электронное обучение и дистанционные технологии</dt><dd>Исключительно с применением дистанционных образовательных технологий</dd></div></dl></div><div class="org-education-columns" aria-hidden="true"><span>Программа</span><span>Ак. часы</span></div><div id="popup-table1" class="org-records"><article id="popup-table1-record-1" class="org-record org-education-program" data-search-item=""><span class="org-record-number" aria-hidden="true">01</span><h4>Диагностика и оценка технического состояния искусственных сооружений</h4><span class="org-education-hours" aria-label="Нормативный срок обучения: 36 ак. часов">36<span class="org-education-hours-unit"> ак. часов</span></span></article><article id="popup-table1-record-2" class="org-record org-education-program" data-search-item=""><span class="org-record-number" aria-hidden="true">02</span><h4>Основные требования и методы испытаний дорожно-строительных материалов, применяемых при строительстве и ремонте автомобильных дорог общего пользования</h4><span class="org-education-hours" aria-label="Нормативный срок обучения: 40 ак. часов">40<span class="org-education-hours-unit"> ак. часов</span></span></article><article id="popup-table1-record-3" class="org-record org-education-program" data-search-item=""><span class="org-record-number" aria-hidden="true">03</span><h4>Оценка развития и причины образования дефектов и повреждений железобетонных мостовых конструкций для прогнозирования их эксплуатационной надежности</h4><span class="org-education-hours" aria-label="Нормативный срок обучения: 16 ак. часов">16<span class="org-education-hours-unit"> ак. часов</span></span></article><article id="popup-table1-record-4" class="org-record org-education-program" data-search-item=""><span class="org-record-number" aria-hidden="true">04</span><h4>Правовые основы дорожной деятельности. Техническое регулирование, стандартизация, аккредитация и метрологическое обеспечение дорожного хозяйства РФ</h4><span class="org-education-hours" aria-label="Нормативный срок обучения: 24 ак. часов">24<span class="org-education-hours-unit"> ак. часов</span></span></article><article id="popup-table1-record-5" class="org-record org-education-program" data-search-item=""><span class="org-record-number" aria-hidden="true">05</span><h4>Проектирование улично-дорожной сети</h4><span class="org-education-hours" aria-label="Нормативный срок обучения: 36 ак. часов">36<span class="org-education-hours-unit"> ак. часов</span></span></article><article id="popup-table1-record-6" class="org-record org-education-program" data-search-item=""><span class="org-record-number" aria-hidden="true">06</span><h4>Проектирование, производство и укладка асфальтобетонных смесей, соответствующих требованиям ГОСТ Р 58406.1-2020 (взамен ПНСТ 183-2019), ГОСТ Р 58406.2-2020 (взамен ПНСТ 184-2019)</h4><span class="org-education-hours" aria-label="Нормативный срок обучения: 72 ак. часов">72<span class="org-education-hours-unit"> ак. часов</span></span></article><article id="popup-table1-record-7" class="org-record org-education-program" data-search-item=""><span class="org-record-number" aria-hidden="true">07</span><h4>Проектирование, строительство и эксплуатация систем водоотвода мостовых сооружений</h4><span class="org-education-hours" aria-label="Нормативный срок обучения: 24 ак. часов">24<span class="org-education-hours-unit"> ак. часов</span></span></article><article id="popup-table1-record-8" class="org-record org-education-program" data-search-item=""><span class="org-record-number" aria-hidden="true">08</span><h4>Цены и сметы: прямые затраты (материальные, трудовые и технические ресурсы), накладные расходы, прочие затраты и прибыль. Актуальные вопросы определения стоимости дорожных работ</h4><span class="org-education-hours" aria-label="Нормативный срок обучения: 60 ак. часов">60<span class="org-education-hours-unit"> ак. часов</span></span></article><article id="popup-table1-record-9" class="org-record org-education-program" data-search-item=""><span class="org-record-number" aria-hidden="true">09</span><h4>Эксплуатация автомобильных дорог</h4><span class="org-education-hours" aria-label="Нормативный срок обучения: 36 ак. часов">36<span class="org-education-hours-unit"> ак. часов</span></span></article><article id="popup-table1-record-10" class="org-record org-education-program" data-search-item=""><span class="org-record-number" aria-hidden="true">10</span><h4>Эксплуатация искусственных сооружений в составе автомобильных дорог</h4><span class="org-education-hours" aria-label="Нормативный срок обучения: 36 ак. часов">36<span class="org-education-hours-unit"> ак. часов</span></span></article></div></div><div id="education-learning" class="org-education-group"><div id="education-learning-title" data-search-heading=""><h3>Сведения об обучении</h3></div><div id="education-item-5" class="org-entry" data-search-item=""><dl class="org-facts org-facts--details"><div class="org-fact-row"><dt>Язык обучения</dt><dd>Русский</dd></div></dl><p class="org-education-note">Основание: п. 2 ст. 14 Федерального закона от 29.12.2012 № 273-ФЗ «Об образовании в Российской Федерации».</p></div><div id="education-item-3" class="org-entry" data-search-item=""><h4 title="Информация о численности обучающихся по реализуемым образовательным программам за счет бюджетных ассигнований федерального бюджета, бюджетов субъектов Российской Федерации, местных бюджетов и по договорам об образовании за счет средств физических и (или) юридических лиц">Численность обучающихся по источникам финансирования</h4><dl class="org-facts org-facts--details"><div class="org-fact-row org-education-federal"><dt>Федеральный бюджет</dt><dd><strong class="org-education-stat">1 647 слушателей</strong><span class="org-education-stat-description">Обучились по дополнительным профессиональным программам повышения квалификации.</span><p class="org-education-note">Период, к которому относится численность, в исходных сведениях не указан.</p></dd></div><div class="org-fact-row"><dt>Бюджеты субъектов РФ</dt><dd>Образовательная деятельность отсутствует.</dd></div><div class="org-fact-row"><dt>Местные бюджеты</dt><dd>Образовательная деятельность отсутствует.</dd></div><div class="org-fact-row"><dt>Договоры платных образовательных услуг</dt><dd>Образовательная деятельность отсутствует.</dd></div></dl></div><div id="education-item-4" class="org-entry" data-search-item=""><h4 title="Информация о численности обучающихся, являющихся иностранными гражданами, по каждой общеобразовательной программе и каждой профессии, специальности, в том числе научной, направлению подготовки или укрупненной группе профессий, специальностей и направлений подготовки (для профессиональных образовательных программ)">Обучающиеся — иностранные граждане</h4><p class="org-education-note">ФАУ «РОСДОРНИИ» не реализует профессиональные образовательные программы.</p><p class="org-education-note">Численность иностранных слушателей программ дополнительного профессионального образования в исходных сведениях не указана.</p></div></div><div id="education-other-levels" class="org-education-group"><div id="education-other-levels-title" data-search-heading=""><h3>Другие уровни образования</h3><p class="org-education-note">СПО, высшее образование и научные специальности.</p></div><div id="education-item-6" class="org-entry" data-search-item=""><h4 title="Информация о результатах приема по каждой профессии, специальности среднего профессионального образования (при наличии вступительных испытаний), каждому направлению подготовки или специальности высшего образования, каждой научной специальности с различными условиями приема (на места, финансируемые за счет бюджетных ассигнований федерального бюджета, бюджетов субъектов Российской Федерации, местных бюджетов, по договорам об образовании за счет средств физических и (или) юридических лиц) с указанием средней суммы набранных баллов по всем вступительным испытаниям, а также о результатах перевода, восстановления и отчисления">Приём, перевод, восстановление и отчисление</h4><dl class="org-facts org-facts--details"><div class="org-fact-row"><dt>Среднее профессиональное образование</dt><dd>Приём не ведётся.</dd></div><div class="org-fact-row"><dt>Высшее образование</dt><dd>Приём не ведётся.</dd></div><div class="org-fact-row"><dt>Научные специальности</dt><dd>Приём не ведётся.</dd></div></dl></div><div id="education-item-7" class="org-entry" data-search-item=""><h4 title="Информация о трудоустройстве выпускников в виде численности трудоустроенных выпускников прошлого учебного года, освоивших основные профессиональные образовательные программы среднего профессионального и высшего образования, по каждой профессии, специальности, в том числе научной, направлению подготовки или укрупненной группе профессий, специальностей и направлений подготовки">Выпускники и трудоустройство</h4><p class="">ФАУ «РОСДОРНИИ» не имеет выпускников по основным профессиональным образовательным программам среднего профессионального и высшего образования, по научным специальностям.</p></div></div><div id="education-item-2" class="org-entry" data-search-item=""><h3 title="Информация о направлениях и результатах научной (научно-исследовательской) деятельности и научно-исследовательской базе для ее осуществления">Научная деятельность</h3><p class="org-education-science-link"><a href="https://rosdornii.ru/activity/nauka-i-innovatsii/" target="_blank" rel="noopener noreferrer">Проектный офис по науке ↗</a></p><p class="">ФАУ «РОСДОРНИИ» осуществляет выполнение задач, связанных с техническим регулированием и стандартизацией в сфере дорожного хозяйства и деятельностью проектного офиса по науке, в том числе:</p><ul><li><h4>Государственная политика и регулирование</h4><p>участие в реализации функций по выработке государственной политики и нормативно-техническому регулированию в области дорожного хозяйства</p></li><li><h4>Нормативные документы и стандартизация</h4><p>в части мониторинга утверждения и разработки новых нормативных технических документов и документов по стандартизации (ГОСТ, ГОСТ Р, ПНСТ, СП) в рамках профильных технических комитетов по стандартизации;</p></li><li><h4>Планирование и реализация НИОКР</h4><p>планирование и реализация НИОКР в рамках национального проекта «Безопасные качественные дороги»;</p></li><li><h4>Экспертиза стандартов</h4><p>участие в проведении экспертизы стандартов организаций и подготовка по ним заключения на предмет включения их в Реестр новых и наилучших технологий, материалов и технологических решений повторного применения;</p></li><li><h4>Информирование об изменениях</h4><p>разработка информационного сборника об изменениях в нормативно-технических документах в сфере дорожной деятельности с учетом требований ТР ТС 014/2011;</p></li><li><h4>Взаимодействие с техническими комитетами</h4><p>взаимодействие с техническими комитетами по стандартизации, в том числе с ТК418 «Дорожное хозяйство», по вопросам технического регулирования и стандартизации при реализации национального проекта «Безопасные качественные дороги».</p></li></ul><p><a href="https://rosdornii.ru/activity/nauka-i-innovatsii/" target="_blank" rel="noopener noreferrer">Проектный офис по науке ↗</a></p></div></div></div>
+    </section>
+    
+    <section class="org-section" id="leadership" data-org-section="" aria-labelledby="leadership-title">
+      <header class="org-section-heading">
+        <span class="org-disclosure__number">05</span>
+        <span class="org-disclosure__heading">
+          <h2 id="leadership-title">Руководство</h2>
+          <small>Руководители организации и образовательного подразделения</small>
+        </span>
+        </header>
+      <div class="org-disclosure__body"><div class="org-prose"><div id="leadership-item-1" class="org-entry org-leader" data-search-item=""><p class="org-leader-caption" title="Информация о руководителе организации">Руководитель организации</p><h3 class="org-person-name">Бедусенко Александр Александрович</h3><p class="org-leader-position">Генеральный директор</p><dl class="org-facts org-facts--details"><div class="org-fact-row"><dt title="Контактные телефоны">Телефон</dt><dd><a href="tel:+74955400820">+7 (495) 540-08-20</a> <span class="org-leader-extension">Добавочные: 6857, 6503</span></dd></div><div class="org-fact-row"><dt title="Адрес электронной почты">Электронная почта</dt><dd><a href="mailto:post@rosdornii.ru">post@rosdornii.ru</a></dd></div></dl></div><div id="leadership-item-2" class="org-entry org-leader" data-search-item=""><p class="org-leader-caption" title="Информация о руководителе специализированного структурного подразделения">Руководитель образовательного подразделения</p><h3 class="org-person-name">Игнатьев Алексей Александрович</h3><p class="org-leader-position">Директор департамента развития отраслевого образования</p><dl class="org-facts org-facts--details"><div class="org-fact-row"><dt title="Контактные телефоны">Телефон</dt><dd><a href="tel:+74955400820">+7 (495) 540-08-20</a> <span class="org-leader-extension">Добавочный: 6259</span></dd></div><div class="org-fact-row"><dt title="Адрес электронной почты">Электронная почта</dt><dd><a href="mailto:info@rosdorspk.ru">info@rosdorspk.ru</a></dd></div></dl></div><div class="org-entry org-leader-branches" id="leadership-branches"><h3>Руководители филиалов и представительств</h3><dl class="org-facts org-facts--details"><div id="leadership-item-3" class="org-fact-row" data-search-item=""><dt title="Информация о руководителях филиалов организации">Филиалы</dt><dd>Отсутствуют филиалы, осуществляющие образовательную деятельность</dd></div><div id="leadership-item-4" class="org-fact-row" data-search-item=""><dt title="Информация о руководителях представительств организации">Представительства</dt><dd>Отсутствуют представительства, осуществляющие образовательную деятельность</dd></div></dl></div></div></div>
+    </section>
+    
+    <section class="org-section" id="teachers" data-org-section="" aria-labelledby="teachers-title">
+      <header class="org-section-heading">
+        <span class="org-disclosure__number">06</span>
+        <span class="org-disclosure__heading">
+          <h2 id="teachers-title">Педагогический состав</h2>
+          <small>Сведения о преподавателе, квалификации и опыте</small>
+        </span>
+        </header><nav class="org-jump-links" aria-label="Темы раздела «Педагогический состав»"><a href="#teachers-item-2">Программы</a><a href="#teachers-item-3">Образование</a><a href="#teachers-item-5">Повышение квалификации</a><a href="#teachers-item-6">Переподготовка</a></nav>
+      <div class="org-disclosure__body"><div class="org-prose"><div id="teachers-item-1" class="org-entry" data-search-item=""><h3 class="org-teacher-name">Овчинников Илья Игоревич</h3><p class="org-teacher-role">Преподаватель</p><p class="org-teacher-credentials">Доктор технических наук · Доцент</p><p class="org-teacher-experience" title="Сведения о продолжительности опыта (лет) работы в профессиональной сфере, соответствующей образовательной деятельности по реализации учебных предметов, курсов, дисциплин (модулей)">Опыт работы в профильной сфере — 18 лет</p></div><div id="teachers-item-2" class="org-entry" data-search-item=""><h3 title="Преподаваемые учебные предметы, курсы, дисциплины (модули):">Преподаваемые программы</h3><p class="org-teacher-program-help">Программы в разделе «Образование»</p><ul class="org-teacher-programs"><li><a href="#popup-table1-record-7"><span class="org-teacher-program-title">Проектирование, строительство и эксплуатация систем водоотвода мостовых сооружений</span><span class="org-teacher-program-arrow" aria-hidden="true">↑</span></a></li><li><a href="#popup-table1-record-3"><span class="org-teacher-program-title">Оценка развития и причины образования дефектов и повреждений железобетонных мостовых конструкций для прогнозирования их эксплуатационной надежности</span><span class="org-teacher-program-arrow" aria-hidden="true">↑</span></a></li><li><a href="#popup-table1-record-1"><span class="org-teacher-program-title">Диагностика и оценка технического состояния искусственных сооружений</span><span class="org-teacher-program-arrow" aria-hidden="true">↑</span></a></li><li><a href="#popup-table1-record-10"><span class="org-teacher-program-title">Эксплуатация искусственных сооружений в составе автомобильных дорог</span><span class="org-teacher-program-arrow" aria-hidden="true">↑</span></a></li></ul></div><div id="teachers-item-3" class="org-entry" data-search-item=""><h3 title="Уровень (уровни) профессионального образования с указанием наименования направления подготовки и (или) специальности, в том числе научной, и квалификации:">Образование и квалификация</h3><dl class="org-facts org-facts--details"><div class="org-fact-row"><dt>Уровень образования</dt><dd>Высшее образование</dd></div><div class="org-fact-row"><dt>Специальность</dt><dd>Мосты и транспортные тоннели</dd></div><div class="org-fact-row"><dt>Квалификация</dt><dd>Инженер путей сообщения</dd></div><div class="org-fact-row"><dt>Научная специальность</dt><dd>Строительная механика</dd></div><div class="org-fact-row"><dt>Учёная степень</dt><dd>Доктор технических наук</dd></div><div class="org-fact-row"><dt>Учёное звание</dt><dd>Доцент</dd></div></dl><!-- Степень и звание сверены: https://www.sstu.ru/teachers/2094-ovchinnikov_ilya_igorevich.html --></div><div id="teachers-item-4" class="org-teacher-training"><div id="teachers-item-5" class="org-entry" data-search-item=""><h3>Повышение квалификации</h3><div class="org-teacher-courses"><div class="org-teacher-course" id="teachers-course-5-1" data-search-item=""><h4>Безопасность строительства и качество устройства мостов, эстакад, путепроводов</h4><p class="org-teacher-course-meta"><span>Объём: 72 ч</span><span>Дата: <time datetime="2023-08-22">22.08.2023</time></span></p><p class="org-teacher-course-document">№ документа: ПК 005108</p></div><div class="org-teacher-course" id="teachers-course-5-5" data-search-item=""><h4>Особенности организации образовательного процесса по основным и дополнительным программам для инвалидов и лиц с ограниченными возможностями здоровья</h4><p class="org-teacher-course-meta"><span>Объём: 18 ч</span><span>Дата: <time datetime="2023-06-06">06.06.2023</time></span></p><p class="org-teacher-course-document">№ документа: ПК 029189</p></div><div class="org-teacher-course" id="teachers-course-5-4" data-search-item=""><h4>Оказание первой помощи обучающимся научно-педагогическим работникам организации, осуществляющей образовательную деятельность</h4><p class="org-teacher-course-meta"><span>Объём: 16 ч</span><span>Дата: <time datetime="2023-05-25">25.05.2023</time></span></p><p class="org-teacher-course-document">№ документа: ПК 1422409</p></div><div class="org-teacher-course" id="teachers-course-5-2" data-search-item=""><h4>Обеспечение долговечности транспортных сооружений</h4><p class="org-teacher-course-meta"><span>Объём: 16 ч</span><span>Дата: <time datetime="2023-01-20">20.01.2023</time></span></p><p class="org-teacher-course-document">№ документа: 302418424158</p></div><div class="org-teacher-course" id="teachers-course-5-3" data-search-item=""><h4>Цифровые технологии в преподавании профильных дисциплин</h4><p class="org-teacher-course-meta"><span>Объём: 144 ч</span><span>Дата: <time datetime="2022-05-04">04.05.2022</time></span></p><p class="org-teacher-course-document">№ документа: 160300028998</p></div></div></div><div id="teachers-item-6" class="org-entry" data-search-item=""><h3>Профессиональная переподготовка</h3><div class="org-teacher-courses"><div class="org-teacher-course" id="teachers-course-6-2" data-search-item=""><h4>Строительно-техническая экспертиза зданий и сооружений</h4><p class="org-teacher-course-meta"><span>Объём: 548 ч</span><span>Дата: <time datetime="2022-07-21">21.07.2022</time></span></p><p class="org-teacher-course-document">№ документа: ПП 005104</p></div><div class="org-teacher-course" id="teachers-course-6-1" data-search-item=""><h4>Педагогическое образование: преподавание и образовательные технологии в условиях реализации основных и дополнительных образовательных программ</h4><p class="org-teacher-course-meta"><span>Объём: 300 ч</span><span>Дата: <time datetime="2020-01-20">20.01.2020</time></span></p><p class="org-teacher-course-document">№ документа: ПП 007700</p></div></div></div></div></div></div>
+    </section>
+    
+    <section class="org-section" id="facilities" data-org-section="" aria-labelledby="facilities-title">
+      <header class="org-section-heading">
+        <span class="org-disclosure__number">07</span>
+        <span class="org-disclosure__heading">
+          <h2 id="facilities-title">Материально-техническое обеспечение и доступная среда</h2>
+          <small>Помещения, цифровая среда, библиотека и условия доступности</small>
+        </span>
+        </header>
+      <div class="org-disclosure__body"><div class="org-prose"><nav class="org-local-nav" aria-label="В разделе «Материально-техническое обеспечение»"><a href="#facilities-rooms">Помещения и оснащение</a><a href="#facilities-library">Библиотека</a><a href="#facilities-digital">Цифровая среда</a><a href="#facilities-accessibility">Доступность</a></nav><div id="facilities-rooms" class="org-topic" aria-labelledby="facilities-rooms-title"><h3 id="facilities-rooms-title" class="org-topic-title" data-search-heading="">Помещения и оснащение</h3><div id="facilities-item-1" class="org-facilities-anchor" title="Материально-техническое обеспечение"></div><div id="facilities-item-2" class="org-entry" data-search-item=""><h4 title="Информация о наличии оборудованных учебных кабинетов">Учебный кабинет и помещение для практических занятий</h4><dl class="org-facts org-facts--details"><div class="org-fact-row"><dt>Адрес</dt><dd>125493, Россия, г. Москва, ул. Смольная, д. 2, Учебный кабинет (конференц-зал)</dd></div><div class="org-fact-row"><dt title="Наименование оборудованных учебных кабинетов">Помещение</dt><dd>Конференц-зал (1316)</dd></div><div class="org-fact-row"><dt title="Оснащенность оборудованных учебных кабинетов">Оснащение</dt><dd>Презентационное оборудование</dd></div><div class="org-fact-row"><dt title="Приспособленность для использования инвалидами и лицами с ограниченными возможностями здоровья">Доступность помещения</dt><dd><span class="org-facilities-room-notice">Конференц-зал 1316 не приспособлен для инвалидов и лиц с ОВЗ.</span><a href="#facilities-room-access">Условия для конференц-зала ↓</a></dd></div></dl></div><div id="facilities-item-3" class="org-entry" data-search-item=""><h4 title="Информация о наличии оборудованных объектов для проведения практических занятий">Практические занятия при дистанционном обучении</h4><p class="">При реализации программ исключительно с применением электронного обучения и дистанционных образовательных технологий практические занятия проводятся в электронной информационно-образовательной среде ФАУ «РОСДОРНИИ» — системе дистанционного обучения «Образовательный портал для работников дорожного хозяйства». <a href="#facilities-item-8">Подробнее о портале</a></p></div><div id="facilities-equipment" class="org-entry" data-search-item=""><h4>Оборудование учебного кабинета</h4><p>Для реализации дополнительных профессиональных образовательных программ в ФАУ «РОСДОРНИИ» имеется специально оборудованный учебный кабинет.</p><div class="org-equipment-columns" aria-hidden="true"><span>Оборудование</span><span>Количество</span></div><dl class="org-facts org-facts--details"><div class="org-fact-row"><dt>Персональный компьютер</dt><dd>15 шт.</dd></div><div class="org-fact-row"><dt>МФУ</dt><dd>1 шт.</dd></div><div class="org-fact-row"><dt>Вебкамера</dt><dd>1 шт.</dd></div><div class="org-fact-row"><dt>Микрофон</dt><dd>6 шт.</dd></div><div class="org-fact-row"><dt>Акустическая система</dt><dd>1 шт.</dd></div></dl></div><div id="facilities-media" class="org-entry" data-search-item=""><h4>Видеостудия и вебинары</h4><p class="">Имеется видеостудия для создания презентаций и видеолекций на базе Программно-аппаратного комплекса Jalinga Premium+.</p><p class="">Используется функционал сервиса видеоконференций и вебинаров МТС Линк.</p></div><div id="facilities-other" class="org-entry" data-search-item=""><h4>Другие объекты и условия</h4><dl class="org-facts org-facts--details"><div id="facilities-item-5" class="org-fact-row" data-search-item=""><dt title="Информация о наличии оборудованных объектов спорта">Объекты спорта</dt><dd>При реализации дополнительных профессиональных программ не используются.</dd></div><div id="facilities-item-7" class="org-fact-row" data-search-item=""><dt title="Информация о наличии оборудованных средствах воспитания">Средства воспитания</dt><dd>В процессе обучения взрослых не предусмотрены.</dd></div><div id="facilities-item-11" class="org-fact-row" data-search-item=""><dt title="Общежитие и условия проживания">Общежития и интернаты</dt><dd>Отсутствуют.</dd></div></dl></div></div><div id="facilities-library" class="org-topic" aria-labelledby="facilities-library-title"><h3 id="facilities-library-title" class="org-topic-title" data-search-heading="">Библиотека</h3><div id="facilities-item-4" class="org-entry" data-search-item=""><h4 title="Информация о наличии оборудованных библиотек">Электронная библиотека «Лань»</h4><p><a class="org-facilities-primary-action" href="https://e.lanbook.com/" target="_blank" rel="noopener noreferrer">Перейти в электронную библиотеку ↗</a></p><p class="">ЭБС ЛАНЬ — ресурс, предоставляющий online-доступ к полнотекстовым коллекциям книг различных издательств и научным журналам по естественным, техническим и гуманитарным наукам.</p><h5>Условия доступа</h5><dl class="org-facts org-facts--details"><div class="org-fact-row"><dt>Кому доступна</dt><dd>Неограниченный доступ для всех обучающихся и преподавателей ФАУ «РОСДОРНИИ».</dd></div><div class="org-fact-row"><dt>В сети организации</dt><dd>Доступ из сети ФАУ «РОСДОРНИИ» без предварительной регистрации.</dd></div><div class="org-fact-row"><dt>Удалённо</dt><dd>Из любой точки мира с доступом к Интернету после предварительной регистрации в личном кабинете.</dd></div></dl><h5>Возможности</h5><dl class="org-facts org-facts--details"><div class="org-fact-row"><dt>Поиск и личный кабинет</dt><dd>Поиск по имени автора и названию, контекстный поиск, личный кабинет пользователя.</dd></div><div class="org-fact-row"><dt>Сохранение и печать</dt><dd>Возможность сохранения или распечатки 10 % книги за одну сессию.</dd></div></dl></div></div><div id="facilities-digital" class="org-topic" aria-labelledby="facilities-digital-title"><h3 id="facilities-digital-title" class="org-topic-title" data-search-heading="">Цифровая среда</h3><div class="org-facilities-secondary-nav"><p>Темы цифровой среды</p><nav class="org-jump-links" aria-label="Темы цифровой среды"><a href="#facilities-item-8">Портал</a><a href="#facilities-item-6">Материалы</a><a href="#facilities-sessions">Занятия</a><a href="#facilities-interaction">Взаимодействие</a><a href="#facilities-item-9">Сеть и доступ</a><a href="#facilities-spk-site">Сайт СПК</a></nav></div><div id="facilities-item-8" class="org-entry" data-search-item=""><h4 title="Информация об электронной информационно-образовательной среде">Образовательный портал</h4><p><a class="org-facilities-primary-action" href="https://edu.rosdorspk.ru/" target="_blank" rel="noopener noreferrer">Перейти на образовательный портал ↗</a></p><div class="org-facilities-text-group"><h5>Возможности портала</h5><p>Электронная информационно-образовательная среда обеспечивает:</p><ul><li>применение дистанционных образовательных технологий и электронного обучения;</li><li>доступ к информационным технологиям, техническим средствам, электронным информационным и образовательным ресурсам, включая учебно-методические материалы;</li><li>освоение программ в полном объёме независимо от места нахождения обучающегося, в том числе для инвалидов и лиц с ограниченными возможностями здоровья.</li></ul></div><div class="org-facilities-text-group"><h5>Платформа и сервер</h5><p>Система дистанционного обучения «Образовательный портал для работников дорожного хозяйства» создана на платформе «WebSoft HCM» и размещена на выделенном сервере с круглосуточным доступом к сети Интернет.</p></div></div><div id="facilities-item-6" class="org-entry" data-search-item=""><h4 title="Информация о наличии оборудованных средствах обучения">Материалы и задания</h4><p class="">Для всех обучающихся обеспечен индивидуальный неограниченный доступ к средствам обучения:</p><ul><li>доступ к учебным планам, рабочим программам дисциплин (модулей), электронным учебным изданиям и электронным образовательным ресурсам, указанным в рабочих программах дисциплин (модулей);</li><li>доступ к электронной библиотечной системе;</li><li>доступ и формирование электронного портфолио обучающегося, в том числе сохранение его работ и оценок за эти работы.</li></ul><div id="facilities-item-10" class="org-entry" data-search-item=""><h4 title="Информация об электронных образовательных ресурсах, к которым обеспечивается доступ обучающихся">Учебные и оценочные материалы</h4><p class="">Доступ к учебным и учебно-методическим материалам, которые представлены в электронно-цифровой форме, осуществляется в СДО и через электронные библиотеки:</p><ul><li>лекционные материалы, практические материалы, электронные учебно-методические комплексы;</li><li>аудиовизуальные (презентации, видеолекции).</li><li>оценочные материалы для процедур текущего контроля успеваемости, промежуточной и итоговой аттестации.</li></ul></div></div><div id="facilities-sessions" class="org-entry" data-search-item=""><h4>Занятия и оценка результатов</h4><p>При реализации образовательной программы с применением электронного обучения, дистанционных образовательных технологий электронная информационно-образовательная среда дополнительно обеспечивает:</p><ul><li>фиксацию хода образовательного процесса, результатов промежуточной аттестации и результатов освоения программы;</li><li>проведение учебных занятий, процедур оценки результатов обучения, реализация которых предусмотрена с применением электронного обучения, дистанционных образовательных технологий;</li></ul></div><div id="facilities-interaction" class="org-entry" data-search-item=""><h4>Взаимодействие участников</h4><p>взаимодействие между участниками образовательного процесса, в том числе синхронное и (или) асинхронное взаимодействие, посредством сети Интернет.</p></div><div id="facilities-item-9" class="org-entry" data-search-item=""><h4 title="Доступ к информационным системам и сетям">Сеть и доступ</h4><div class="org-facilities-network"><div class="org-facilities-text-group"><h5 title="">Кому предоставляется доступ</h5><div>Высокоскоростная корпоративная вычислительная сеть обеспечивает доступ к информационным системам и информационно-телекоммуникационным сетям обучающихся, в том числе для использования инвалидами и лицами с ограниченными возможностями здоровья, бесплатно в период действия обучения.</div></div><div class="org-facilities-text-group"><h5 title="">Локальная сеть и Wi-Fi</h5><div>Функционирует локальная сеть — компьютеры соединены в локальную сеть территориально через серверы учреждения. В учебной аудитории ФАУ «РОСДОРНИИ» возможно подключение к беспроводной сети «wi-fi» для доступа к сети Интернет. Доступ к беспроводной сети «wi-fi» осуществляется с использованием логина и пароля.</div></div><div class="org-facilities-text-group"><h5 title="">Электронная почта</h5><div>Внедрена корпоративная электронная почта.</div></div><div class="org-facilities-text-group"><h5 title="">Видеосопровождение</h5><div>Видеосопровождение дополнительных профессиональных программ осуществляется посредством образовательного канала RuTube.</div></div><div class="org-facilities-text-group"><h5 title="">Оборудование</h5><div>Имеется локальная сеть, компьютеры с лицензионным программным обеспечением, оргтехника.</div></div><div class="org-facilities-text-group"><h5 title="">Сайт организации</h5><div><a href="https://rosdornii.ru/" target="_blank" rel="noopener noreferrer">Официальный сайт ФАУ «РОСДОРНИИ» ↗</a></div></div></div></div><div id="facilities-spk-site" class="org-entry" data-search-item=""><h4>Сайт СПК: информация и сервисы</h4><p><a href="https://rosdorspk.ru/" target="_blank" rel="noopener noreferrer">Перейти на сайт РОСДОРСПК ↗</a></p><div class="org-facilities-text-group"><h5>Назначение</h5><p>Сайт СПК входит в единый образовательный портал для работников дорожного хозяйства и обеспечивает:</p><ul><li>информирование работников дорожного хозяйства о предстоящем обучении, информационно-ознакомительных мероприятиях, ходе реализации национального проекта «Безопасные качественные дороги»;</li><li>содержание и наполнение реестра организаций дорожного хозяйства и реестра разработанных дополнительных профессиональных программ повышения квалификации;</li><li>ведение веб-страницы о профориентационной деятельности среди молодежи.</li></ul><p class="">Сайт СПК дает возможность пользователю быстро переходить на информационные ресурсы, входящие в состав единого образовательного портала для работников дорожного хозяйства.</p></div><div class="org-facilities-text-group"><h5>Информация и сервисы</h5><ul><li>актуальную информацию о реализации мероприятия «Создание системы повышения квалификации для работников дорожного хозяйства, ориентированной на обучение применению новых и наилучших технологий, материалов и технологических решений повторного применения» федерального проекта «Общесистемные меры развития дорожного хозяйства»;</li><li>нормативно-правовые акты, определяющие создание СПК, в том числе Требования к СПК;</li><li>информацию о ходе проведения профориентационной деятельности среди молодежи;</li><li>реестр ПрДПП;</li><li>анонсы предстоящих онлайн-мероприятий/вебинаров;</li><li>контактную информацию;</li><li>переход на образовательный портал для работников дорожного хозяйства.</li></ul></div></div></div><div id="facilities-accessibility" class="org-topic" aria-labelledby="facilities-accessibility-title"><h3 id="facilities-accessibility-title" class="org-topic-title" data-search-heading="">Доступность</h3><div id="facilities-item-12" class="org-facilities-access-content"><div id="popup-table2" class="org-records"><article id="popup-table2-record-1" class="org-record org-accessibility-record" data-search-item=""><h4 title="Обеспечение беспрепятственного доступа в здания образовательной организации">Доступ в здание</h4><p>При входе в здание, а также в фойе здания имеются пандусы. Здание оборудовано лифтами. Возможность беспрепятственного входа в здание и выхода из него. Возможность с помощью работников ФАУ «РОСДОРНИИ» передвигаться инвалидам-колясочникам и остальным — без ограничения.</p></article><div class="org-facilities-limitations" role="region" aria-labelledby="facilities-limitations-title"><h4 id="facilities-limitations-title">Ограничения доступности</h4><div id="facilities-room-access" class="org-entry" data-search-item=""><h4>Учебное помещение</h4><p class="org-facilities-limit-summary">Конференц-зал 1316 не приспособлен для инвалидов и лиц с ОВЗ.</p></div><article id="popup-table2-record-2" class="org-record org-accessibility-record" data-search-item=""><h4 title="Специальные технические средства обучения коллективного и индивидуального пользования">Специальное оборудование для обучения</h4><p>Специальные технические средства обучения коллективного и индивидуального пользования отсутствуют.</p></article></div><div id="facilities-computer-access" class="org-entry" data-search-item=""><h4>Цифровые средства доступности</h4><h5>Возможности компьютера</h5><p class="">Для самостоятельной работы на обычном персональном компьютере с программами общего назначения используются специализированные приложения и функции Windows, повышающие комфорт работы для инвалидов и лиц с ОВЗ.</p><p>В разделе Windows «Специальные возможности» доступны:</p><ul><li>настройка изображения на экране</li><li>использование компьютера без мыши или клавиатуры</li><li>облегчение работы с мышью</li><li>упрощение работы с клавиатурой</li><li>использование текста и визуальных объектов для звуков</li><li>увеличение громкости звука, настройки чтения и ввода текста</li><li>экранная лупа</li><li>экранный диктор</li><li>экранная клавиатура</li></ul><h5>Учебные материалы и сайты</h5><p class="">На официальном сайте ФАУ «РОСДОРНИИ» присутствует раздел с версией для слабовидящих. В обучении могут принимать участие инвалиды и лица с ограниченными возможностями здоровья: звук читаемых лекций можно увеличить; слушателям предоставляются учебные материалы в электронном виде с возможностью увеличения шрифта.</p></div></div></div></div></div></div>
+    </section>
+    
+    <section class="org-section" id="paid-services" data-org-section="" aria-labelledby="paid-services-title">
+      <header class="org-section-heading">
+        <span class="org-disclosure__number">08</span>
+        <span class="org-disclosure__heading">
+          <h2 id="paid-services-title">Платные образовательные услуги</h2>
+          
+          </span>
+        </header>
+      <div class="org-disclosure__body"><div class="org-prose"><div id="paid-services-item-1" class="org-entry" data-search-item=""><p class="">ФАУ «РОСДОРНИИ» не оказывает платные образовательные услуги.</p></div></div></div>
+    </section>
+    
+    <section class="org-section" id="finance" data-org-section="" aria-labelledby="finance-title">
+      <header class="org-section-heading">
+        <span class="org-disclosure__number">09</span>
+        <span class="org-disclosure__heading">
+          <h2 id="finance-title">Финансово-хозяйственная деятельность</h2>
+          <small>Источники финансового обеспечения образовательной деятельности</small>
+        </span>
+        </header>
+      <div class="org-disclosure__body"><div class="org-prose"><div id="finance-own-funds" class="org-entry" data-search-item=""><p class="org-finance-label">Источник финансирования</p><h3>Собственные средства ФАУ «РОСДОРНИИ»</h3><p class="">За счёт этих средств реализуются дополнительные профессиональные программы.</p></div><dl class="org-facts org-facts--details"><div class="org-fact-row" id="finance-item-1" data-search-item=""><dt title="Информация об объеме образовательной деятельности, финансовое обеспечение которой осуществляется за счет бюджетных ассигнований федерального бюджета">Федеральный бюджет</dt><dd>Образовательная деятельность отсутствует.</dd></div><div class="org-fact-row" id="finance-item-2" data-search-item=""><dt title="Информация об объеме образовательной деятельности, финансовое обеспечение которой осуществляется за счет бюджетов субъектов Российской Федерации">Бюджеты субъектов РФ</dt><dd>Образовательная деятельность отсутствует.</dd></div><div class="org-fact-row" id="finance-item-3" data-search-item=""><dt title="Информация об объеме образовательной деятельности, финансовое обеспечение которой осуществляется за счет местных бюджетов">Местные бюджеты</dt><dd>Образовательная деятельность отсутствует.</dd></div><div class="org-fact-row" id="finance-item-4" data-search-item=""><dt title="Информация об объеме образовательной деятельности, финансовое обеспечение которой осуществляется по договорам об образовании за счет средств физических и (или) юридических лиц"><span>Платные образовательные договоры</span><small>За счёт физических и юридических лиц</small></dt><dd>Образовательная деятельность отсутствует.</dd></div></dl></div></div>
+    </section>
+    
+    <section class="org-section" id="vacancies" data-org-section="" aria-labelledby="vacancies-title">
+      <header class="org-section-heading">
+        <span class="org-disclosure__number">10</span>
+        <span class="org-disclosure__heading">
+          <h2 id="vacancies-title">Вакантные места</h2>
+          <small>Сведения о наличии мест для приёма и перевода</small>
+        </span>
+        </header>
+      <div class="org-disclosure__body"><div class="org-prose"><p id="vacancies-data-status" class="org-vacancies-status" data-search-item="">Количество вакантных мест для приёма и перевода в исходных сведениях не указано.</p><h3 class="org-vacancies-heading">По источникам финансирования</h3><dl class="org-facts org-facts--details"><div class="org-fact-row" id="vacancies-item-2" data-search-item=""><dt>Федеральный бюджет</dt><dd><span class="org-vacancies-review">Требует уточнения.</span><small class="org-vacancies-source-note">В исходных сведениях этой строки указано отсутствие образовательной деятельности за счёт бюджетов субъектов РФ.</small></dd></div><div class="org-fact-row" id="vacancies-item-3" data-search-item=""><dt>Бюджеты субъектов РФ</dt><dd>Образовательная деятельность отсутствует.</dd></div><div class="org-fact-row" id="vacancies-item-4" data-search-item=""><dt>Местные бюджеты</dt><dd>Образовательная деятельность отсутствует.</dd></div><div class="org-fact-row" id="vacancies-item-5" data-search-item=""><dt>Платные образовательные договоры</dt><dd>Образовательная деятельность отсутствует.</dd></div></dl><div id="vacancies-item-1" class="org-entry org-vacancies-note" data-search-item=""><p class="">ФАУ «РОСДОРНИИ» реализует образовательную деятельность в соответствии с Уставом.</p><p class="org-vacancies-charter-action"><a href="https://rosdornii.ru/upload/iblock/34f/6my6egm5q8sqretee7t6jqyhsa9nqktd/Ustav-s-otmetkoy-o-gosregistratsii.pdf" target="_blank" rel="noopener noreferrer" aria-label="Открыть Устав ФАУ «РОСДОРНИИ» в новой вкладке">Открыть устав ↗</a></p></div></div></div>
+    </section>
+    
+    
+    <section class="org-section" id="support" data-org-section="" aria-labelledby="support-title">
+      <header class="org-section-heading">
+        <span class="org-disclosure__number">11</span>
+        <span class="org-disclosure__heading">
+          <h2 id="support-title">Стипендии и меры поддержки</h2>
+          
+        </span>
+        </header>
+      <div class="org-disclosure__body"><div class="org-prose"><p class="org-support-summary" id="support-summary" data-search-item="">Стипендии, меры социальной поддержки и проживание в общежитии или интернате не предусмотрены.</p><div id="support-item-1" class="org-entry"><div class="org-support-group" id="support-social"><div id="support-social-heading" data-search-heading=""><h3>Социальная поддержка</h3><p class="org-support-group-note">Включая условия предоставления и локальные нормативные акты.</p></div><dl class="org-facts org-facts--details"><div class="org-fact-row" id="support-detail-1" data-search-item=""><dt><span>Стипендии</span></dt><dd>Не предусмотрены</dd></div><div class="org-fact-row" id="support-detail-2" data-search-item=""><dt><span>Меры социальной поддержки</span></dt><dd>Не предусмотрены</dd></div></dl></div><div class="org-support-group" id="support-housing"><div id="support-housing-heading" data-search-heading=""><h3>Проживание</h3><p class="org-support-group-note">Включая наличие и количество помещений в общежитиях и интернатах, в том числе приспособленных для инвалидов и лиц с ограниченными возможностями здоровья.</p></div><dl class="org-facts org-facts--details"><div class="org-fact-row" id="support-detail-3" data-search-item=""><dt><span>Общежитие и интернат</span></dt><dd>Не предусмотрены</dd></div><div class="org-fact-row" id="support-detail-4" data-search-item=""><dt><span>Проживание иногородних обучающихся</span></dt><dd>Не предусмотрено</dd></div><div class="org-fact-row" id="support-detail-5" data-search-item=""><dt><span>Документ о плате за проживание</span></dt><dd>Не предусмотрен<small class="org-support-document-note">Копия документа, регламентирующего формирование платы за проживание в общежитии.</small></dd></div></dl></div></div></div></div>
+    </section>
+    
+    
+    <section class="org-section" id="international" data-org-section="" aria-labelledby="international-title">
+      <header class="org-section-heading">
+        <span class="org-disclosure__number">12</span>
+        <span class="org-disclosure__heading">
+          <h2 id="international-title">Международное сотрудничество</h2>
+          <small>Партнёрство и направления научно-технического сотрудничества</small>
+        </span>
+        </header>
+      <div class="org-disclosure__body"><div class="org-prose"><div id="international-item-1" class="org-entry" data-search-item=""><h3>Институт транспортной науки и технологий Вьетнама</h3><p>ФАУ «РОСДОРНИИ» и Институт транспортной науки и технологий Вьетнама (ITST) подписали Меморандум о взаимопонимании и сотрудничестве.</p><h4 class="org-international-directions-title">Направления сотрудничества</h4><p class="org-international-scope">Действие меморандума откроет возможности научно-технического сотрудничества по следующим направлениям:</p><ul><li>Проведение НИОКР</li><li>Развитие научно-исследовательской деятельности и инноваций</li><li>Подготовка кадров в области дорожного хозяйства</li><li>Повышение квалификации кадров</li></ul></div></div></div>
+    </section>
+    
+    <section class="org-section" id="food-health" data-org-section="" aria-labelledby="food-health-title">
+      <header class="org-section-heading">
+        <span class="org-disclosure__number">13</span>
+        <span class="org-disclosure__heading">
+          <h2 id="food-health-title">Питание и охрана здоровья</h2>
+          <small>Условия питания, санитарные требования и безопасность</small>
+        </span>
+        </header>
+      <nav class="org-jump-links" aria-label="Темы раздела «Питание и охрана здоровья»"><a href="#food-health-item-1">Питание</a><a href="#food-health-sanitary">Санитарные условия</a><a href="#food-health-breaks">Режим занятий</a><a href="#food-health-medical">Медицинская помощь</a><a href="#food-health-prevention">Профилактика</a><a href="#food-health-building">Безопасность здания</a></nav><div class="org-disclosure__body"><div class="org-prose"><div id="food-health-item-2" class="org-health-intro"><p class="org-health-basis">В соответствии со статьей 41 Федерального закона от 29 декабря 2012 г. № 273-ФЗ «Об образовании в Российской Федерации» осуществляется охрана здоровья слушателей.</p></div><div id="food-health-item-1" class="org-entry org-health-group"><h3>Питание</h3><dl class="org-facts org-facts--details"><div class="org-fact-row" id="food-health-meals-1" data-search-item=""><dt>Организация питания</dt><dd>Питание обучающихся в организации не предусмотрено.</dd></div><div class="org-fact-row" id="food-health-meals-2" data-search-item=""><dt>Обеденный перерыв</dt><dd>Предусмотрен режимом занятий; его продолжительности достаточно для приёма пищи.</dd></div><div class="org-fact-row" id="food-health-meals-3" data-search-item=""><dt>Самостоятельное питание</dt><dd><p>Сотрудники и обучающиеся могут приобрести готовые блюда, продукты и кулинарные изделия в кафе со свободным доступом.</p><p><span class="org-health-detail-label">Адрес:</span> Москва, ул. Смольная, д. 2, или поблизости от здания.</p><p><span class="org-health-detail-label">Оплата:</span> наличная и безналичная.</p></dd></div></dl></div><div class="org-health-group" id="food-health-sanitary" data-search-item=""><h3>Санитарные условия</h3><p>Процесс обучения осуществляется в соответствии с требованиями санитарных норм и правил. На помещения, находящиеся в распоряжении ФАУ «РОСДОРНИИ», имеется санитарно-эпидемиологическое заключение.</p><h4>Санитарно-эпидемиологическое заключение</h4><dl class="org-facts org-facts--details org-health-certificate"><div class="org-fact-row" id="food-health-sanitary-fact-1" data-search-item=""><dt>Дата заключения</dt><dd>14 июля 2024 года</dd></div><div class="org-fact-row" id="food-health-sanitary-fact-2" data-search-item=""><dt>Номер заключения</dt><dd>77.07.16.000.М.002739.06.24</dd></div></dl><h4>Условия помещения</h4><dl class="org-facts org-facts--details"><div class="org-fact-row" id="food-health-sanitary-fact-3" data-search-item=""><dt>Кондиционирование</dt><dd>В помещении установлены кондиционеры.</dd></div><div class="org-fact-row" id="food-health-sanitary-fact-4" data-search-item=""><dt>Питьевая вода</dt><dd>В помещении установлен напольный кулер и заключен договор на поставку питьевой воды.</dd></div></dl></div><div class="org-health-group" id="food-health-breaks" data-search-item=""><h3>Режим занятий</h3><p>Расписание занятий предусматривает перерывы достаточной продолжительности для отдыха, психологической и эмоциональной разгрузки обучающихся, а также проветривания помещений.</p></div><div class="org-health-group" id="food-health-medical" data-search-item=""><h3>Медицинская помощь</h3><h4>Экстренная и неотложная помощь</h4><p><span class="org-health-medical-lead">Первичная медико-санитарная помощь слушателям оказывается в экстренной или неотложной форме по месту вызова бригады скорой медицинской помощи, в том числе скорой специализированной.</span><span class="org-health-medical-detail">При заболеваниях, несчастных случаях, травмах, отравлениях и других состояниях, требующих срочного медицинского вмешательства.</span></p><h4>Подготовка преподавателей по первой помощи</h4><p>Проводится обучение педагогических работников навыкам оказания первой помощи.</p></div><div class="org-health-group" id="food-health-prevention" data-search-item=""><h3>Профилактика</h3><h4>Работа за компьютером</h4><p>Обучающиеся перед началом обучения знакомятся с правилами работы за компьютером — с техникой безопасности и организации рабочего места, со способами профилактики нарушения зрения и других возможных заболеваний при работе за компьютером.</p><h4>Профилактика и запреты</h4><p>Проводятся мероприятия по профилактике и запрещению курения, употреблению алкогольных, слабоалкогольных напитков, пива, наркотических средств и психотропных веществ, их прекурсоров и аналогов и других одурманивающих веществ.</p><h4 class="org-health-territory-title">На территории учреждения</h4><p>На территории ФАУ «РОСДОРНИИ» запрещены курение, употребление алкогольных, слабоалкогольных напитков, пива, наркотических средств и психотропных веществ.</p><h4>Предупреждение несчастных случаев</h4><p>Проводится профилактика несчастных случаев с обучающимися во время пребывания в организации.</p></div><div class="org-health-group" id="food-health-building" data-mobile-topic="Безопасность здания" data-search-item=""><h3>Безопасность здания и эвакуация</h3><p>Обеспечивается безопасность обучающихся во время пребывания в ФАУ «РОСДОРНИИ». В учреждении выполняются все меры по инженерно-технической, физической защите и пожарной безопасности.</p><div class="org-health-safety-list"><div id="food-health-safety-1" class="org-health-safety-item" data-search-item=""><h4>Видеонаблюдение и вызов помощи</h4><p>Установлена система видеонаблюдения, экстренного вызова группы быстрого реагирования.</p></div><div id="food-health-safety-2" class="org-health-safety-item" data-search-item=""><h4>Системы оповещения</h4><p>Установлены объектовые и локальные системы оповещения — АПС, СОУЭ, система передачи сигнала тревоги на ЕДДС - «01» г. Москва.</p></div><div id="food-health-safety-3" class="org-health-safety-item" data-search-item=""><h4>Начало эвакуации</h4><p>Кнопки подачи звукового сигнала о начале эвакуации расположены по всему зданию.</p></div><div id="food-health-safety-4" class="org-health-safety-item" data-search-item=""><h4>Пожарная защита и пути эвакуации</h4><ul><li>Здание оборудовано внутренним пожарным водопроводом.</li><li>Все помещения оборудованы автоматической системой оповещения и управления эвакуации людей.</li><li>Для обеспечения информирования слушателей и персонала на этажах и в помещениях здания установлены согласно планам эвакуации первичные средства пожаротушения.</li><li>Пути эвакуации соответствуют требованиям действующего законодательства в области пожарной безопасности.</li></ul></div><div id="food-health-safety-5" class="org-health-safety-item" data-search-item=""><h4>Инструктажи</h4><p>Регулярно с персоналом проводятся инструктажи по ОТ, ПБ, ЭБ. Слушатели знакомятся и расписываются в Журнале по технике безопасности.</p></div></div></div></div></div>
+    </section>
+    
+    
+    <section class="org-section" id="standards" data-org-section="" aria-labelledby="standards-title">
+      <header class="org-section-heading">
+        <span class="org-disclosure__number">14</span>
+        <span class="org-disclosure__heading">
+          <h2 id="standards-title">Образовательные стандарты и требования</h2>
+          <small>По программам дополнительного профессионального образования</small>
+        </span>
+        </header>
+      <div class="org-disclosure__body"><div class="org-prose"><div id="standards-item-1" class="org-entry"><dl class="org-facts org-facts--details"><div class="org-fact-row" id="standards-detail-1" data-search-item=""><dt>Федеральные государственные образовательные стандарты (ФГОС)</dt><dd>Отсутствуют</dd></div><div class="org-fact-row" id="standards-detail-2" data-search-item=""><dt>Образовательные стандарты</dt><dd>Отсутствуют</dd></div><div class="org-fact-row" id="standards-detail-3" data-search-item=""><dt>Федеральные государственные требования (ФГТ)</dt><dd>Отсутствуют</dd></div></dl></div></div></div>
+    </section>
+    </div>
+          </div>
+
+          </div>
+      </section>
+    </main>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </div>
+
+  <footer class="edu2-chrome edu2-chrome-footer">
+  <div class="edu2-chrome-container edu2-chrome-footer__grid">
+    <div class="edu2-chrome-footer__brand">
+      <a class="edu2-chrome-brand edu2-chrome-brand--footer" href="index.html" aria-label="РОСДОРСПК — главная">
+        <span class="edu2-chrome-brand__mark" aria-hidden="true"><img src="assets/brand/rosdorspk-mark-v4.png" width="256" height="256" alt="" decoding="async"></span>
+        <span class="edu2-chrome-brand__text"><strong>РОСДОРСПК</strong><small>Система повышения квалификации</small></span>
+      </a>
+      <p>Знания для специалистов <br>дорожного хозяйства.</p>
+    </div>
+    <nav class="edu2-chrome-footer__column" aria-label="Обучение и материалы">
+      <h2>Обучение и материалы</h2>
+      <a href="education.html">Программы обучения</a>
+      <a href="webinars.html">Вебинары</a>
+      <a href="regulations.html">Нормативные обзоры</a>
+    </nav>
+    <nav class="edu2-chrome-footer__column" aria-label="О системе">
+      <h2>О системе</h2>
+      <a href="results.html">Результаты в цифрах</a>
+      <a href="organization.html">Сведения об организации</a>
+      <a href="history.html">История создания</a>
+      <a href="contacts.html">Контакты</a>
+    </nav>
+    <div class="edu2-chrome-footer__contact">
+      <h2>По вопросам обучения</h2>
+      <a class="edu2-chrome-footer__email" href="mailto:info@rosdorspk.ru">info@rosdorspk.ru <span aria-hidden="true">↗</span></a>
+      <a class="edu2-chrome-footer__phone" href="tel:+74955400820">+7 (495) 540-08-20</a>
+      <p>Добавочный <strong>6259</strong></p>
+    </div>
+  </div>
+  <div class="edu2-chrome-container edu2-chrome-footer__bottom">
+    <span>© 2022&#8288;–&#8288;2026 ФАУ «РОСДОРНИИ»</span>
+    <a class="edu2-chrome-footer__policy" href="policy.html#top">Политика конфиденциальности</a>
+  </div>
+</footer>
+
+  <script src="site-chrome.js"></script>
+  <script>
+(() => {
+  const page = document.querySelector('.org-page');
+  if (!page) return;
+  page.classList.add('is-enhanced');
+  const sections = [...page.querySelectorAll('[data-org-section]')];
+  const search = page.querySelector('#org-search');
+  const clear = page.querySelector('#org-search-clear');
+  const status = page.querySelector('#org-search-status');
+  const results = page.querySelector('#org-search-results');
+  const contents = page.querySelector('.org-contents');
+  const toggle = page.querySelector('.org-mobile-toggle');
+  const nav = contents.querySelector('nav');
+  const links = [...nav.querySelectorAll(':scope > a')];
+  const topicMenu = page.querySelector('#org-facilities-subnav');
+  const layout = page.querySelector('.org-layout');
+  const header = document.querySelector('.edu2-chrome-header');
+  const syncHeaderHeight = () => {
+    const height = header?.getBoundingClientRect().height || 76;
+    page.style.setProperty('--org-header-height', `${height}px`);
+  };
+  syncHeaderHeight();
+  if (header && 'ResizeObserver' in window) new ResizeObserver(syncHeaderHeight).observe(header);
+  const fitNavigation = () => {
+    if (matchMedia('(max-width:960px)').matches) {
+      contents.style.setProperty('--org-menu-space', `${Math.max(80, innerHeight - contents.getBoundingClientRect().bottom - 16)}px`);
+      contents.style.removeProperty('--org-nav-height');
+      nav.style.removeProperty('overflow-y');
+      return;
+    }
+    const top = parseFloat(getComputedStyle(contents).top);
+    const overhead = nav.offsetTop;
+    const available = Math.min(innerHeight - top - 16, layout.getBoundingClientRect().bottom - top);
+    contents.style.setProperty('--org-nav-height', `${Math.max(80, available - overhead - 2)}px`);
+    // Measure at full width: a classic scrollbar can otherwise keep itself alive
+    // by wrapping labels even after the extra topic links have been collapsed.
+    nav.style.overflowY = 'hidden';
+    const needsScroll = nav.scrollHeight > nav.clientHeight + 1;
+    nav.style.overflowY = needsScroll ? 'auto' : 'hidden';
+    if (!needsScroll) nav.scrollTop = 0;
+  };
+  const keepLinkVisible = link => {
+    if (!link || !nav.getClientRects().length) return;
+    const a = link.getBoundingClientRect(), n = nav.getBoundingClientRect();
+    if (a.bottom > n.bottom - 8) nav.scrollTop += a.bottom - n.bottom + 8;
+    if (a.top < n.top + 8) nav.scrollTop -= n.top - a.top + 8;
+  };
+  const normalize = value => value.toLocaleLowerCase('ru-RU').replace(/ё/g, 'е').replace(/\s+/g, ' ').trim();
+  const searchAliases = {
+    'фгос':['федеральн','государствен','образовательн','стандарт'],
+    'фгт':['федеральн','государствен','требован'],
+    'дпо':['дополнительн','профессиональн'],
+    'овз':['ограниченн','возможност','здоров'],
+    'сдо':['дистанционн','обучен'],
+    'эбс':['библиотечн'],
+    'лицензия':['лицензи'], 'лицензии':['лицензи']
+  };
+  const searchTerms = value => [...new Set(normalize(value).split(/\s+/).filter(Boolean).flatMap(word => searchAliases[word] || [word]))];
+  const matchesQuery = (text, value) => normalize(value).split(/\s+/).filter(Boolean).every(word =>
+    text.includes(word) || (searchAliases[word] && searchAliases[word].every(term => text.includes(term))));
+  const cleanText = element => {
+    const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
+    const parts = [];
+    while (walker.nextNode()) parts.push(walker.currentNode.nodeValue);
+    return parts.join(' ').replace(/\s+/g, ' ').trim();
+  };
+  const items = [...page.querySelectorAll('[data-org-section], [data-search-item], [data-search-heading]')].map(element => {
+    const section = element.closest('[data-org-section]');
+    const sectionTitle = cleanText(section.querySelector('h2'));
+    if (element.hasAttribute('data-org-section')) {
+      const heading = element.querySelector('.org-section-heading');
+      const text = cleanText(heading);
+      return {element, text, normalized: normalize(text), title:sectionTitle, context:'Раздел', sectionOnly:true};
+    }
+    const copy = element.cloneNode(true);
+    copy.querySelectorAll('[data-search-item], .org-file-status, nav').forEach(node => node.remove());
+    const text = cleanText(copy);
+    const heading = copy.querySelector('h3,h4,dt,.org-program-title strong');
+    const title = heading ? cleanText(heading) : element.hasAttribute('data-search-heading') ? text : sectionTitle;
+    return {element, text, normalized: normalize(text), title, context:sectionTitle, sectionOnly:false};
+  });
+  let query = '';
+  let debounce;
+  const reducedMotion = () => matchMedia('(prefers-reduced-motion:reduce)').matches;
+  let menuAnimation;
+  const closeMenu = () => {
+    if (menuAnimation) { menuAnimation.cancel(); menuAnimation = null; }
+    contents.classList.remove('is-open'); toggle.setAttribute('aria-expanded', 'false');
+  };
+  toggle.addEventListener('click', () => {
+    const open = toggle.getAttribute('aria-expanded') !== 'true';
+    if (menuAnimation) { menuAnimation.cancel(); menuAnimation = null; }
+    contents.classList.add('is-open');
+    toggle.setAttribute('aria-expanded', String(open));
+    if (reducedMotion()) { if (!open) closeMenu(); return; }
+    const height = nav.getBoundingClientRect().height;
+    const animation = nav.animate(open
+      ? [{height:'0px',opacity:0,overflow:'hidden'},{height:height+'px',opacity:1,overflow:'hidden'}]
+      : [{height:height+'px',opacity:1,overflow:'hidden'},{height:'0px',opacity:0,overflow:'hidden'}],
+      {duration:180,easing:'ease-out'});
+    menuAnimation = animation;
+    animation.onfinish = () => { if (menuAnimation !== animation) return; menuAnimation = null; if (!open) closeMenu(); };
+  });
+  contents.addEventListener('keydown', event => {
+    if (event.key === 'Escape') { closeMenu(); toggle.focus(); }
+  });
+  document.addEventListener('click', event => { if (!contents.contains(event.target)) closeMenu(); });
+  const removeMarks = () => page.querySelectorAll('mark[data-org-match]').forEach(mark => {
+    const parent = mark.parentNode;
+    mark.replaceWith(document.createTextNode(mark.textContent));
+    parent.normalize();
+  });
+  const highlight = (element, value) => {
+    if (!value) return;
+    const terms = [...searchTerms(value), ...normalize(value).split(/\s+/)];
+    const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
+    const nodes = [];
+    while (walker.nextNode()) {
+      const node = walker.currentNode;
+      if (!node.parentElement.closest('mark,script,style')) nodes.push(node);
+    }
+    nodes.forEach(node => {
+      const text = node.nodeValue;
+      const words = [...text.matchAll(/[\p{L}\p{N}]+(?:[.\-][\p{L}\p{N}]+)*/gu)];
+      const matches = words.filter(word => terms.some(term => normalize(word[0]).includes(term)));
+      if (!matches.length) return;
+      let start = 0;
+      const fragment = document.createDocumentFragment();
+      for (const word of matches) {
+        const index = word.index;
+        fragment.append(document.createTextNode(text.slice(start, index)));
+        const mark = document.createElement('mark');
+        mark.dataset.orgMatch = ''; mark.textContent = word[0];
+        fragment.append(mark); start = index + word[0].length;
+      }
+      fragment.append(document.createTextNode(text.slice(start))); node.replaceWith(fragment);
+    });
+  };
+  const setActive = (section, activeTopic = null) => {
+    topicMenu.hidden = section.id !== 'facilities';
+    links.forEach(link => {
+      const active = link.hash === '#' + section.id;
+      if (active) link.setAttribute('aria-current','location'); else link.removeAttribute('aria-current');
+    });
+    const compactTopic = ['facilities','food-health'].includes(section.id) && matchMedia('(max-width:960px)').matches
+      ? activeTopic || section.querySelector('.org-topic,.org-health-group') : null;
+    page.querySelector('#org-current-section').textContent = compactTopic?.dataset.mobileTopic || cleanText(compactTopic?.querySelector('h3') || section.querySelector('h2'));
+    if (matchMedia('(max-width:960px)').matches) {
+      syncHeaderHeight();
+      const toggleHeight = toggle.getBoundingClientRect().height;
+      page.style.setProperty('--org-toggle-height', `${toggleHeight}px`);
+      const offset = parseFloat(getComputedStyle(contents).top) + toggleHeight + 20;
+      page.style.setProperty('--org-scroll-offset', `${offset}px`);
+    }
+    fitNavigation();
+    const active = links.find(link => link.getAttribute('aria-current') === 'location');
+    if (active && matchMedia('(min-width:961px)').matches) {
+      keepLinkVisible(active);
+    }
+  };
+  const go = (target, fromSearch = false) => {
+    if (!target || !page.contains(target)) return;
+    closeMenu();
+    for (let node = target; node && node !== page; node = node.parentElement) {
+      if (node.tagName === 'DETAILS') node.open = true;
+    }
+    if ((fromSearch && !target.hasAttribute('data-org-section')) || target.classList.contains('org-record')) target.querySelectorAll('details').forEach(detail => { detail.open = true; });
+    const section = target.closest('[data-org-section]');
+    if (section) setActive(section, target.closest('.org-topic,.org-health-group'));
+    if (!target.matches('input,button,a,summary')) target.setAttribute('tabindex','-1');
+    target.focus({preventScroll:true});
+    requestAnimationFrame(() => {
+      if (section) setActive(section, target.closest('.org-topic,.org-health-group'));
+      const match = fromSearch ? target.querySelector('mark') : null;
+      const destination = match?.closest('p,li,dt,dd,h2,h3,h4,strong') || target;
+      if (destination !== target) destination.style.scrollMarginTop = getComputedStyle(target).scrollMarginTop;
+      destination.scrollIntoView({block:'start', behavior:'instant'});
+      if (!reducedMotion()) {
+        const cue = target.querySelector('h2,h3,h4') || destination;
+        cue.getAnimations().forEach(animation => animation.cancel());
+        cue.animate([{opacity:.55},{opacity:1}], {duration:220,easing:'ease-out'});
+      }
+    });
+  };
+  page.addEventListener('click', event => {
+    const link = event.target.closest('a[href^="#"]');
+    if (!link || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || event.button !== 0) return;
+    const target = document.getElementById(link.hash.slice(1));
+    if (!target) return;
+    event.preventDefault();
+    const fromSearch = link.classList.contains('org-result');
+    removeMarks();
+    if (fromSearch) {
+      highlight(target.hasAttribute('data-org-section') ? target.querySelector('.org-section-heading') : target, query);
+      results.hidden = true;
+      const firstMark = target.querySelector('mark');
+      if (firstMark) firstMark.closest('details')?.setAttribute('open','');
+    }
+    if (location.hash !== link.hash) history.pushState(null,'',link.hash);
+    go(target, fromSearch);
+  });
+  const applySearch = () => {
+    query = normalize(search.value); removeMarks(); results.replaceChildren();
+    clear.hidden = !search.value; results.hidden = !query;
+    if (!query) { status.textContent = ''; return; }
+    const matches = items.filter(item => matchesQuery(item.normalized, query)).sort((a,b) => {
+      const rank = item => normalize(item.title) === query ? 0 : matchesQuery(normalize(item.title), query) ? 1 : 2;
+      return rank(a) - rank(b);
+    });
+    status.textContent = matches.length
+      ? `Найдено: ${matches.length}. Выберите результат, чтобы перейти к сведениям.`
+      : 'Ничего не найдено. Попробуйте другое слово или выберите раздел ниже.';
+    if (!matches.length) { results.hidden = true; return; }
+    matches.forEach(item => {
+      const link = document.createElement('a'); link.className = 'org-result'; link.href = '#' + item.element.id;
+      const title = document.createElement('strong'); title.textContent = item.title;
+      const context = document.createElement('span'); context.className = 'org-result-context'; context.textContent = item.context;
+      const snippet = document.createElement('small');
+      const positions = searchTerms(query).map(term => item.normalized.indexOf(term)).filter(index => index >= 0);
+      const index = positions.length ? Math.min(...positions) : 0, start = Math.max(0,index - 65), end = Math.min(item.text.length,index + query.length + 100);
+      snippet.textContent = (start ? '…' : '') + item.text.slice(start,end) + (end < item.text.length ? '…' : '');
+      highlight(title, query); highlight(snippet, query); link.append(context,title,snippet); results.append(link);
+    });
+  };
+  search.addEventListener('input', () => { clearTimeout(debounce); debounce = setTimeout(applySearch, 120); });
+  search.addEventListener('focus', () => { if (query && results.childElementCount) results.hidden = false; });
+  search.addEventListener('keydown', event => {
+    if (event.key === 'Escape') { search.value = ''; clearTimeout(debounce); applySearch(); }
+    if (event.key === 'Enter') { clearTimeout(debounce); applySearch(); results.querySelector('a')?.focus(); }
+  });
+  clear.addEventListener('click', () => { search.value = ''; clearTimeout(debounce); applySearch(); search.focus(); });
+  let scheduled = false;
+  const updateActive = () => {
+    scheduled = false;
+    const compact = matchMedia('(max-width:960px)').matches;
+    const threshold = compact
+      ? parseFloat(getComputedStyle(contents).top) + toggle.getBoundingClientRect().height + 24
+      : 125; // Follow the reading line below the fixed header, including short sections.
+    let current = sections[0];
+    for (const section of sections) { if (section.getBoundingClientRect().top <= threshold) current = section; else break; }
+    const last = sections[sections.length - 1];
+    const atBottom = Math.ceil(scrollY + innerHeight) >= document.documentElement.scrollHeight - 2;
+    if (atBottom || (last.getBoundingClientRect().bottom <= innerHeight && last.getBoundingClientRect().top < innerHeight * .6)) current = last;
+    const topics = [...current.querySelectorAll('.org-topic,.org-health-group')];
+    let activeTopic = null;
+    if (current.id === 'facilities' || (compact && current.id === 'food-health')) {
+      if (compact) {
+        activeTopic = topics[0];
+        for (const topic of topics) {
+          if (topic.getBoundingClientRect().top <= threshold) activeTopic = topic;
+          else break;
+        }
+      } else {
+        let largestVisible = 0;
+        for (const topic of topics) {
+          const rect = topic.getBoundingClientRect();
+          const visible = Math.max(0, Math.min(rect.bottom, innerHeight) - Math.max(rect.top, 100));
+          if (visible > largestVisible) { largestVisible = visible; activeTopic = topic; }
+        }
+      }
+    }
+    setActive(current, activeTopic);
+    page.querySelectorAll('.org-local-nav a, .org-subnav a, #food-health > .org-jump-links a').forEach(link => {
+      if (activeTopic && link.hash === '#' + activeTopic.id) link.setAttribute('aria-current','location');
+      else link.removeAttribute('aria-current');
+    });
+    if (activeTopic && !compact) keepLinkVisible(topicMenu.querySelector('[aria-current]'));
+  };
+  window.addEventListener('scroll', () => { if (!scheduled) { scheduled = true; requestAnimationFrame(updateActive); } }, {passive:true});
+  window.addEventListener('resize', updateActive);
+  const revealHash = () => {
+    let id; try { id = decodeURIComponent(location.hash.slice(1)); } catch { return; }
+    if (id) go(document.getElementById(id));
+  };
+  window.addEventListener('hashchange', revealHash);
+  window.addEventListener('popstate', revealHash);
+  let printState = [];
+  window.addEventListener('beforeprint', () => { printState = [...page.querySelectorAll('details')].map(node => [node,node.open]); printState.forEach(([node]) => {node.open = true;}); });
+  window.addEventListener('afterprint', () => printState.forEach(([node,open]) => {node.open = open;}));
+  updateActive();
+  if (document.readyState === 'complete') revealHash();
+  else window.addEventListener('load', revealHash, {once:true});
+})();
+
+  </script>
+</body>
+</html>

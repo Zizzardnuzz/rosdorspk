@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>История создания — РОСДОРСПК</title>
+<meta name="description" content="История создания системы повышения квалификации РОСДОРНИИ: от первых очных программ в 2019 году до развития дистанционного обучения по всей России.">
+<link rel="stylesheet" href="site-chrome.css">
+<style>
+body{margin:0;background:#fff;color:#18283d}
+.history-page{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+.history-page,.history-page *{box-sizing:border-box}
+.history-shell{width:min(1120px,calc(100% - 40px));margin-inline:auto}
+.history-page a{color:#0869e8;text-underline-offset:4px}
+.history-page a:focus-visible{outline:3px solid #79adf1;outline-offset:4px;border-radius:4px}
+.history-skip{position:fixed;left:16px;top:-100px;z-index:1000;background:#0869e8;color:#fff;padding:12px 16px;border-radius:8px}.history-skip:focus{top:16px}
+.history-hero{padding:40px 0 24px}
+.history-eyebrow{margin:0 0 12px;color:#59697c;font-size:12px;font-weight:650;line-height:1.5;letter-spacing:.06em;text-transform:uppercase}
+.history-hero h1{margin:0;font-size:44px;font-weight:750;line-height:1.15}
+.history-lead{max-width:760px;margin:16px 0 0;font-size:20px;line-height:1.6;color:#59697c}
+.history-origin{padding:16px 20px;border-left:3px solid #dbe5f2;border-radius:0 10px 10px 0;background:#f8fafc}
+.history-origin h2{margin:0 0 8px;font-size:18px;line-height:1.4}
+.history-origin p{margin:0;font-size:15px;line-height:1.6;color:#47586d}
+.history-origin p+p{margin-top:12px}
+.history-origin .history-origin-note{margin:8px 0 0;font-size:13px;line-height:1.6;color:#59697c}
+.history-origin-note a{display:inline-block}
+.history-section{max-width:960px;padding:40px 0 0}
+.history-section-heading{display:flex;align-items:baseline;gap:16px;margin-bottom:28px}
+.history-section-heading h2{margin:0;font-size:28px;line-height:1.3}
+.history-section-heading p{margin:0;color:#59697c;font-size:15px;line-height:1.5}
+.history-timeline{list-style:none;margin:0;padding:0}
+.history-step{display:grid;grid-template-columns:120px minmax(0,1fr);column-gap:32px;position:relative;padding:0 0 32px}
+.history-step:before{content:"";position:absolute;left:113px;top:16px;bottom:-16px;width:1px;background:#dbe5f2}
+.history-step:last-child{padding-bottom:0}.history-step:last-child:before{display:none}
+.history-year{position:relative;display:block;padding-top:1px;font-size:26px;font-weight:650;line-height:1.3;color:#0869e8;font-variant-numeric:tabular-nums}
+.history-year:after{content:"";position:absolute;left:108px;top:12px;width:9px;height:9px;border:1px solid #0869e8;border-radius:50%;background:#fff}
+.history-step--key .history-year:after{background:#0869e8;box-shadow:0 0 0 4px #eaf2fd}
+.history-event{min-width:0;padding:0 0 28px;border-bottom:1px solid #e3e8ef}
+.history-step:last-child .history-event{border-bottom:0;padding-bottom:0}
+.history-event h3{max-width:34em;margin:0 0 10px;font-size:22px;line-height:1.4}
+.history-event p{max-width:70ch;margin:0;font-size:16px;line-height:1.7;color:#47586d}
+.history-event .history-outcome{margin-top:14px;padding-left:14px;border-left:2px solid #bfd7f7;color:#18283d;font-size:15px;font-weight:550;line-height:1.6}
+.history-event p+p{margin-top:12px}
+.history-metrics-panel{margin-top:18px;padding:18px 22px;border:1px solid #e3e8ef;border-radius:10px;background:#f8fafc}
+.history-metrics-panel .history-metrics-label{margin:0 0 12px;font-size:13px;color:#59697c}
+.history-metrics{display:flex;flex-wrap:wrap;gap:20px 36px;margin:0}
+.history-metrics>div{flex:1 1 180px}.history-metrics dt{font-size:25px;font-weight:650;line-height:1.3;color:#18283d}.history-metrics dd{margin:5px 0 0;font-size:14px;line-height:1.5;color:#59697c}
+.history-summary{margin:28px 0 0 152px;padding:24px 0 0;border-top:1px solid #e3e8ef}
+.history-summary h3{margin:0 0 10px;font-size:22px;line-height:1.4}
+.history-summary p{margin:0 0 12px;font-size:16px;line-height:1.7;color:#47586d}
+.history-summary a{display:inline-flex;align-items:center;min-height:44px;font-size:15px;font-weight:550;text-decoration:none}.history-summary a:hover{text-decoration:underline}
+.history-practice{margin-top:44px;padding:32px 0 40px;border-top:1px solid #e3e8ef}
+.history-practice>h2{margin:0 0 12px;font-size:28px;line-height:1.3}
+.history-practice-intro{max-width:70ch;margin:0 0 24px;font-size:16px;line-height:1.7;color:#47586d}
+.history-practice-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.history-practice-grid .history-practice-card{display:flex;flex-direction:column;align-items:flex-start;min-width:0;padding:24px;border:1px solid #e3e8ef;border-radius:12px;color:#18283d;text-decoration:none}
+.history-practice-grid h3{margin:0 0 10px;font-size:20px;line-height:1.4}
+.history-practice-grid p{margin:0 0 12px;font-size:15px;line-height:1.7;color:#47586d}
+.history-card-link{display:inline-flex;align-items:center;min-height:44px;margin-top:auto;color:#0869e8;font-size:14px;font-weight:550}.history-practice-card:hover{border-color:#bfd7f7;background:#f8fafc}.history-practice-card:hover .history-card-link{text-decoration:underline}.history-page .history-practice-card:focus-visible{outline:3px solid #79adf1;outline-offset:4px;border-radius:12px}
+@media(max-width:960px){.history-shell{width:calc(100% - 36px)}.history-hero{padding-top:28px}.history-hero h1{font-size:36px}.history-origin{padding:16px 20px}.history-practice-grid{gap:16px}.history-practice-grid .history-practice-card{padding:20px}}
+@media(max-width:760px){.history-practice-grid{grid-template-columns:1fr}.history-step{grid-template-columns:84px minmax(0,1fr);column-gap:20px}.history-step:before{left:77px}.history-year:after{left:72px}.history-summary{margin-left:104px}}
+@media(max-width:640px){.history-hero{padding:24px 0}.history-hero h1{font-size:32px}.history-lead{font-size:17px;margin-top:12px}.history-origin{padding:16px}.history-origin h2{font-size:18px}.history-origin p{font-size:15px}.history-section{padding-top:32px}.history-section-heading{display:block;margin-bottom:24px}.history-section-heading h2,.history-practice>h2{font-size:24px}.history-section-heading p{margin-top:8px}.history-step{display:block;padding:0 0 22px 24px}.history-step:before{left:4px;top:18px;bottom:-18px}.history-year{font-size:23px;margin-bottom:10px}.history-year:after{left:-24px;top:10px}.history-event{padding-bottom:20px}.history-event h3{font-size:20px}.history-event p{font-size:15px}.history-metrics-panel{padding:16px;margin-top:16px}.history-metrics{gap:16px}.history-summary{margin:24px 0 0;padding-top:20px}.history-summary h3{font-size:20px}.history-summary p{font-size:15px}.history-metrics>div{flex-basis:100%}.history-metrics dt{font-size:23px}.history-practice{margin-top:28px;padding:28px 0}.history-practice>h2{margin-bottom:12px}}
+.history-event .history-outcome--research{font-weight:400}
+.history-outcome--research strong{font-weight:650}
+.history-forecast{display:block;margin-top:6px}
+@media(max-width:640px){
+ .history-origin-note .history-note-separator{display:none}
+ .history-origin-note a{display:flex;align-items:center;min-height:44px;margin-top:4px;width:fit-content}
+ .history-practice-grid .history-practice-card{padding:16px}
+ .history-practice-grid p{margin-bottom:8px}
+}
+</style>
+<link rel="icon" type="image/x-icon" sizes="16x16 32x32 48x48 256x256" href="assets/brand/favicon-v4.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/brand/favicon-v4-32.png">
+</head>
+<body>
+<a class="history-skip" href="#history-main">Перейти к истории создания</a>
+<header class="edu2-chrome edu2-chrome-header">
+    <div class="edu2-chrome-container edu2-chrome-header__inner">
+      <a class="edu2-chrome-brand" href="index.html" aria-label="РОСДОРСПК — главная">
+        <span class="edu2-chrome-brand__mark" aria-hidden="true"><img src="assets/brand/rosdorspk-mark-v4.png" width="256" height="256" alt="" decoding="async"></span>
+        <span class="edu2-chrome-brand__text"><strong>РОСДОРСПК</strong><small>Система повышения квалификации</small></span>
+      </a>
+      <nav class="edu2-chrome-nav" aria-label="Основная навигация">
+        <a href="index.html">Главная</a>
+        <a href="education.html">Обучение</a>
+        <a href="webinars.html">Вебинары</a>
+        <a href="regulations.html">Нормативные обзоры</a>
+      <div class="edu2-chrome-about" data-edu2-chrome-about>
+        <button class="edu2-chrome-about__trigger is-active" type="button" aria-controls="edu2-chrome-about-menu" aria-expanded="false" data-edu2-chrome-about-trigger>О&nbsp;нас <span class="edu2-chrome-about__chevron" aria-hidden="true">⌄</span>
+        </button>
+        <div class="edu2-chrome-about__menu" id="edu2-chrome-about-menu" aria-hidden="true" inert data-edu2-chrome-about-menu>
+          <p class="edu2-chrome-about__heading">О системе РОСДОРСПК</p>
+          <a class="edu2-chrome-about__item" data-about-icon="results" href="results.html"><strong>Результаты в цифрах</strong><small>Масштаб, география и аудитория</small></a>
+          <a class="edu2-chrome-about__item" data-about-icon="organization" href="organization.html"><strong>Сведения об организации</strong><small>Документы, структура и руководство</small></a>
+          <a class="edu2-chrome-about__item" data-about-icon="contacts" href="contacts.html"><strong>Контакты</strong><small>Телефон, почта и адрес</small></a>
+          <a class="edu2-chrome-about__item is-active" data-about-icon="history" href="history.html" aria-current="page"><strong>История создания</strong><small>Этапы развития системы</small></a>
+        </div>
+      </div>
+      </nav>
+      <button class="edu2-chrome-menu-button" type="button" aria-expanded="false" aria-controls="edu2-chrome-mobile-menu" aria-label="Открыть меню" data-edu2-chrome-menu-button>
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="edu2-chrome-mobile-menu" id="edu2-chrome-mobile-menu" aria-label="Мобильная навигация" aria-hidden="true" inert>
+      <a href="index.html">Главная</a>
+      <a href="education.html">Обучение</a>
+      <a href="webinars.html">Вебинары</a>
+      <a href="regulations.html">Нормативные обзоры</a>
+    <div class="edu2-chrome-mobile-about" data-edu2-chrome-mobile-about>
+      <button class="edu2-chrome-mobile-about__toggle is-active" type="button" aria-expanded="false" aria-controls="edu2-chrome-about-mobile-menu" data-edu2-chrome-mobile-about-toggle>
+        О&nbsp;нас <span aria-hidden="true">⌄</span>
+      </button>
+      <div class="edu2-chrome-mobile-about__menu" id="edu2-chrome-about-mobile-menu" aria-hidden="true" inert data-edu2-chrome-mobile-about-menu>
+        <div class="edu2-chrome-mobile-about__inner">
+        <a data-about-icon="results" href="results.html">Результаты в цифрах</a>
+        <a data-about-icon="organization" href="organization.html">Сведения об организации</a>
+        <a data-about-icon="contacts" href="contacts.html">Контакты</a>
+        <a data-about-icon="history" class="is-active" href="history.html" aria-current="page">История создания</a>
+              </div>
+      </div>
+    </div>
+    </nav>
+  </header>
+<main class="history-page" id="history-main">
+ <div class="history-shell">
+  <section class="history-hero" aria-labelledby="history-title">
+   <p class="history-eyebrow">О системе РОСДОРСПК</p>
+   <h1 id="history-title">История создания</h1>
+   <p class="history-lead">От первых очных программ до дистанционного обучения специалистов дорожного хозяйства по всей России.</p>
+  </section>
+  <section class="history-origin" aria-labelledby="history-origin-title">
+   <h2 id="history-origin-title">Основание создания</h2>
+   <p>РОСДОРНИИ создаёт систему в рамках нацпроекта <a href="https://rosdornii.ru/proekty/bkd/">«Безопасные качественные дороги»</a>.</p>
+   <p class="history-origin-note">Дополнительное профессиональное образование<span class="history-note-separator" aria-hidden="true"> · </span><a href="organization.html#general-license">Сведения о лицензии →</a></p>
+  </section>
+  <section class="history-section" aria-labelledby="history-stages-title">
+   <div class="history-section-heading"><h2 id="history-stages-title">Этапы развития</h2><p>2019–2026</p></div>
+   <ol class="history-timeline">
+    <li class="history-step">
+     <time class="history-year" datetime="2019">2019</time>
+     <div class="history-event"><h3>Первые очные программы</h3><p>Формируются цели, структура и модель системы повышения квалификации. Начинается очное обучение специалистов дорожного хозяйства.</p></div>
+    </li>
+    <li class="history-step history-step--key">
+     <time class="history-year" datetime="2020">2020</time>
+     <div class="history-event"><h3>Переход к онлайн-обучению</h3><p>В условиях пандемии вводятся дистанционный и смешанный форматы. Программы дополняют видеолекциями, онлайн-практиками и цифровыми учебными модулями.</p></div>
+    </li>
+    <li class="history-step">
+     <time class="history-year" datetime="2021">2021</time>
+     <div class="history-event"><h3>Единый портал и консультационный центр</h3><p>Создаются образовательный портал и центр консультаций, собственные студии видео- и звукозаписи. Начинается разработка интерактивных практических модулей.</p><p class="history-outcome history-outcome--research">Мониторинг кадровой потребности: <strong>более 150&nbsp;000</strong> работников и <strong>3&nbsp;500</strong> организаций.<span class="history-forecast">Подготовлен прогноз до <strong>2030 года</strong>.</span></p></div>
+    </li>
+    <li class="history-step history-step--key">
+     <time class="history-year" datetime="2022">2022</time>
+     <div class="history-event"><h3>Все программы — дистанционно</h3><p>Все программы адаптированы для онлайн-обучения с сохранением практики. Разрабатываются интерактивные тренажёры, модели производственных ситуаций и дистанционные задания.</p><p class="history-outcome">Обучение доступно специалистам по всей России.</p></div>
+    </li>
+    <li class="history-step">
+     <time class="history-year" datetime="2023">2023</time>
+     <div class="history-event"><h3>Больше программ и слушателей</h3><p>Расширяется библиотека программ, растёт число обучающихся. Улучшаются стабильность платформы, удобство обучения и поддержка слушателей.</p></div>
+    </li>
+    <li class="history-step history-step--key">
+     <time class="history-year" datetime="2024">2024</time>
+     <div class="history-event"><h3>Практические программы и сообщество</h3><p>Разработаны программы по ключевым направлениям дорожного хозяйства. Формируется устойчивое сообщество слушателей; опрос подтверждает спрос на дистанционный формат (70%).</p>
+      <div class="history-metrics-panel"><p class="history-metrics-label">К концу 2024 года</p><dl class="history-metrics"><div><dt>37</dt><dd>практико-ориентированных программ</dd></div><div><dt>19&nbsp;000+</dt><dd>специалистов прошли обучение за всё время</dd></div></dl></div>
+     </div>
+    </li>
+    <li class="history-step">
+     <time class="history-year" datetime="2025">2025</time>
+     <div class="history-event"><h3>Обновление программ и поддержки</h3><p>Обратная связь от регионов и организаций помогает обновлять программы, интерактивные модули и сервисы поддержки слушателей.</p></div>
+    </li>
+    <li class="history-step history-step--key">
+     <time class="history-year" datetime="2026">2026</time>
+     <div class="history-event"><h3>Актуальность и удобство обучения</h3><p>В фокусе дальнейшего развития — актуальность учебных материалов, удобный выбор программ и доступ к знаниям с любого устройства. Ориентир — практические задачи специалистов дорожного хозяйства.</p></div>
+    </li>
+   </ol>
+   <div class="history-summary">
+    <h3>Система сегодня</h3>
+    <p>Система объединяет дистанционные программы, собственный учебный контент и поддержку слушателей.</p>
+    <a href="results.html">Результаты в цифрах →</a>
+   </div>
+  </section>
+  <section class="history-practice" aria-labelledby="history-practice-title">
+   <h2 id="history-practice-title">Больше, чем учебные программы</h2>
+   <p class="history-practice-intro">Вместе с обучением развивались собственный учебный контент, нормативные обзоры и площадка для обмена опытом.</p>
+   <div class="history-practice-grid">
+    <a class="history-practice-card" href="education.html" aria-labelledby="history-card-education"><h3 id="history-card-education">Программы обучения</h3><p>Онлайн-программы с видео и аудио из собственных студий записи.</p><span class="history-card-link">Перейти к программам →</span></a>
+    <a class="history-practice-card" href="regulations.html" aria-labelledby="history-card-regulations"><h3 id="history-card-regulations">Нормативные обзоры</h3><p>Обзоры нормативных документов и мониторинг изменений ФСНБ-2022.</p><span class="history-card-link">Перейти к обзорам →</span></a>
+    <a class="history-practice-card" href="webinars.html" aria-labelledby="history-card-webinars"><h3 id="history-card-webinars">Вебинары и обмен опытом</h3><p>Бесплатные вебинары с экспертами РОСДОРНИИ о дорожном хозяйстве.</p><span class="history-card-link">Смотреть вебинары →</span></a>
+   </div>
+  </section>
+ </div>
+</main>
+<footer class="edu2-chrome edu2-chrome-footer">
+  <div class="edu2-chrome-container edu2-chrome-footer__grid">
+    <div class="edu2-chrome-footer__brand">
+      <a class="edu2-chrome-brand edu2-chrome-brand--footer" href="index.html" aria-label="РОСДОРСПК — главная">
+        <span class="edu2-chrome-brand__mark" aria-hidden="true"><img src="assets/brand/rosdorspk-mark-v4.png" width="256" height="256" alt="" decoding="async"></span>
+        <span class="edu2-chrome-brand__text"><strong>РОСДОРСПК</strong><small>Система повышения квалификации</small></span>
+      </a>
+      <p>Знания для специалистов <br>дорожного хозяйства.</p>
+    </div>
+    <nav class="edu2-chrome-footer__column" aria-label="Обучение и материалы">
+      <h2>Обучение и материалы</h2>
+      <a href="education.html">Программы обучения</a>
+      <a href="webinars.html">Вебинары</a>
+      <a href="regulations.html">Нормативные обзоры</a>
+    </nav>
+    <nav class="edu2-chrome-footer__column" aria-label="О системе">
+      <h2>О системе</h2>
+      <a href="results.html">Результаты в цифрах</a>
+      <a href="organization.html">Сведения об организации</a>
+      <a href="history.html">История создания</a>
+      <a href="contacts.html">Контакты</a>
+    </nav>
+    <div class="edu2-chrome-footer__contact">
+      <h2>По вопросам обучения</h2>
+      <a class="edu2-chrome-footer__email" href="mailto:info@rosdorspk.ru">info@rosdorspk.ru <span aria-hidden="true">↗</span></a>
+      <a class="edu2-chrome-footer__phone" href="tel:+74955400820">+7 (495) 540-08-20</a>
+      <p>Добавочный <strong>6259</strong></p>
+    </div>
+  </div>
+  <div class="edu2-chrome-container edu2-chrome-footer__bottom">
+    <span>© 2022&#8288;–&#8288;2026 ФАУ «РОСДОРНИИ»</span>
+    <a class="edu2-chrome-footer__policy" href="policy.html#top">Политика конфиденциальности</a>
+  </div>
+</footer>
+<script src="site-chrome.js"></script>
+</body>
+</html>
