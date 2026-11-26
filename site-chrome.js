@@ -1,4 +1,91 @@
 (function () {
+  var themeKey = 'rosdorspk:theme';
+  var systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
+  var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var themePreference = null;
+  var themeTransition = null;
+  try {
+    var savedTheme = localStorage.getItem(themeKey);
+    if (savedTheme === 'light' || savedTheme === 'dark') themePreference = savedTheme;
+  } catch (error) {
+    // The theme control also works when browser storage is unavailable.
+  }
+
+  function getActiveTheme() {
+    return themePreference || (systemTheme.matches ? 'dark' : 'light');
+  }
+
+  function applyTheme() {
+    var activeTheme = getActiveTheme();
+    document.documentElement.dataset.siteTheme = activeTheme;
+    var label = activeTheme === 'dark' ? 'Включить светлую тему' : 'Включить тёмную тему';
+    document.querySelectorAll('.edu2-chrome-theme').forEach(function (button) {
+      button.setAttribute('aria-label', label);
+      button.title = label;
+    });
+  }
+
+  function animateThemeChange(button) {
+    var root = document.documentElement;
+    if (themeTransition) {
+      themeTransition.skipTransition();
+      applyTheme();
+      return;
+    }
+    if (root.dataset.siteTheme === getActiveTheme()) return;
+    if (reducedMotion.matches || document.hidden || !document.startViewTransition) {
+      applyTheme();
+      return;
+    }
+
+    root.classList.add('site-theme-transition');
+    button.classList.add('is-theme-transitioning');
+    var transition = document.startViewTransition(applyTheme);
+    themeTransition = transition;
+    // A second click can skip the transition before its snapshots are ready.
+    transition.ready.catch(function () {});
+    function finishTransition() {
+      themeTransition = null;
+      root.classList.remove('site-theme-transition');
+      button.classList.remove('is-theme-transitioning');
+    }
+    transition.finished.then(finishTransition, finishTransition);
+  }
+
+  applyTheme();
+  if (systemTheme.addEventListener) systemTheme.addEventListener('change', applyTheme);
+  else systemTheme.addListener(applyTheme);
+  window.addEventListener('storage', function (event) {
+    if (event.key !== themeKey && event.key !== null) return;
+    themePreference = event.newValue === 'light' || event.newValue === 'dark' ? event.newValue : null;
+    applyTheme();
+  });
+
+  function initThemeToggle(menuButton) {
+    var button = menuButton.previousElementSibling;
+    if (!button || !button.classList.contains('edu2-chrome-theme')) {
+      button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'edu2-chrome-theme';
+      menuButton.before(button);
+    }
+    if (!button.firstElementChild) {
+      button.innerHTML = '<span class="edu2-chrome-theme__icon" aria-hidden="true"></span>';
+    }
+    applyTheme();
+
+    button.addEventListener('click', function () {
+      themePreference = getActiveTheme() === 'dark' ? 'light' : 'dark';
+      try {
+        localStorage.setItem(themeKey, themePreference);
+      } catch (error) {
+        // The selected mode stays active in this page.
+      }
+      animateThemeChange(button);
+    });
+    button.disabled = false;
+  }
+
   function initHeader(header) {
     var button = header.querySelector('[data-edu2-chrome-menu-button]');
     var menu = header.querySelector('.edu2-chrome-mobile-menu');
@@ -11,6 +98,7 @@
     var aboutCloseTimer = 0;
     var aboutKeyboardInteraction = false;
     if (!button || !menu) return;
+    initThemeToggle(button);
     var backdrop = document.createElement('div');
     backdrop.className = 'edu2-chrome-menu-backdrop';
     backdrop.setAttribute('aria-hidden', 'true');
@@ -156,13 +244,90 @@
     }, { passive: true });
   }
 
+  function initSectionMenu(menu) {
+    var toggle = menu.querySelector('.site-section-menu__toggle');
+    var panel = toggle && document.getElementById(toggle.getAttribute('aria-controls'));
+    if (!panel || !menu.contains(panel)) return;
+
+    var compact = window.matchMedia('(max-width: 960px)');
+
+    function fitPanel() {
+      if (!menu.classList.contains('is-open')) return;
+      var available = window.innerHeight - menu.getBoundingClientRect().bottom - 16;
+      menu.style.setProperty('--site-section-menu-space', Math.max(80, available) + 'px');
+    }
+
+    function setOpen(open) {
+      open = open && compact.matches;
+      toggle.setAttribute('aria-expanded', String(open));
+      panel.toggleAttribute('inert', compact.matches && !open);
+      menu.classList.toggle('is-open', open);
+      fitPanel();
+    }
+
+    toggle.addEventListener('click', function () {
+      setOpen(toggle.getAttribute('aria-expanded') !== 'true');
+    });
+
+    menu.addEventListener('keydown', function (event) {
+      if (event.key !== 'Escape' || !menu.classList.contains('is-open')) return;
+      event.preventDefault();
+      setOpen(false);
+      toggle.focus({ preventScroll: true });
+    });
+
+    document.addEventListener('click', function (event) {
+      if (!menu.contains(event.target) || event.target.closest('a')) setOpen(false);
+    });
+    document.addEventListener('focusin', function (event) {
+      if (!menu.contains(event.target) && menu.classList.contains('is-open')) setOpen(false);
+    });
+
+    compact.addEventListener('change', function () { setOpen(false); });
+    window.addEventListener('scroll', fitPanel, { passive: true });
+    window.addEventListener('resize', fitPanel, { passive: true });
+
+    menu.classList.add('is-menu-ready');
+    setOpen(false);
+  }
+
+  function initBackToTop() {
+    var page = document.querySelector('[data-site-back-top]');
+    if (!page) return;
+
+    var button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'site-back-top';
+    button.title = 'Наверх';
+    button.setAttribute('aria-label', 'Наверх');
+    button.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V5m-6 6 6-6 6 6"></path></svg>';
+    document.body.appendChild(button);
+
+    function updateVisibility() {
+      button.classList.toggle('is-visible', window.scrollY > 480);
+    }
+
+    button.addEventListener('click', function (event) {
+      if (event.detail === 0) {
+        var heading = page.querySelector('h1') || page;
+        if (!heading.hasAttribute('tabindex')) heading.setAttribute('tabindex', '-1');
+        heading.focus({ preventScroll: true });
+      }
+      window.scrollTo({ top: 0, behavior: reducedMotion.matches ? 'instant' : 'smooth' });
+    });
+    window.addEventListener('scroll', updateVisibility, { passive: true });
+    updateVisibility();
+  }
+
   function init() {
+    initBackToTop();
     if (window.location.protocol === 'file:') {
       document.querySelectorAll('.edu2-chrome-footer__policy').forEach(function (link) {
         link.setAttribute('href', 'policy.html#top');
       });
     }
     document.querySelectorAll('.edu2-chrome-header').forEach(initHeader);
+    document.querySelectorAll('.site-section-menu').forEach(initSectionMenu);
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);

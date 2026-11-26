@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Результаты в цифрах — РОСДОРСПК</title>
 <meta name="description" content="Результаты РОСДОРСПК, география программ, портрет выпускников и форматы профессионального развития специалистов дорожной отрасли.">
+<script src="site-chrome.js"></script>
 <link rel="stylesheet" href="site-chrome.css">
 <style>
 html {
@@ -17,7 +18,7 @@ html {
   top: 10px;
   left: 10px;
   padding: 10px 14px;
-  border: 2px solid #ffffff;
+  border: 2px solid var(--site-dark-line-strong, #ffffff);
   border-radius: 10px;
   color: #ffffff;
   background: #0d2d55;
@@ -37,14 +38,14 @@ html {
 .about-page {
   --about-header-height: 76px;
   --about-scroll-offset: calc(var(--about-header-height) + 24px);
-  --about-ink: #18283e;
-  --about-ink-soft: #30445e;
-  --about-muted: #596a7f;
-  --about-blue: #0a62d7;
+  --about-ink: var(--site-dark-ink, #18283e);
+  --about-ink-soft: var(--site-dark-text, #30445e);
+  --about-muted: var(--site-dark-muted, #596a7f);
+  --about-blue: var(--site-dark-link, #0a62d7);
   --about-blue-deep: #0d2d55;
-  --about-line: #e0e6ee;
-  --about-canvas: #f6f8fb;
-  --about-white: #ffffff;
+  --about-line: var(--site-dark-line, #e0e6ee);
+  --about-canvas: var(--site-dark-canvas, #f6f8fb);
+  --about-white: var(--site-dark-surface, #ffffff);
   --about-radius-panel: 18px;
   --about-radius-control: 12px;
   min-width: 0;
@@ -178,10 +179,6 @@ html {
   text-transform: uppercase;
 }
 
-.about-section-nav__toggle {
-  display: none;
-}
-
 .about-section-nav__links {
   display: grid;
   gap: 2px;
@@ -200,38 +197,30 @@ html {
   min-height: 44px;
   padding: 11px 10px;
   border-radius: 7px;
-  color: #526176;
+  color: var(--site-dark-text, #526176);
   font-size: 14px;
   line-height: 1.45;
   transition: color 160ms ease, background-color 160ms ease;
 }
 
 .about-section-nav__index {
-  color: #697b91;
+  color: var(--site-dark-muted, #697b91);
   font-size: 12px;
 }
 
 .about-section-nav a:hover {
   color: var(--about-ink);
-  background: #f3f5f8;
+  background: var(--site-dark-raised, #f3f5f8);
 }
 
 .about-section-nav a[aria-current="location"] {
-  color: #095fcd;
-  background: #edf4ff;
+  color: var(--site-dark-link, #095fcd);
+  background: var(--site-dark-tint, #edf4ff);
   font-weight: 650;
 }
 
 .about-section-nav a[aria-current="location"] .about-section-nav__index {
   color: inherit;
-}
-
-.about-page .about-section-nav__top {
-  margin-top: 12px;
-  padding-top: 16px;
-  border-top: 1px solid var(--about-line);
-  border-radius: 0;
-  color: var(--about-blue);
 }
 
 @media (min-width: 961px) {
@@ -267,72 +256,9 @@ html {
   }
 
   .about-section-nav {
-    top: var(--about-header-height);
-    margin: 0 -18px 28px;
-    padding: 0 18px;
-    border-block: 1px solid var(--about-line);
+    --site-section-menu-top: var(--about-header-height);
+    margin-bottom: 28px;
   }
-
-  .about-section-nav__heading { display: none; }
-
-  .about-page.is-navigation-ready .about-section-nav__toggle {
-    position: relative;
-    display: flex;
-    width: 100%;
-    min-height: 64px;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 3px;
-    padding: 10px 26px 10px 0;
-    border: 0;
-    color: var(--about-ink);
-    background: transparent;
-    font: inherit;
-    text-align: left;
-    cursor: pointer;
-  }
-
-  .about-section-nav__toggle > span { color: var(--about-muted); font-size: 12px; }
-  .about-section-nav__toggle strong { font-size: 14px; font-weight: 600; line-height: 1.4; }
-
-  .about-section-nav__toggle::after {
-    position: absolute;
-    top: 25px;
-    right: 8px;
-    width: 8px;
-    height: 8px;
-    border-right: 1.5px solid currentColor;
-    border-bottom: 1.5px solid currentColor;
-    content: "";
-    transform: rotate(45deg);
-    transition: transform 180ms ease;
-  }
-
-  .about-section-nav__toggle[aria-expanded="true"]::after { transform: translateY(4px) rotate(225deg); }
-
-  .about-section-nav__toggle:focus-visible {
-    border-radius: 7px;
-    outline: 2px solid var(--about-blue);
-    outline-offset: -3px;
-  }
-
-  .about-section-nav__links { max-height: none; padding-block: 10px; }
-
-  .about-page.is-navigation-ready .about-section-nav__links {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    left: 0;
-    display: none;
-    max-height: min(var(--about-menu-space, 100dvh), calc(100dvh - var(--about-header-height) - 82px));
-    padding: 8px 18px 14px;
-    border-bottom: 1px solid var(--about-line);
-    background: var(--about-white);
-    box-shadow: 0 8px 18px rgba(24, 40, 61, 0.08);
-  }
-
-  .about-page.is-navigation-ready .about-section-nav.is-open .about-section-nav__links { display: grid; }
 }
 
 
@@ -380,12 +306,12 @@ html {
 
 .about-button--primary {
   color: #ffffff !important;
-  background: var(--about-blue);
+  background: var(--site-dark-action, var(--about-blue));
   box-shadow: 0 2px 4px rgba(10, 98, 215, 0.1);
 }
 
 .about-button--primary:hover {
-  background: #0759c6;
+  background: var(--site-dark-action, #0759c6);
   box-shadow: 0 4px 10px rgba(10, 98, 215, 0.16);
   transform: translateY(-1px);
 }
@@ -399,7 +325,7 @@ html {
 
 .about-page a:focus-visible {
   border-radius: 8px;
-  outline: 2px solid rgba(10, 98, 215, 0.78);
+  outline: 2px solid var(--site-dark-focus, rgba(10, 98, 215, 0.78));
   outline-offset: 3px;
 }
 
@@ -518,10 +444,10 @@ html {
   align-items: flex-start;
   gap: 10px;
   padding: 11px 13px;
-  border: 1px solid #d8e4f3;
+  border: 1px solid var(--site-dark-line, #d8e4f3);
   border-radius: 12px;
   color: var(--about-muted);
-  background: #f7faff;
+  background: var(--site-dark-surface-soft, #f7faff);
   font-size: 14px;
   line-height: 1.5;
 }
@@ -539,7 +465,7 @@ html {
   flex: 0 0 7px;
   margin-top: 7px;
   border-radius: 50%;
-  background: var(--about-blue);
+  background: var(--site-dark-action, var(--about-blue));
   content: "";
 }
 
@@ -610,7 +536,7 @@ html {
   padding: 0;
   border: 0;
   border-radius: 0;
-  color: #62758d;
+  color: var(--site-dark-muted, #62758d);
   background: transparent;
   font-size: 13px;
 }
@@ -620,13 +546,13 @@ html {
 }
 
 .about-report-heading__period strong {
-  color: #62758d;
+  color: var(--site-dark-muted, #62758d);
   font-weight: 650;
 }
 
 .about-program-ranking li:focus-within {
-  border-color: #9fc5f2;
-  background: #f7faff;
+  border-color: var(--site-dark-line-strong, #9fc5f2);
+  background: var(--site-dark-surface-soft, #f7faff);
   box-shadow: 0 14px 30px rgba(16, 64, 122, 0.09);
   transform: translateY(-2px);
 }
@@ -634,15 +560,15 @@ html {
 
 @media (hover: hover) {
   .about-program-ranking li:hover {
-    border-color: #b8d2f0;
-    background: #f7faff;
+    border-color: var(--site-dark-line-strong, #b8d2f0);
+    background: var(--site-dark-surface-soft, #f7faff);
     box-shadow: 0 14px 30px rgba(16, 64, 122, 0.09);
     transform: translateY(-2px);
   }
   .about-program-ranking li:hover .about-program-ranking__arrow {
-    border-color: #b8d2f0;
+    border-color: var(--site-dark-line-strong, #b8d2f0);
     color: var(--about-blue);
-    background: #eef5ff;
+    background: var(--site-dark-tint, #eef5ff);
     transform: translateX(2px);
   }
 }
@@ -661,9 +587,17 @@ html {
   height: auto;
   aspect-ratio: 16 / 9;
   margin: -24px -24px 2px;
-  object-fit: cover;
+  overflow: hidden;
   border-bottom: 1px solid var(--about-line);
-  background: #f2f6fa;
+  background: var(--site-dark-raised, #f2f6fa);
+}
+
+.about-program-ranking__cover img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: var(--site-dark-cover-image, none);
 }
 
 .about-program-ranking__arrow {
@@ -673,10 +607,10 @@ html {
   flex: 0 0 34px;
   margin-left: auto;
   place-items: center;
-  border: 1px solid #d3dfec;
+  border: 1px solid var(--site-dark-line, #d3dfec);
   border-radius: 50%;
   color: var(--about-muted);
-  background: #f8fafc;
+  background: var(--site-dark-surface-soft, #f8fafc);
   font-size: 22px;
   font-weight: 400;
   line-height: 24px;
@@ -849,7 +783,7 @@ html {
   padding: 24px;
   border-color: transparent;
   color: #ffffff;
-  background: #115dc5;
+  background: var(--site-dark-action, #115dc5);
 }
 
 .about-card-label {
@@ -977,7 +911,7 @@ html {
 }
 
 .about-open-metrics span {
-  color: #3f536c;
+  color: var(--site-dark-text, #3f536c);
   font-size: 14px;
   line-height: 1.45;
 }
@@ -1013,7 +947,7 @@ html {
 }
 
 .about-open-metric-link:hover {
-  background: #edf5ff;
+  background: var(--site-dark-tint, #edf5ff);
 }
 
 .about-page .about-open-metric-link:focus-visible {
@@ -1172,7 +1106,7 @@ html {
   height: 7px;
   overflow: hidden;
   border-radius: 999px;
-  background: #edf2f8;
+  background: var(--site-dark-raised, #edf2f8);
 }
 
 .about-organization-bar__track > span {
@@ -1277,9 +1211,9 @@ html {
 }
 
 .about-geo-area {
-  fill: #e4edf6;
+  fill: var(--site-dark-map-land, #e4edf6);
   fill-rule: evenodd;
-  stroke: #abc0d6;
+  stroke: var(--site-dark-map-line, #abc0d6);
   stroke-width: 0.85;
   stroke-linejoin: round;
   vector-effect: non-scaling-stroke;
@@ -1293,8 +1227,8 @@ html {
 }
 
 .about-geo-area.is-active {
-  fill: #c6dff9;
-  stroke: #2674bf;
+  fill: var(--site-dark-map-active, #c6dff9);
+  stroke: var(--site-dark-link, #2674bf);
   stroke-width: 1.5;
 }
 
@@ -1318,7 +1252,7 @@ html {
 }
 
 .about-geo-bubble__core {
-  fill: #3279c9;
+  fill: var(--site-dark-map-pin, #3279c9);
   stroke: #ffffff;
   stroke-width: 2;
   transform: scaleY(var(--about-geo-marker-y));
@@ -1394,7 +1328,7 @@ html {
 .about-geo-tooltip[data-placement="right"]::after {
   top: var(--about-tooltip-pointer-y, 50%);
   right: 100%;
-  border-right-color: var(--about-blue-deep);
+  border-right-color: var(--site-dark-link, var(--about-blue-deep));
   transform: translateY(-50%);
 }
 
@@ -1511,8 +1445,8 @@ html {
 }
 
 .about-geo-map__region.is-active {
-  color: var(--about-blue-deep);
-  background: #edf5ff;
+  color: var(--site-dark-link, var(--about-blue-deep));
+  background: var(--site-dark-tint, #edf5ff);
 }
 
 .about-geo-map__region[aria-pressed="true"] {
@@ -1533,6 +1467,7 @@ html {
 
 /* Audience explorer: one cohort, four independent views */
 .about-audience-explorer {
+  --audience-age-blue: #0a62d7;
   overflow: hidden;
   border: 1px solid var(--about-line);
   border-radius: 18px;
@@ -1558,7 +1493,7 @@ html {
   padding: 3px;
   overflow-x: auto;
   border-radius: 11px;
-  background: #eef3f9;
+  background: var(--site-dark-raised, #eef3f9);
   scrollbar-width: none;
 }
 
@@ -1587,7 +1522,7 @@ html {
 
 .about-audience-tab:hover {
   color: var(--about-ink);
-  background: rgba(255, 255, 255, 0.56);
+  background: var(--site-dark-hover, rgba(255, 255, 255, 0.56));
 }
 
 .about-audience-tab[aria-selected="true"] {
@@ -1598,7 +1533,7 @@ html {
 }
 
 .about-audience-tab:focus-visible {
-  outline: 2px solid rgba(10, 98, 215, 0.62);
+  outline: 2px solid var(--site-dark-focus, rgba(10, 98, 215, 0.62));
   outline-offset: -2px;
 }
 
@@ -1606,7 +1541,7 @@ html {
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background: #c2d9fb;
+  background: var(--site-dark-tint-strong, #c2d9fb);
   pointer-events: none;
   opacity: 0;
   transform: scaleX(0);
@@ -1622,7 +1557,7 @@ html {
 }
 
 .about-audience-tab[aria-selected="true"] .about-audience-tab__label {
-  color: #0855b8;
+  color: var(--site-dark-link, #0855b8);
 }
 
 .about-audience-explorer__body {
@@ -1761,7 +1696,7 @@ html {
 }
 
 .about-audience-legend li {
-  border-top: 1px solid #e2e9f2;
+  border-top: 1px solid var(--site-dark-line, #e2e9f2);
   color: var(--about-ink-soft);
   font-size: 15px;
   line-height: 1.4;
@@ -1789,7 +1724,7 @@ html {
 
 .about-audience-category.is-highlighted {
   color: var(--about-ink);
-  background: #edf4fd;
+  background: var(--site-dark-tint, #edf4fd);
 }
 
 .about-audience-category:focus-visible {
@@ -1872,7 +1807,7 @@ html {
     overscroll-behavior-x: contain;
     scroll-padding-inline: 4px;
     border-radius: 12px;
-    background: #eef3f9;
+    background: var(--site-dark-raised, #eef3f9);
     -webkit-mask-image: linear-gradient(to right, transparent 0, #000 var(--audience-fade-start), #000 calc(100% - var(--audience-fade-end)), transparent 100%);
     mask-image: linear-gradient(to right, transparent 0, #000 var(--audience-fade-start), #000 calc(100% - var(--audience-fade-end)), transparent 100%);
   }
@@ -1903,7 +1838,7 @@ html {
 
   .about-audience-tab__progress {
     border-radius: 0;
-    background: linear-gradient(to right, #d4e4fb 0%, #d4e4fb calc(100% - 18px), rgba(212, 228, 251, 0) 100%);
+    background: linear-gradient(to right, var(--site-dark-tint-strong, #d4e4fb) 0%, var(--site-dark-tint-strong, #d4e4fb) calc(100% - 18px), transparent 100%);
   }
 
   .about-audience-tab:focus-visible {
@@ -2314,11 +2249,12 @@ html {
 
 /* Shared panoramic intro: keep this block identical on all five pages. */
 .panorama {
-  --panorama-bg: #f6f8fb;
-  --panorama-ink: #14243d;
-  --panorama-text: #47586d;
-  --panorama-muted: #596a7f;
-  --panorama-blue: #0a58ca;
+  --panorama-bg: var(--site-dark-panorama, #f6f8fb);
+  --panorama-ink: var(--site-dark-ink, #14243d);
+  --panorama-text: var(--site-dark-text, #47586d);
+  --panorama-muted: var(--site-dark-muted, #596a7f);
+  --panorama-blue: var(--site-dark-link, #0a58ca);
+  --panorama-image: var(--panorama-light-image);
   --panorama-image-position: 100% 15%;
   position: relative;
   isolation: isolate;
@@ -2327,7 +2263,7 @@ html {
   min-height: 480px;
   padding: 64px 0 32px;
   overflow: hidden;
-  border-bottom: 1px solid #e1e7ef;
+  border-bottom: 1px solid var(--site-dark-line, #e1e7ef);
   background: var(--panorama-bg);
   color: var(--panorama-ink);
   font: 16px/1.6 Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
@@ -2339,7 +2275,7 @@ html {
   position: absolute;
   z-index: 1;
   inset: 0;
-  background: linear-gradient(90deg,var(--panorama-bg) 0%,var(--panorama-bg) 35%,rgba(246,248,251,.9) 43%,transparent 56%);
+  background: var(--site-dark-panorama-fade, linear-gradient(90deg,var(--panorama-bg) 0%,var(--panorama-bg) 35%,rgba(246,248,251,.9) 43%,transparent 56%));
   pointer-events: none;
   content: "";
 }
@@ -2359,8 +2295,8 @@ html {
 .panorama .panorama__actions { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 24px; margin: 20px 0 0; }
 .panorama .panorama__link { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 8px; min-height: 44px; margin: 0; padding: 4px 0; color: var(--panorama-blue); font-size: 15px; font-weight: 600; line-height: 1.5; text-decoration: none; }
 .panorama .panorama__link--secondary { color: var(--panorama-muted); font-size: 14px; font-weight: 500; }
-.panorama .panorama__link:hover { color: #0849a9; text-decoration: underline; text-underline-offset: 4px; }
-.panorama .panorama__link:focus-visible { border-radius: 4px; outline: 3px solid #79adf1; outline-offset: 4px; }
+.panorama .panorama__link:hover { color: var(--site-dark-link-hover, #0849a9); text-decoration: underline; text-underline-offset: 4px; }
+.panorama .panorama__link:focus-visible { border-radius: 4px; outline: 3px solid var(--site-dark-focus, #79adf1); outline-offset: 4px; }
 .panorama .panorama__link > :is(span,svg) { flex: 0 0 auto; width: 18px; height: 18px; font-size: 18px; line-height: 1; }
 .panorama .panorama__facts { display: flex; flex-wrap: wrap; gap: 8px 20px; margin: 16px 0 0; padding: 0; list-style: none; color: var(--panorama-muted); font-size: 13px; line-height: 1.5; }
 .panorama .panorama__facts li { display: inline-flex; align-items: flex-start; gap: 8px; }
@@ -2370,10 +2306,14 @@ html {
 .panorama .panorama__stats .stat-number { color: var(--panorama-ink); font-size: 28px; font-weight: 650; line-height: 1.15; letter-spacing: -.035em; font-variant-numeric: tabular-nums; }
 .panorama .panorama__stats .stat-label { color: var(--panorama-muted); font-size: 13px; line-height: 1.5; white-space: nowrap; }
 .panorama .panorama__stats.is-loading .stat-card { gap: 4px; }
-.panorama .panorama__visual { position: absolute; z-index: 0; inset: 0 0 0 auto; width: 100%; margin: 0; overflow: hidden; }
-.panorama .panorama__visual img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: var(--panorama-image-position); }
-.panorama .panorama__visual::after { position: absolute; inset: 0; background: linear-gradient(180deg,var(--panorama-bg),transparent 10%,transparent 92%,var(--panorama-bg)); pointer-events: none; content: ""; }
-/* Only the crop of each existing illustration differs. */
+.panorama .panorama__visual { position: absolute; z-index: 0; inset: 0 0 0 auto; width: 100%; margin: 0; overflow: hidden; background: var(--panorama-image) var(--panorama-image-position) / cover no-repeat; }
+.panorama .panorama__visual::after { position: absolute; inset: 0; background: var(--site-dark-panorama-overlay, linear-gradient(180deg,var(--panorama-bg),transparent 10%,transparent 92%,var(--panorama-bg))); pointer-events: none; content: ""; }
+@media screen {
+  :root[data-site-theme="dark"] .panorama {
+    --panorama-image: var(--panorama-dark-image, var(--panorama-light-image));
+  }
+}
+/* Adjust the crop where the foreground needs more room. */
 .panorama--education { --panorama-image-position: 100% 65%; }
 @media (max-width:960px) {
   .panorama { display: block; min-height: 0; padding: 32px 0 0; }
@@ -2402,6 +2342,31 @@ html {
   .panorama .panorama__link--secondary { font-size: 13px; }
 }
 /* End shared panoramic intro. */
+
+.about-hero {
+  --panorama-light-image: url("assets/hero-results-growth-v2.webp");
+  --panorama-dark-image: url("assets/hero-results-growth-v2-dark.jpg");
+}
+
+@media screen {
+  :root[data-site-theme="dark"] .about-hero .about-hero__more {
+    padding: 4px 14px;
+    border: 1px solid var(--site-dark-action);
+    border-radius: 8px;
+    background: var(--site-dark-action);
+    color: #fff;
+  }
+
+  :root[data-site-theme="dark"] .about-hero .about-hero__more:hover {
+    border-color: var(--site-dark-action-hover);
+    background: var(--site-dark-action-hover);
+    text-decoration: none;
+  }
+
+  :root[data-site-theme="dark"] .about-audience-explorer {
+    --audience-age-blue: #4f94ed;
+  }
+}
 </style>
 <link rel="icon" type="image/x-icon" sizes="16x16 32x32 48x48 256x256" href="assets/brand/favicon-v4.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/brand/favicon-v4-32.png">
@@ -2432,6 +2397,7 @@ html {
         </div>
       </div>
       </nav>
+      <button class="edu2-chrome-theme" type="button" aria-label="Переключить тему" disabled><span class="edu2-chrome-theme__icon" aria-hidden="true"></span></button>
       <button class="edu2-chrome-menu-button" type="button" aria-expanded="false" aria-controls="edu2-chrome-mobile-menu" aria-label="Открыть меню" data-edu2-chrome-menu-button>
         <span></span><span></span><span></span>
       </button>
@@ -2458,7 +2424,7 @@ html {
   </header>
 
 
-<main class="about-page" id="about-main-content" tabindex="-1">
+<main class="about-page" id="about-main-content" tabindex="-1" data-site-back-top>
   <section class="about-hero panorama" id="top" aria-labelledby="about-title">
     <div class="about-shell about-hero__layout panorama__layout">
       <div class="about-hero__content panorama__content">
@@ -2473,24 +2439,23 @@ html {
       </div>
 
     </div>
-    <figure class="about-hero__visual panorama__visual" aria-hidden="true">
-      <img src="assets/hero-results-growth-v2.webp" width="2172" height="724" alt="" decoding="async" fetchpriority="high">
-    </figure>
+    <div class="panorama__visual" aria-hidden="true"></div>
   </section>
 
   <div class="about-shell about-content-layout">
-    <aside class="about-section-nav" aria-label="Содержание страницы" data-about-section-nav>
-      <strong class="about-section-nav__heading">На этой странице</strong>
-      <button class="about-section-nav__toggle" type="button" aria-expanded="false" aria-controls="about-section-links" data-about-section-toggle>
-        <span>Разделы страницы</span>
-        <strong data-about-section-label>Масштаб работы</strong>
-      </button>
-      <nav class="about-section-nav__links" id="about-section-links" aria-label="Разделы результатов">
-        <a href="#scale" data-about-section-link aria-current="location"><span class="about-section-nav__index" aria-hidden="true">01</span><span data-about-link-label>Масштаб работы</span></a>
-        <a href="#geography" data-about-section-link><span class="about-section-nav__index" aria-hidden="true">02</span><span data-about-link-label>География</span></a>
-        <a href="#organizations" data-about-section-link><span class="about-section-nav__index" aria-hidden="true">03</span><span data-about-link-label>Организации</span></a>
-        <a href="#audience" data-about-section-link><span class="about-section-nav__index" aria-hidden="true">04</span><span data-about-link-label>Аудитория</span></a>
-        <a class="about-section-nav__top" href="#top"><span aria-hidden="true">↑</span>Наверх</a>
+    <aside class="about-section-nav site-section-menu" aria-label="Содержание страницы" data-about-section-nav>
+      <strong class="about-section-nav__heading site-section-menu__heading">На этой странице</strong>
+      <div class="site-section-menu__bar">
+        <button class="site-section-menu__toggle" type="button" aria-expanded="false" aria-controls="about-section-links" data-about-section-toggle>  
+          <span>Разделы страницы</span>  
+          <strong data-about-section-label>Масштаб работы</strong>  
+        </button>
+      </div>
+      <nav class="about-section-nav__links site-section-menu__panel" id="about-section-links" aria-label="Разделы результатов">
+        <a class="site-section-menu__link" href="#scale" data-about-section-link aria-current="location"><span class="about-section-nav__index site-section-menu__number" aria-hidden="true">01</span><span data-about-link-label>Масштаб работы</span></a>
+        <a class="site-section-menu__link" href="#geography" data-about-section-link><span class="about-section-nav__index site-section-menu__number" aria-hidden="true">02</span><span data-about-link-label>География</span></a>
+        <a class="site-section-menu__link" href="#organizations" data-about-section-link><span class="about-section-nav__index site-section-menu__number" aria-hidden="true">03</span><span data-about-link-label>Организации</span></a>
+        <a class="site-section-menu__link" href="#audience" data-about-section-link><span class="about-section-nav__index site-section-menu__number" aria-hidden="true">04</span><span data-about-link-label>Аудитория</span></a>
       </nav>
     </aside>
 
@@ -2550,7 +2515,9 @@ html {
         </header>
         <ol class="about-program-ranking" aria-label="Три программы с наибольшим числом выпускников">
           <li>
-            <img class="about-program-ranking__cover" src="assets/education/154570320742-road-estimates-v2.webp" width="1280" height="720" loading="lazy" decoding="async" alt="">
+            <div class="about-program-ranking__cover">
+              <img src="assets/education/154570320742-road-estimates-v2.webp" width="1280" height="720" loading="lazy" decoding="async" alt="">
+            </div>
             <div class="about-program-ranking__visual" aria-hidden="true">
               <span class="about-program-ranking__rank">1 место</span>
               <span class="about-program-ranking__arrow" aria-hidden="true">→</span>
@@ -2559,7 +2526,9 @@ html {
             <div class="about-program-ranking__count"><strong>2&#8239;031</strong><span>выпускник</span></div>
           </li>
           <li>
-            <img class="about-program-ranking__cover" src="assets/education/476541233262-asphalt-production-v2.webp" width="1280" height="720" loading="lazy" decoding="async" alt="">
+            <div class="about-program-ranking__cover">
+              <img src="assets/education/476541233262-asphalt-production-v2.webp" width="1280" height="720" loading="lazy" decoding="async" alt="">
+            </div>
             <div class="about-program-ranking__visual" aria-hidden="true">
               <span class="about-program-ranking__rank">2 место</span>
               <span class="about-program-ranking__arrow" aria-hidden="true">→</span>
@@ -2568,7 +2537,9 @@ html {
             <div class="about-program-ranking__count"><strong>1&#8239;979</strong><span>выпускников</span></div>
           </li>
           <li>
-            <img class="about-program-ranking__cover" src="assets/education/609496792122-road-quality-monitoring-v2.webp" width="1280" height="720" loading="lazy" decoding="async" alt="">
+            <div class="about-program-ranking__cover">
+              <img src="assets/education/609496792122-road-quality-monitoring-v2.webp" width="1280" height="720" loading="lazy" decoding="async" alt="">
+            </div>
             <div class="about-program-ranking__visual" aria-hidden="true">
               <span class="about-program-ranking__rank">3 место</span>
               <span class="about-program-ranking__arrow" aria-hidden="true">→</span>
@@ -2898,7 +2869,7 @@ html {
                 <h3>моложе 35 лет</h3>
               </div>
               <ul class="about-audience-legend" aria-label="Распределение выпускников по возрасту">
-                <li style="--segment:#0a62d7"><button class="about-audience-category" type="button" aria-pressed="false"><i aria-hidden="true"></i><span>Моложе 35 лет</span><b>51%</b></button></li>
+                <li style="--segment:var(--audience-age-blue)"><button class="about-audience-category" type="button" aria-pressed="false"><i aria-hidden="true"></i><span>Моложе 35 лет</span><b>51%</b></button></li>
                 <li style="--segment:#7359d2"><button class="about-audience-category" type="button" aria-pressed="false"><i aria-hidden="true"></i><span>35&#8288;–&#8288;50 лет</span><b>40%</b></button></li>
                 <li style="--segment:#d08b2f"><button class="about-audience-category" type="button" aria-pressed="false"><i aria-hidden="true"></i><span>Старше 50 лет</span><b>9%</b></button></li>
               </ul>
@@ -2985,13 +2956,11 @@ html {
   </div>
 </footer>
 
-<script src="site-chrome.js"></script>
 <script>
 (() => {
   const navigationPage = document.querySelector(".about-page");
   const siteHeader = document.querySelector(".edu2-chrome-header");
   const sectionNav = document.querySelector("[data-about-section-nav]");
-  const sectionNavLinks = sectionNav?.querySelector(".about-section-nav__links");
   const sectionNavToggle = sectionNav?.querySelector("[data-about-section-toggle]");
   const sectionNavLabel = sectionNav?.querySelector("[data-about-section-label]");
   const sectionLinks = sectionNav ? Array.from(sectionNav.querySelectorAll("[data-about-section-link]")) : [];
@@ -3008,17 +2977,6 @@ html {
     navigationPage?.style.setProperty("--about-header-height", `${height}px`);
   };
 
-  const syncMenuState = () => {
-    const isOpen = compactNavigation.matches && sectionNav?.classList.contains("is-open");
-    sectionNavToggle?.setAttribute("aria-expanded", String(Boolean(isOpen)));
-    sectionNavLinks?.toggleAttribute("inert", compactNavigation.matches && !isOpen);
-  };
-
-  const closeSectionMenu = () => {
-    sectionNav?.classList.remove("is-open");
-    syncMenuState();
-  };
-
   const updateSectionNav = () => {
     scrollFrame = 0;
     if (!sectionNav) return;
@@ -3026,7 +2984,6 @@ html {
     const headerHeight = siteHeader?.getBoundingClientRect().height || 76;
     const menuHeight = compactNavigation.matches ? sectionNavToggle?.offsetHeight || 64 : 0;
     const activationLine = headerHeight + menuHeight + Math.min(160, window.innerHeight * 0.2);
-    sectionNav.style.setProperty("--about-menu-space", `${Math.max(80, window.innerHeight - sectionNav.getBoundingClientRect().bottom - 16)}px`);
 
     let visibleSectionId = "";
     trackedSections.forEach((section) => {
@@ -3071,31 +3028,8 @@ html {
     requestSectionNavUpdate();
   });
   window.addEventListener("hashchange", requestSectionNavUpdate);
-  compactNavigation.addEventListener("change", closeSectionMenu);
-  sectionNavToggle?.addEventListener("click", () => {
-    sectionNav.classList.toggle("is-open");
-    syncMenuState();
-    requestSectionNavUpdate();
-  });
-  sectionNavLinks?.addEventListener("click", (event) => {
-    if (event.target.closest("a")) closeSectionMenu();
-  });
-  sectionNav?.addEventListener("keydown", (event) => {
-    if (event.key !== "Escape" || !sectionNav.classList.contains("is-open")) return;
-    event.preventDefault();
-    closeSectionMenu();
-    sectionNavToggle?.focus({ preventScroll: true });
-  });
-  document.addEventListener("click", (event) => {
-    if (sectionNav && !sectionNav.contains(event.target)) closeSectionMenu();
-  });
-  document.addEventListener("focusin", (event) => {
-    if (compactNavigation.matches && sectionNav && !sectionNav.contains(event.target)) closeSectionMenu();
-  });
   syncHeaderHeight();
   if (siteHeader && "ResizeObserver" in window) new ResizeObserver(syncHeaderHeight).observe(siteHeader);
-  syncMenuState();
-  navigationPage?.classList.add("is-navigation-ready");
   updateSectionNav();
 
   const enableUrlSync = () => {
@@ -3342,7 +3276,7 @@ html {
     const audiencePanels = Array.from(audienceExplorer.querySelectorAll("[data-audience-panel]"));
     const audienceData = {
       age: [
-        { count: 51, color: "#0a62d7" },
+        { count: 51, color: "var(--audience-age-blue)" },
         { count: 40, color: "#7359d2" },
         { count: 9, color: "#d08b2f" }
       ],
