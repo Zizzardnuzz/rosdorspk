@@ -8,11 +8,8 @@
 <script src="site-chrome.js"></script>
 <link rel="stylesheet" href="site-chrome.css">
 <style>
-body{margin:0}
 #rd-policy #top{scroll-margin-top:90px}
 @media print{.edu2-chrome-header,.edu2-chrome-footer{display:none!important}}
-</style>
-<style>
 #rd-policy,
 #rd-policy * {
 box-sizing: border-box;
@@ -350,12 +347,12 @@ line-height: 1.6;
 }
 
 #rd-policy .rd-policy__toc-link:hover,
-#rd-policy .rd-policy__toc-link[aria-current="true"] {
+#rd-policy .rd-policy__toc-link[aria-current="location"] {
 color: var(--rd-policy-blue-dark);
 background: var(--rd-policy-blue-soft);
 }
 
-#rd-policy .rd-policy__toc-link[aria-current="true"] span:first-child {
+#rd-policy .rd-policy__toc-link[aria-current="location"] span:first-child {
 color: var(--rd-policy-blue);
 }
 }
@@ -901,7 +898,7 @@ display: none;
  @media (width > 960px) {
   #rd-policy .rd-policy__toc-card{padding:8px 8px 8px 0;border:0;border-radius:0;background:transparent;box-shadow:none;max-height:calc(100dvh - var(--rd-policy-mobile-top-offset,96px) - 24px);overflow-y:auto;overscroll-behavior-y:contain;scrollbar-width:thin}
   #rd-policy .rd-policy__toc-link{font-weight:400}
-  #rd-policy .rd-policy__toc-link[aria-current="true"]{font-weight:650}
+  #rd-policy .rd-policy__toc-link[aria-current="location"]{font-weight:650}
  }
  #rd-policy .rd-policy__article{padding:32px 40px 40px;border-color:var(--site-dark-line, #e7ecf2);border-radius:10px;box-shadow:none}
  #rd-policy .rd-policy__section + .rd-policy__section{margin-top:36px;padding-top:36px}
@@ -954,7 +951,6 @@ display: none;
         <button class="edu2-chrome-about__trigger" type="button" aria-controls="edu2-chrome-about-menu" aria-expanded="false" data-edu2-chrome-about-trigger>О&nbsp;нас <span class="edu2-chrome-about__chevron" aria-hidden="true">⌄</span>
         </button>
         <div class="edu2-chrome-about__menu" id="edu2-chrome-about-menu" aria-hidden="true" inert data-edu2-chrome-about-menu>
-          <p class="edu2-chrome-about__heading">О системе РОСДОРСПК</p>
           <a class="edu2-chrome-about__item" data-about-icon="results" href="results.html"><strong>Результаты в цифрах</strong><small>Масштаб, география и аудитория</small></a>
           <a class="edu2-chrome-about__item" data-about-icon="organization" href="organization.html"><strong>Сведения об организации</strong><small>Документы, структура и руководство</small></a>
           <a class="edu2-chrome-about__item" data-about-icon="contacts" href="contacts.html"><strong>Контакты</strong><small>Телефон, почта и адрес</small></a>
@@ -1023,7 +1019,7 @@ display: none;
 <nav class="rd-policy__toc-card site-section-menu__panel" id="policy-section-links" aria-label="Разделы политики">
 <p class="rd-policy__toc-title site-section-menu__heading">Содержание</p>
 <ol class="rd-policy__toc-list site-section-menu__list">
-<li><a class="rd-policy__toc-link site-section-menu__link" href="#1" data-policy-nav aria-current="true"><span class="site-section-menu__number" aria-hidden="true">01</span> <span>Общие положения</span></a></li>
+<li><a class="rd-policy__toc-link site-section-menu__link" href="#1" data-policy-nav aria-current="location"><span class="site-section-menu__number" aria-hidden="true">01</span> <span>Общие положения</span></a></li>
 <li><a class="rd-policy__toc-link site-section-menu__link" href="#2" data-policy-nav><span class="site-section-menu__number" aria-hidden="true">02</span> <span>Термины и определения</span></a></li>
 <li><a class="rd-policy__toc-link site-section-menu__link" href="#3" data-policy-nav><span class="site-section-menu__number" aria-hidden="true">03</span> <span>Права и обязанности</span></a></li>
 <li><a class="rd-policy__toc-link site-section-menu__link" href="#4" data-policy-nav><span class="site-section-menu__number" aria-hidden="true">04</span> <span>Категории данных</span></a></li>
@@ -1359,18 +1355,20 @@ window.history.replaceState(null, "", hash);
 }
 }
 
+var currentSectionId;
 function setCurrent(id, syncHash) {
+if (currentSectionId !== id) {
+currentSectionId = id;
 links.forEach(function (link) {
 if (link.getAttribute("href") === "#" + id) {
-link.setAttribute("aria-current", "true");
+link.setAttribute("aria-current", "location");
 if (mobileCurrent) mobileCurrent.textContent = link.lastElementChild.textContent.trim();
 } else {
 link.removeAttribute("aria-current");
 }
 });
-
+}
 if (syncHash) replaceHash("#" + id);
-
 }
 
 if (!sections.length) return;

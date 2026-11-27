@@ -224,9 +224,6 @@
       } else if (mobileAboutToggle && mobileAboutToggle.getAttribute('aria-expanded') === 'true') {
         setMobileAbout(false);
         mobileAboutToggle.focus();
-      } else if (button.getAttribute('aria-expanded') === 'true') {
-        setMenu(false);
-        button.focus();
       }
     });
 
@@ -234,14 +231,14 @@
       if (button.getAttribute('aria-expanded') === 'true' && !header.contains(event.target)) setMenu(false);
     });
 
-    window.addEventListener('resize', function () {
-      if (window.innerWidth > 900) {
+    window.matchMedia('(max-width: 900px)').addEventListener('change', function (event) {
+      if (!event.matches) {
         setMenu(false);
         setMobileAbout(false);
       } else {
         setAboutMenu(false);
       }
-    }, { passive: true });
+    });
   }
 
   function initSectionMenu(menu) {

@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Обучение — РОСДОРСПК</title>
+<meta name="description" content="Каталог программ повышения квалификации для специалистов дорожной отрасли. Направления обучения, продолжительность и содержание программ.">
 <script src="site-chrome.js"></script>
 <link rel="stylesheet" href="site-chrome.css">
 <style>
@@ -16,7 +17,6 @@
   --edu2-blue-soft: var(--site-dark-tint, #edf4ff);
   --edu2-line: var(--site-dark-line, #e1e7ef);
   --edu2-bg: var(--site-dark-canvas, #f6f8fb);
-  --edu2-surface: var(--site-dark-surface, #fff);
   min-width: 0;
   color: var(--edu2-ink);
   background: var(--edu2-bg);
@@ -48,7 +48,6 @@
 .edu2-filters__reset { min-height: 32px; margin-block: -4px; padding: 4px 0 4px 4px; border: 0; color: var(--edu2-blue); background: transparent; font-size: 12px !important; }
 .edu2-filters__reset:hover { text-decoration: underline; text-underline-offset: 3px; }
 .edu2-filters__help { margin-top: 4px; padding: 18px; border: 1px solid var(--site-dark-line, #e1eaf8); border-radius: 12px; background: var(--site-dark-tint, #edf3fc); }
-.edu2-filters__help-icon { display: grid; width: 24px; height: 24px; place-items: center; border: 1px solid var(--site-dark-line-strong, #bbd0ed); border-radius: 50%; color: var(--edu2-blue); font-size: 13px; font-weight: 600; }
 .edu2-filters__help p { margin: 12px 0 6px; font-size: 14px; font-weight: 600; }
 .edu2-filters__help > span:last-of-type { display: block; color: var(--site-dark-muted, #596b82); font-size: 12px; line-height: 1.65; }
 .edu2 .edu2-filters__help a { display: flex; min-height: 44px; align-items: center; justify-content: space-between; gap: 8px; margin-top: 8px; color: var(--edu2-blue); font-size: 12px; font-weight: 600; }
@@ -100,9 +99,6 @@
 .edu2-program-list { display: grid; grid-template-columns: minmax(0,1fr); gap: 12px; margin: 0; padding: 0; list-style: none; }
 .edu2-program-item { display: flex; min-width: 0; margin: 0; padding: 0; list-style: none; scroll-margin-top: 92px; }
 .edu2-program-card { display: grid; width: 100%; min-width: 0; grid-template-columns: 40px minmax(0,1fr); gap: 0 18px; padding: 22px 24px 10px; border: 1px solid var(--edu2-line); border-radius: 14px; background: var(--site-dark-surface, #fff); transition: border-color .18s ease,box-shadow .18s ease; }
-.edu2-program-card__icon { display: grid; width: 40px; height: 40px; grid-row: 1 / 3; place-items: center; border: 1px solid var(--site-dark-line, #e0eafa); border-radius: 10px; color: var(--edu2-blue); background: var(--site-dark-tint, #f0f5fe); }
-.edu2-program-card__icon svg { width: 21px; height: 21px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
-.edu2-program-card.is-archive .edu2-program-card__icon { color: var(--site-dark-muted, #758297); border-color: var(--site-dark-line, #e7ebf1); background: var(--site-dark-raised, #f3f5f8); }
 .edu2-program-card.is-interactive { cursor: pointer; }
 .edu2-program-card.is-interactive:hover, .edu2-program-card.is-interactive:focus-within { border-color: var(--site-dark-line-strong, #b9cee9); box-shadow: 0 5px 18px rgb(20 36 61 / 5%); }
 .edu2-program-card.is-linked-program { outline: 2px solid var(--edu2-blue); outline-offset: 3px; }
@@ -166,7 +162,6 @@
 .edu2-modal__meta-item { min-width: 0; }
 .edu2-modal__meta dt { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .edu2-modal__meta dd { display: flex; align-items: center; margin: 0; }
-.edu2-modal__meta-item--direction { grid-column: 1 / -1; }
 .edu2-modal__hours { color: var(--site-dark-muted, #637086); font-size: 12px; line-height: 1.5; white-space: nowrap; }
 .edu2-modal__direction { color: var(--site-dark-muted, #637086); font-size: 13px; line-height: 1.5; }
 .edu2-modal h2 { margin: 18px 0 0; font-size: 26px; font-weight: 650; line-height: 1.3; letter-spacing: -.025em; overflow-wrap: break-word; }
@@ -224,7 +219,6 @@
   .edu2-catalog__layout { gap: 24px; }
   .edu2-results__heading h2 { font-size: 20px; }
   .edu2-program-card { grid-template-columns: minmax(0,1fr); padding: 18px 18px 8px; border-radius: 12px; }
-  .edu2-program-card__icon { display: none; }
   .edu2-program-card__content, .edu2-program-card__footer { grid-column: 1; }
   .edu2-program-card__title { font-size: 17px; }
   .edu2-program-card__footer { margin-top: 16px; padding-top: 4px; }
@@ -548,7 +542,6 @@
         <button class="edu2-chrome-about__trigger" type="button" aria-controls="edu2-chrome-about-menu" aria-expanded="false" data-edu2-chrome-about-trigger>О&nbsp;нас <span class="edu2-chrome-about__chevron" aria-hidden="true">⌄</span>
         </button>
         <div class="edu2-chrome-about__menu" id="edu2-chrome-about-menu" aria-hidden="true" inert data-edu2-chrome-about-menu>
-          <p class="edu2-chrome-about__heading">О системе РОСДОРСПК</p>
           <a class="edu2-chrome-about__item" data-about-icon="results" href="results.html"><strong>Результаты в цифрах</strong><small>Масштаб, география и аудитория</small></a>
           <a class="edu2-chrome-about__item" data-about-icon="organization" href="organization.html"><strong>Сведения об организации</strong><small>Документы, структура и руководство</small></a>
           <a class="edu2-chrome-about__item" data-about-icon="contacts" href="contacts.html"><strong>Контакты</strong><small>Телефон, почта и адрес</small></a>
@@ -820,7 +813,7 @@
     </div>
   </div>
   <div class="edu2-chrome-container edu2-chrome-footer__bottom">
-    <span>© 2021–2026 ФАУ «РОСДОРНИИ»</span>
+    <span>© 2022&#8288;–&#8288;2026 ФАУ «РОСДОРНИИ»</span>
     <a class="edu2-chrome-footer__policy" href="policy.html#top">Политика конфиденциальности</a>
   </div>
 </footer>
@@ -908,8 +901,6 @@
     var showMoreButton = root.querySelector('[data-edu2-show-more]');
     var backToCatalogButton = root.querySelector('[data-edu2-back-to-catalog]');
     var pageHeader = document.querySelector('.edu2-chrome-header');
-    var menuButton = root.querySelector('[data-edu2-menu-button]');
-    var mobileMenu = root.querySelector('#edu2-mobile-menu');
     var programModal = root.querySelector('#edu2-program-modal');
     var modalDialog = root.querySelector('.edu2-modal__dialog');
     var modalCloseButton = root.querySelector('.edu2-modal__close');
@@ -1165,16 +1156,7 @@
       return getProgramsTitle() + '. ' + getProgramsTotalLabel(count);
     }
 
-    function setMenu(open) {
-      if (!menuButton || !mobileMenu) return;
-      menuButton.classList.toggle('is-open', open);
-      mobileMenu.classList.toggle('is-open', open);
-      menuButton.setAttribute('aria-expanded', String(open));
-      menuButton.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню');
-      mobileMenu.setAttribute('aria-hidden', String(!open));
-      if (open) mobileMenu.removeAttribute('inert');
-      else mobileMenu.setAttribute('inert', '');
-    }
+
 
     function updateStickyFiltersState() {
       stickyFiltersFrame = 0;
@@ -2293,7 +2275,6 @@
       if (!programModal || !modalDialog || !program || !hasProgramDetails(program)) return;
 
       closeDirectionPicker(false);
-      setMenu(false);
       lastFocusedElement = trigger && trigger.isConnected ? trigger : document.activeElement;
       if (!renderModalProgram(program)) return;
 
@@ -2397,9 +2378,8 @@
             if (timeoutId) window.clearTimeout(timeoutId);
             if (requestSequence !== programsRequestSequence) return;
             clearProgramsSlowNoticeTimer();
-            writeProgramsCache(payload.programs);
-
             if (!hasCachedPrograms || !isSameProgramsData(cachedPrograms, payload.programs)) {
+              writeProgramsCache(payload.programs);
               applyProgramsData(payload.programs, 'google-sheets', hasCachedPrograms, true);
             }
           })
@@ -2420,18 +2400,6 @@
       requestPrograms(0);
     }
 
-    if (menuButton && mobileMenu) {
-      menuButton.addEventListener('click', function () {
-        setMenu(!mobileMenu.classList.contains('is-open'));
-      });
-      mobileMenu.addEventListener('click', function (event) {
-        if (event.target.closest('a')) setMenu(false);
-      });
-      document.addEventListener('click', function (event) {
-        if (mobileMenu.classList.contains('is-open') && !event.target.closest('.edu2-header')) setMenu(false);
-      });
-    }
-
     Array.prototype.slice.call(root.querySelectorAll('a[href^="#edu2-"]')).forEach(function (link) {
       link.addEventListener('click', function (event) {
         if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
@@ -2439,7 +2407,6 @@
         if (!hash) return;
         event.preventDefault();
         event.stopPropagation();
-        setMenu(false);
         scrollToSection(hash, true, true);
       });
     });
@@ -2705,7 +2672,6 @@
 
     document.addEventListener('keydown', function (event) {
       if (event.key === 'Escape') {
-        setMenu(false);
         closeDirectionPicker(false);
       }
     });

@@ -155,7 +155,6 @@ body { margin:0; background:var(--site-dark-canvas, #fff); color:var(--org-ink);
 #education #education-learning-title { scroll-margin-top:105px; }
 #education .org-education-group .org-entry { padding:16px 0; }
 #education .org-education-note { font-size:14px; color:var(--org-muted); margin-top:10px; }
-#education .org-education-language { font-size:18px; font-weight:600; }
 #education #education-item-2 { margin-top:28px; }
 #education #education-item-2 li { margin:12px 0; }
 @media(max-width:960px) {
@@ -182,7 +181,6 @@ body { margin:0; background:var(--site-dark-canvas, #fff); color:var(--org-ink);
 }
 
 #structure .org-entry > h3 { font-size:18px; margin-bottom:14px; }
-#structure .org-structure-name { font-size:20px; font-weight:600; line-height:1.5; margin-bottom:16px; }
 #structure .org-structure-person { font-size:17px; font-weight:500; margin-bottom:12px; }
 #popup-table0 { margin:0; }
 #popup-table0 .org-record { border:0; border-radius:0; padding:18px 0; margin:0; }
@@ -203,7 +201,6 @@ body { margin:0; background:var(--site-dark-canvas, #fff); color:var(--org-ink);
 .org-prose ul { max-width:740px; margin:10px 0; padding-left:22px; }
 .org-prose li { padding-left:3px; margin:7px 0; }
 .org-prose li::marker { color:var(--site-dark-muted, #7c8ca1); }
-.org-prose__lead { font-weight:500; }
 .org-facts { margin:0 0 8px; }
 .org-fact-row { display:grid; grid-template-columns:250px minmax(0,1fr); gap:24px; padding:16px 0; border-bottom:1px solid var(--org-line); scroll-margin-top:105px; }
 .org-fact-row dt { color:var(--org-muted); font-size:14px; }
@@ -217,22 +214,9 @@ body { margin:0; background:var(--site-dark-canvas, #fff); color:var(--org-ink);
 .org-records { margin:18px 0 12px; scroll-margin-top:105px; }
 .org-record { border:1px solid var(--org-line); border-radius:10px; margin-top:12px; padding:20px; background:var(--site-dark-surface, #fff); scroll-margin-top:105px; }
 .org-record h4 { margin:0 0 16px; font-size:17px; line-height:1.4; }
-.org-record-fields { margin:0; }
-.org-record-fields>div { display:grid; grid-template-columns:250px minmax(0,1fr); gap:24px; padding:12px 0; border-top:1px solid var(--site-dark-line, #edf0f4); }
-.org-record-fields dt { font-size:14px; color:var(--org-muted); line-height:1.55; }
-.org-record-fields dd { margin:0; font-size:15px; line-height:1.65; }
 #popup-table1 .org-record { padding:0; margin-top:0; border-radius:0; border-width:0 0 1px; }
 #popup-table1 { border-top:1px solid var(--org-line); }
-.org-program>summary { display:flex; gap:14px; align-items:baseline; padding:18px 10px; cursor:pointer; list-style:none; }
-.org-program>summary::-webkit-details-marker { display:none; }
-.org-program>summary:hover { background:var(--site-dark-surface-soft, #f8fafc); }
 .org-record-number { flex:none; color:var(--site-dark-muted, #7c8ca1); font-size:12px; font-variant-numeric:tabular-nums; }
-.org-program-title { flex:1; min-width:0; }
-.org-program-title strong { display:block; font-size:15px; line-height:1.6; font-weight:600; }
-.org-program-title small { display:block; margin-top:6px; font-size:13px; color:var(--org-muted); }
-.org-chevron { flex:none; width:8px; height:8px; border-right:1.5px solid var(--site-dark-line-strong, #687b94); border-bottom:1.5px solid var(--site-dark-line-strong, #687b94); transform:rotate(45deg); margin:0 7px 3px; }
-.org-program[open] .org-chevron { transform:rotate(225deg); }
-.org-program .org-record-fields { padding:0 16px 14px 40px; }
 .org-page mark { background:var(--site-dark-highlight, #fff0aa); color:var(--site-dark-ink, #16263d); border-radius:2px; padding:1px 0; }
 .org-page [tabindex="-1"]:focus { outline:none; }
 @media(max-width:1000px) {
@@ -264,9 +248,6 @@ body { margin:0; background:var(--site-dark-canvas, #fff); color:var(--org-ink);
  .org-entry { padding:14px 0; }
  .org-document { padding:18px 0; }
  .org-record { padding:16px; }
- .org-record-fields>div { grid-template-columns:250px minmax(0,1fr); gap:24px; }
- .org-program>summary { padding:16px 2px; gap:10px; }
- .org-program .org-record-fields { padding:0 10px 10px 28px; }
  .org-search-results { padding-inline:12px; max-height:50dvh; }
 }
 
@@ -286,7 +267,7 @@ body { margin:0; background:var(--site-dark-canvas, #fff); color:var(--org-ink);
 .org-topic .org-entry:empty { padding:0; }
 @media(max-width:960px) { .org-topic,[data-search-heading] { scroll-margin-top:var(--org-scroll-offset,175px); } }
 @media(max-width:540px) {
- .org-fact-row,.org-facts--details .org-fact-row,.org-record-fields>div { grid-template-columns:1fr; gap:5px; padding:10px 0; }
+ .org-fact-row, .org-facts--details .org-fact-row { grid-template-columns:1fr; gap:5px; padding:10px 0; }
  .org-hero h1 { font-size:30px; }
  .org-section h2 { font-size:22px; }
  .org-section-heading small { font-size:14px; }
@@ -300,12 +281,9 @@ body { margin:0; background:var(--site-dark-canvas, #fff); color:var(--org-ink);
 .org-accessibility-record { border:0; border-radius:0; padding:16px 0; margin:0; }
 .org-accessibility-record + .org-accessibility-record { border-top:1px solid var(--org-line); }
 .org-accessibility-record p { max-width:740px; }
-.org-document-group { margin:22px 0 4px; padding:16px 0 0; border-top:1px solid var(--org-line); }
-.org-prose .org-document-group h3 { font-size:19px; }
 .org-prose > .org-entry:last-child { padding-bottom:0; }
 @media(max-width:960px) { .org-contents .org-subnav a { font-size:14px; } }
 
-@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
 
 /* Shared hierarchy and navigation for the information directory. */
 .org-page { --org-topic-size:20px; --org-item-size:16px; }
@@ -324,14 +302,13 @@ body { margin:0; background:var(--site-dark-canvas, #fff); color:var(--org-ink);
  .org-jump-links a { min-height:44px; display:flex; align-items:center; }
 }
 @media(max-width:720px) {
- .org-page .org-section .org-fact-row,.org-page .org-record-fields>div { grid-template-columns:minmax(0,1fr); gap:6px; }
+ .org-page .org-section .org-fact-row { grid-template-columns:minmax(0,1fr); gap:6px; }
  .org-page .org-section .org-fact-row { padding:12px 0; }
 }
 
 
 /* Final directory hierarchy: identical roles use identical sizes. */
 .org-page :is(#general,#structure,#documents,#education,#leadership,#teachers,#facilities,#finance,#vacancies,#support,#international,#food-health,#standards) .org-prose h3:not(.org-person-name):not(.org-teacher-name) { font-size:20px; line-height:1.4; margin-bottom:16px; }
-.org-count-tail { white-space:nowrap; }
 .org-page .org-contents a,.org-page .org-jump-links a { transition:background-color 160ms ease,color 160ms ease; }
 .org-page .org-jump-links a:hover { color:var(--site-dark-link-hover, #034ba7); }
 @media(max-width:960px) {
@@ -347,7 +324,7 @@ body { margin:0; background:var(--site-dark-canvas, #fff); color:var(--org-ink);
  .edu2-chrome,.org-contents,.org-tools,.org-quicklinks,.org-skip-link { display:none!important; }
  .org-shell { width:100%; } .org-layout { display:block; } .org-hero { padding:0 0 20px; background:var(--site-dark-surface, #fff); }
  .org-section { break-before:auto; } .org-section-heading { break-after:avoid; }
- .org-record { break-inside:avoid; } .org-program::details-content { display:block; }
+ .org-record { break-inside:avoid; }
 }
 
 
@@ -1112,7 +1089,6 @@ body { margin:0; background:var(--site-dark-canvas, #fff); color:var(--org-ink);
         <button class="edu2-chrome-about__trigger is-active" type="button" aria-controls="edu2-chrome-about-menu" aria-expanded="false" data-edu2-chrome-about-trigger>О&nbsp;нас <span class="edu2-chrome-about__chevron" aria-hidden="true">⌄</span>
         </button>
         <div class="edu2-chrome-about__menu" id="edu2-chrome-about-menu" aria-hidden="true" inert data-edu2-chrome-about-menu>
-          <p class="edu2-chrome-about__heading">О системе РОСДОРСПК</p>
           <a class="edu2-chrome-about__item" data-about-icon="results" href="results.html"><strong>Результаты в цифрах</strong><small>Масштаб, география и аудитория</small></a>
           <a class="edu2-chrome-about__item is-active" data-about-icon="organization" href="organization.html" aria-current="page"><strong>Сведения об организации</strong><small>Документы, структура и руководство</small></a>
           <a class="edu2-chrome-about__item" data-about-icon="contacts" href="contacts.html"><strong>Контакты</strong><small>Телефон, почта и адрес</small></a>
@@ -1511,7 +1487,7 @@ body { margin:0; background:var(--site-dark-canvas, #fff); color:var(--org-ink);
     'лицензия':['лицензи'], 'лицензии':['лицензи']
   };
   const searchTerms = value => [...new Set(normalize(value).split(/\s+/).filter(Boolean).flatMap(word => searchAliases[word] || [word]))];
-  const matchesQuery = (text, value) => normalize(value).split(/\s+/).filter(Boolean).every(word =>
+  const matchesQuery = (text, words) => words.every(word =>
     text.includes(word) || (searchAliases[word] && searchAliases[word].every(term => text.includes(term))));
   const cleanText = element => {
     const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
@@ -1519,20 +1495,21 @@ body { margin:0; background:var(--site-dark-canvas, #fff); color:var(--org-ink);
     while (walker.nextNode()) parts.push(walker.currentNode.nodeValue);
     return parts.join(' ').replace(/\s+/g, ' ').trim();
   };
-  const items = [...page.querySelectorAll('[data-org-section], [data-search-item], [data-search-heading]')].map(element => {
+  let searchItems;
+  const buildSearchIndex = () => [...page.querySelectorAll('[data-org-section], [data-search-item], [data-search-heading]')].map(element => {
     const section = element.closest('[data-org-section]');
     const sectionTitle = cleanText(section.querySelector('h2'));
     if (element.hasAttribute('data-org-section')) {
       const heading = element.querySelector('.org-section-heading');
       const text = cleanText(heading);
-      return {element, text, normalized: normalize(text), title:sectionTitle, context:'Раздел', sectionOnly:true};
+      return {element, text, normalized: normalize(text), title:sectionTitle, context:'Раздел'};
     }
     const copy = element.cloneNode(true);
     copy.querySelectorAll('[data-search-item], .org-file-status, nav').forEach(node => node.remove());
     const text = cleanText(copy);
-    const heading = copy.querySelector('h3,h4,dt,.org-program-title strong');
+    const heading = copy.querySelector('h3,h4,dt');
     const title = heading ? cleanText(heading) : element.hasAttribute('data-search-heading') ? text : sectionTitle;
-    return {element, text, normalized: normalize(text), title, context:sectionTitle, sectionOnly:false};
+    return {element, text, normalized: normalize(text), title, context:sectionTitle};
   });
   let query = '';
   let debounce;
@@ -1634,20 +1611,26 @@ body { margin:0; background:var(--site-dark-canvas, #fff); color:var(--org-ink);
     query = normalize(search.value); removeMarks(); results.replaceChildren();
     clear.hidden = !search.value; results.hidden = !query;
     if (!query) { status.textContent = ''; return; }
-    const matches = items.filter(item => matchesQuery(item.normalized, query)).sort((a,b) => {
-      const rank = item => normalize(item.title) === query ? 0 : matchesQuery(normalize(item.title), query) ? 1 : 2;
-      return rank(a) - rank(b);
-    });
+    if (!searchItems) searchItems = buildSearchIndex();
+    const words = query.split(' ');
+    const terms = searchTerms(query);
+    const rank = item => {
+      const title = normalize(item.title);
+      return title === query ? 0 : matchesQuery(title, words) ? 1 : 2;
+    };
+    const matches = searchItems.filter(item => matchesQuery(item.normalized, words))
+      .map(item => ({ item, rank: rank(item) }))
+      .sort((a, b) => a.rank - b.rank);
     status.textContent = matches.length
       ? `Найдено: ${matches.length}. Выберите результат, чтобы перейти к сведениям.`
       : 'Ничего не найдено. Попробуйте другое слово или выберите раздел ниже.';
     if (!matches.length) { results.hidden = true; return; }
-    matches.forEach(item => {
+    matches.forEach(({ item }) => {
       const link = document.createElement('a'); link.className = 'org-result'; link.href = '#' + item.element.id;
       const title = document.createElement('strong'); title.textContent = item.title;
       const context = document.createElement('span'); context.className = 'org-result-context'; context.textContent = item.context;
       const snippet = document.createElement('small');
-      const positions = searchTerms(query).map(term => item.normalized.indexOf(term)).filter(index => index >= 0);
+      const positions = terms.map(term => item.normalized.indexOf(term)).filter(index => index >= 0);
       const index = positions.length ? Math.min(...positions) : 0, start = Math.max(0,index - 65), end = Math.min(item.text.length,index + query.length + 100);
       snippet.textContent = (start ? '…' : '') + item.text.slice(start,end) + (end < item.text.length ? '…' : '');
       highlight(title, query); highlight(snippet, query); link.append(context,title,snippet); results.append(link);
@@ -1660,6 +1643,7 @@ body { margin:0; background:var(--site-dark-canvas, #fff); color:var(--org-ink);
     if (event.key === 'Enter') { clearTimeout(debounce); applySearch(); results.querySelector('a')?.focus(); }
   });
   clear.addEventListener('click', () => { search.value = ''; clearTimeout(debounce); applySearch(); search.focus(); });
+  const topicLinks = page.querySelectorAll('.org-local-nav a, .org-subnav a, #food-health > .org-jump-links a');
   let scheduled = false;
   const updateActive = () => {
     scheduled = false;
@@ -1672,9 +1656,10 @@ body { margin:0; background:var(--site-dark-canvas, #fff); color:var(--org-ink);
     const last = sections[sections.length - 1];
     const atBottom = Math.ceil(scrollY + innerHeight) >= document.documentElement.scrollHeight - 2;
     if (atBottom || (last.getBoundingClientRect().bottom <= innerHeight && last.getBoundingClientRect().top < innerHeight * .6)) current = last;
-    const topics = [...current.querySelectorAll('.org-topic,.org-health-group')];
+
     let activeTopic = null;
     if (current.id === 'facilities' || (compact && current.id === 'food-health')) {
+      const topics = current.querySelectorAll('.org-topic,.org-health-group');
       if (compact) {
         activeTopic = topics[0];
         for (const topic of topics) {
@@ -1691,7 +1676,7 @@ body { margin:0; background:var(--site-dark-canvas, #fff); color:var(--org-ink);
       }
     }
     setActive(current, activeTopic);
-    page.querySelectorAll('.org-local-nav a, .org-subnav a, #food-health > .org-jump-links a').forEach(link => {
+    topicLinks.forEach(link => {
       if (activeTopic && link.hash === '#' + activeTopic.id) link.setAttribute('aria-current','location');
       else link.removeAttribute('aria-current');
     });

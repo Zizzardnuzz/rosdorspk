@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Вебинары — РОСДОРСПК</title>
+<meta name="description" content="Расписание вебинаров для специалистов дорожной отрасли, записи прошедших встреч, презентации и ответы на вопросы.">
 <script src="site-chrome.js"></script>
 <link rel="stylesheet" href="site-chrome.css">
 <link rel="icon" type="image/x-icon" sizes="16x16 32x32 48x48 256x256" href="assets/brand/favicon-v4.ico">
@@ -20,13 +21,12 @@
       <nav class="edu2-chrome-nav" aria-label="Основная навигация">
         <a href="index.html">Главная</a>
         <a href="education.html">Обучение</a>
-        <a class="is-active" href="webinars.html">Вебинары</a>
+        <a class="is-active" href="webinars.html" aria-current="page">Вебинары</a>
         <a href="regulations.html">Нормативные обзоры</a>
       <div class="edu2-chrome-about" data-edu2-chrome-about>
         <button class="edu2-chrome-about__trigger" type="button" aria-controls="edu2-chrome-about-menu" aria-expanded="false" data-edu2-chrome-about-trigger>О&nbsp;нас <span class="edu2-chrome-about__chevron" aria-hidden="true">⌄</span>
         </button>
         <div class="edu2-chrome-about__menu" id="edu2-chrome-about-menu" aria-hidden="true" inert data-edu2-chrome-about-menu>
-          <p class="edu2-chrome-about__heading">О системе РОСДОРСПК</p>
           <a class="edu2-chrome-about__item" data-about-icon="results" href="results.html"><strong>Результаты в цифрах</strong><small>Масштаб, география и аудитория</small></a>
           <a class="edu2-chrome-about__item" data-about-icon="organization" href="organization.html"><strong>Сведения об организации</strong><small>Документы, структура и руководство</small></a>
           <a class="edu2-chrome-about__item" data-about-icon="contacts" href="contacts.html"><strong>Контакты</strong><small>Телефон, почта и адрес</small></a>
@@ -42,7 +42,7 @@
     <nav class="edu2-chrome-mobile-menu" id="edu2-chrome-mobile-menu" aria-label="Мобильная навигация" aria-hidden="true" inert>
       <a href="index.html">Главная</a>
       <a href="education.html">Обучение</a>
-      <a class="is-active" href="webinars.html">Вебинары</a>
+      <a class="is-active" href="webinars.html" aria-current="page">Вебинары</a>
       <a href="regulations.html">Нормативные обзоры</a>
     <div class="edu2-chrome-mobile-about" data-edu2-chrome-mobile-about>
       <button class="edu2-chrome-mobile-about__toggle" type="button" aria-expanded="false" aria-controls="edu2-chrome-about-mobile-menu" data-edu2-chrome-mobile-about-toggle>
@@ -154,7 +154,7 @@
     </div>
   </div>
   <div class="edu2-chrome-container edu2-chrome-footer__bottom">
-    <span>© 2021–2026 ФАУ «РОСДОРНИИ»</span>
+    <span>© 2022&#8288;–&#8288;2026 ФАУ «РОСДОРНИИ»</span>
     <a class="edu2-chrome-footer__policy" href="policy.html#top">Политика конфиденциальности</a>
   </div>
 </footer>
@@ -415,7 +415,6 @@
   }
   @media (max-width:560px) {
     .wbn-page { padding-bottom:48px; }
-    .wbn-desktop-break { display:none; }
     .wbn-button { min-height:40px; padding:9px 12px; font-size:11px; }
     .wbn-page--archive .webinars-grid { grid-template-columns:1fr; gap:16px; }
     .archive-controls .wbn-topic-picker { flex-basis:100%; }
@@ -915,13 +914,15 @@
     let changed = false;
     try {
       const data = await fetchWebinarsJson(key === 'archive' ? WEBINARS_API_URL : WEBINARS_UPCOMING_API_URL);
-      const payload = data && data[key === 'archive' ? 'archive' : 'upcoming'];
+      const payload = data && data[key];
       if (!data || data.ok === false || !Array.isArray(payload)) throw new Error('Invalid webinars response');
       const previous = key === 'archive' ? allArchiveWebinars : allUpcomingWebinars;
       changed = !source.ready || !isSameArchiveData(previous,payload);
-      if (key === 'archive') allArchiveWebinars = payload;
-      else allUpcomingWebinars = payload;
-      writeWebinarsCache(key === 'archive' ? WEBINARS_ARCHIVE_CACHE_KEY : WEBINARS_UPCOMING_CACHE_KEY,payload);
+      if (changed) {
+        if (key === 'archive') allArchiveWebinars = payload;
+        else allUpcomingWebinars = payload;
+        writeWebinarsCache(key === 'archive' ? WEBINARS_ARCHIVE_CACHE_KEY : WEBINARS_UPCOMING_CACHE_KEY, payload);
+      }
       source.ready = true;
     } catch (error) { source.error = error; console.error(error); }
     finally {

@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Нормативные обзоры — РОСДОРСПК</title>
+<meta name="description" content="Нормативные обзоры для дорожной отрасли и мониторинг изменений ФСНБ-2022. Поиск материалов по теме и году.">
 <script src="site-chrome.js"></script>
 <link rel="stylesheet" href="site-chrome.css">
 <link rel="icon" type="image/x-icon" sizes="16x16 32x32 48x48 256x256" href="assets/brand/favicon-v4.ico">
@@ -28,7 +29,6 @@
         <button class="edu2-chrome-about__trigger" type="button" aria-controls="edu2-chrome-about-menu" aria-expanded="false" data-edu2-chrome-about-trigger>О&nbsp;нас <span class="edu2-chrome-about__chevron" aria-hidden="true">⌄</span>
         </button>
         <div class="edu2-chrome-about__menu" id="edu2-chrome-about-menu" aria-hidden="true" inert data-edu2-chrome-about-menu>
-          <p class="edu2-chrome-about__heading">О системе РОСДОРСПК</p>
           <a class="edu2-chrome-about__item" data-about-icon="results" href="results.html"><strong>Результаты в цифрах</strong><small>Масштаб, география и аудитория</small></a>
           <a class="edu2-chrome-about__item" data-about-icon="organization" href="organization.html"><strong>Сведения об организации</strong><small>Документы, структура и руководство</small></a>
           <a class="edu2-chrome-about__item" data-about-icon="contacts" href="contacts.html"><strong>Контакты</strong><small>Телефон, почта и адрес</small></a>
@@ -189,7 +189,7 @@
     </div>
   </div>
   <div class="edu2-chrome-container edu2-chrome-footer__bottom">
-    <span>© 2021–2026 ФАУ «РОСДОРНИИ»</span>
+    <span>© 2022&#8288;–&#8288;2026 ФАУ «РОСДОРНИИ»</span>
     <a class="edu2-chrome-footer__policy" href="policy.html#top">Политика конфиденциальности</a>
   </div>
 </footer>
@@ -222,8 +222,7 @@
   html, body { max-width: 100%; overflow-x: clip; }
   body.kb-modal-lock { overflow: hidden; }
   .kb-site, .kb-modal {
-    --kb-blue: var(--site-dark-link, #0a58ca); --kb-blue-dark: var(--site-dark-link-hover, #0849a8); --kb-blue-soft: var(--site-dark-tint, #edf4ff);
-    --kb-ink: var(--site-dark-ink, #172b46); --kb-text: var(--site-dark-text, #475b74); --kb-muted: var(--site-dark-muted, #728096);
+    --kb-blue: var(--site-dark-link, #0a58ca); --kb-blue-dark: var(--site-dark-link-hover, #0849a8);     --kb-ink: var(--site-dark-ink, #172b46); --kb-text: var(--site-dark-text, #475b74); --kb-muted: var(--site-dark-muted, #728096);
     --kb-line: var(--site-dark-line, #e1e7ef); --kb-surface: var(--site-dark-surface-soft, #f6f8fb);
     color: var(--kb-ink); font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
     font-size: 16px; line-height: 1.5; -webkit-font-smoothing: antialiased;
@@ -380,8 +379,7 @@
   .kb-modal-summary p { margin: 0; }
   .kb-modal-summary p + p { margin-top: 14px; }
   .kb-modal-related { margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--kb-line); }
-  .kb-modal-related__title, .kb-modal-related__group-title { display: flex; align-items: center; justify-content: flex-start; gap: 8px; margin: 0 0 14px; color: var(--kb-ink); font-size: 13px; font-weight: 650; }
-  .kb-modal-related__group + .kb-modal-related__group { margin-top: 18px; }
+  .kb-modal-related__title { display: flex; align-items: center; justify-content: flex-start; gap: 8px; margin: 0 0 14px; color: var(--kb-ink); font-size: 13px; font-weight: 650; }
   .kb-modal-related__count { display: grid; min-width: 24px; height: 24px; padding: 0 6px; place-items: center; border-radius: 6px; background: var(--kb-category-soft); color: var(--kb-category-accent); font-size: 11px; font-weight: 600; }
   .kb-modal-related__list { display: grid; gap: 0; border: 1px solid var(--kb-line); border-radius: 10px; background: var(--site-dark-surface, #fff); }
   .kb-related-button { display: grid; width: 100%; min-height: 48px; grid-template-columns: minmax(0,1fr) 28px; align-items: center; gap: 14px; padding: 9px 14px; border: 0; border-bottom: 1px solid var(--kb-line); border-radius: 0; color: var(--site-dark-text, #304761) !important; background: var(--site-dark-surface, #fff); font: inherit; text-align: left; text-decoration: none; cursor: pointer; }
@@ -608,6 +606,7 @@
     const KB_CACHE_KEY = 'rosdorspk:regulations:materials:v1';
 
     let KB_DATA = [];
+    const documentsById = new Map();
     let catalogLoadComplete = false;
     let knowledgeBaseLoadPending = false;
     const state = { query: '', type: '', year: '', sort: 'date_desc', visibleYears: KB_YEAR_BATCH_SIZE };
@@ -636,8 +635,6 @@
         return false;
       }
     }
-    let filteredDocuments = [];
-    let visibleDocuments = [];
     let lastFocusedElement = null;
     let modalCloseTimer = null;
     let searchRevealTimer = null;
@@ -929,13 +926,17 @@
 
     function startCatalog(data) {
       KB_DATA = data;
+      documentsById.clear();
+      for (const item of data) {
+        if (!documentsById.has(item.id)) documentsById.set(item.id, item);
+      }
       catalogLoadComplete = true;
       const panel = document.querySelector('.kb-filter-panel');
       if (panel) panel.classList.remove('has-load-error');
       initializeFilters();
       setControlsFromState();
       setCatalogControlsDisabled(false);
-      applyFilters({ animateFrom: 0 });
+      applyFilters();
     }
 
     async function loadKnowledgeBaseData() {
@@ -964,9 +965,8 @@
           slowNoticeTimer = null;
           if (!cachedData) byId('kb-results-count').textContent = 'Повторяем загрузку материалов…';
         });
-        writeKnowledgeBaseCache(freshData);
-
         if (!cachedData || !isSameKnowledgeBaseData(cachedData, freshData)) {
+          writeKnowledgeBaseCache(freshData);
           startCatalog(freshData);
         }
       } catch (error) {
@@ -1006,9 +1006,10 @@
       if (picker.select.selectedIndex < 0 && options.length) picker.select.selectedIndex = 0;
       const selected = options.find(option => option.selected) || options[0];
       picker.value.textContent = selected ? selected.textContent : '';
+      const yearCounts = name === 'year' ? getYearPickerCounts() : null;
       picker.listbox.innerHTML = options.map((option, index) => {
         const isSelected = Boolean(selected && option.value === selected.value);
-        const count = name === 'year' ? getYearPickerOptionCount(option.value) : null;
+        const count = yearCounts ? (yearCounts.get(option.value) || 0) : null;
         return '<button class="kb-picker__option" id="' + picker.config.listboxId + '-option-' + index + '" type="button" role="option" data-kb-picker-option="' + escapeHtml(option.value) + '" aria-selected="' + String(isSelected) + '" tabindex="-1">' +
           '<span class="kb-picker__option-label">' + escapeHtml(option.textContent) + '</span>' +
           (count === null ? '' : '<span class="kb-picker__option-count">' + escapeHtml(catalogLoadComplete ? count : '…') + '</span>') +
@@ -1166,7 +1167,7 @@
       if (!catalogLoadComplete) return;
       state.type = value || '';
       updateTypeFilterState();
-      applyFilters({ animateFrom: 0, revealResults: true });
+      applyFilters({ revealResults: true });
     }
 
     function loadStateFromUrl() {
@@ -1180,25 +1181,15 @@
       if (!['date_desc', 'date_asc'].includes(state.sort)) state.sort = 'date_desc';
     }
 
-    const DOCUMENT_THEME_ICONS = {
-      norm: '<path d="M7 4.5h6.5L18 9v10.5H7z"></path><path d="M13.5 4.5V9H18"></path><path d="M10 13h5M10 16h4"></path>',
-      decree: '<path d="M7.5 4.5h9v15h-9z"></path><path d="M10 8h4M10 11h4"></path><circle cx="13.5" cy="15.5" r="2"></circle><path d="M12.4 17.1 11.8 20l1.7-1 1.7 1-.6-2.9"></path>',
-      law: '<path d="M12 4.5v15"></path><path d="M6 7h12"></path><path d="M7.5 7 5 12h5L7.5 7Z"></path><path d="M16.5 7 14 12h5l-2.5-5Z"></path><path d="M9 19.5h6"></path>',
-      order: '<path d="M8 5h8a2 2 0 0 1 2 2v12H6V7a2 2 0 0 1 2-2Z"></path><path d="M9.5 9h5M9.5 12.5h5M9.5 16h3"></path>',
-      review: '<path d="M5 6.5h14v11H5z"></path><path d="M8 10h8M8 13h8M8 16h5"></path>',
-      fsnb: '<path d="M5 18.5v-8M12 18.5v-13M19 18.5v-6"></path><path d="M4 18.5h16"></path>',
-      letter: '<path d="M5 7h14v10H5z"></path><path d="m5 8 7 5 7-5"></path>'
-    };
-
     function getDocumentTheme(item) {
       const type = normalize([item.documentType, item.title, item.category].join(' '));
-      if (type.includes('фснб') || type.includes('мониторинг')) return { slug: 'fsnb', icon: DOCUMENT_THEME_ICONS.fsnb };
-      if (type.includes('обзор')) return { slug: 'review', icon: DOCUMENT_THEME_ICONS.review };
-      if (type.includes('федераль') && type.includes('закон')) return { slug: 'law', icon: DOCUMENT_THEME_ICONS.law };
-      if (type.includes('постанов') || type.includes('указ')) return { slug: 'decree', icon: DOCUMENT_THEME_ICONS.decree };
-      if (type.includes('распоряж') || type.includes('приказ')) return { slug: 'order', icon: DOCUMENT_THEME_ICONS.order };
-      if (type.includes('письм') || type.includes('разъяснен')) return { slug: 'letter', icon: DOCUMENT_THEME_ICONS.letter };
-      return { slug: 'norm', icon: DOCUMENT_THEME_ICONS.norm };
+      if (type.includes('фснб') || type.includes('мониторинг')) return 'fsnb';
+      if (type.includes('обзор')) return 'review';
+      if (type.includes('федераль') && type.includes('закон')) return 'law';
+      if (type.includes('постанов') || type.includes('указ')) return 'decree';
+      if (type.includes('распоряж') || type.includes('приказ')) return 'order';
+      if (type.includes('письм') || type.includes('разъяснен')) return 'letter';
+      return 'norm';
     }
 
     function getSearchRelatedDocuments(item) {
@@ -1373,7 +1364,7 @@
       const query = normalizeSearch(state.query);
       return getCatalogDocuments().filter(item => {
         if (state.year && getYear(item) !== state.year) return false;
-        return matchesSearchText(getSearchText(item), query);
+        return !query || matchesSearchText(getSearchText(item), query);
       });
     }
 
@@ -1387,13 +1378,19 @@
       });
     }
 
-    function getYearPickerOptionCount(year) {
+    function getYearPickerCounts() {
+      const counts = new Map();
       const query = normalizeSearch(state.query);
-      const documents = getCatalogDocuments().filter(item => {
-        if (state.type && getPublicCatalogType(item) !== state.type) return false;
-        return matchesSearchText(getSearchText(item), query);
-      });
-      return year ? documents.filter(item => getYear(item) === year).length : documents.length;
+      let total = 0;
+      for (const item of getCatalogDocuments()) {
+        if (state.type && getPublicCatalogType(item) !== state.type) continue;
+        if (query && !matchesSearchText(getSearchText(item), query)) continue;
+        const year = getYear(item);
+        counts.set(year, (counts.get(year) || 0) + 1);
+        total++;
+      }
+      counts.set('', total);
+      return counts;
     }
 
     function getFilteredDocuments() {
@@ -1403,7 +1400,7 @@
         const publicType = getPublicCatalogType(item);
         if (state.type && publicType !== state.type) return false;
         if (state.year && getYear(item) !== state.year) return false;
-        return matchesSearchText(getSearchText(item), query);
+        return !query || matchesSearchText(getSearchText(item), query);
       });
 
       return result.sort((a, b) => {
@@ -1423,17 +1420,13 @@
     }
 
     function groupDocumentsByYear(items) {
-      const groups = [];
-      items.forEach(item => {
+      const years = new Map();
+      for (const item of items) {
         const year = getDocumentYearLabel(item);
-        let group = groups.find(entry => entry.year === year);
-        if (!group) {
-          group = { year: year, items: [] };
-          groups.push(group);
-        }
-        group.items.push(item);
-      });
-      return groups;
+        if (!years.has(year)) years.set(year, { year, items: [] });
+        years.get(year).items.push(item);
+      }
+      return Array.from(years.values());
     }
 
     function getDocumentTypeLabel(item) {
@@ -1486,7 +1479,7 @@
       return summary;
     }
 
-    function renderDocumentCard(item, index, animateFrom) {
+    function renderDocumentCard(item) {
       const theme = getDocumentTheme(item);
       const searchSummary = getSearchSummaryContent(item);
       const summaryClass = (searchSummary.isPlaceholder ? ' is-placeholder' : '') + (searchSummary.isContext ? ' is-search-context' : '');
@@ -1495,14 +1488,13 @@
       const heading = getDocumentCardHeading(item);
       const title = state.query ? highlightSearchText(heading.title, state.query) : formatTitleHtml(heading.title);
       const typeLabel = state.query ? highlightSearchText(getDocumentTypeLabel(item), state.query) : escapeHtml(getDocumentTypeLabel(item));
-      const enteringClass = animateFrom >= 0 && index >= animateFrom ? ' kb-is-entering' : '';
       const hideType = Boolean(state.type) && !state.query;
       const typeClass = hideType ? ' kb-document-card--without-type' : '';
       const metadata = !hideType
         ? '<div class="kb-document-meta"><span class="kb-document-type">' + typeLabel + '</span></div>'
         : '';
 
-      return '<article class="kb-document-card kb-doc--' + theme.slug + typeClass + enteringClass + '" data-kb-card-id="' + escapeHtml(item.id) + '" role="listitem" style="--kb-delay:' + (Math.min(Math.max(index - Math.max(animateFrom, 0), 0), 7) * 38) + 'ms">' +
+      return '<article class="kb-document-card kb-doc--' + theme + typeClass + '" data-kb-card-id="' + escapeHtml(item.id) + '" role="listitem">' +
         '<div class="kb-document-main">' +
           metadata +
           '<div class="kb-document-head">' +
@@ -1519,26 +1511,21 @@
       '</article>';
     }
 
-    function renderDocumentGroups(items, animateFrom) {
-      const groups = groupDocumentsByYear(items);
+    function renderDocumentGroups(groups) {
       const hideSingleYearHeading = Boolean(state.year && groups.length === 1);
-      let itemIndex = 0;
 
       return groups.map((group, groupIndex) => {
         const groupId = 'kb-year-group-' + groupIndex;
-        const totalInYear = filteredDocuments.filter(item => getDocumentYearLabel(item) === group.year).length;
-        const groupStartIndex = itemIndex;
-        const enteringClass = animateFrom >= 0 && groupStartIndex >= animateFrom ? ' kb-is-entering-year' : '';
-        const cards = group.items.map(item => renderDocumentCard(item, itemIndex++, animateFrom)).join('');
+        const cards = group.items.map(renderDocumentCard).join('');
         if (hideSingleYearHeading) {
-          return '<section class="kb-year-group kb-year-group--without-heading' + enteringClass + '" role="group" aria-label="Материалы за ' + escapeHtml(group.year) + ' год">' +
+          return '<section class="kb-year-group kb-year-group--without-heading" role="group" aria-label="Материалы за ' + escapeHtml(group.year) + ' год">' +
             cards +
           '</section>';
         }
-        return '<section class="kb-year-group' + enteringClass + '" role="group" aria-labelledby="' + groupId + '">' +
+        return '<section class="kb-year-group" role="group" aria-labelledby="' + groupId + '">' +
           '<header class="kb-year-heading">' +
             '<h3 id="' + groupId + '">' + escapeHtml(group.year) + '</h3>' +
-            '<span>' + escapeHtml(getMaterialCountLabel(totalInYear)) + '</span>' +
+            '<span>' + escapeHtml(getMaterialCountLabel(group.items.length)) + '</span>' +
           '</header>' +
           cards +
         '</section>';
@@ -1595,21 +1582,21 @@
 
     function applyFilters(options) {
       if (!options || !options.keepVisible) state.visibleYears = KB_YEAR_BATCH_SIZE;
-      filteredDocuments = getFilteredDocuments();
+      const filteredDocuments = getFilteredDocuments();
       updateTypeFilterCounts();
       renderPicker('year');
       const yearGroups = groupDocumentsByYear(filteredDocuments);
       const visibleYearCount = normalizeSearch(state.query)
         ? yearGroups.length
         : Math.min(state.visibleYears, yearGroups.length);
-      visibleDocuments = yearGroups.slice(0, visibleYearCount).flatMap(group => group.items);
+      const visibleGroups = yearGroups.slice(0, visibleYearCount);
+      const visibleCount = visibleGroups.reduce((count, group) => count + group.items.length, 0);
       const list = byId('kb-document-list');
-      const animateFrom = options && Number.isInteger(options.animateFrom) ? options.animateFrom : -1;
 
-      if (!visibleDocuments.length) {
+      if (!visibleCount) {
         list.innerHTML = renderEmptyState();
       } else {
-        list.innerHTML = renderDocumentGroups(visibleDocuments, animateFrom);
+        list.innerHTML = renderDocumentGroups(visibleGroups);
       }
 
       list.setAttribute('aria-busy', 'false');
@@ -1622,7 +1609,7 @@
         ? (/^\d{4}$/.test(nextGroup.year) ? 'Показать ' + nextGroup.year + ' год · ' : 'Показать далее · ') + getMaterialCountLabel(nextGroup.items.length)
         : 'Показать следующий год';
       const progress = byId('kb-results-progress');
-      progress.textContent = 'Показано ' + visibleDocuments.length + ' из ' + filteredDocuments.length;
+      progress.textContent = 'Показано ' + visibleCount + ' из ' + filteredDocuments.length;
       progress.parentElement.hidden = !nextGroup;
       renderActiveFilters();
       applyRussianTypography(list);
@@ -1633,9 +1620,8 @@
 
       if (options && options.revealResults) revealResultsStart();
 
-      if (options && options.revealNewYear && visibleDocuments.length) {
-        const visibleGroups = list.querySelectorAll('.kb-year-group');
-        const newGroup = visibleGroups[visibleGroups.length - 1];
+      if (options && options.revealNewYear && visibleCount) {
+        const newGroup = list.lastElementChild;
         const newHeading = newGroup && newGroup.querySelector('.kb-year-heading');
         const newTitle = newHeading && newHeading.querySelector('h3');
         if (newHeading && newTitle) {
@@ -1672,19 +1658,19 @@
       Object.assign(state, { query: '', type: '', year: '', sort: 'date_desc', visibleYears: KB_YEAR_BATCH_SIZE });
       fillTypeFilter();
       setControlsFromState();
-      applyFilters({ animateFrom: 0, revealResults: true });
+      applyFilters({ revealResults: true });
     }
 
     function clearSearch() {
       const searchInput = byId('kb-search');
       searchInput.value = '';
       state.query = '';
-      applyFilters({ animateFrom: 0, revealResults: true });
+      applyFilters({ revealResults: true });
       searchInput.focus({ preventScroll: true });
     }
 
     function findDocumentById(documentId) {
-      return KB_DATA.find(documentItem => documentItem.id === documentId);
+      return documentsById.get(documentId);
     }
 
     function isReviewDocument(item) {
@@ -1723,14 +1709,6 @@
 
     function renderRelatedList(items, mode) {
       return '<div class="kb-modal-related__list">' + items.map(item => renderRelatedButton(item, mode)).join('') + '</div>';
-    }
-
-    function renderRelatedGroup(title, items, mode) {
-      if (!items.length) return '';
-      return '<div class="kb-modal-related__group">' +
-        '<span class="kb-modal-related__group-title"><span>' + escapeHtml(title) + '</span><span class="kb-modal-related__count">' + items.length + '</span></span>' +
-        renderRelatedList(items, mode) +
-      '</div>';
     }
 
     function renderReviewRelations(review) {
@@ -1792,7 +1770,7 @@
       const meta = byId('kb-modal-meta');
       meta.hidden = isReviewDocument(item);
       meta.innerHTML = meta.hidden ? ''
-        : '<span class="kb-modal-type kb-doc--' + theme.slug + '">' + escapeHtml(getDocumentTypeLabel(item)) + '</span>';
+        : '<span class="kb-modal-type kb-doc--' + theme + '">' + escapeHtml(getDocumentTypeLabel(item)) + '</span>';
       // Let long review periods wrap before the year on narrow screens.
       byId('kb-modal-title').innerHTML = formatTitleHtml(item.title).replace(/&nbsp;(?=20\d{2}\b)/g, ' ');
       const summary = byId('kb-modal-summary');
@@ -1844,23 +1822,6 @@
         if (!modal.classList.contains('is-active')) modal.hidden = true;
         modalCloseTimer = null;
       }, 190);
-    }
-
-    function initializeMobileMenu() {
-      const button = document.querySelector('.kb-menu-button');
-      const menu = byId('kb-mobile-menu');
-      if (!button || !menu) return () => {};
-      function setOpen(isOpen) {
-        button.setAttribute('aria-expanded', String(isOpen));
-        button.setAttribute('aria-label', isOpen ? 'Закрыть меню' : 'Открыть меню');
-        menu.classList.toggle('is-open', isOpen);
-        menu.setAttribute('aria-hidden', String(!isOpen));
-        menu.toggleAttribute('inert', !isOpen);
-      }
-      button.addEventListener('click', () => setOpen(button.getAttribute('aria-expanded') !== 'true'));
-      menu.addEventListener('click', event => { if (event.target.closest('a')) setOpen(false); });
-      window.addEventListener('resize', () => { if (window.innerWidth > 860) setOpen(false); }, { passive: true });
-      return () => setOpen(false);
     }
 
     function initializeTypeFilterInputModality() {
@@ -1940,7 +1901,6 @@
     applyRussianTypography(byId('kb-site').querySelector('main'));
     applyRussianTypography(byId('kb-modal'));
     loadStateFromUrl();
-    initializeMobileMenu();
     initializeTypeFilterInputModality();
     initializeBackTop();
     initializeStickyFilterState();
@@ -1962,7 +1922,7 @@
     ['kb-year-filter', 'kb-sort'].forEach(id => {
       byId(id).addEventListener('change', () => {
         syncStateFromControls();
-        applyFilters({ animateFrom: 0, revealResults: true });
+        applyFilters({ revealResults: true });
       });
     });
 
@@ -1976,9 +1936,8 @@
     byId('kb-reset').addEventListener('click', resetFilters);
     byId('kb-search-clear').addEventListener('click', clearSearch);
     byId('kb-load-more').addEventListener('click', () => {
-      const previousVisible = visibleDocuments.length;
       state.visibleYears += KB_YEAR_BATCH_SIZE;
-      applyFilters({ keepVisible: true, animateFrom: previousVisible, revealNewYear: true });
+      applyFilters({ keepVisible: true, revealNewYear: true });
     });
 
     document.addEventListener('click', event => {
